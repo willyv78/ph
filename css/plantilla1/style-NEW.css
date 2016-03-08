@@ -1,0 +1,315 @@
+body{
+    background-color:#F5F6F6;
+    color: #546E7A;
+}
+#tabla{
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+#tabla tfoot tr th{
+    border-top: none;
+}
+#tabla thead tr th{
+    background-color:#546E7A;
+    border:1px #C0C0C0 solid;
+    text-align:center;
+    vertical-align:middle;
+    height:30px;
+    color: white;
+}
+#tabla thead tr th:first-child{
+    border-radius: 15px 0 0 0;
+}
+#tabla thead tr th:last-child{
+    border-radius: 0 15px 0 0;
+}
+#tabla tbody tr td{
+    background-color: #E4E3E2;
+    text-align:center;
+    vertical-align:middle;
+    height:25px;
+}
+button.DTTT_button, div.DTTT_button, a.DTTT_button{
+    position: relative;
+    float: left;
+    margin-right: 3px;
+    padding: 5px 8px;
+    border: 1px solid #546E7A;
+    cursor: pointer;
+    font-size: 0.88em;
+    color: #546E7A;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.navbar-header{
+   background: rgba(164, 194, 48,1);
+   background: -moz-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(164, 194, 48,1)), color-stop(100%, rgba(105, 143, 47, 1)));
+   background: -webkit-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+   background: -o-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+   background: -ms-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+   background: linear-gradient(to bottom, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dcc46', endColorstr='#354704', GradientType=0 );
+   min-height: 76px !important;
+   max-height: 85px !important;
+}
+.navbar-inverse{
+    background-color:#588430;
+    border-bottom: 4px solid #1B4F1D;
+    height: 90px !important;
+    min-height: 76px !important;
+    max-height: 90px !important;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    background-color: transparent;
+    border-color: transparent;
+    float: none;
+    width: 95%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    height: 45px !important;
+}
+.navbar-nav{
+    float: none !important;
+    height: 45px;
+}
+.navbar-nav > li{
+    border-right: 1.5px solid rgb(56, 75, 6) !important;
+    text-align: center;
+    padding: 10px 0;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 0 0 0;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+.img-izq{
+    left: -1px;
+    position: absolute;
+    top: 80px;
+    z-index: 1;
+    width: 20%;
+}
+.img-sup{
+    margin-right: -30px;
+    z-index: 1;
+    width: 150px;
+    display: inline-block;
+}
+#logo_edif{
+    padding: 5px;
+    width: 30%;
+    display: inline-block;
+}
+#logo-site{
+    background-image: url('../../css/plantilla1/img/verdesuperior.png');
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    height: 88px;
+    min-height: 76px;
+}
+#menu-sup{
+    height: 85px;
+    min-height: 76px;
+}
+#nom-usu{
+    height: 85px;
+    min-height: 76px;
+}
+#nom-usu div{
+    /*margin-top: 10px;*/
+}
+.nav-cerrar > i{
+    font-size: 1.2em;
+    border: 1px solid #FFF;
+    padding: 5px 4px;
+    top: 10px;
+    margin: 0px 5px 15px 5px;
+}
+.paging_full_numbers a.paginate_button,
+.paging_full_numbers a.paginate_active {
+    color: #546E7A !important;
+}
+
+.paging_full_numbers a.paginate_button {
+    background-color: transparent;
+}
+
+.paging_full_numbers a.paginate_button:hover {
+    background-color: transparent;
+    text-decoration: none !important;
+}
+
+.paging_full_numbers a.paginate_active {
+    background-color: transparent;
+}
+.badge{
+    background-color: #C62923;
+}
+
+#rel-aptos > span, .destinatarios > span{
+    border: 1px solid rgb(84, 110, 122);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+#rel-aptos > span > i, .destinatarios > span > i{
+    color: red;
+    cursor: pointer;
+    font-size: .8em;
+    margin: 0 0 0 5px;
+}
+
+.titulo-pagina{
+    z-index: 2;
+    border-bottom: thick dotted rgb(84, 110, 122);
+    margin-bottom: 20px;
+    text-align: left;
+}
+.btn-temaazul{
+    color:#fff;
+    background-color:#546E7A;
+    border-color:#2e6da4;
+}
+.btn-temaazul:hover,.btn-temaazul:focus,.btn-temaazul.focus,.btn-temaazul:active,.btn-temaazul.active,.open>.dropdown-toggle.btn-temaazul{
+    color:#fff;
+    background-color:#286090;
+    border-color:#204d74;
+}
+.btn-temaazul:active,.btn-temaazul.active,.open>.dropdown-toggle.btn-temaazul{
+    background-image:none;
+}
+.btn-temaazul.disabled,.btn-temaazul[disabled],fieldset[disabled] .btn-temaazul,.btn-temaazul.disabled:hover,.btn-temaazul[disabled]:hover,fieldset[disabled] .btn-temaazul:hover,.btn-temaazul.disabled:focus,.btn-temaazul[disabled]:focus,fieldset[disabled] .btn-temaazul:focus,.btn-temaazul.disabled.focus,.btn-temaazul[disabled].focus,fieldset[disabled] .btn-temaazul.focus,.btn-temaazul.disabled:active,.btn-temaazul[disabled]:active,fieldset[disabled] .btn-temaazul:active,.btn-temaazul.disabled.active,.btn-temaazul[disabled].active,fieldset[disabled] .btn-temaazul.active{
+    background-color:#546E7A;
+    border-color:#2e6da4;
+}
+.btn-temaazul .badge{
+    color:#546E7A;
+    background-color:#fff
+}
+.eq-t-content {
+    /*background-color: #C0C0C0;*/
+    margin: 10px 0;
+    padding: 10px;
+}
+.eq-t-titulo {
+    background-color: #546E7A;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    color: #FFF;
+    height: 50px;
+    padding: 12px 5px;
+    text-align: left;
+    vertical-align: middle;
+}
+.eq-t-imagen, .eq-t-botones{
+    background-color: #E4E3E2;
+    padding: 10px 0;
+}
+.eq-t-ver-mas{
+    background-color: #D9E3E4;
+    border-radius: 5px;
+    padding: 20px 10px 20px 20px;
+}
+.eq-t-ver-mas > div{
+    border-bottom: 1px solid #546E7A;
+}
+.eq-t-ver-mas > div:last-child{
+    border-bottom: none;
+}
+#histo-tabla thead tr th{
+    background-color: #F5F6F6;
+    border-radius: 2px;
+    color: #546E7A;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+#histo-tabla tbody tr{
+    background-color: #D9E2E4;
+}
+#histo-tabla tbody tr td{
+    border-radius: 2px;
+    color: #546E7A;
+    height: 25px;
+    margin-bottom: 2px;
+    text-align: center;
+    vertical-align: middle;
+}
+#histo-tabla tbody tr:hover{
+   background-color: #F7F7F7;
+}
+.mens-est{
+    width:1.3em;
+    float:left;
+    height:60px;
+}
+.mens-est-nom{
+    width:1.3em;
+    float:right;
+    height:20px;
+}
+.doc-est{
+    border-radius: 3px;
+    float: left;
+    width: 3.99em;
+}
+#footer{
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 10px 10px 10px 10px;
+    font-size: .9em;
+    background: rgba(164, 194, 48,1);
+    background: -moz-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(164, 194, 48,1)), color-stop(100%, rgba(105, 143, 47, 1)));
+    background: -webkit-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -o-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: linear-gradient(to bottom, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dcc46', endColorstr='#354704', GradientType=0 );
+    color:#FFF;
+}
+#footer > p{
+    margin: 0;
+}
+
+
+/* media querys */
+@media (max-width: 768px) {
+    #menu-sup{
+        height: 1px;
+        min-height: 1px;
+    }
+    .navbar {
+        min-height: 55px;
+    }
+    #col-md-12 {
+        top: 35px;
+    }
+    .navbar-collapse {
+        margin-top: 0;
+    }
+    .lista_historial_facturas > a > button.btn{
+        padding: 3px 7px;
+    }
+    .lista_historial_facturas > a > button > img {
+        width: 25px;
+        height: 40px;
+    }
+    #tabla, #tabla_length, #tabla_info, #tabla_paginate{
+        font-size: 0.8em;
+        float: none !important;
+        text-align: center;
+    }
+    .DTTT_container, .DTTT_container > a{
+        float: none !important;
+    }
+}

@@ -1,0 +1,1683 @@
+/* This code is only meant for previewing your Reflow design. */
+#cuerpotexto {
+    float: none;
+    font-size: 1em;
+    width: 94.998035%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 8px auto 10px;
+    clear: none;
+    min-height: 59px;
+    color: rgb(53, 53, 53);
+}
+#act {
+    float: none;
+    height: 63px;
+    margin: 15px auto 5px;
+    clear: none;
+    width: 89.996069%;
+    background-color: rgb(66, 100, 174);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(56, 85, 148);
+    visibility: visible;
+    display: block;
+}
+#regla {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    background-color: rgb(248, 152, 32);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(204, 116, 6);
+    visibility: visible;
+    display: block;
+}
+#circu {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(156, 35, 105);
+    background-color: rgb(214, 72, 154);
+    visibility: visible;
+    display: block;
+}
+#manco {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(56, 47, 108);
+    background-color: rgb(72, 61, 139);
+    visibility: visible;
+    display: block;
+}
+#infre {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(99, 138, 40);
+    background-color: rgb(145, 199, 62);
+    visibility: visible;
+    display: block;
+}
+#infad {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(160, 169, 117);
+    background-color: rgb(40, 118, 24);
+    visibility: visible;
+    display: block;
+}
+#infocon {
+    float: none;
+    height: 63px;
+    margin: 5px auto;
+    clear: none;
+    width: 89.996069%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 1px solid rgb(0, 99, 142);
+    background-color: rgb(0, 136, 196);
+    visibility: visible;
+    display: block;
+}
+#image5 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image6 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image7 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    display: none;
+    margin-right: auto;
+}
+#image8 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image9 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image10 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image11 {
+    float: none;
+    width: 42.555168%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20%;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#box1 {
+    float: none;
+    height: 50px;
+    clear: none;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    top: auto;
+    left: 0%;
+    bottom: 0%;
+}
+#text7 {
+    float: none;
+    font-size: 1em;
+    width: 79.6875%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 18px;
+    clear: none;
+    min-height: 19px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#textspan1 {
+    float: none;
+    font-size: 1em;
+    line-height: 1em;
+    color: rgb(205, 6, 6);
+}
+
+#textspan2 {
+    float: none;
+    font-size: 1em;
+    line-height: 1em;
+    color: rgb(205, 6, 6);
+}
+#text {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    margin-right: auto;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+}
+#text1 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text2 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text3 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text4 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text5 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 17.5px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text6 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 15px;
+    clear: none;
+    min-height: 28px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#formgroup {
+    float: none;
+    height: 70px;
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-top: 60px;
+    clear: none;
+    width: 89.997385%;
+    margin-right: auto;
+}
+#text1_doc {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: block;
+}
+#select {
+    float: none;
+    height: 37.625px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0%;
+    clear: none;
+}
+#text2_doc {
+    float: left;
+    font-size: 1em;
+    width: 87.866109%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 5.001308%;
+    margin-top: 34px;
+    clear: none;
+    min-height: 34px;
+}
+#text3_doc {
+    float: left;
+    font-size: 1em;
+    width: 87.866109%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 5.001308%;
+    margin-top: 14px;
+    clear: both;
+    min-height: 34px;
+    margin-right: 0%;
+}
+#image1_doc {
+    float: none;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 37px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+#image2_doc {
+    float: none;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: -130px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    display: none;
+}
+#image3_doc {
+    float: none;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 18px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    display: none;
+}
+.cont_doc{
+    width: 80%;
+    display: inline-block;
+}
+.cont_doc2{
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+}
+.img_doc{
+    width:20%;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    float: left;
+}
+.det_doc{
+    width: 78%;
+    display: inline-block;
+    text-align: justify;
+
+}
+@media only screen and (min-width: 320px) {
+    #cuerpotexto {
+        float: left;
+        font-size: 1em;
+        width: 94.996106%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: 2.492212%;
+        margin-top: 8px;
+        clear: none;
+        min-height: 47px;
+        color: rgb(53, 53, 53);
+    }
+    #textspan {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-family: arial;
+        font-weight: 400;
+    }
+    #act {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 63px;
+        clear: none;
+        width: 94.996106%;
+        margin-right: auto;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border: 1px solid rgb(56, 85, 148);
+    }
+    #regla {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 94.996106%;
+        margin-right: auto;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border: 1px solid rgb(204, 116, 6);
+    }
+    #circu {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 95%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border: 1px solid rgb(156, 35, 105);
+        margin-right: auto;
+    }
+    #manco {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 95%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        margin-right: auto;
+    }
+    #infre {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 95%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        margin-right: auto;
+    }
+    #infad {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 95%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        margin-right: auto;
+    }
+    #infocon {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 95%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        margin-right: auto;
+    }
+    #image5 {display: none;}
+    #image6 {display: none;}
+    #image7 {display: none;}
+    #image9 {display: none;}
+    #image10 {display: none;}
+    #image11 {display: none;}
+    #image8 {display: none;}
+    #box1 {top: auto;}
+    #formgroup {
+        width: 89.995433%;
+        height: 70px;
+    }
+    #image1_doc {
+        display: block;
+        width: 220px;
+    }
+    #image2_doc {
+        display: block;
+        margin-top: 15px;
+        margin-left: auto;
+        clear: none;
+        width: 220px;
+        margin-right: auto;
+        float: none;
+    }
+    #image3_doc {
+        display: block;
+        margin-top: 17px;
+        clear: none;
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+@media only screen and (min-width: 480px) {
+    #image5 {display: none;}
+    #image6 {display: none;}
+    #image7 {display: none;}
+    #image9 {display: none;}
+    #image10 {display: none;}
+    #image11 {display: none;}
+    #image8 {display: none;}
+}
+@media only screen and (min-width: 640px) {
+    #cuerpotexto {width: 94.99604%;}
+    #act {
+        width: 94.99604%;
+        height: 63px;
+    }
+    #regla {
+        width: 94.99604%;
+        height: 63px;
+    }
+    #circu {
+        width: 94.998071%;
+        height: 63px;
+    }
+    #manco {
+        width: 94.998071%;
+        height: 63px;
+    }
+    #infre {
+        width: 94.998071%;
+        height: 63px;
+    }
+    #infad {
+        width: 94.998071%;
+        height: 63px;
+    }
+    #infocon {
+        width: 94.998071%;
+        height: 63px;
+    }
+    #image5 {display: none;}
+    #image6 {display: none;}
+    #image7 {display: none;}
+    #image8 {display: none;}
+    #image11 {display: none;}
+    #image10 {display: none;}
+    #image9 {display: none;}
+    #formgroup {
+        width: 89.998172%;
+        height: 70px;
+    }
+    #image1_doc {
+        margin-top: 20px;
+        clear: none;
+        margin-left: 4.999898%;
+        margin-right: 0px;
+        float: left;
+        width: 220px;
+    }
+    #image2_doc {
+        margin-top: 20px;
+        clear: none;
+        width: 220px;
+        margin-left: 2.11003%;
+        margin-right: 0px;
+        float: left;
+    }
+    #image3_doc {
+        width: 220px;
+        margin-top: 20px;
+        margin-left: 2.11003%;
+        clear: none;
+        margin-right: 0px;
+        float: left;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #act {
+        width: 11.997419%;
+        margin-left: 2.493351%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: left;
+        height: 300px;
+    }
+    #regla {
+        width: 11.997419%;
+        margin-left: 1.601611%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #circu {
+        width: 11.997419%;
+        margin-left: 1.476455%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #manco {
+        width: 11.997419%;
+        margin-left: 1.600515%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #infre {
+        width: 11.997419%;
+        margin-left: 1.602464%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #infad {
+        width: 11.997419%;
+        margin-left: 1.473799%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #infocon {
+        width: 11.997419%;
+        margin-left: 1.602464%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 20px;
+        clear: none;
+        height: 300px;
+    }
+    #cuerpotexto {
+        width: 94.995698%;
+        margin-top: 1px;
+        height: 47px;
+    }
+    #image5 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 0px;
+    }
+    #image6 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 0px;
+    }
+    #image7 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 0px;
+    }
+    #image9 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 0px;
+    }
+    #image10 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        margin-bottom: 0px;
+    }
+    #image11 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+    }
+    #image8 {
+        width: 42.525303%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        display: block;
+    }
+    #box1 {
+        clear: none;
+        width: 100%;
+        height: 50px;
+    }
+    #text {
+        margin-top: 180px;
+        width: 94.989215%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text1 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text2 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text3 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text4 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text5 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #text6 {
+        margin-top: 180px;
+        width: 94.989213%;
+        clear: none;
+        font-size: 0.6em;
+    }
+    #box {
+        margin-top: 395px;
+        clear: none;
+    }
+}
+@media only screen and (min-width: 800px) {
+    #cuerpotexto {
+        width: 94.994438%;
+        height: 47px;
+    }
+    #act {
+        margin-top: 20px;
+        margin-left: 1.772803%;
+        clear: left;
+        width: 11.997706%;
+        height: 300px;
+    }
+    #regla {
+        width: 11.997706%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.531215%;
+        clear: none;
+    }
+    #circu {
+        width: 11.997706%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.532953%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 20px;
+        margin-left: 1.64245%;
+        clear: none;
+        width: 11.997706%;
+        height: 300px;
+    }
+    #infre {
+        width: 11.997706%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.529905%;
+        clear: none;
+    }
+    #infad {
+        margin-top: 20px;
+        margin-left: 1.531638%;
+        clear: none;
+        width: 11.997706%;
+        height: 300px;
+    }
+    #infocon {
+        width: 11.997706%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.529905%;
+        clear: none;
+    }
+    #image9 {
+        width: 42.548183%;
+    }
+    #image7 {
+        width: 42.548183%;
+    }
+    #image10 {
+        width: 42.548183%;
+    }
+    #image11 {
+        width: 42.548183%;
+    }
+    #image8 {
+        width: 42.548183%;
+    }
+    #image6 {
+        width: 42.548183%;
+    }
+    #image5 {
+        width: 42.548183%;
+    }
+    #box1 {
+        clear: none;
+        width: 100%;
+        height: 50px;
+    }
+    #box {
+        margin-top: 403px;
+        clear: none;
+    }
+    #formgroup {
+        width: 89.997574%;
+        height: 70px;
+    }
+    #image1_doc {
+        width: 220px;
+        margin-top: 20px;
+        margin-left: 9.527687%;
+        clear: none;
+    }
+    #image2_doc {
+        margin-top: 20px;
+        margin-left: 2.337307%;
+        clear: none;
+    }#image3_doc {
+        margin-top: 20px;
+        margin-left: 1.879895%;
+        clear: none;
+        width: 220px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    #cuerpotexto {
+        width: 94.994153%;
+        height: 47px;
+    }
+    #act {
+        margin-top: 20px;
+        margin-left: 1.871102%;
+        clear: left;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #circu {
+        margin-top: 20px;
+        margin-left: 1.515398%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #manco {
+        margin-top: 20px;
+        margin-left: 1.617723%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #infre {
+        margin-top: 20px;
+        margin-left: 1.515398%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #infad {
+        margin-top: 20px;
+        margin-left: 1.513773%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #infocon {
+        margin-top: 20px;
+        margin-left: 1.515398%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #regla {
+        margin-top: 20px;
+        margin-left: 1.513773%;
+        clear: none;
+        width: 11.99974%;
+        height: 300px;
+    }
+    #image9 {
+        width: 42.534435%;
+    }
+    #image7 {
+        width: 42.534435%;
+    }
+}
+@media only screen and (min-width: 960px) {
+    #act {
+        margin-top: 20px;
+        margin-left: 2.533611%;
+        clear: left;
+        width: 11.999635%;
+        height: 300px;
+    }
+    #cuerpotexto {
+        width: 94.993681%;
+        height: 47px;
+    }
+    #regla {
+        margin-top: 20px;
+        margin-left: 1.449518%;
+        clear: none;
+        width: 11.999635%;
+        height: 300px;
+    }
+    #circu {
+        width: 11.999635%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.352072%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 20px;
+        margin-left: 1.447995%;
+        clear: none;
+        width: 11.999635%;
+        height: 300px;
+    }
+    #infre {
+        width: 11.999635%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.449518%;
+        clear: none;
+    }
+    #infad {
+        margin-top: 20px;
+        margin-left: 1.352072%;
+        clear: none;
+        width: 11.999635%;
+        height: 300px;
+        min-width: 0px;
+    }
+    #infocon {
+        width: 11.999635%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 1.447995%;
+        clear: none;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #cuerpotexto {
+        height: auto;
+        min-height: 33px;
+        width: 94.993648%;
+    }
+    #act {
+        margin-top: 20px;
+        margin-left: 2.502317%;
+        clear: left;
+        width: 11.998957%;
+        height: 300px;
+    }
+    #regla {
+        margin-top: 20px;
+        margin-left: 0.97746756%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+    }
+    #circu {
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 0.97746756%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 20px;
+        margin-left: 0.88478916%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+    }
+    #infre {
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 0.97746756%;
+        clear: none;
+    }
+    #infad {
+        margin-top: 20px;
+        margin-left: 0.97746756%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+        background-color: rgb(40, 118, 24);
+    }
+    #infocon {
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 0.97746756%;
+        clear: none;
+    }
+    #image5 {
+        width: 42.546432%;
+    }
+    #image6 {
+        width: 42.546432%;
+    }
+    #image8 {
+        width: 42.546432%;
+    }
+    #image7 {
+        width: 42.534213%;
+    }
+    #text {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text1 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text2 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text3 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text4 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text5 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+    #text6 {
+        margin-top: 150px;
+        font-size: 0.8em;
+    }
+}
+@media only screen and (min-width: 1080px) {
+    #act {
+        margin-top: 5px;
+        margin-left: 2.494154%;
+        clear: left;
+        width: 11.999464%;
+        height: 300px;
+    }
+    #cuerpotexto {
+        width: 94.993424%;
+    }
+    #regla {
+        margin-top: 5px;
+        margin-left: 1.407833%;
+        clear: none;
+        width: 11.999464%;
+        height: 300px;
+    }
+    #circu {
+        width: 11.999464%;
+        height: 300px;
+        margin-top: 5px;
+        margin-left: 1.329891%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 5px;
+        margin-left: 1.406615%;
+        clear: none;
+        width: 11.999464%;
+        height: 300px;
+    }
+    #infre {
+        width: 11.999464%;
+        height: 300px;
+        margin-top: 5px;
+        margin-left: 1.407833%;
+        clear: none;
+    }
+    #infad {
+        margin-top: 5px;
+        margin-left: 1.407833%;
+        clear: none;
+        width: 11.999464%;
+        height: 300px;
+    }
+    #infocon {
+        width: 12%;
+        height: 300px;
+        margin-top: 5px;
+        margin-left: 1.407833%;
+        clear: none;
+    }
+    #image9 {
+        width: 42.529563%;
+    }
+    #image7 {
+        width: 42.529563%;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    #act {
+        margin-top: 6px;
+        margin-left: 2.538071%;
+        clear: left;
+        width: 11.999184%;
+        height: 300px;
+    }
+    #cuerpotexto {
+        width: 94.993901%;
+    }
+    #regla {
+        margin-top: 6px;
+        margin-left: 1.417467%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+    }
+    #circu {
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 6px;
+        margin-left: 1.417467%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 6px;
+        margin-left: 1.344951%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+    }
+    #infre {
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 6px;
+        margin-left: 1.416334%;
+        clear: none;
+    }
+    #infad {
+        margin-top: 6px;
+        margin-left: 1.417467%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+    }
+    #infocon {
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 6px;
+        margin-left: 1.417467%;
+        clear: none;
+    }
+    #image7 {
+        width: 42.525012%;
+    }
+    #text {
+        margin-top: 120px;
+    }
+    #text1 {
+        margin-top: 120px;
+    }
+    #text2 {
+        margin-top: 120px;
+    }
+    #text3 {
+        margin-top: 120px;
+    }
+    #text4 {
+        margin-top: 120px;
+    }
+    #text5 {
+        margin-top: 120px;
+    }
+    #text6 {
+        margin-top: 120px;
+    }
+}
+@media only screen and (min-width: 1380px) {
+    #act {
+        width: 11.999913%;
+        margin-top: 17px;
+        margin-left: 2.492856%;
+        clear: left;
+        height: 300px;
+    }
+    #regla {
+        width: 11.999913%;
+        height: 300px;
+        margin-top: 17px;
+        margin-left: 1.231815%;
+        clear: none;
+    }
+    #circu {
+        width: 11.999913%;
+        height: 300px;
+        margin-top: 17px;
+        margin-left: 1.303256%;
+        clear: none;
+    }
+    #manco {
+        margin-top: 17px;
+        margin-left: 1.231815%;
+        clear: none;
+        height: 300px;
+        width: 11.999913%;
+    }
+    #cuerpotexto {
+        width: 94.993722%;
+    }
+    #infre {
+        margin-top: 17px;
+        margin-left: 1.232897%;
+        clear: none;
+        width: 11.999913%;
+        height: 300px;
+    }
+    #infad {
+        margin-top: 17px;
+        margin-left: 1.231815%;
+        clear: none;
+        width: 11.999913%;
+        height: 300px;
+    }
+    #infocon {
+        width: 12%;
+        height: 300px;
+        margin-top: 17px;
+        margin-left: 1.232897%;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #cuerpotexto {
+        width: 94.994267%;
+        margin-top: 1px;
+        margin-left: 2.492212%;
+        clear: none;
+    }
+    #act {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 2.540717%;
+        clear: left;
+    }
+    #regla {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.42101%;
+        clear: none;
+    }
+    #circu {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.42101%;
+        clear: none;
+    }
+    #manco {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.355863%;
+        clear: none;
+    }
+    #infre {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.422028%;
+        clear: none;
+        margin-right: 0px;
+    }
+    #infad {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.42101%;
+        clear: none;
+    }
+    #infocon {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 8px;
+        margin-left: 1.42101%;
+        clear: none;
+        margin-right: 0px;
+    }
+    #image8 {
+        width: 42.540822%;
+    }
+    #image7 {
+        width: 42.523724%;
+    }
+    #text {
+        font-size: 1em;
+    }
+    #text1 {
+        font-size: 1em;
+    }
+    #text2 {
+        font-size: 1em;
+    }
+    #text3 {
+        font-size: 1em;
+    }
+    #text4 {
+        font-size: 1em;
+    }
+    #text5 {
+        font-size: 1em;
+    }
+    #text6 {
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    #text {
+        margin-top: 100px;
+    }
+
+    #text1 {
+        margin-top: 100px;
+    }
+
+    #text2 {
+        margin-top: 100px;
+    }
+
+    #text3 {
+        margin-top: 100px;
+    }
+
+    #text4 {
+        margin-top: 100px;
+    }
+
+    #text5 {
+        margin-top: 100px;
+    }
+
+    #text6 {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (min-width: 1680px) {
+    #image7 {
+        width: 42.538383%;
+    }
+
+    #text {
+        margin-top: 80px;
+    }
+
+    #text1 {
+        margin-top: 80px;
+    }
+
+    #text2 {
+        margin-top: 80px;
+    }
+
+    #text3 {
+        margin-top: 80px;
+    }
+
+    #text4 {
+        margin-top: 80px;
+    }
+
+    #text5 {
+        margin-top: 80px;
+    }
+
+    #text6 {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    #text {
+        font-size: 1.2em;
+    }
+
+    #text1 {
+        font-size: 1.2em;
+    }
+
+    #text2 {
+        font-size: 1.2em;
+    }
+
+    #text3 {
+        font-size: 1.2em;
+    }
+
+    #text4 {
+        font-size: 1.2em;
+    }
+
+    #text5 {
+        font-size: 1.2em;
+    }
+
+    #text6 {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 2048px) {
+    #image7 {
+        width: 42.542062%;
+    }
+    #cuerpotexto {
+        width: 94.993767%;
+    }
+
+    #act {
+        margin-top: 8px;
+        margin-left: 2.532157%;
+        clear: left;
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #regla {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #circu {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #manco {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #infre {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #infad {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #infocon {
+        width: 11.998527%;
+        height: 454px;
+    }
+
+    #image5 {
+        width: 42.54408%;
+    }
+
+    #image6 {
+        width: 42.54408%;
+    }
+
+    #image11 {
+        width: 42.547776%;
+    }
+
+    #text {
+        font-size: 2em;
+    }
+
+    #text1 {
+        font-size: 2em;
+    }
+
+    #text2 {
+        font-size: 2em;
+    }
+
+    #text3 {
+        font-size: 2em;
+    }
+
+    #text4 {
+        font-size: 2em;
+    }
+
+    #text5 {
+        font-size: 2em;
+    }
+
+    #text6 {
+        font-size: 2em;
+    }
+    #box {
+        margin-top: 883px;
+        clear: none;
+        width: 100%;
+        height: 40px;
+    }
+    #box1 {
+        width: 100%;
+        height: 50px;
+    }
+}
+

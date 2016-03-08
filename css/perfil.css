@@ -1,0 +1,1445 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    background-image:url("../images/background.fw.png");
+    background-attachment: scroll;
+    background-size: auto;
+    min-width: 0px;
+    background-position: 0% 0%;
+    background-repeat: repeat repeat;
+}
+
+#header {
+    float: none;
+    height: 60px;
+    margin: 0px auto 5px;
+    clear: none;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+#logo {
+    float: left;
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: 0%;
+    display: block;
+}
+
+#text {
+    float: none;
+    font-size: 2em;
+    width: 49.84375%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 25px;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+
+#text1 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+}
+
+#text2 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+    color: rgb(123, 123, 123);
+}
+
+#text3 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+}
+
+#text4 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+    color: rgb(123, 123, 123);
+}
+
+#text7 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+}
+
+#text5 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+}
+
+#text8 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+    color: rgb(123, 123, 123);
+}
+
+#text6 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+    color: rgb(123, 123, 123);
+}
+
+#text9 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+}
+
+#text10 {
+    float: none;
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 0px;
+    clear: none;
+    min-height: 25px;
+    margin-right: auto;
+    color: rgb(123, 123, 123);
+}
+
+#box_perfil {
+    float: left;
+    height: auto;
+    margin: 39px auto 20px;
+    clear: none;
+    width: 26%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(40, 118, 24);
+    display: inline-block;
+}
+
+#image {
+    float: none;
+    width: 74.883781%;
+    max-width: 100%;
+    height: auto;
+    margin: 13px auto;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#formgroup {
+    float: none;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    width: 92.207031%;
+    margin-right: auto;
+}
+
+#text11 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#perfil{
+    margin-top: 70px;
+}
+
+#editarperfil {
+    float: none;
+    height: 301px;
+    margin-left: auto;
+    margin-top: 5.5px;
+    clear: none;
+    width: 91.586914%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(35, 111, 1);
+    margin-right: auto;
+}
+
+#formgroup1 {
+    float: left;
+    height: 45.375px;
+    display: block;
+    text-align: left;
+    margin-left: 3.253425%;
+    margin-top: 17.75px;
+    clear: none;
+    width: 93.832197%;
+}
+
+#text13 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#box4 {
+    float: none;
+    height: 32px;
+    margin-left: auto;
+    margin-top: -1px;
+    clear: none;
+    width: 100%;
+    margin-right: auto;
+    background-color: rgb(11, 19, 22);
+}
+
+#text12 {
+    float: none;
+    font-size: 1em;
+    width: 41.778947%;
+    height: auto;
+    text-align: left;
+    font-weight: 600;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    min-height: 25px;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+
+#image1 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 89.006388%;
+    margin-top: -30px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#formgroup2 {
+    float: left;
+    height: 45.375px;
+    display: block;
+    text-align: left;
+    margin-left: 3.253425%;
+    margin-top: 5.875px;
+    clear: both;
+    width: 93.832197%;
+    margin-right: 0%;
+}
+
+#text14 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#formgroup3 {
+    float: left;
+    height: 45.375px;
+    display: block;
+    text-align: left;
+    margin-left: 3.253425%;
+    margin-top: 6.875px;
+    clear: both;
+    width: 93.832197%;
+    margin-right: 0%;
+}
+
+#text15 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 0.2em 0em;
+    display: block;
+}
+
+#text16 {
+    float: none;
+    font-size: 1em;
+    width: 93.832197%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 176.125px;
+    clear: none;
+    min-height: 26px;
+    margin-right: auto;
+}
+
+#input {
+    float: none;
+    height: 33px;
+    font-size: 1em;
+    margin-left: 3.082192%;
+    margin-top: 19.5px;
+    clear: none;
+    width: 44.173064%;
+    margin-right: 0px;
+    font-family: arial;
+    color: rgb(242, 242, 242);
+    background-color: rgb(40, 118, 24);
+}
+
+#input1 {
+    float: none;
+    height: 33px;
+    font-size: 1em;
+    margin-left: 53.938356%;
+    margin-top: -33px;
+    clear: none;
+    width: 43.14778%;
+    margin-right: 0px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 111, 1);
+}
+
+#input2 {
+    float: left;
+    height: 32px;
+    font-size: 1em;
+    margin-left: 26.047086%;
+    margin-top: 58px;
+    clear: none;
+    width: 47.03125%;
+    font-family: arial;
+    background-color: rgb(40, 118, 24);
+    color: rgb(255, 255, 255);
+}
+
+#box1_perfil {
+    float: none;
+    height: auto;
+    margin: 20px auto 10px;
+    clear: none;
+    width: 92.207031%;
+}
+
+#box2_perfil {
+    float: none;
+    height: auto;
+    margin: 17px auto 10px;
+    clear: none;
+    width: 92.207031%;
+}
+
+#ciudad {
+    float: none;
+    height: auto;
+    margin: 18px auto 10px;
+    clear: none;
+    width: 92.207031%;
+}
+
+#box3 {
+    float: none;
+    height: auto;
+    margin: 20px auto 10px;
+    clear: none;
+    width: 92.207031%;
+}
+
+#correo {
+    float: none;
+    height: auto;
+    margin: 17px auto 10px;
+    clear: none;
+    width: 92.207031%;
+}
+
+@media only screen and (min-width: 320px) {
+    #header {
+        height: 60px;
+        margin-top: 0px;
+        clear: none;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+    }
+
+    #text {
+        float: none;
+        font-size: 2em;
+        width: 49.844237%;
+        height: auto;
+        text-align: center;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 20px;
+        clear: none;
+        min-height: 25px;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+    }
+
+    #logo {
+        margin-left: 10px;
+        margin-top: 10px;
+        clear: none;
+    }
+
+    #text1 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+    }
+
+    #text2 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+        color: rgb(123, 123, 123);
+    }
+
+    #text3 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+    }
+
+    #text4 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+        color: rgb(123, 123, 123);
+    }
+
+    #text7 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+    }
+
+    #text5 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+    }
+
+    #text8 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+        color: rgb(123, 123, 123);
+    }
+
+    #text6 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+        color: rgb(123, 123, 123);
+    }
+
+    #text9 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+    }
+
+    #text10 {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 0px;
+        clear: none;
+        min-height: 25px;
+        margin-right: auto;
+        color: rgb(123, 123, 123);
+    }
+
+    #box_perfil {
+        float: none;
+        margin: 13px auto 20px;
+        clear: none;
+        width: 26%;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(40, 118, 24);
+    }
+
+    #image {
+        width: 74.883781%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+    }
+
+    #formgroup {
+        float: none;
+        height: auto;
+        display: block;
+        text-align: left;
+        margin-left: auto;
+        margin-top: 20px;
+        clear: none;
+        width: 92.208637%;
+        margin-right: auto;
+    }
+
+    #select {
+        float: none;
+        height: auto;
+        padding: 0px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+
+    #text11 {
+        float: none;
+        font-size: 1em;
+        width: auto;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        padding: 0.2em 0em;
+        display: block;
+    }
+
+    #editarperfil {
+        float: none;
+        height: 301px;
+        margin-left: auto;
+        margin-top: 5.5px;
+        clear: none;
+        width: 91.587539%;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(35, 111, 1);
+        margin-right: auto;
+    }
+
+    #formgroup1 {
+        float: left;
+        height: 45.375px;
+        display: block;
+        text-align: left;
+        margin-left: 3.253425%;
+        margin-top: 17.75px;
+        clear: none;
+        width: 93.835616%;
+    }
+
+    #textinput {
+        float: none;
+        height: auto;
+        padding: 0px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+
+    #text13 {
+        float: none;
+        font-size: 1em;
+        width: auto;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        padding: 0.2em 0em;
+        display: block;
+    }
+
+    #box4 {
+        float: none;
+        height: 30px;
+        margin-left: auto;
+        margin-top: -1px;
+        clear: none;
+        width: 100%;
+        margin-right: auto;
+        background-color: rgb(11, 19, 22);
+    }
+
+    #text12 {
+        float: left;
+        font-size: 1em;
+        width: 41.780822%;
+        height: auto;
+        text-align: left;
+        font-weight: 600;
+        line-height: 1em;
+        margin-left: 23.731807%;
+        margin-top: 5px;
+        clear: none;
+        min-height: 25px;
+        color: rgb(255, 255, 255);
+        margin-right: 0%;
+    }
+
+    #image1 {
+        float: right;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        margin-left: 0px;
+        margin-top: 0px;
+        clear: none;
+        color: rgb(0, 0, 0);
+        margin-right: 3.65945%;
+    }
+
+    #formgroup2 {
+        float: left;
+        height: 45.375px;
+        display: block;
+        text-align: left;
+        margin-left: 3.253425%;
+        margin-top: 5.875px;
+        clear: both;
+        width: 93.835616%;
+        margin-right: 0%;
+    }
+
+    #text14 {
+        float: none;
+        font-size: 1em;
+        width: auto;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        padding: 0.2em 0em;
+        display: block;
+    }
+
+    #textinput1 {
+        float: none;
+        height: auto;
+        padding: 0px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+
+    #formgroup3 {
+        float: left;
+        height: 45.375px;
+        display: block;
+        text-align: left;
+        margin-left: 3.253425%;
+        margin-top: 6.875px;
+        clear: both;
+        width: 93.835616%;
+        margin-right: 0%;
+    }
+
+    #text15 {
+        float: none;
+        font-size: 1em;
+        width: auto;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        padding: 0.2em 0em;
+        display: block;
+    }
+
+    #textinput2 {
+        float: none;
+        height: auto;
+        padding: 0px;
+        font-size: 1em;
+        display: block;
+        width: 100%;
+    }
+
+    #text16 {
+        float: none;
+        font-size: 1em;
+        width: 93.835616%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 178.125px;
+        clear: none;
+        min-height: 26px;
+        margin-right: auto;
+    }
+
+    #input {
+        float: none;
+        height: 33px;
+        font-size: 1em;
+        margin-left: 3.082192%;
+        margin-top: 19.5px;
+        clear: none;
+        width: 44.178082%;
+        margin-right: 0px;
+        font-family: arial;
+        color: rgb(242, 242, 242);
+        background-color: rgb(40, 118, 24);
+    }
+
+    #input1 {
+        float: none;
+        height: 33px;
+        font-size: 1em;
+        margin-left: 53.938356%;
+        margin-top: -33px;
+        clear: none;
+        width: 43.150685%;
+        margin-right: 0px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        background-color: rgb(35, 111, 1);
+    }
+
+    #input2 {
+        float: left;
+        height: 32px;
+        font-size: 1em;
+        margin-left: 26.047086%;
+        margin-top: 58px;
+        clear: none;
+        width: 47.034339%;
+        font-family: arial;
+        background-color: rgb(40, 118, 24);
+        color: rgb(255, 255, 255);
+    }
+
+    #box1_perfil {
+        float: none;
+        height: auto;
+        margin: 40px auto 10px;
+        clear: none;
+        width: 92.208637%;
+    }
+
+    #box2_perfil {
+        float: none;
+        height: auto;
+        margin: 17px auto 10px;
+        clear: none;
+        width: 92.208637%;
+    }
+
+    #ciudad {
+        float: none;
+        height: auto;
+        margin: 18px auto 10px;
+        clear: none;
+        width: 92.208637%;
+    }
+
+    #box3 {
+        float: none;
+        height: auto;
+        margin: 20px auto 10px;
+        clear: none;
+        width: 92.208637%;
+    }
+
+    #correo {
+        float: none;
+        height: auto;
+        margin: 17px auto 10px;
+        clear: none;
+        width: 92.208637%;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #box1_perfil {
+        margin: 20px;
+        clear: none;
+        width: 92.207001%;
+    }
+
+    #box2_perfil {
+        margin: 20px;
+        clear: none;
+        width: 92.207001%;
+    }
+
+    #ciudad {
+        margin: 20px;
+        clear: none;
+        width: 92.207001%;
+    }
+
+    #box_perfil {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box3 {
+        width: 92.207001%;
+        margin: 20px;
+    }
+
+    #correo {
+        width: 92.207001%;
+        margin: 20px;
+    }
+
+    #formgroup {
+        width: 92.207001%;
+        margin: 20px;
+    }
+
+    #editarperfil {
+        width: 91.585413%;
+        height: 301px;
+        margin: 20px;
+    }
+
+    #input2 {
+        width: 47.033444%;
+        height: 32px;
+        margin: 20px auto;
+        float: none;
+        clear: none;
+    }
+
+    #image {
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    #ciudad {
+        margin-top: -10px;
+        clear: none;
+        width: 92.205682%;
+    }
+
+    #box3 {
+        margin-top: -10px;
+        clear: none;
+        width: 92.205682%;
+    }
+
+    #correo {
+        margin-top: 0px;
+        clear: none;
+        width: 92.205682%;
+    }
+
+    #box_perfil {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box1_perfil {
+        width: 92.205682%;
+    }
+
+    #box2_perfil {
+        width: 92.205682%;
+    }
+
+    #formgroup {
+        width: 92.205682%;
+    }
+
+    #editarperfil {
+        width: 91.584249%;
+        height: 301px;
+    }
+
+    #input2 {
+        width: 47.031945%;
+        height: 32px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #correo {
+        margin: 20px auto;
+        clear: none;
+        width: 59.99896%;
+        float: none;
+    }
+
+    #formgroup {
+        margin: 20px auto;
+        clear: none;
+        width: 59.99896%;
+        float: none;
+    }
+
+    #editarperfil {
+        margin: 20px auto;
+        clear: none;
+        width: 59.99896%;
+        height: 301px;
+        float: none;
+    }
+
+    #input2 {
+        margin-top: 25px;
+        margin-left: auto;
+        clear: none;
+        width: 40%;
+        height: 32px;
+        margin-right: auto;
+        float: none;
+    }
+
+    #box_perfil {
+        margin-left: auto;
+        margin-right: auto;
+        width: 26%;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box1_perfil {
+        width: 59.99896%;
+        margin: 20px auto;
+        clear: none;
+        float: none;
+    }
+
+    #box2_perfil {
+        width: 59.99896%;
+        margin: 20px auto;
+        clear: none;
+        float: none;
+    }
+
+    #ciudad {
+        width: 59.99896%;
+        margin: 20px auto;
+        clear: none;
+        float: none;
+    }
+
+    #box3 {
+        width: 59.99896%;
+        margin: 20px auto;
+        clear: none;
+        float: none;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #box1_perfil {
+        margin-top: 25px;
+        clear: none;
+        width: 59.998701%;
+    }
+
+    #box_perfil {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box2_perfil {
+        width: 59.998701%;
+    }
+
+    #ciudad {
+        width: 59.998701%;
+    }
+
+    #box3 {
+        width: 59.998701%;
+    }
+
+    #correo {
+        width: 59.998701%;
+    }
+
+    #formgroup {
+        width: 59.998701%;
+    }
+
+    #editarperfil {
+        width: 59.998701%;
+        height: 301px;
+    }
+
+    #input2 {
+        width: 39.999675%;
+        height: 32px;
+    }
+
+    #logo {
+        margin-top: 10px;
+        margin-left: 10px;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #box_perfil {
+        margin-left: 2.491627%;
+        margin-right: 0px;
+        float: none;
+        clear: none;
+        margin-top: 13px;
+        width: 26%;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box1_perfil {
+        width: 39.998845%;
+        margin-left: 44.294486%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        margin-top: -365px;
+    }
+
+    #box2_perfil {
+        width: 39.998845%;
+        margin-top: -292px;
+        clear: none;
+        margin-left: 44.288693%;
+        margin-right: 0px;
+        float: none;
+    }
+
+    #ciudad {
+        width: 39.998845%;
+        margin-top: 0px;
+        clear: none;
+        margin-left: 44.283405%;
+        margin-right: 0px;
+        float: none;
+    }
+
+    #box3 {
+        width: 39.998845%;
+        margin-top: 0px;
+        clear: none;
+        margin-left: 44.294953%;
+        margin-right: 0px;
+        float: none;
+    }
+
+    #correo {
+        width: 39.998845%;
+        margin-top: 26px;
+        clear: none;
+        margin-left: 44.27763%;
+        margin-right: 0px;
+        float: none;
+    }
+
+    #formgroup {
+        width: 39.998845%;
+        margin-top: -4px;
+        clear: none;
+    }
+
+    #editarperfil {
+        width: 39.998845%;
+        height: 301px;
+        margin-top: 22px;
+        clear: none;
+    }
+
+    #input2 {
+        width: 39.998845%;
+        height: 32px;
+        margin-top: 57.625px;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #box_perfil {
+        width: 26%;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #header {
+        width: 100%;
+        height: 60px;
+    }
+
+    #box1_perfil {
+        margin-top: -479px;
+        margin-left: 44.294601%;
+        clear: none;
+        width: 39.998173%;
+    }
+
+    #box_perfil {
+        width: 26%;
+    }
+
+    #box2_perfil {
+        margin-top: -336px;
+        margin-left: 44.294585%;
+        clear: none;
+        width: 39.998173%;
+    }
+
+    #ciudad {
+        width: 39.998173%;
+        margin-top: 25px;
+        margin-left: 44.294601%;
+        clear: none;
+    }
+
+    #box3 {
+        width: 39.998173%;
+        margin-top: 25px;
+        margin-left: 44.294601%;
+        clear: none;
+    }
+
+    #correo {
+        width: 39.998173%;
+        margin-top: 25px;
+        margin-left: 44.294601%;
+        clear: none;
+    }
+
+    #formgroup {
+        width: 39.998173%;
+        margin-top: 74px;
+        clear: none;
+    }
+
+    #editarperfil {
+        width: 39.998173%;
+        height: 301px;
+        margin-top: 26px;
+        clear: none;
+    }
+
+    #input2 {
+        width: 39.998173%;
+        height: 32px;
+        margin-top: 31.25px;
+        clear: none;
+    }
+
+    #text1 {
+        margin-top: 68px;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    #box_perfil {
+        width: 26%;
+        margin-top: 63px;
+        margin-left: 15.984112%;
+        clear: none;
+    }
+
+    #correo {
+        margin-top: 23px;
+        margin-left: 37.743688%;
+        clear: none;
+        width: 39.997565%;
+        margin-right: 0px;
+    }
+
+    #header {
+        width: 100%;
+        height: 60px;
+        margin-top: 0px;
+        clear: none;
+    }
+
+    #box1_perfil {
+        margin-top: -376px;
+        margin-left: 37.743688%;
+        clear: none;
+        width: 39.997565%;
+        margin-right: 0px;
+        float: none;
+    }
+
+    #box2_perfil {
+        margin-top: 23px;
+        margin-left: 37.743688%;
+        clear: none;
+        width: 39.997565%;
+        margin-right: 0px;
+    }
+
+    #ciudad {
+        width: 39.997565%;
+        margin-top: 23px;
+        margin-left: 37.743688%;
+        clear: none;
+        margin-right: 0px;
+    }
+
+    #box3 {
+        width: 39.997565%;
+        margin-top: 23px;
+        margin-left: 37.743688%;
+        clear: none;
+        margin-right: 0px;
+    }
+
+    #formgroup {
+        margin-top: 66px;
+        clear: none;
+        width: 39.997565%;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+
+    #editarperfil {
+        width: 39.997565%;
+        height: 301px;
+        margin-top: 22px;
+        margin-left: 30.001217%;
+        clear: none;
+    }
+
+    #input2 {
+        width: 39.997565%;
+        height: 32px;
+        margin-top: 40.5px;
+        clear: none;
+    }
+}
+

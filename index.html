@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- 
+//////////////////////////////////////////////////////////////////////////////////////
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
+// Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
+//////////////////////////////////////////////////////////////////////////////////////
+-->
+<html>
+    <!-- This code is only meant for previewing your Reflow design. -->
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="description" content="Aplicacion WEB para administrar propiedades horizontales (apartamentos, casas, locales comerciales), residentes, habitantes, áreas comunes, equipos instalados, calendario de eventos, clasificados, personal autorizado, empleados, bitácora en las porterias, parqueaderos, depósitos, vehículos, personal de servicio, mascotas, vulnerabilidades, propietarios, inmobiliarias, locatarios y otros datos relacionados con el proyecto de vivienda o construcción. Esto permite a los administradores un control más eficiente de los bienes, las personas y las áreas, a las directivas o consejo permite realizar seguimiento a los administradores en sus actividades, a los residentes, propietarios y/o habitantes les permite estar al tanto de los eventos, tener a mano los documentos (reglamentos, actas, recibos de pago administración) y poder comunicarse efectivamente con el administrador además de tener una seguridad en el personal que ingresa al conjunto cerrado. Por otra parte el comercio en general se beneficia permitiendoles publicitar sus productos y servicios. Gerencia inmobiliaria, soluciones integrales para el sector inmobiliario.">
+        <meta name="keywords" content="propiedad horizontal, administracion propiedad horizontal, clasificados en propiedad horizontal, consejo administrativo, admnistracion de bienes raices, admnistracion de apartamentos, administracion de conjunto cerrado, bitacora conjunto cerrado, seguridad en conjunto cerrado, calendario actividades, mantenimiento de equipos, propietario apartamento, coeficiente, area construida, area privada, locatario, numero de parqueadero, numero de deposito, personal de servicio, mascotas, control mascotas, control personal de servicio, control de vehiculos, numero de torres, gerencia inmobiliaria">
+        <meta name="author" content="Wilson Giovanny Velandia Barreto <willyv78@gmail.com> 3204274564">
+        <title>Admnistración de Propiedad Horizontal, gerencia inmobiliaria y bienes raices</title>
+        <link rel="shortcut icon" href="./images/favicon.ico" />
+        <link rel="apple-touch-icon" href="./images/icono-57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="./images/icono-72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="./images/icono-114.png" />
+        <link rel="stylesheet" href="css/boilerplate.css" />
+        <link rel="stylesheet" href="css/sweet-alert.css">
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="primaryContainer" class="primaryContainer clearfix">
+            <div id="animacion" class="clearfix">
+                <div id="Stage" class="introph"></div>
+            </div>
+        </div>
+        <div id="panel" class="clearfix col-xs-10 col-sm-8 col-md-6 col-lg-4">
+            <form id="form-login" name="login_form" role="form" action="">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img id="image" src="images/logo.png" class="image" width="40%" />
+                </div>
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12 control-label" for="textinput">Email : </label>
+                    <input id="textinput" type="email" name="textinput" placeholder="E-mail" value="" class="form-control" />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12 control-label" for="textinput1">Contraseña : </label>
+                    <input id="textinput1" type="password" name="textinput1" placeholder="Contraseña" value="" class="form-control" />
+                </div>
+                <div class="clearfix">&nbsp;</div>
+                <div id="botones" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <button id="botoningreso" class="btn btn-success btn-lg btn-block" type="submit">Ingresar</button>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <a id="olvido" href="olvido.html">¿Ólvido su Contraseña?</a>
+                </div>
+            </form>
+        </div>
+        <script>var __adobewebfontsappname__ = "reflow"</script>
+        <script src="http://use.edgefonts.net/jura:n6,n3,n5,n4:all.js"></script>
+        <script charset="utf-8" src="js/animacion_edgePreload.js"></script>
+        <style>.edgeLoad-introph { visibility:hidden; }</style>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/sweet-alert.js"></script><!-- Personalizar alertas -->
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootstrapValidator.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('body').hide();
+                $('body').fadeIn(1500);
+            })
+        </script>
+
+        <script>
+        $(document).ready(function() {
+            $("#form-login").bootstrapValidator({
+                message: 'Este valor no es valido',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    textinput: {
+                        message: 'El email no es valido',
+                        validators: {
+                            notEmpty: {
+                                message: 'El email es requerido'
+                            },
+                            emailAddress: {
+                                message: 'El email no es valido'
+                            }
+                        }
+                    },
+                    textinput1: {
+                        message: 'La clave no es valido',
+                        validators: {
+                            notEmpty: {
+                                message: 'La clave es requerido'
+                            },
+                            stringLength: {
+                                min: 5,
+                                max: 45,
+                                message: 'La clave debe contener de 5 a 45 characteres'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ_.@#]+$/,
+                                message: 'La clave debe contener letras, números, "_", "#", "@" y/o ".".'
+                            }
+                        }
+                    }
+                }
+            })
+            .on('success.form.bv', function(e) {
+                e.preventDefault();
+                //Trer los datos de la shema de la tabla seleccionada
+                $.ajax({
+                    url:"php/login.php",
+                    cache:false,
+                    type:"POST",
+                    data:"email="+textinput.value+"&pass="+textinput1.value,
+                    success: function(datos){
+                        // alert(datos);
+                        if(datos !== ''){
+                            var dat = datos.split(",");
+                            if(dat[2] === '1'){
+                                switch(dat[1]) {
+                                    case '1':
+                                        swal({
+                                            title: "¡Bienvenid@!",
+                                            text: dat[3],
+                                            type: "success",
+                                            confirmButtonText: "Aceptar",
+                                            confirmButtonColor: "#94B86E"
+                                        },
+                                        function(){
+                                            window.location = "adminph/";
+                                        });
+                                        break;
+                                    case '2':
+                                        window.location = "administracion/";
+                                        break;
+                                    case '3':
+                                        window.location = "administracion/";
+                                        break;
+                                    default:                                
+                                        window.location = "habitante/";
+                                }
+                            }
+                            else{
+                                swal({
+                                    title: "Error!",
+                                    text: "Usuario registrado pero inactivo, comuniquese con el administrador del sistema para solicitar activacion de la cuenta.",
+                                    type: "error",
+                                    confirmButtonText: "Aceptar",
+                                    confirmButtonColor: "#E25856"
+                                });
+                            }
+                        }
+                        else{
+                            swal({
+                                title: "Error!",
+                                text: "No se encontro un usuario registrado con los datos ingresados.",
+                                type: "error",
+                                confirmButtonText: "Aceptar",
+                                confirmButtonColor: "#E25856"
+                            });
+                            return;
+                        }
+                    }
+                });
+            });
+        });
+        </script>
+    </body>
+</html>

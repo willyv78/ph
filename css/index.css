@@ -1,0 +1,151 @@
+/* This code is only meant for previewing your Reflow design. */
+body{
+    background-color: #000 !important;
+}
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100%;
+    width: 100.31348%;
+    min-width: 320px;
+    /*border-top-color: rgb(202, 202, 202);
+    border-right-color: rgb(202, 202, 202);
+    border-bottom-color: rgb(202, 202, 202);
+    border-left-color: rgb(202, 202, 202);*/
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: rgb(0, 0, 0);
+}
+#usuario {
+    height: 55px;
+    display: inline-block;
+    text-align: right;
+    margin: auto;
+    clear: none;
+    width: 45%;
+}
+
+#text {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: block;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    margin: 0px 0px 0px 50%;
+}
+
+#contrasena {
+    height: 55px;
+    display: inline-block;
+    text-align: left;
+    margin: auto;
+    clear: both;
+    width: 45%;
+}
+
+#text1 {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: block;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    margin: 0px 0px 0px 10%;
+}
+#olvido{
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+#text2 {
+    float: none;
+    font-size: 1em;
+    width: 74.395637%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 164.375px;
+    clear: none;
+    min-height: 21px;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+    display: block;
+}
+
+#panel {
+    background-color: rgb(0, 0, 0);
+    clear: none;
+    color: rgb(255, 255, 255);
+    float: none;
+    margin: auto;    
+    padding: 40px 0px 60px 0px;
+}
+
+#panel:active {
+    display: block;
+    height: 20px;
+}
+
+#panel:hover {
+}
+
+#animacion {
+    float: left;
+    height: auto;
+    margin: auto;
+    clear: none;
+    width: 100%;
+}
+
+#image {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    float: none;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+/* media querys */
+@media (max-width: 768px) {
+    #image{
+        padding: 10px;
+        margin: -30px auto 20px;
+    }
+    label{
+        display: none !important;
+    }
+}

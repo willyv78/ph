@@ -1,0 +1,643 @@
+/* This code is only meant for previewing your Reflow design. */
+#seleccion_tes {
+    float: none;
+    height: 51.375px;
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-top: 3px;
+    clear: none;
+    width: 59.999017%;
+    margin-right: auto;
+}
+#select {
+    float: none;
+    height: auto;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: none;
+    margin-top: 0px;
+}
+#text_tes {
+    float: none;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: block;
+}
+#btnimprimir {
+    height: 35px;
+    font-size: 1em;
+    margin: auto;
+    clear: none;
+    width: 28.636006%;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    background-color: rgb(62, 199, 78);
+    border-top-color: rgb(47, 163, 61);
+    border-right-color: rgb(47, 163, 61);
+    border-bottom-color: rgb(47, 163, 61);
+    border-left-color: rgb(47, 163, 61);
+    display: inline-block;
+}
+#btnpagar {
+    height: 35px;
+    font-size: 1em;
+    margin: auto;
+    clear: none;
+    width: 28.636006%;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    background-color: rgb(62, 199, 78);
+    border-top-color: rgb(47, 163, 61);
+    border-right-color: rgb(47, 163, 61);
+    border-bottom-color: rgb(47, 163, 61);
+    border-left-color: rgb(47, 163, 61);
+    display: inline-block;
+}
+#btnpse {
+    height: 35px;
+    font-size: 1em;
+    margin: auto;
+    clear: none;
+    width: 28.636006%;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+    background-color: rgb(62, 199, 78);
+    border-top-color: rgb(47, 163, 61);
+    border-right-color: rgb(47, 163, 61);
+    border-bottom-color: rgb(47, 163, 61);
+    border-left-color: rgb(47, 163, 61);
+    display: inline-block;
+}
+#cuadrorecibo {
+    float: none;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    width: 92.713247%;
+    background-color: rgb(255, 255, 255);
+    margin-right: auto;
+    display: block;
+}
+#textovalor {
+    float: left;
+    font-size: 1em;
+    width: 88.729225%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 4.856302%;
+    margin-top: 14.75px;
+    clear: none;
+    min-height: 21px;
+    margin-right: 0%;
+}
+#textspan1 {color: rgb(205, 6, 6);}
+#textspan2 {color: rgb(205, 6, 6);}
+#image_tes {
+    float: none;
+    width: 97.075484%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+#espacio {
+    float: none;
+    height: 30px;
+    margin: auto;
+    clear: none;
+    width: 100%;
+}
+
+.tabla_tes{
+    width: 80%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 320px) {
+    #seleccion_tes {
+        margin-top: 99px;
+        clear: none;
+        width: 39.995117%;
+        height: 51.375px;
+    }
+
+    #cuadrorecibo {
+        height: auto;
+        margin-top: 21px;
+        clear: none;
+        width: 92.709961%;
+    }
+
+    #btnimprimir {
+        width: 28.632813%;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 28.632813%;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 28.632813%;
+        height: 35px;
+    }
+
+    #image_tes {
+        display: block;
+    }
+
+    #footer {
+        width: 99.677734%;
+        height: 50px;
+    }
+
+    #espacio {
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #seleccion_tes {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    #seleccion_tes {
+        margin-top: 22px;
+        clear: left;
+        margin-left: 1.868074%;
+        width: 24.321626%;
+        margin-right: 0px;
+        float: left;
+        height: 53.375px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+        clear: none;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+        clear: none;
+    }
+
+    #btnpse {
+        clear: none;
+        width: 120px;
+        height: 35px;
+    }
+
+    #cuadrorecibo {
+        margin-top: 10px;
+        clear: none;
+        width: 92.711358%;
+    }
+    #image_tes {
+        width: 97.075484%;
+        max-width: 100%;
+        height: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #seleccion_tes {
+        width: 24.321585%;
+        height: 53.375px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #seleccion_tes {
+        width: 24.322545%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.866034%;
+        clear: left;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+        clear: none;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+    #cuadrorecibo {
+        width: 92.71086%;
+    }
+    #textspan1 {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        color: rgb(205, 6, 6);
+    }
+
+    #textspan2 {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        color: rgb(205, 6, 6);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #cuadrorecibo {
+        width: 92.710506%;
+    }
+
+    #seleccion_tes {
+        width: 24.320581%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.86555%;
+        clear: left;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+    #espacio {
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #textocuerpo {
+        width: 94.387685%;
+    }
+
+    #seleccion_tes {
+        width: 24.320538%;
+        height: 53.375px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+    #seleccion_tes {
+        width: 24.320072%;
+        height: 53.375px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    #cuadrovalor {
+        width: 18%;
+        height: 50px;
+    }
+    #seleccion_tes {
+        width: 24.319223%;
+        height: 53.375px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #cuadrorecibo {
+        width: 80%;
+    }
+    #textocuerpo {
+        width: 94.386211%;
+    }
+
+    #seleccion_tes {
+        width: 24.31889%;
+        height: 53.375px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+
+    #cuadrovalor {
+        width: 18%;
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+    #cuadrorecibo {
+        width: 79.999131%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #seleccion_tes {
+        width: 24.317017%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.865445%;
+        clear: left;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+
+    #cuadrovalor {
+        width: 17.999696%;
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #cuadrovalor {
+        width: 15%;
+        height: 50px;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #cuadrorecibo {
+        width: 80%;
+    }
+
+    #seleccion_tes {
+        margin-top: 22px;
+        margin-left: 1.865839%;
+        clear: left;
+        width: 24.317997%;
+        height: 53.375px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #cuadrorecibo {
+        width: 79.999218%;
+    }
+
+    #seleccion_tes {
+        margin-top: 22px;
+        margin-left: 1.865424%;
+        clear: left;
+        width: 24.317933%;
+        height: 53.375px;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    #cuadrorecibo {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1680px) {
+    #seleccion_tes {
+        width: 17.999283%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.865392%;
+        clear: left;
+    }
+
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+        clear: none;
+    }
+    #cuadrorecibo {
+        margin-left: auto;
+        margin-top: 10px;
+        clear: none;
+        width: 59.999511%;
+        margin-right: auto;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+    #cuadrorecibo {
+        margin-left: auto;
+        margin-top: 10px;
+        clear: none;
+        width: 50%;
+        margin-right: auto;
+    }
+
+    #seleccion_tes {
+        width: 17.999664%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.865535%;
+        clear: left;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media only screen and (min-width: 2048px) {
+    #btnimprimir {
+        width: 120px;
+        height: 35px;
+    }
+
+    #image_tes {
+        margin-top: 20px;
+        clear: none;
+        width: 92%;
+        display: block;
+    }
+    #cuadrorecibo {
+        margin-left: auto;
+        margin-top: 10px;
+        clear: none;
+        width: 36.434957%;
+        margin-right: auto;
+    }
+
+    #seleccion_tes {
+        width: 17.999607%;
+        height: 53.375px;
+        margin-top: 22px;
+        margin-left: 1.86593%;
+        clear: left;
+    }
+
+    #btnpagar {
+        width: 120px;
+        height: 35px;
+    }
+
+    #btnpse {
+        width: 120px;
+        height: 35px;
+    }
+}
+

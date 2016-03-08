@@ -1,0 +1,419 @@
+/* This code is only meant for previewing your Reflow design. */
+#header_admin {
+    float: left;
+    height: 40px;
+    margin: 0px;
+    clear: none;
+    width: 98%;
+    background-color: rgb(66, 100, 174);
+    border-radius: 3px;
+    border: 1px solid rgb(56, 85, 148);
+    background-image:-webkit-linear-gradient(270deg,rgb(115,172,202) 3%,rgb(87,120,191) 100%);
+    background-attachment: scroll;
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+
+#text_admin {
+    float: none;
+    font-size: 1em;
+    width: 88.113133%;
+    height: auto;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1em;
+    margin: auto;
+    clear: none;
+    min-height: 29px;
+    color: rgb(255, 255, 255);
+}
+
+#image_admin {
+    float: none;
+    width: 79.996082%;
+    max-width: 100%;
+    height: auto;
+    margin-left: 5px;
+    margin-top: 51px;
+    clear: none;
+    color: rgb(0, 0, 0);
+    margin-right: auto;
+}
+
+.text1_admin {
+    float: right;
+    font-size: 1em;
+    width: 65%;
+    height: auto;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1em;
+    margin: auto;
+    clear: none;
+    min-height: 20px;
+    font-family: arial;
+}
+
+#text2_admin {
+    float: none;
+    font-size: 0.8em;
+    width: 69.99902%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 38px;
+    clear: none;
+    min-height: 90px;
+    margin-right: auto;
+}
+
+.text3_admin {
+    float: none;
+    font-size: 0.8em;
+    width: 69.99902%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 12px;
+    clear: none;
+    min-height: 45px;
+    margin-right: auto;
+}
+
+#text4_admin {
+    float: none;
+    font-size: 0.8em;
+    width: 69.99902%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 13px;
+    clear: none;
+    min-height: 45px;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 240px) {
+    #header_admin {
+        margin: auto;
+        float: none;
+        clear: none;
+        width: 100%;
+        height: 40px;
+    }
+
+    #image_admin {
+        margin-top: 10px;
+        clear: none;
+        width: 40%;
+        margin: auto;
+        float: none;
+    }
+
+    #text_admin {
+        margin-top: 7px;
+        clear: none;
+        width: 93.204599%;
+        margin-left: auto;
+        float: none;
+        height: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .text1_admin {
+        width: 100%;
+        clear: none;
+        height: auto;
+        float: none;
+        text-align: center;
+    }
+
+    #text2_admin {
+        width: 100%;
+        clear: none;
+        margin: auto;
+        float: none;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    #text4_admin {
+        width: 100%;
+        margin: auto;
+        clear: none;
+        float: none;
+        text-align: center;
+    }
+
+    .text3_admin {
+        width: 100%;
+        margin: auto;
+        clear: none;
+        float: none;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 320px) {
+    #header_admin {
+        float: left;
+        margin: 0px;
+        clear: none;
+        width: 100%;
+        height: 40px;
+    }
+
+    #image_admin {
+        float: none;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        clear: none;
+        color: rgb(0, 0, 0);
+        width: 40%;
+    }
+
+    #text_admin {
+        margin-top: 9.625px;
+        clear: none;
+        width: 76.226636%;
+        height: auto;
+        min-height: 23px;
+    }
+
+    #textspan_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-family: arial;
+    }
+
+    .text1_admin {
+        float: none;
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1em;
+        margin: auto;
+        clear: none;
+        min-height: 23px;
+        font-family: arial;
+    }
+
+    #text2_admin {
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: normal;
+        line-height: 1em;
+        clear: none;
+        min-height: 90px;
+    }
+
+    .text3_admin {
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: normal;
+        line-height: 1em;
+        clear: none;
+        min-height: 45px;
+    }
+
+    #text4_admin {
+        font-size: 1em;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-weight: normal;
+        line-height: 1em;
+        clear: none;
+        min-height: 45px;
+    }
+
+    #textspan1_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-family: arial;
+        font-weight: 700;
+    }
+
+    #textspan2_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-family: arial;
+    }
+
+    .textspan3_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-weight: 700;
+    }
+
+    #textspan4_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-weight: 700;
+    }
+
+    #textspan5_admin {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #image_admin {
+        margin-top: 10px;
+        clear: both;
+        margin-left: 5px;
+        margin-right: 0px;
+        float: left;
+        width: 30%;
+    }
+
+    #header_admin {
+        width: 100%;
+        height: 40px;
+    }
+
+    .text1_admin {
+        width: 65%;
+        margin: auto;
+        clear: none;
+        float: right;
+        height: auto;
+        text-align: left;
+    }
+
+    #text2_admin {
+        width: 65%;
+        margin: auto;
+        clear: none;
+        float: right;
+        height: auto;
+        text-align: left;
+    }
+
+    #text4_admin {
+        width: 65%;
+        margin: auto;
+        clear: none;
+        float: right;
+        height: auto;
+        text-align: left;
+    }
+
+    .text3_admin {
+        width: 65%;
+        margin: auto;
+        clear: none;
+        float: right;
+        height: auto;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    #text_admin {
+        font-size: 1em;
+        width: 76.227592%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-top: 16px;
+        clear: none;
+        min-height: 29px;
+        margin-left: 11.886204%;
+        margin-right: 0px;
+        float: left;
+    }
+
+    #image_admin {
+        margin-top: 5px;
+        clear: both;
+        margin-left: 5px;
+        margin-right: 0px;
+        float: left;
+        width: 20%;
+    }
+
+    #header_admin {
+        width: 100%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(56, 85, 148);
+        border-right-color: rgb(56, 85, 148);
+        border-bottom-color: rgb(56, 85, 148);
+        border-left-color: rgb(56, 85, 148);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+    #header_admin {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #header_admin {
+        width: 100%;
+    }
+}
+.back{
+    width: 15%;
+    float: left;
+    background-color: rgb(51, 160, 3);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    cursor: pointer;
+}
+.sin_registros{
+    width: 100%;
+    text-align: center;
+    display: block;
+    float: left;
+    height: 60px;
+    margin: auto;
+    clear: none;
+}

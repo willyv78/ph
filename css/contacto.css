@@ -1,0 +1,866 @@
+/* This code is only meant for previewing your Reflow design. */
+.box_contac {
+    height: 64px;
+    margin-left: 3.935547%;
+    margin-top: 9px;
+    clear: both;
+    width: 89.995117%;
+    background-color: rgb(255, 255, 255);
+    margin-right: 0%;
+}
+
+.box1_contac {
+    float: right;
+    height: 388px;
+    margin-left: 0.78613281%;
+    margin-top: 13px;
+    clear: both;
+    width: 95%;
+    margin-right: 50px;
+    background-color: rgb(255, 255, 255);
+    border-top-color: rgb(123, 123, 123);
+    border-right-color: rgb(123, 123, 123);
+    border-bottom-color: rgb(123, 123, 123);
+    border-left-color: rgb(123, 123, 123);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    margin-bottom: 10px;
+}
+
+.box2_contac {
+    float: none;
+    height: 64px;
+    margin-left: auto;
+    margin-top: 16px;
+    clear: none;
+    width: 40%;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+}
+
+#box10_contac {
+    float: none;
+    height: 40px;
+    margin-left: auto;
+    margin-top: 8px;
+    clear: none;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: auto;
+}
+
+.text1_contac {
+    float: none;
+    font-size: 1em;
+    width: 91.577148%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    min-height: 100px;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.text2_contac {
+    float: left;
+    font-size: 1em;
+    width: 68.755425%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 2.218967%;
+    margin-top: 8px;
+    clear: none;
+    min-height: 38px;
+    margin-right: 0px;
+}
+
+.text3_contac {
+    float: left;
+    font-size: 1em;
+    width: 73.349249%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 2.218967%;
+    margin-top: 8px;
+    clear: none;
+    min-height: 38px;
+    margin-right: 0px;
+}
+
+#textspan_contac {
+    float: none;
+    font-size: 1.2em;
+    line-height: 1em;
+    font-family: advent-pro;
+}
+
+.textspan1_contac {
+    float: none;
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+.textspan2_contac {
+    float: none;
+    font-size: 1em;
+    line-height: 1em;
+    color: rgb(123, 123, 123);
+}
+
+.image5_contac {
+    float: right;
+    width: 64px;
+    max-width: 100%;
+    height: 64px;
+    margin-left: 0px;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#input_contac {
+    float: none;
+    height: 31px;
+    font-size: 1em;
+    margin-left: auto;
+    margin-top: 22.25px;
+    clear: none;
+    width: 30%;
+    font-family: advent-pro;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 111, 1);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-right: auto;
+    box-shadow: rgb(255, 255, 255) 0px 1px inset;
+}
+
+#input1_contac {
+    float: none;
+    height: 33px;
+    font-size: 1em;
+    margin-left: auto;
+    margin-top: 24px;
+    clear: none;
+    width: 90%;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 111, 1);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-right: auto;
+    display: block;
+}
+
+.textinput_contac {
+    float: none;
+    height: auto;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+}
+.textinput2_contac {
+    float: none;
+    height: 6.7890625em;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+}
+.formgroup_contac {
+    float: none;
+    height: auto;
+    display: block;
+    text-align: left;
+    margin: auto;
+    clear: none;
+    width: 94.189776%;
+    padding: 5px;
+}
+.agrega {
+    float: none;
+    height: 324px;
+    margin-left: auto;
+    margin-top: 11px;
+    clear: none;
+    width: 90.154289%;
+    background-color: rgb(255, 255, 255);
+    border-top-color: rgb(123, 123, 123);
+    border-right-color: rgb(123, 123, 123);
+    border-bottom-color: rgb(123, 123, 123);
+    border-left-color: rgb(123, 123, 123);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    display: block;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 320px) {
+    .box_contac {
+        margin-top: 25px;
+        margin-left: 3.733091%;
+        clear: none;
+        width: 89.994147%;
+        height: 64px;
+        margin-bottom: 5px;
+    }
+
+    .box1_contac {
+        width: 94.995447%;
+        height: 388px;
+        margin-top: 3px;
+        clear: both;
+        margin-left: 0.78368887%;
+        margin-right: 12px;
+    }
+
+    .text3_contac {
+        font-size: 1em;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+    }
+
+    .text1_contac {
+        width: 91.57128%;
+        margin-top: 0px;
+        clear: none;
+    }
+
+    .box2_contac {
+        margin-top: 26px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        width: 89.994147%;
+        height: 64px;
+        margin-bottom: 5px;
+        float: none;
+    }
+
+    #input1_contac {
+        width: 89.994147%;
+        height: 33px;
+        margin-top: 15px;
+        margin-left: auto;
+        clear: none;
+        margin-bottom: 10px;
+        margin-right: auto;
+        float: none;
+    }
+
+    .formgroup_contac {
+        margin-top: 20px;
+        clear: none;
+        width: 94.189776%;
+    }
+
+    #input_contac {
+        width: 29.997937%;
+        height: 31px;
+        clear: none;
+    }
+
+    #box10_contac {
+        width: 100%;
+        height: 40px;
+    }
+
+    .agrega {
+        height: 317px;
+        margin-top: 0px;
+        clear: none;
+        width: 90.152843%;
+        background-color: rgb(255, 255, 255);
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(123, 123, 123);
+        border-right-color: rgb(123, 123, 123);
+        border-bottom-color: rgb(123, 123, 123);
+        border-left-color: rgb(123, 123, 123);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .text1_contac {
+        height: auto;
+        min-height: 63px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 91.573225%;
+    }
+
+    .box2_contac {
+        margin-top: 13px;
+        margin-right: 0%;
+        margin-left: 3.707586%;
+        clear: both;
+        width: 89.9961%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 94.995612%;
+        height: 415px;
+        margin-right: 15px;
+    }
+
+    #input1_contac {
+        width: 89.9961%;
+        height: 33px;
+        margin-top: 15px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+    }
+
+    #input_contac {
+        clear: none;
+    }
+
+    .formgroup_contac {
+        width: 94.189429%;
+    }
+
+    #box10_contac {
+        width: 100%;
+        height: 40px;
+    }
+
+    .agrega {
+        height: 319px;
+        width: 90.152106%;
+        margin-top: 0px;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .text1_contac {
+        margin-top: 10px;
+        clear: none;
+        width: 90%;
+        height: auto;
+        min-height: 47px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .box_contac {
+        margin-top: 20px;
+        margin-left: 3.742816%;
+        clear: none;
+        width: 89.994111%;
+        height: 64px;
+    }
+
+    .box2_contac {
+        margin-top: 10px;
+        margin-left: 3.706261%;
+        clear: left;
+        width: 89.998172%;
+        height: 64px;
+    }
+
+    #textspan_contac {
+        font-size: 2em;
+    }
+
+    .box1_contac {
+        margin-top: 20px;
+        margin-right: 17px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .text1_contac {
+        width: 89.99922%;
+    }
+
+    .box_contac {
+        width: 89.993372%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 94.993762%;
+        height: 388px;
+        margin-right: 20px;
+    }
+
+    .box2_contac {
+        width: 89.997271%;
+        height: 64px;
+    }
+
+    #input1_contac {
+        width: 89.995321%;
+        height: 33px;
+    }
+
+    .agrega {
+        width: 80%;
+        height: 298px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .box_contac {
+        height: 64px;
+        margin-left: 3.657565%;
+        margin-top: 20px;
+        clear: none;
+        width: 39.999307%;
+    }
+
+    .box1_contac {
+        width: 50%;
+        margin-top: -398px;
+        clear: none;
+        height: 388px;
+        margin-left: 10.841015%;
+    }
+
+    .box2_contac {
+        float: none;
+        height: 64px;
+        margin-left: 3.395939%;
+        margin-top: 28px;
+        clear: left;
+        width: 39.999307%;
+    }
+
+    .text1_contac {
+        width: 89.999307%;
+    }
+
+    #input1_contac {
+        width: 89.999307%;
+        height: 33px;
+        margin-top: 24px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+    }
+
+    .agrega {
+        width: 80%;
+        height: 317px;
+        margin-top: 0px;
+        clear: none;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .agrega {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .agrega {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .text1_contac {
+        width: 89.998845%;
+    }
+
+    .box_contac {
+        width: 39.998845%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        margin-top: -404px;
+        margin-left: 10.867306%;
+        clear: none;
+        margin-right: 30px;
+    }
+
+    .box2_contac {
+        margin-top: 28px;
+        margin-left: 3.393868%;
+        clear: left;
+        width: 39.998845%;
+        height: 64px;
+    }
+
+    #input1_contac {
+        margin-top: 24px;
+        margin-left: auto;
+        clear: none;
+        width: 89.998845%;
+        height: 33px;
+        margin-right: auto;
+        float: none;
+    }
+
+    .agrega {
+        margin-top: 0px;
+        clear: none;
+        width: 60%;
+        height: 317px;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .text1_contac {
+        width: 89.99659%;
+    }
+
+    .box_contac {
+        width: 40%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        margin-top: -398px;
+        clear: none;
+        width: 50%;
+        height: 388px;
+        margin-left: 11.076335%;
+        margin-right: 40px;
+    }
+
+    .box2_contac {
+        margin-top: 14px;
+        margin-left: 3.652329%;
+        clear: none;
+        width: 29.998051%;
+        height: 64px;
+    }
+
+    #input1_contac {
+        margin-top: 50px;
+        margin-left: auto;
+        clear: none;
+        width: 59.696512%;
+        height: 33px;
+        float: none;
+        margin-right: auto;
+    }
+
+    .agrega {
+        width: 59.999756%;
+        clear: none;
+        margin-top: 22px;
+        height: 317px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        margin-top: 14px;
+        margin-left: 3.657435%;
+        clear: left;
+        width: 29.997063%;
+        height: 64px;
+    }
+
+    .text1_contac {
+        width: 89.995708%;
+    }
+
+    #input1_contac {
+        width: 60%;
+        height: 33px;
+    }
+
+    .agrega {
+        clear: none;
+        margin-top: 20px;
+        margin-left: auto;
+        width: 50%;
+        height: 470px;
+        margin-right: auto;
+        float: none;
+    }
+}
+
+@media only screen and (min-width: 1380px) {
+    .text1_contac {
+        width: 89.995021%;
+    }
+
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        margin-top: 14px;
+        margin-left: 3.656477%;
+        clear: none;
+        width: 29.996536%;
+        height: 64px;
+    }
+
+    #input1_contac {
+        width: 59.999567%;
+        height: 33px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .formgroup_contac {
+        margin-top: 8px;
+        clear: both;
+    }
+
+    .text1_contac {
+        width: 89.995637%;
+    }
+
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        margin-top: -398px;
+        margin-left: 10.260079%;
+        clear: none;
+        width: 55%;
+        height: 388px;
+        margin-right: 60px;
+    }
+
+    #input1_contac {
+        width: 59.999797%;
+        height: 33px;
+    }
+
+    .agrega {
+        margin-bottom: 40px;
+        width: 50%;
+        height: 317px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    #input1_contac {
+        margin-top: 168px;
+        clear: none;
+        width: 59.998576%;
+        height: 33px;
+    }
+
+    .text1_contac {
+        width: 89.993286%;
+    }
+
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        margin-top: 10px;
+        margin-left: 3.654925%;
+        clear: none;
+        width: 29.99471%;
+        height: 64px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+}
+
+@media only screen and (min-width: 1680px) {
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        width: 19.999838%;
+        margin-top: 14px;
+        margin-left: 3.657438%;
+        clear: left;
+        height: 64px;
+    }
+
+    .text1_contac {
+        width: 89.995211%;
+    }
+
+    #input1_contac {
+        width: 59.999513%;
+        height: 33px;
+    }
+
+    .agrega {
+        clear: none;
+        width: 50%;
+        height: 317px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        margin-top: 14px;
+        margin-left: 3.655511%;
+        clear: left;
+        width: 19.998783%;
+        height: 64px;
+    }
+
+    .text1_contac {
+        width: 89.994521%;
+    }
+
+    #input1_contac {
+        width: 59.999391%;
+        height: 33px;
+    }
+    .agrega {
+        clear: none;
+        width: 50%;
+        height: 317px;
+    }
+}
+
+@media only screen and (min-width: 2048px) {
+    .box_contac {
+        width: 35%;
+        height: 64px;
+    }
+
+    .box1_contac {
+        width: 55%;
+        margin-top: -398px;
+        clear: none;
+        margin-left: 10.260697%;
+        margin-right: 50px;
+    }
+
+    .box2_contac {
+        margin-top: 14px;
+        margin-left: 3.656354%;
+        clear: left;
+        width: 19.998788%;
+        height: 64px;
+    }
+
+    .text1_contac {
+        width: 89.993848%;
+    }
+
+    #input1_contac {
+        width: 29.999814%;
+        height: 33px;
+    }
+
+    .agrega {
+        width: 19.999719%;
+        clear: none;
+        height: 317px;
+    }
+}
+

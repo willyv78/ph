@@ -1,0 +1,320 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    min-width: 320px;
+    border-top-color: rgb(202, 202, 202);
+    border-right-color: rgb(202, 202, 202);
+    border-bottom-color: rgb(202, 202, 202);
+    border-left-color: rgb(202, 202, 202);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: rgb(0, 0, 0);
+}
+#contrasena {
+    height: 55px;
+    display: block;
+    margin: auto;
+    clear: both;
+    width: 60%;
+}
+#text1 {
+    float: none;
+    font-size: 1em;
+    width: 20%;
+    height: auto;
+    text-align: right;
+    font-weight: normal;
+    line-height: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0em;
+    padding-right: 0em;
+    display: inline-block;
+    font-family: jura;
+    color: rgb(255, 255, 255);
+}
+#textinput1 {
+    float: none;
+    height: 35px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 1em;
+    display: inline-block;
+    width: 70%;
+}
+#panel {
+    float: left;
+    height: 100%;
+    margin: auto;
+    clear: none;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+#panel:active {
+    display: block;
+    height: 100%;
+}
+#panel:hover {
+    height: 100%;
+}
+#botones{
+    margin: auto;
+    text-align: center;
+}
+#botonrecordar {
+    float: none;
+    height: 40px;
+    font-size: 1em;
+    margin: auto;
+    clear: none;
+    width: 30%;
+    font-family: jura;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: rgb(40, 139, 52);
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(255, 255, 255) 0px 1px inset;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+#botonregreso {
+    float: none;
+    height: 40px;
+    font-size: 1em;
+    margin: auto;
+    clear: none;
+    width: 30%;
+    font-family: jura;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: rgb(40, 139, 52);
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    color: rgb(255, 255, 255);
+    box-shadow: rgb(255, 255, 255) 0px 1px inset;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+#animacion {
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+}
+
+#image {
+    float: none;
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (min-width: 768px) {
+    #usuario {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+    }
+
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+
+    #botoningreso {
+        clear: none;
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #panel {
+        height: 100%;
+    }
+
+    #animacion {
+        width: 100%;
+        height: 100%;
+    }
+
+    #panel:hover {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #usuario {
+        width: 40%;
+    }
+
+    #contrasena {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #usuario {
+        margin-left: 23.976438%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 12.375px;
+        clear: none;
+        width: 24.998554%;
+        height: 62px;
+    }
+
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+
+    #botoningreso {
+        width: 19.99971%;
+        height: 27px;
+        clear: none;
+    }
+
+    #textinput1 {
+        height: 39px;
+    }
+
+    #image {
+        width: 180px;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    #botoningreso {
+        clear: none;
+        width: 19.998585%;
+        height: 27px;
+    }
+
+    #usuario {
+        width: 14.998048%;
+        height: 62px;
+        margin-top: 21px;
+        margin-left: 33.860083%;
+        clear: none;
+    }
+
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+
+    #image {
+        width: 180px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #botoningreso {
+        clear: none;
+    }
+
+    #image {
+        width: 180px;
+    }
+
+    #usuario {
+        width: 14.99819%;
+        height: 62px;
+    }
+
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+
+    #usuario {
+        width: 14.999136%;
+        height: 61.375px;
+        margin-top: 32px;
+        clear: none;
+    }
+
+    #botoningreso {
+        width: 14.999136%;
+        clear: none;
+        height: 27px;
+    }
+
+    #image {
+        width: 180px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    #contrasena {
+        height: 57.375px;
+        display: block;
+        margin: auto;
+        clear: both;
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 2048px) {
+    #botoningreso {
+        display: block;
+    }
+}
+

@@ -1,0 +1,1457 @@
+/* This code is only meant for previewing your Reflow design. */
+#quienes_somos{
+    height: auto;
+    display: block;
+}
+#intro {
+    float: left;
+    font-size: 1em;
+    width: 94.99902%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 2.492212%;
+    margin-top: 8px;
+    clear: none;
+    min-height: 59px;
+    color: rgb(53, 53, 53);
+    margin-bottom: 10px;
+}
+#admi {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 80px;
+    clear: none;
+    width: 94.994122%;
+    margin-right: auto;
+    background-color: rgb(66, 100, 174);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(56, 85, 148);
+    border-right-color: rgb(56, 85, 148);
+    border-bottom-color: rgb(56, 85, 148);
+    border-left-color: rgb(56, 85, 148);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    visibility: visible;
+    display: block;
+}
+#conta {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.994122%;
+    margin-right: auto;
+    background-color: rgb(248, 152, 32);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(204, 116, 6);
+    border-right-color: rgb(204, 116, 6);
+    border-bottom-color: rgb(204, 116, 6);
+    border-left-color: rgb(204, 116, 6);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#revis {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.99902%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(156, 35, 105);
+    border-right-color: rgb(156, 35, 105);
+    border-bottom-color: rgb(156, 35, 105);
+    border-left-color: rgb(156, 35, 105);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: rgb(214, 72, 154);
+    margin-right: auto;
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#conse {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.99902%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(56, 47, 108);
+    border-right-color: rgb(56, 47, 108);
+    border-bottom-color: rgb(56, 47, 108);
+    border-left-color: rgb(56, 47, 108);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    margin-right: auto;
+    background-color: rgb(72, 61, 139);
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#fiscal {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.99902%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(99, 138, 40);
+    border-right-color: rgb(99, 138, 40);
+    border-bottom-color: rgb(99, 138, 40);
+    border-left-color: rgb(99, 138, 40);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    margin-right: auto;
+    background-color: rgb(145, 199, 62);
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#aseo {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.99902%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(160, 169, 117);
+    border-right-color: rgb(160, 169, 117);
+    border-bottom-color: rgb(160, 169, 117);
+    border-left-color: rgb(160, 169, 117);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    margin-right: auto;
+    background-color: rgb(40, 118, 24);
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#comitecon {
+    float: none;
+    height: 63px;
+    margin-left: auto;
+    margin-top: 5px;
+    clear: none;
+    width: 94.99902%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-color: rgb(0, 99, 142);
+    border-right-color: rgb(0, 99, 142);
+    border-bottom-color: rgb(0, 99, 142);
+    border-left-color: rgb(0, 99, 142);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    margin-right: auto;
+    background-color: rgb(0, 136, 196);
+    visibility: visible;
+    display: block;
+    margin-bottom: 5px;
+}
+#text_quien {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien1 {
+    float: none;
+    font-size: 1em;
+    width: 95%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien2 {
+    float: none;
+    font-size: 1em;
+    width: 94.995085%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien3 {
+    float: none;
+    font-size: 1em;
+    width: 94.995085%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien4 {
+    float: none;
+    font-size: 1em;
+    width: 94.995085%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien5 {
+    float: none;
+    font-size: 1em;
+    width: 94.995085%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#text_quien6 {
+    float: none;
+    font-size: 1em;
+    width: 94.995085%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: auto;
+    margin-top: 20px;
+    clear: none;
+    min-height: 15px;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+}
+#box {
+    float: none;
+    height: 40px;
+    margin-left: auto;
+    margin-top: 13px;
+    clear: none;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: auto;
+}
+@media only screen and (min-width: 320px) {
+    #intro {
+        float: left;
+        font-size: 1em;
+        width: 94.996106%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: 2.492212%;
+        margin-top: 8px;
+        clear: none;
+        min-height: 47px;
+        color: rgb(53, 53, 53);
+    }
+    #textspan {
+        float: none;
+        font-size: 1em;
+        line-height: 1em;
+        font-family: arial;
+        font-weight: 400;
+    }
+    #admi {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        margin-top: 63px;
+        clear: none;
+        width: 90%;
+        margin-right: auto;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(56, 85, 148);
+        border-right-color: rgb(56, 85, 148);
+        border-bottom-color: rgb(56, 85, 148);
+        border-left-color: rgb(56, 85, 148);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+    }
+    #conta {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        margin-right: auto;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(204, 116, 6);
+        border-right-color: rgb(204, 116, 6);
+        border-bottom-color: rgb(204, 116, 6);
+        border-left-color: rgb(204, 116, 6);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+    }
+    #revis {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(156, 35, 105);
+        border-right-color: rgb(156, 35, 105);
+        border-bottom-color: rgb(156, 35, 105);
+        border-left-color: rgb(156, 35, 105);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        margin-right: auto;
+    }
+    #conse {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        margin-right: auto;
+    }
+    #fiscal {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        margin-right: auto;
+    }
+    #aseo {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        margin-right: auto;
+    }
+    #comitecon {
+        float: none;
+        height: 63px;
+        margin-left: auto;
+        clear: none;
+        width: 90%;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        margin-right: auto;
+    }
+}
+@media only screen and (min-width: 480px) {
+    #intro {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+    }
+
+    #admi {
+        margin-top: 2px;
+        clear: none;
+        margin-bottom: 5px;
+    }
+}
+@media only screen and (min-width: 640px) {
+    #intro {
+        width: 94.99604%;
+    }
+
+    #admi {
+        width: 94.99604%;
+        height: 63px;
+    }
+
+    #conta {
+        width: 94.99604%;
+        height: 63px;
+    }
+
+    #revis {
+        width: 94.998071%;
+        height: 63px;
+    }
+
+    #conse {
+        width: 94.998071%;
+        height: 63px;
+    }
+
+    #fiscal {
+        width: 94.998071%;
+        height: 63px;
+    }
+
+    #aseo {
+        width: 94.998071%;
+        height: 63px;
+    }
+
+    #comitecon {
+        width: 94.998071%;
+        height: 63px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #quienes_somos{
+        height: 730px;
+    }
+    #admi {
+        width: 11.997419%;
+        margin-left: 2.493351%;
+        margin-right: 0px;
+        float: left;
+        margin-top: 4px;
+        clear: none;
+        height: 300px;
+    }
+    #conta {
+        width: 11.997419%;
+        margin-left: 1.603567%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+        margin-top: 5px;
+    }
+    #revis {
+        width: 11.997419%;
+        margin-left: 1.477698%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+    }
+    #conse {
+        width: 11.997419%;
+        margin-left: 1.602464%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+    }
+    #fiscal {
+        width: 11.997419%;
+        margin-left: 1.602464%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+    }
+    #aseo {
+        width: 11.997419%;
+        margin-left: 1.477698%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+    }
+    #comitecon {
+        width: 11.997419%;
+        margin-left: 1.602464%;
+        margin-right: 0px;
+        float: left;
+        clear: none;
+        height: 300px;
+    }
+
+    #intro {
+        width: 94.995698%;
+        margin-top: 1px;
+        height: 47px;
+    }
+
+    #text_quien {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien1 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien2 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien3 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien4 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien5 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #text_quien6 {
+        float: none;
+        width: 95%;
+        height: auto;
+        font-weight: normal;
+        line-height: 1em;
+        margin-left: auto;
+        margin-top: 230px;
+        clear: none;
+        min-height: 15px;
+        font-family: arial;
+        color: rgb(255, 255, 255);
+        margin-right: auto;
+        font-size: 0.6em;
+    }
+
+    #box {
+        margin-top: 322px;
+        clear: none;
+    }
+}
+@media only screen and (min-width: 800px) {
+    #intro {
+        width: 94.994438%;
+        height: 47px;
+    }
+
+    #admi {
+        margin-top: 20px;
+        margin-left: 1.779755%;
+        clear: none;
+        width: 11.999444%;
+        height: 300px;
+    }
+
+    #conta {
+        width: 11.999444%;
+        height: 300px;
+        margin-left: 1.574666%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.999444%;
+        height: 300px;
+        margin-left: 1.463432%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.572928%;
+        clear: none;
+        width: 11.999444%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.999444%;
+        height: 300px;
+        margin-left: 1.574666%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.463432%;
+        clear: none;
+        width: 11.999444%;
+        height: 300px;
+        margin-top: 20px;
+        background-color: rgb(40, 118, 24);
+    }
+
+    #comitecon {
+        width: 11.999444%;
+        height: 300px;
+        margin-left: 1.572928%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #box {
+        margin-top: 342px;
+        clear: none;
+    }
+}
+@media only screen and (min-width: 900px) {
+    #quienes_somos{
+        height: 730px;
+    }
+
+    #intro {
+        width: 94.994153%;
+        height: 47px;
+    }
+
+    #admi {
+        margin-top: 20px;
+        margin-left: 1.876955%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+    }
+
+    #revis {
+        margin-left: 1.454966%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.559241%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        margin-left: 1.559241%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.559241%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        margin-left: 1.454966%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #conta {
+        margin-left: 1.559241%;
+        clear: none;
+        width: 11.999804%;
+        height: 300px;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 960px) {
+    #quienes_somos{
+        height: 730px;
+    }
+    #admi {
+        margin-top: 20px;
+        margin-left: 2.541544%;
+        clear: none;
+        width: 11.999022%;
+        height: 300px;
+    }
+
+    #intro {
+        width: 94.993681%;
+        height: 47px;
+    }
+
+    #conta {
+        margin-left: 1.394489%;
+        clear: none;
+        width: 11.999022%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.999022%;
+        height: 300px;
+        margin-left: 1.394489%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.492241%;
+        clear: none;
+        width: 11.999022%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.999022%;
+        height: 300px;
+        margin-left: 1.392962%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.392962%;
+        clear: none;
+        width: 11.999022%;
+        height: 300px;
+        min-width: 0px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.999022%;
+        height: 300px;
+        margin-left: 1.392962%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #text_quien {
+        font-size: 0.8em;
+    }
+
+    #text_quien1 {
+        font-size: 0.8em;
+    }
+
+    #text_quien2 {
+        font-size: 0.8em;
+    }
+
+    #text_quien3 {
+        font-size: 0.8em;
+    }
+
+    #text_quien4 {
+        font-size: 0.8em;
+    }
+
+    #text_quien5 {
+        font-size: 0.8em;
+    }
+
+    #text_quien6 {
+        font-size: 0.8em;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #quienes_somos{
+        height: 730px;
+    }
+    #intro {
+        height: auto;
+        min-height: 33px;
+        width: 94.99247%;
+    }
+
+    #admi {
+        margin-top: 20px;
+        margin-left: 2.502317%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+    }
+
+    #conta {
+        margin-left: 1.44086%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.998957%;
+        height: 300px;
+        margin-left: 1.44086%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.348181%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.998957%;
+        height: 300px;
+        margin-left: 1.442308%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.44086%;
+        clear: none;
+        width: 11.998957%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.998957%;
+        height: 300px;
+        margin-left: 1.44086%;
+        clear: none;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 1080px) {
+    #quienes_somos{
+        height: 730px;
+    }
+    #admi {
+        margin-top: 20px;
+        margin-left: 2.501955%;
+        clear: none;
+        width: 11.99912%;
+        height: 300px;
+    }
+
+    #intro {
+        width: 94.993424%;
+    }
+
+    #conta {
+        margin-left: 1.3707%;
+        clear: none;
+        width: 11.99912%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.99912%;
+        height: 300px;
+        margin-left: 1.3707%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.448886%;
+        clear: none;
+        width: 11.99912%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.99912%;
+        height: 300px;
+        margin-left: 1.3707%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.3707%;
+        clear: none;
+        width: 11.99912%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.99912%;
+        height: 300px;
+        margin-left: 1.448886%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #text_quien {
+        font-size: 1em;
+    }
+
+    #text_quien1 {
+        font-size: 1em;
+    }
+
+    #text_quien2 {
+        font-size: 1em;
+    }
+
+    #text_quien3 {
+        font-size: 1em;
+    }
+
+    #text_quien4 {
+        font-size: 1em;
+    }
+
+    #text_quien5 {
+        font-size: 1em;
+    }
+
+    #text_quien6 {
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    #admi {
+        margin-top: 20px;
+        margin-left: 2.538071%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+    }
+
+    #intro {
+        width: 94.993901%;
+    }
+
+    #conta {
+        margin-left: 1.4186%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.999184%;
+        height: 300px;
+        margin-left: 1.4186%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.4186%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.999184%;
+        height: 300px;
+        margin-left: 1.4186%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.346084%;
+        clear: none;
+        width: 11.999184%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.999184%;
+        height: 300px;
+        margin-left: 1.4186%;
+        clear: none;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 1380px) {
+    #admi {
+        width: 11.999435%;
+        margin-top: 20px;
+        margin-left: 2.501737%;
+        clear: none;
+        height: 300px;
+    }
+
+    #conta {
+        width: 11.999435%;
+        height: 300px;
+        margin-left: 1.205264%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.999435%;
+        height: 300px;
+        margin-left: 1.274757%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        margin-left: 1.273671%;
+        clear: none;
+        height: 300px;
+        width: 11.999435%;
+        margin-top: 20px;
+    }
+
+    #intro {
+        width: 94.993722%;
+    }
+
+    #fiscal {
+        margin-left: 1.204178%;
+        clear: none;
+        width: 11.999435%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        margin-left: 1.274757%;
+        clear: none;
+        width: 11.999435%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.999435%;
+        height: 300px;
+        margin-left: 1.204178%;
+        clear: none;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    #intro {
+        width: 94.993893%;
+        margin-top: 1px;
+        margin-left: 2.492212%;
+        clear: none;
+    }
+
+    #admi {
+        width: 11.999186%;
+        height: 300px;
+        margin-top: 20px;
+        margin-left: 2.540717%;
+        clear: none;
+    }
+
+    #conta {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.42101%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #revis {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.42101%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #conse {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.355863%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #fiscal {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.422028%;
+        clear: none;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+    #aseo {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.42101%;
+        clear: none;
+        margin-top: 20px;
+    }
+
+    #comitecon {
+        width: 11.999186%;
+        height: 300px;
+        margin-left: 1.42101%;
+        clear: none;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    #intro {
+        margin-top: 0px;
+        margin-left: 2.491451%;
+        clear: none;
+        width: 94.993436%;
+    }
+
+    #admi {
+        margin-top: 20px;
+        margin-left: 2.540303%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #conta {
+        margin-top: 20px;
+        margin-left: 1.420524%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #revis {
+        margin-top: 20px;
+        margin-left: 1.420524%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #conse {
+        margin-top: 20px;
+        margin-left: 1.354879%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #fiscal {
+        margin-top: 20px;
+        margin-left: 1.422814%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #aseo {
+        margin-top: 20px;
+        margin-left: 1.420524%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #comitecon {
+        margin-top: 20px;
+        margin-left: 1.420524%;
+        clear: none;
+        width: 11.998504%;
+        height: 300px;
+    }
+
+    #box {
+        margin-top: 388px;
+        clear: none;
+        width: 100%;
+        height: 40px;
+    }
+}
+@media only screen and (min-width: 2048px) {
+    #text_quien {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien1 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien2 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien3 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien4 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien5 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+
+    #text_quien6 {
+        font-size: 2em;
+        margin-top: 200px;
+    }
+}
+.barrasmenu{cursor: pointer;}
