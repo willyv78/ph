@@ -58,6 +58,21 @@ else{$dates = "";}
 // consulta para obtener los banner que estan en la base de datos y que tienen un estado visible
 $res_banner = registroCampo("rmb_banner", "rmb_banner_id, rmb_banner_nom, rmb_banner_desc, rmb_banner_img", " WHERE rmb_est_id = 25", "", "ORDER BY rmb_banner_ord ASC");
 
+$banner_default = '
+    <div class="item active">
+        <img src="../images/banners/default.png" alt="Banner informativo">
+        <div class="carousel-caption col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 home-content-titulo">
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11"></div>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 home-content-desc">
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11"></div>
+            </div>
+        </div>
+    </div>
+';
+$n_rows = 1;
+
 ?>
 <!-- Titulo de la pagina -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -70,93 +85,61 @@ $res_banner = registroCampo("rmb_banner", "rmb_banner_id, rmb_banner_nom, rmb_ba
 
     <!-- Ejemplo de carrusell -->
     <div id="home-content-img" class="carousel slide col-xs-12 col-sm-12 col-md-8 col-lg-8 home-content" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="../images/banners/1.png" alt="Primero">
-                <div class="carousel-caption col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 home-content-titulo">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Título uno
-                        </div>
-                    </div>
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 home-content-desc">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Descripción uno.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="item">
-                <img src="../images/banners/2.png" alt="Segundo">
-                <div class="carousel-caption col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="home-content-titulo">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Título dos
-                        </div>
-                    </div>
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="home-content-desc">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Descripción dos.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="../images/banners/3.png" alt="Tercero">
-                <div class="carousel-caption col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="home-content-titulo">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Título tres
-                        </div>
-                    </div>
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="home-content-desc">
-                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            Descripción tres.
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+        <div class="carousel-inner" role="listbox"><?php 
+            if($res_banner){
+                if(mysql_num_rows($res_banner) > 0){
+                    $n_rows = mysql_num_rows($res_banner);
+                    $sq = 0;
+                    while($row_banner = mysql_fetch_array($res_banner)){?>
+                        <div id="<?php echo $sq;?>" class="item <?php if($sq == 0){echo "active";}?>" data-id="<?php echo $row_banner[0];?>">
+                            <img src="<?php if($row_banner[3] <> ''){echo $row_banner[3];}else{echo '../images/banners/default.png';} ?>" alt="<?php echo $row_banner[1];?>" title="<?php echo $row_banner[1];?>"><?php 
+                            if(($row_banner[1] <> '') || ($row_banner[2] <> '')){?>
+                                <div class="carousel-caption col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 home-content-titulo">
+                                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                            <?php echo $row_banner[1];?>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 home-content-desc">
+                                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                            <?php echo $row_banner[2];?>
+                                        </div>
+                                    </div>
+                                </div><?php 
+                            }?>
+                        </div><?php 
+                        
+                        $sq++;
+                    }
+                }
+                else{echo $banner_default;}
+            }
+            else{echo $banner_default;}?>
         </div>
 
+        <!-- Indicators -->
+        <!-- <ol class="carousel-indicators"><?php 
+            for($i = 0; $i < $n_rows; $i++){?>
+                <li data-target="#home-content-img" data-slide-to="<?php echo $i;?>" class="<?php if($i == 0){echo "active";}?>"></li><?php 
+            }?>
+        </ol> -->
+
         <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#home-content-img" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
         </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <a class="right carousel-control" href="#home-content-img" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Siguiente</span>
         </a>
+        <div class="widget visible-xs-*"></div>
     </div>
 
-    <!-- columna izq con los banners -->
-    <!-- <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 home-content" id="home-content-img" alt="Noticia Importante" title="Noticia Importante">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="home-content-titulo">
-                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                    m m m m m m m m m m m m m m m m m m 
-                </div>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="home-content-desc">
-                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium possimus tempore accusamus facere, atque qui sunt nobis itaque. Hic ipsa eius, odi fugiat optio enim praesentium nam animi tenetur harum! atque qui sunt nobis itaque. atque qui sunt nobis itaque. atque qui sunt nobis itaqxxxxxue.
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <div class="widget visible-xs-*"></div>
-
     <!-- Columna derecha con los dias y otros botones -->
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 home-content" style="padding:0;margin:0;">
+    <div id="home-content-dias" class="col-xs-12 col-sm-12 col-md-4 col-lg-4 home-content">
         <!-- espacio superior de lafecha y dias calendario -->
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="space-sup">&nbsp;</div>
         <!-- div de la fecha y dias de la semana en el calendario -->

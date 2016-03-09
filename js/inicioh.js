@@ -83,7 +83,7 @@ function cargarHome () {
   if(ancho_pag < 991){
     setTimeout(function(){
       $(".home-content:first").css('height', '450px');
-      $(".home-content:first").css('background-size', '100% 98%');
+      // $(".home-content:first").css('background-size', '100% 98%');
     }, 50);
   }
   else{

@@ -361,6 +361,10 @@ button.DTTT_button, div.DTTT_button, a.DTTT_button{
 .container-fluid {
     min-height: 82.8vh;
 }
+#home-content-dias{
+    padding: 0;
+    margin: 0;
+}
 #home-content-img{
     height: 450px;
     /*background: url("../../images/calendario/homeresidente.png");
@@ -368,13 +372,13 @@ button.DTTT_button, div.DTTT_button, a.DTTT_button{
     background-size: 98% 98%;
     background-repeat: no-repeat;*/
 }
-#home-content-titulo {
+.home-content-titulo {
     font-size: 2rem;
     margin-top: 41px;
     text-align: left;
     padding-left: 60px;
 }
-#home-content-desc {
+.home-content-desc {
     font-size: 1rem;
     margin-top: 41px;
     text-align: left;
