@@ -2,7 +2,7 @@
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $UsuID = $_SESSION['UsuID'];
@@ -11,7 +11,7 @@ $datos = "";
 $table = "";
 $table .= '
 <div id="content_res">
-    <p id="titulo">TESORERIA</p>
+    <p id="titulo">Tesorería</p>
     <p id="intro">
         <span id="textspan">Aquí encontrará los estados de cuenta de su apartamento, los recibos de pago de administración y los comprobantes respectivos. </span><br />
     </p>';

@@ -18,7 +18,7 @@ $anio2 = $anio + 1;
 $res_tes = registroCampo("rmb_tesoreria tes", "tes.rmb_tesoreria_id, tes.rmb_tesoreria_fpag, tes.rmb_tesoreria_fven, tes.rmb_tesoreria_obs, SUM(tes.rmb_tesoreria_val), tes.rmb_est_id, tes.rmb_tesoreria_fecha, tes.rmb_tesoreria_user", "WHERE tes.rmb_aptos_id = '$id_apto' AND DATE_FORMAT(tes.rmb_tesoreria_fpag,'%Y') = '$anio'", "GROUP BY DATE_FORMAT(tes.rmb_tesoreria_fpag,'%m'), DATE_FORMAT(tes.rmb_tesoreria_fpag,'%Y')", "ORDER BY tes.rmb_tesoreria_fpag DESC");
 ?>
 <!-- Inicio página estado financiero -->
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="titulo-pagina">

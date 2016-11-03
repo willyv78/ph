@@ -2,11 +2,12 @@
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 
-$id_eq = "";$nom = "";$marc = "";$mod = "";$fab = "";$fcom = "";$val = "";$est = "";$obs = "";$tipo = "";$foto = "";$fecha = "";$user = "";$accion = "Agregar";
+$id_eq = "";$nom = "";$marc = "";$mod = "";$fab = "";$fcom = "";$val = "";$est = "";$obs = "";$tipo = "";$foto = "";$fecha = "";$user = "";$accion = "Agregar";$icono="plus";
 
 if(isset($_GET['id_equipo'])){
    $id_eq = $_GET['id_equipo'];
    $accion = "Actualizar";
+   $icono = "save";
    $res_val = EquiposId($id_eq);
    if($res_val){
       if(mysql_num_rows($res_val) > 0){
@@ -20,7 +21,7 @@ if(isset($_GET['tipo_equipo'])){
 }
 
 ?>
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -28,7 +29,7 @@ if(isset($_GET['tipo_equipo'])){
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" alt="Cerrar Ventana" title="Cerrar Ventana"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
                     <span style="font-weight: bold;color: #546E7A">
-                        <i class="glyphicon glyphicon-search"></i>&nbsp;<?php echo $accion;?> Equipo</span>
+                        <i class="glyphicon glyphicon-<?php echo $icono;?>"></i>&nbsp;<?php echo $accion;?> Equipo</span>
                 </h4>
                 <div class="clearfix">&nbsp;</div>
             </div>
@@ -36,6 +37,10 @@ if(isset($_GET['tipo_equipo'])){
         <div class="modal-body">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <form id="form_equipo" name="form_equipo" action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+                    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <label for="rmb_teq_id">Tipo :</label>
+                        <?php echo campoSelect($tipo, 'rmb_teq');?>
+                    </div>
                     <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <label for="rmb_equipos_nom">Nombre :</label>
                         <input type="text" name="rmb_equipos_nom" id="rmb_equipos_nom" class="form-control" value="<?php echo $nom;?>" title="" placeholder="Nombre del Equipo">
@@ -88,7 +93,6 @@ if(isset($_GET['tipo_equipo'])){
                             <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_eq;?>">
                         <?php }
                         ?>
-                        <input type="hidden" name="rmb_teq_id" id="rmb_teq_id" class="form-control" value="<?php echo $tipo;?>">
                     </div>
                 </form>
             </div>
@@ -106,7 +110,6 @@ if(isset($_GET['tipo_equipo'])){
 <script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {
-        var teq = '<?php echo $tipo;?>';
         $('#form_equipo').bootstrapValidator({
             message: 'Este valor no es valido',
             feedbackIcons: {
@@ -115,6 +118,14 @@ if(isset($_GET['tipo_equipo'])){
                 validating: 'glyphicon glyphicon-refresh'
             },
             fields: {
+                rmb_teq_id: {
+                    message: 'El tipo de equipo no es valido',
+                    validators: {
+                        notEmpty: {
+                            message: 'El tipo de equipo es requerido'
+                        }
+                    }
+                },
                 rmb_equipos_nom: {
                     message: 'El nombre del equipo no es valido',
                     validators: {
@@ -145,6 +156,7 @@ if(isset($_GET['tipo_equipo'])){
         .on('success.form.bv', function(e) {
             // Prevent form submission
             e.preventDefault();
+            var teq = $('select[name="rmb_teq_id"] option:selected').val();
             var datos_form = new FormData($("#form_equipo")[0]);
             $.ajax({
                 url:"../php/ins_upd_equip.php",
@@ -161,8 +173,10 @@ if(isset($_GET['tipo_equipo'])){
                             type: "success",
                             confirmButtonText: "Continuar",
                             confirmButtonColor: "#94B86E"
+                        },
+                        function () {
+                          $("#content-mant").load("./equipos-por-tipo.php?teq="+teq);
                         });
-                        $("#content-mant").load("./equipos-por-tipo.php?teq="+teq);
                         setTimeout($(".ing-cal").addClass('hidden'), 3000);
                         setTimeout($(".ing-cal").html(""), 3000);
                     }
@@ -182,7 +196,7 @@ if(isset($_GET['tipo_equipo'])){
             });
         });
     });
-    editMantenimiento();
+    cargarAgregarActualizarEquipo();
     $(function () {
         $('#rmb_equipos_fcom').datepicker({format: "yyyy-mm-dd", autoclose: true, endDate: "0d", todayBtn: true});
         //Cuando se selecciona una imagen en usuario

@@ -7,7 +7,7 @@ require_once ("../php/funciones.php");
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 
-$id_apto = "";$id_masc = "";$masc_id = "";$masc_placa = "";$masc_marca = "";$masc_mod = "";$masc_color = "";$masc_obs = "";$masc_tipo = "";$masc_parq = "";
+$id_apto = "";$id_masc = "";$masc_id = "";$masc_nom = "";$masc_raza = "";$masc_vac = "";$masc_tipo = "";$masc_aplica = "";$class_arch_vac = "";
 if(isset($_GET['id_apto'])){
     $id_apto = $_GET['id_apto'];
 }
@@ -22,31 +22,55 @@ if(isset($_GET['id_masc'])){
             $masc_raza = $row_veh[2];
             $masc_vac = $row_veh[3];
             $masc_tipo = $row_veh[4];
+            $masc_aplica = $row_veh[6];
         }
     }
 }
 ?>
 <div class="text-left">
     <form id="form_masc" name="form_masc" action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Nombre -->
+        <?php if($masc_nom <> ''){$class_nom = "";}else{$class_nom = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_nom;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_mascotas_nom">Nombre: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_mascotas_nom" id="rmb_mascotas_nom" class="form-control" value="<?php echo $masc_nom;?>" placeholder="Nombre de la mascota">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Raza -->
+        <?php if($masc_raza <> ''){$class_raza = "";}else{$class_raza = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_raza;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_mascotas_raza">Raza: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_mascotas_raza" id="rmb_mascotas_raza" class="form-control" value="<?php echo $masc_raza;?>" placeholder="Raza de la mascota">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Tipo de mascota -->
+        <?php if($masc_tipo <> ''){$class_tipo = "";}else{$class_tipo = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_tipo;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_tmascotas_id">Tipo: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5"><?php 
                 echo campoSelectMaster("rmb_tmascotas", $masc_tipo, "*", "", "", "ORDER BY rmb_tmascotas_id ASC");?>
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Aplica vacunas -->
+        <?php if($masc_aplica <> ''){$class_aplica = "";}else{$class_aplica = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_aplica;?>">
+            <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_mascotas_aplica">¿Tiene vacunas?: </label>
+            <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica1" value="1" alt="Si a su mascota le aplican vacunas marque esta opción" title="Si a su mascota le aplican vacunas marque esta opción" <?php if($masc_aplica == 1){echo 'checked="checked"';}?>>SI
+                    </label>
+                    <label>
+                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica2" value="0" alt="Si a su mascota NO le aplican vacunas marque esta opción" title="Si a su mascota NO le aplican vacunas marque esta opción" <?php if($masc_aplica == 0){echo 'checked="checked"';}?>>NO
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Vacunas -->
+        <?php if($masc_vac <> ''){$class_vac = "";}else{$class_vac = "has-error";}if($masc_aplica == 0){$class_arch_vac = "hidden";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_vac." ".$class_arch_vac;?>" id="arch-vac">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_mascotas_vac">Vacunas: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5"><?php 
                 if($masc_vac){
@@ -70,7 +94,8 @@ if(isset($_GET['id_masc'])){
                 <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_masc;?>">
             <?php }?>
             <input type="hidden" name="id_apto" id="id_apto" class="form-control" value="<?php echo $id_apto;?>">
-            <button type="submit" class="btn btn-default"><img src="../css/plantilla1/img/actualizar.png" alt=""></button>
+            <button type="submit" class="btn btn-default" alt="Ingresar / Actualizar datos" title="Ingresar / Actualizar datos">Actualizar</button>
+            <button type="button" class="btn btn-default regresar">Regresar</button>
         </div>
         <div class="clearfix">&nbsp;</div>
     </form>
@@ -157,6 +182,20 @@ if(isset($_GET['id_masc'])){
                 }
             });
         });
+        function volverAtras(argument) {
+            pag = "lista_mascotas.php?id_apto="+id_apto+"&tipo_nom=mascotas";
+            $("#mascota").parent().next().load(pag);
+        }
+        $(".regresar").on("click", volverAtras);
+        function verArchivo(){
+            if(this.value == 0){
+                $("#arch-vac").addClass('hidden');
+            }
+            else{
+                $("#arch-vac").removeClass('hidden');
+            }
+        }
+        $("input[name=rmb_mascotas_aplica]").on("click", verArchivo);
     });
     $(function () {
         //Cuando se selecciona un archivo en vacunas

@@ -47,42 +47,38 @@ if($res){
 $evetos_base = json_encode($array_events);
 if(isset($_GET['tipo'])){$tipo = $_GET['tipo'];}
 else{$tipo = 1;}
-if(isset($_GET['date'])){$dates = date('m-d-Y H:i', strtotime($_GET['date']));}
+if(isset($_GET['date'])){
+    $dates = date('Y-m-d', strtotime($_GET['date']));
+}
 else{$dates = "";}
 ?>
 <!-- Titulo de la pagina -->
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
+<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
    <h3 class="text-left">Calendario</h3>
-</div>
+</div> -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="z-index:1000">
 	<div class="widget"></div>
     <input class="form-control" type="hidden" id="tipo_cal" value="<?php echo $tipo;?>">
 	<div id='calendar'></div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <p><strong>¡Tenga en cuenta!</strong></p><p>Para agregar un nuevo Evento, Circular o Clasificado debe hacer click dentro del cuadro del día deseado, si hace click en un evento ya creado podrá editarlo o eliminarlo.</p>
-    </div>
-</div>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <br>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-            <div class="mens-est-nom btn-danger"></div>
-            <span>Circulares&nbsp;</span>
+          <div class="mens-est-nom bgreen"></div>
+          <span>Tareas&nbsp;</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-            <div class="mens-est-nom btn-primary"></div>
-            <span>Eventos&nbsp;</span>
+          <div class="mens-est-nom borange"></div>
+          <span>Clasificados&nbsp;</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-            <div class="mens-est-nom btn-warning"></div>
-            <span>Clasificados&nbsp;</span>
+          <div class="mens-est-nom bblue"></div>
+          <span>Eventos&nbsp;</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-            <div class="mens-est-nom btn-success"></div>
-            <span>Tareas&nbsp;</span>
+          <div class="mens-est-nom bred"></div>
+          <span>Circulares&nbsp;</span>
         </div>
     </div>
 </div>
@@ -93,13 +89,12 @@ else{$dates = "";}
 <script src='../js/gcal.js'></script>
 <script>
     $(document).ready(function() {
+        var altopag = resizePag();
         var eventos = [<?php echo $array_events;?>];
         var dates = '<?php echo $dates;?>';
-        if(dates.length < 1){
-            var dates = new Date();
-        }
+        if(dates.length < 1){var dates = new Date();}
         else{
-            dates = dates.replace(/\-/g, ',');
+            dates = dates.replace(/ /g, ',T');
             dates = new Date(dates);
         }
         dateString = dates;
@@ -129,6 +124,7 @@ else{$dates = "";}
                 else{var tip_evento = "4";}
                 var ini_evento = date.format();
                 $(".ing-cal").load("detalle-evento-calendario.php?tipo="+tip_evento+"&start="+ini_evento);
+                $(".ing-cal").height(altopag);
                 $(".ing-cal").removeClass('hidden');
             },
             eventClick: function(calEvent, jsEvent, view) {
@@ -150,6 +146,7 @@ else{$dates = "";}
                     function(isConfirm){
                         if (isConfirm) {
                             $(".ing-cal").load("detalle-evento-calendario.php?id="+calEvent.id);
+                            $(".ing-cal").height(altopag);
                             $(".ing-cal").removeClass('hidden');
                         }
                         else {
@@ -186,6 +183,7 @@ else{$dates = "";}
                 }
                 else{
                     $(".ing-cal").load("detalle-evento-calendario.php?id="+calEvent.id);
+                    $(".ing-cal").height(altopag);
                     $(".ing-cal").removeClass('hidden');
                 }
             }

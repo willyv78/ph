@@ -1,2 +1,52 @@
 
-(function($,Edge,compId){var _=null,y=true,n=false,e21='${_agua_edi}',x2='3.0.0.322',c='color',x3='rgba(0,0,0,0)',g='image',cl='clip',e20='${_buenos_dias4}',e19='${_fondo}',x14='hidden',e15='${_ciudaddd}',dt='Default Timeline',e17='${_pagoadmi}',x1='3.0.0',i='none',x11='rect(@@0@@px @@1@@px @@2@@px @@3@@px)',e16='${_ama}',o='opacity',lf='left',bg='background-color',e18='${_buenos_dias4Copy}',x12='rgba(255,255,255,1)',a='Base State',w='width',tp='top',ql='linear',ov='overflow',e13='${_Stage}',h='height',x10='stage',s='style';var im='images/';var g6='buenos_dias.png',g5='ciudaddd.png',g8='pagoadmi.png',g9='ama.png',g7='agua_edi.png',g4='fondo.jpg';var fonts={};var P=Edge.P,T=Edge.T,A=Edge.A;var opts={};var resources=[];var symbols={"stage":{v:x1,mv:x1,b:x2,bS:a,stf:w,cg:i,iS:a,gpu:n,rI:n,cn:{dom:[{id:'fondo',t:g,r:['-111px','-1184px','1662px','1599px','auto','auto'],f:[x3,im+g4,'0px','0px']},{id:'ciudaddd',t:g,r:['-3136px','141px','4636px','270px','auto','auto'],f:[x3,im+g5,'0px','0px']},{id:'buenos_dias4',t:g,r:['1103px','195px','242px','106px','auto','auto'],f:[x3,im+g6,'0px','0px']},{id:'buenos_dias4Copy',t:g,r:['1103px','195px','242px','106px','auto','auto'],f:[x3,im+g6,'0px','0px']},{id:'agua_edi',t:g,r:['231px','139px','419px','122px','auto','auto'],f:[x3,im+g7,'0px','0px']},{id:'pagoadmi',t:g,r:['650px','80px','368px','122px','auto','auto'],f:[x3,im+g8,'0px','0px']},{id:'ama',t:g,r:['198px','142px','323px','106px','auto','auto'],f:[x3,im+g9,'0px','0px']}],sI:[]},s:{},tl:{"Default Timeline":{fS:a,tS:"",d:21000,a:y,tt:[]}}}};var S1=symbols[x10];var tl0=S1.tl[dt].tt,st1=S1.s[a]={},A1=A(_,tl0,st1);A1.A(e13).P(bg,x12,c).P(w,1500).P(h,400).P(ov,x14);A1.A(e15).P(tp,141).P(h,270).P(w,4636).P(lf,-3136).T(0.01,-354,19.99,ql);A1.A(e16).P(tp,142).P(h,106).P(lf,198).P(w,323).P(o,0,_,_,"").T(0,0).T(3.7,1,0.385,ql).T(5.055,0,0.195).T(7,1,0.36).T(8.42,0,0.445);A1.A(e17).P(tp,139).P(h,122).P(lf,650).P(w,368).P(o,0,_,_,"").T(0,0).T(2.845,1,0.345,ql).T(3.85,0,0.4).T(7.36,1,0.325).T(8.865,0,0.33).T(15.425,1,0.325).T(16.315,0,1.185);A1.A(e18).P(tp,162).P(h,106).P(lf,20).P(w,242).P(o,0,_,_,"").T(1.935,1,0.513,ql).T(3.29,0,0.515).T(3.805,0,9.195).T(16.585,1,0.665).T(18.424,0,0.576);A1.A(e19).P(cl,[-6.976685047149658,1664.32568359375,1601.32568359375,-2.325684070587158],_,x11).P(lf,-111).P(w,1662).P(tp,-1184).T(0,-1184).T(2.008,-20,3.992,ql).T(9.995,-20).T(11,-1188,3).T(16,-1188);A1.A(e20).P(tp,195).P(h,106).P(lf,1103).P(w,242).P(o,1,_,_,"").T(0,0,2.008,ql).T(13,1,2.335).T(15.824,0,0.275);A1.A(e21).P(tp,139).P(h,122).P(lf,231).P(w,419).P(o,0,_,_,"").T(0,0).T(3.19,0).T(5.2,1,0.3,ql).T(6.5,0,0.5).T(9.995,1,0.755).T(12.375,0,0.375);Edge.registerCompositionDefn(compId,symbols,fonts,resources,opts);$(window).ready(function(){Edge.launchComposition(compId);});})(jQuery,AdobeEdge,"introph");
+(function($,Edge,compId){
+    var _=null,
+        y=true,
+        n=false,
+        e21='${_agua_edi}',
+        x2='3.0.0.322',
+        c='color',
+        x3='rgba(0,0,0,0)',
+        g='image',
+        cl='clip',
+        e20='${_buenos_dias4}',
+        e19='${_fondo}',
+        x14='hidden',
+        e15='${_ciudaddd}',
+        dt='Default Timeline',
+        e17='${_pagoadmi}',
+        x1='3.0.0',
+        i='none',
+        x11='rect(@@0@@px @@1@@px @@2@@px @@3@@px)',
+        e16='${_ama}',
+        o='opacity',
+        lf='left',
+        bg='background-color',
+        e18='${_buenos_dias4Copy}',
+        x12='rgba(255,255,255,1)',
+        a='Base State',
+        w='width',
+        tp='top',
+        ql='linear',
+        ov='overflow',
+        e13='${_Stage}',
+        h='height',
+        x10='stage',
+        s='style';
+    var im='images/';
+    var g6='buenos_dias.png',
+        g5='ciudaddd.png',
+        g8='pagoadmi.png',
+        g9='ama.png',
+        g7='agua_edi.png',
+        g4='fondo.jpg';
+    var fonts={};
+    var P=Edge.P,
+        T=Edge.T,
+        A=Edge.A;
+    var opts={};
+    var resources=[];
+    var symbols={"stage":{v:x1,mv:x1,b:x2,bS:a,stf:w,cg:i,iS:a,gpu:n,rI:n,cn:{dom:[{id:'fondo',t:g,r:['-111px','-1184px','1662px','1599px','auto','auto'],f:[x3,im+g4,'0px','0px']},{id:'ciudaddd',t:g,r:['-3136px','141px','4636px','380px','auto','auto'],f:[x3,im+g5,'0px','0px']},{id:'buenos_dias4',t:g,r:['1103px','195px','242px','106px','auto','auto'],f:[x3,im+g6,'0px','0px']},{id:'buenos_dias4Copy',t:g,r:['1103px','195px','242px','106px','auto','auto'],f:[x3,im+g6,'0px','0px']},{id:'agua_edi',t:g,r:['231px','139px','419px','122px','auto','auto'],f:[x3,im+g7,'0px','0px']},{id:'pagoadmi',t:g,r:['650px','80px','368px','122px','auto','auto'],f:[x3,im+g8,'0px','0px']},{id:'ama',t:g,r:['198px','142px','323px','106px','auto','auto'],f:[x3,im+g9,'0px','0px']}],sI:[]},s:{},tl:{"Default Timeline":{fS:a,tS:"",d:21000,a:y,tt:[]}}}};
+    var S1=symbols[x10];
+    var tl0=S1.tl[dt].tt,st1=S1.s[a]={},A1=A(_,tl0,st1);A1.A(e13).P(bg,x12,c).P(w,1500).P(h,480).P(ov,x14);A1.A(e15).P(tp,141).P(h,380).P(w,4636).P(lf,-3136).T(0.01,-354,19.99,ql);A1.A(e16).P(tp,142).P(h,106).P(lf,198).P(w,323).P(o,0,_,_,"").T(0,0).T(3.7,1,0.385,ql).T(5.055,0,0.195).T(7,1,0.36).T(8.42,0,0.445);A1.A(e17).P(tp,139).P(h,122).P(lf,650).P(w,368).P(o,0,_,_,"").T(0,0).T(2.845,1,0.345,ql).T(3.85,0,0.4).T(7.36,1,0.325).T(8.865,0,0.33).T(15.425,1,0.325).T(16.315,0,1.185);A1.A(e18).P(tp,162).P(h,106).P(lf,20).P(w,242).P(o,0,_,_,"").T(1.935,1,0.513,ql).T(3.29,0,0.515).T(3.805,0,9.195).T(16.585,1,0.665).T(18.424,0,0.576);A1.A(e19).P(cl,[-6.976685047149658,1664.32568359375,1601.32568359375,-2.325684070587158],_,x11).P(lf,-111).P(w,1662).P(tp,-1184).T(0,-1184).T(2.008,-20,3.992,ql).T(9.995,-20).T(11,-1188,3).T(16,-1188);A1.A(e20).P(tp,195).P(h,106).P(lf,1103).P(w,242).P(o,1,_,_,"").T(0,0,2.008,ql).T(13,1,2.335).T(15.824,0,0.275);A1.A(e21).P(tp,139).P(h,122).P(lf,231).P(w,419).P(o,0,_,_,"").T(0,0).T(3.19,0).T(5.2,1,0.3,ql).T(6.5,0,0.5).T(9.995,1,0.755).T(12.375,0,0.375);Edge.registerCompositionDefn(compId,symbols,fonts,resources,opts);$(window).ready(function(){Edge.launchComposition(compId);});
+})(jQuery,AdobeEdge,"introph");

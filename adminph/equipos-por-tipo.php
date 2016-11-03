@@ -16,7 +16,7 @@ $res_tipoeq = registroCampo("rmb_equipos", "rmb_equipos_id, rmb_equipos_nom, rmb
 ?>
 <!-- Boton de regresar a listado -->
 <div class="col-lg-offset-5 col-md-offset-5 col-sm-offset-5 col-xs-offset-2 col-xs-8 col-sm-2 col-md-2 col-lg-2" id="regresar" name="regresar">
-    <button type="button" class="btn btn-default form-control">Regresar</button>
+    <button id="comeback" name="comeback" type="button" class="btn btn-default form-control">Regresar</button>
 </div>
 <!-- lista de equipos por tipo -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><?php 

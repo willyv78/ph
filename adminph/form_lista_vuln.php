@@ -26,16 +26,20 @@ if(isset($_GET['id_vuln'])){
 ?>
 <div class="text-left">
     <form id="form_vuln" name="form_vuln" action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Tipo -->
+        <?php if($vuln_tipo <> ''){$class_vuln_tipo = "";}else{$class_vuln_tipo = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_vuln_tipo;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_tvulnera_id">Tipo: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5"><?php 
                 echo campoSelect($vuln_tipo, "rmb_tvulnera");?>
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Observación -->
+        <?php if($vuln_obs <> ''){$class_vuln_obs = "";}else{$class_vuln_obs = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_vuln_obs;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_vulnera_obs">Observación: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
-                <textarea name="rmb_vulnera_obs" id="rmb_vulnera_obs" class="form-control" rows="3" placeholder="Describa el posible riesgo que presenta el apartamento"></textarea>
+                <textarea name="rmb_vulnera_obs" id="rmb_vulnera_obs" class="form-control" rows="3" placeholder="Describa el posible riesgo que presenta el apartamento"><?php echo $vuln_obs;?></textarea>
             </div>
         </div>
         <div class="clearfix">&nbsp;</div>

@@ -31,42 +31,52 @@ if(isset($_GET['id_vehi'])){
 ?>
 <div class="text-left">
     <form id="form_vehi" name="form_vehi" action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Placa -->
+        <?php if($veh_placa <> ''){$class_placa = "";}else{$class_placa = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_placa;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_veh_placa">Placa: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_veh_placa" id="rmb_veh_placa" class="form-control" value="<?php echo $veh_placa;?>" placeholder="Placa del Vehículo">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Marca -->
+        <?php if($veh_marca <> ''){$class_marca = "";}else{$class_marca = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_marca;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_veh_marca">Marca: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_veh_marca" id="rmb_veh_marca" class="form-control" value="<?php echo $veh_marca;?>" placeholder="Marca del Vehículo">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Marca -->
+        <?php if($veh_mod <> ''){$class_mod = "";}else{$class_mod = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_mod;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_veh_mod">Modelo: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_veh_mod" id="rmb_veh_mod" class="form-control" value="<?php echo $veh_mod;?>" placeholder="Modelo del Vehículo">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Marca -->
+        <?php if($veh_color <> ''){$class_color = "";}else{$class_color = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_color;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_veh_color">Color: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <input type="text" name="rmb_veh_color" id="rmb_veh_color" class="form-control" value="<?php echo $veh_color;?>" placeholder="Color del Vehículo">
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- Marca -->
+        <?php if($veh_tipo <> ''){$class_tipo = "";}else{$class_tipo = "has-error";}?>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 <?php echo $class_tipo;?>">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_tveh_id">Tipo: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5"><?php 
                 echo campoSelect($veh_tipo, "rmb_tveh");?>
             </div>
         </div>
-        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!-- <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_parq_id">Parqueadero: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5"><?php 
                 echo campoSelectMaster("rmb_parq p", $veh_parq, "p.rmb_parq_id, p.rmb_parq_nom, z.rmb_zonas_nom, t.rmb_torres_nom", "LEFT JOIN rmb_zonas z USING (rmb_zonas_id) LEFT JOIN rmb_torres t USING (rmb_torres_id) WHERE (p.rmb_aptos_id = '$id_apto')", "", "ORDER BY LENGTH(p.rmb_parq_nom), p.rmb_parq_nom, p.rmb_zonas_id ASC");?>
             </div>
-        </div>
+        </div> -->
         <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="col-xs-12 col-sm-5 col-md-5 col-lg-5 control-label" for="rmb_veh_obs">Observación: </label>
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
@@ -79,12 +89,17 @@ if(isset($_GET['id_vehi'])){
                 <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_vehi;?>">
             <?php }?>
             <input type="hidden" name="id_apto" id="id_apto" class="form-control" value="<?php echo $id_apto;?>">
-            <button type="submit" class="btn" alt="Ingresar / Actualizar datos del vehículo" title="Ingresar / Actualizar datos del vehículo" style="border: none;background-color: transparent;"><img src="../css/plantilla1/img/actualizar.png" alt=""></button>
+            <button type="submit" class="btn btn-default" alt="Ingresar / Actualizar datos del vehículo" title="Ingresar / Actualizar datos del vehículo">Actualizar</button>
+            <button type="button" class="btn btn-default regresar">Regresar</button>
         </div>
         <div class="clearfix">&nbsp;</div>
     </form>
 </div>
 <div class="clearfix">&nbsp;</div>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/sweet-alert.js"></script><!-- Personalizar alertas -->
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {
         setTimeout(esperehide, 1000);
@@ -160,5 +175,10 @@ if(isset($_GET['id_vehi'])){
                 }
             });
         });
+        function volverAtras(argument) {
+            pag = "lista_vehiculos.php?id_apto="+id_apto+"&tipo_nom=vehiculos";
+            $("#vehiculo").parent().next().load(pag);
+        }
+        $(".regresar").on("click", volverAtras);
     });
 </script>

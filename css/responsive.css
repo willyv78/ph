@@ -1,5 +1,5 @@
 @media (max-width: 319px) {
-    dt > img{width: 18%;}
+    dt > img{display: none;}
     #space-sup{display: block;}
     #home-content-img{height: 140px !important;}
     .carousel-caption{
@@ -19,54 +19,195 @@
     }
     .navbar-header{min-height: 50px !important;}
     .navbar-inverse{height: 55px !important;}
-    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{margin-top: 4px !important;}
-    #col-md-12 {top: 40px !important;}
+    #col-md-12 {top: 0px !important;}
     #home-dia-cal {font-size: 5rem;}
-    #home-tip-cal {bottom: 5.4rem;}
+    #home-tip-cal {bottom: 5.3rem;}
     .panel-heading {padding: 15px 15px !important;}
     .doc-est > img {padding: 5px 2px !important;}
-    .doc-est {width: 3.3rem !important;}
+    .doc-est {
+        width: 2.9rem !important;
+        height: 52px !important;
+    }
+    .admon2{
+        width: 50%;
+        height: 120px;
+        margin-left: -25px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 40%;
+        height: 90px;
+        margin-left: -20px;
+    }
+    .panel-body{padding: 0;}
+    .alert{padding: 0;}
+    .fotoconsejo, .fotoconsejo2, .fotocomite, .fotocomite2, .fotoservicios{width: 100%;}
+    .dataconsejo, .datacomite, .dataservicios{
+        margin: 5px 0;
+    }
+    .mieconsejo, .miecomite{
+        width: 100% !important;
+    }
+    .carousel-indicators {
+        bottom: -30px;
+    }
+    .home-accesos{
+        width: 94%;
+    }
+    .div-contacto{padding: 0;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        right: -5px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 44%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        padding-left: 0;
+        padding-right: 0;
+        width: 56%;
+    }
+    .text2_contac, .textspan2_contac{
+        font-size: .8rem;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height:99px;
+    }
+    .panel-heading > div.div-mes, .panel-heading > div.div-valor{
+        width: 47%;
+        display: inline-block;
+    }
+    .container-fluid {
+        margin-top: 40px;
+    }
 }
 @media (min-width: 320px){
+    dt > img{width: 20%;}
     .carousel-caption{
         background-color: rgba(255, 255, 255, 0.6);
     }
     #home-content-img{height: 140px !important;}
     #space-sup{display: block;}
     #home-tip-cal {
-        bottom: 4.4rem;
-        font-size: 1.15rem;
-        padding: 10px 0;
+        bottom: 4.3rem;
+        /*font-size: 1.15rem;
+        padding: 10px 0;*/
+    }
+    .doc-est {width: 3.6rem !important;}
+    .admon2{
+        width: 50%;
+        height: 120px;
+        margin-left: -25px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 40%;
+        height: 90px;
+        margin-left: -20px;
+    }
+    .fotoconsejo, .fotoconsejo2, .fotocomite, .fotocomite2, .fotoservicios{width: 100%;}
+    .dataconsejo, .datacomite, .dataservicios{
+        margin: 5px 0;
+    }
+    .mieconsejo, .miecomite{
+        width: 100% !important;
+    }
+    .carousel-indicators {
+        bottom: -30px;
+    }
+    .home-accesos{
+        width: 95.4%;
+    }
+    .div-contacto{padding: 0;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        right: -10px;
+        width: 42%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        width: 58%;
+    }
+    .text2_contac, .textspan2_contac{
+        font-size: .8rem;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height:96px;
+    }
+    #imagen_rande {
+        margin: 25px 0;
+        width: 30%;
+    }
+    .panel-heading > div.div-mes, .panel-heading > div.div-valor{
+        width: 47%;
+        display: inline-block;
+    }
+    .panel-heading > div.div-total{
+        display: none;
+    }
+    .container-fluid {
+        margin-top: 40px;
     }
 }
 @media (min-width: 320px) and (max-width: 339px){
     #home-content-img{height: 150px !important;}
+    #lista_historial_facturas > a > button{
+        padding: 0 2px;
+    }
+}
+@media (min-width: 340px){dt > img{width: 18%;}}
+@media (min-width: 355px){
+    #home-tip-cal {
+        bottom: 2.4rem;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        width: 36%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        width: 64%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height:92px;
+    }
 }
 @media (min-width: 340px) and (max-width: 359px){
     #home-content-img{height: 160px !important;}
 }
+@media (min-width: 360px){dt > img{width: 16%;}}
 @media (min-width: 360px) and (max-width: 379px){
     #home-content-img{height: 170px !important;}
+    #lista_historial_facturas > a > button{
+        padding: 5px 10px;
+    }
 }
+@media (min-width: 380px){dt > img{width: 14%;}}
 @media (min-width: 380px) and (max-width: 399px){
     #home-content-img{height: 180px !important;}
 }
 @media (min-width: 400px){
-    #home-tip-cal {
-        bottom: 2.5rem;
+    .admon2{
+        width: 50%;
+        height: 150px;
+        margin-left: -25px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 40%;
+        height: 120px;
+        margin-left: -30px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        width: 30%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        width: 70%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height:90px;
     }
 }
 @media (min-width: 400px) and (max-width: 419px){
     #home-content-img{height: 190px !important;}
-    #home-tip-cal {
-        bottom: 2.5rem;
-    }
 }
 @media (min-width: 420px) and (max-width: 439px){
     #home-content-img{height: 200px !important;}
 }
 @media (min-width: 320px) and (max-width: 439px){
-    dt > img{width: 14%;}
+    /*dt > img{width: 20%;}*/
     #home-img-banner {width: 100%;}
     #home-dia-cal {font-size: 5rem;}
     #home-mes-cal{font-size: 1.6rem;}
@@ -84,23 +225,23 @@
     }
     .navbar-header{min-height: 50px !important;}
     .navbar-inverse{height: 55px !important;}
-    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{margin-top: 4px !important;}
-    #col-md-12 {top: 40px !important;}
+    #col-md-12 {top: 0px !important;}
     #home-dia-cal {font-size: 5.5rem;}
 }
 @media (min-width: 440px){
-    #home-tip-cal {
-        bottom: 2.7rem;
-    }
+    dt > img{width: 13%;}
+    #home-tip-cal {bottom: 2.6rem;}
+    .carousel-indicators {bottom: -35px;}
 }
 @media (min-width: 440px) and (max-width: 459px){
     #home-content-img{height: 210px !important;}
 }
+@media (min-width: 460px){dt > img{width: 12%;}}
 @media (min-width: 460px) and (max-width: 479px){
     #home-content-img{height: 220px !important;}
 }
 @media (min-width: 440px) and (max-width: 479px){
-    dt > img{width: 11%;}
+    /*dt > img{width: 11%;}*/
 
     #space-sup{display: block;}
     #home-img-banner {width: 100%;}
@@ -123,8 +264,7 @@
     }
     .navbar-header{min-height: 50px !important;}
     .navbar-inverse{height: 55px !important;}
-    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{margin-top: 4px !important;}
-    #col-md-12 {top: 40px !important;}
+    #col-md-12 {top: 0px !important;}
     #home-dia-cal {font-size: 7rem;}
 }
 @media (min-width: 480px) {
@@ -149,15 +289,31 @@
     }
     .navbar-header{min-height: 50px !important;}
     .navbar-inverse{height: 55px !important;}
-    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{margin-top: 4px !important;}
-    #col-md-12 {top: 40px !important;}
+    #col-md-12 {top: 0px !important;}
     #home-dia-cal {font-size: 7rem;}
     #space-sup{display: block;}
+    .admon2{
+        width: 50%;
+        height: 180px;
+        margin-left: -50px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 35%;
+        height: 140px;
+        margin-left: -25px;
+    }
+    .mieconsejo, .miecomite{width: 50% !important;}
+    .carousel-indicators {bottom: -40px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 22%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 78%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 80px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    .esp-carrusel-dias{height: 35px;}
 }
 @media (min-width: 480px) and (max-width: 488px){
-    #home-tip-cal {
-        bottom: 4.9rem;
-        font-size: 1.2rem;
+    #home-tip-cal {font-size: 1.2rem;}
+    #lista_historial_facturas > a > button{
+        padding: 5px 20px;
     }
 }
 @media (min-width: 480px) and (max-width: 499px){
@@ -176,7 +332,7 @@
     dt > img{width: 10%;}
     #home-dia-cal {font-size: 7rem;}
     #home-tip-cal {
-        bottom: 3.25rem;
+        bottom: 3.17rem;
         font-size: 1.2rem;
     }
     #home-mes-cal{
@@ -191,9 +347,15 @@
     #home-content-img{height: 280px !important;}
 }
 @media (min-width: 560px){
-    #home-tip-cal {
-        bottom: 3.28rem;
-    }
+    #home-tip-cal {bottom: 3.17rem;}
+    .admon2{width: 45%;}
+    .fotoadmin, .fotocontador, .fotorevisor{width: 30%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 19%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 81%;}
+    .text2_contac, .textspan2_contac{font-size: .9rem;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 84px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 7px;}
+    .esp-carrusel-dias{height: 40px;}
 }
 @media (min-width: 560px) and (max-width: 599px){
     dt > img{width: 9%;}
@@ -203,9 +365,7 @@
         padding: 11px 0;
     }
     #home-content-img{height: 280px !important;}
-    .home-content-titulo {
-        padding-left: 10px !important;
-    }
+    .home-content-titulo {padding-left: 10px !important;}
     .home-content-desc {
         margin-top: 18px !important;
         margin-left: -10px;
@@ -219,9 +379,7 @@
         padding: 11px 0;
     }
     #home-content-img{height: 300px !important;}
-    .home-content-titulo {
-        padding-left: 15px !important;
-    }
+    .home-content-titulo {padding-left: 15px !important;}
     .home-content-desc {
         margin-top: 20px !important;
         margin-left: -15px;
@@ -235,37 +393,50 @@
         padding: 11px 0;
     }
     #home-content-img{height: 320px !important;}
-    .home-content-titulo {
-        padding-left: 20px !important;
-    }
+    .home-content-titulo {padding-left: 20px !important;}
     .home-content-desc {
         margin-top: 25px !important;
         margin-left: -18px;
     }
+    .admon2{
+        width: 35%;
+        height: 180px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 20%;
+        height: 130px;
+    }
+    .mieconsejo, .miecomite{width: 33% !important;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 16%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 84%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 82px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
 }
+@media (min-width: 660px){dt > img{width: 7.8%;}}
 @media (min-width: 660px) and (max-width: 679px){
     #home-content-img{height: 330px !important;}
 }
+@media (min-width: 680px){dt > img{width: 7.5%;}}
 @media (min-width: 680px) and (max-width: 699px){
     #home-content-img{height: 340px !important;}
 }
+@media (min-width: 700px){dt > img{width: 7.2%;}}
 @media (min-width: 700px) and (max-width: 719px){
     #home-content-img{height: 350px !important;}
 }
 @media (min-width: 720px) and (max-width: 739px){
     #home-content-img{height: 360px !important;}
 }
+@media (min-width: 740px){dt > img{width: 7%;}}
 @media (min-width: 740px) and (max-width: 759px){
     #home-content-img{height: 370px !important;}
 }
 @media (min-width: 760px) and (max-width: 779px){
-    #home-content-img{height: 380px !important;}
+    #home-content-img{height: 390px !important;}
+    .esp-carrusel-dias{height: 45px;}
 }
 @media (min-width: 660px) and (max-width: 767px) {
-    dt > img{width: 7.1%;}
-    .navbar-inverse .navbar-nav>li>a{
-        font-size: 1rem !important;
-    }
+    .navbar-inverse .navbar-nav>li>a{font-size: 1rem !important;}
     .home-content-titulo {
         font-size: 1.2rem !important;
         padding-left: 25px !important;
@@ -280,29 +451,19 @@
     }
 }
 @media (max-width: 767px) {
-    .navbar-inverse .navbar-nav>li>a{
-        font-size: 1rem !important;
-    }
+    .navbar-inverse .navbar-nav>li>a{font-size: 1rem !important;}
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
         width: 100% !important;
         text-align: left;
     }
     #menu-sup{
-        height: 1px;
-        min-height: 1px;
+        height: 1px !important;
+        min-height: 1px !important;
     }
-    .navbar {
-        min-height: 55px;
-    }
-    #col-md-12 {
-        top: 76px;
-    }
-    .navbar-collapse {
-        margin-top: 0;
-    }
-    .lista_historial_facturas > a > button.btn{
-        padding: 3px 7px;
-    }
+    .navbar {min-height: 55px !important;}
+    #col-md-12 {top: 0px;}
+    .navbar-collapse {margin-top: 0;}
+    .lista_historial_facturas > a > button.btn{padding: 3px 7px;}
     .lista_historial_facturas > a > button > img {
         width: 25px;
         height: 40px;
@@ -312,36 +473,33 @@
         float: none !important;
         text-align: center;
     }
-    .DTTT_container, .DTTT_container > a{
-        float: none !important;
+    .DTTT_container, .DTTT_container > a{float: none !important;}
+    .form-horizontal .radio {
+        padding-top: 0;
+        vertical-align: middle;
+    }
+    .form-horizontal label {
+        margin-bottom: 0;
+        vertical-align: middle;
     }
 }
+
+/* Tamaño desde el cual empienza col-sm */
 @media (min-width: 768px) {
-    dt > img{width: 7%;}
-    .nav-cerrar > i {
-        margin: 0px 5px 15px -10px !important;
-    }
+    dt > img{width: 6.8%;}
+    .nav-cerrar > i {margin: 0px 0px 0px 0px !important;}
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
         width: 100% !important;
         background: transparent !important;
-        margin-top: 40px !important;
     }
-    .navbar-nav>li {
-        float: left !important;
-    }
-    .navbar-header{
-        min-height: 85px !important;
-    }
-    .navbar-inverse{
-        height: 90px !important;
-    }
-    #col-md-12 {
-        top: 76px !important;
-    }
+    .navbar-nav>li {float: left !important;}
+    .navbar-header{min-height: 45px !important;}
+    .navbar-inverse{height: 50px !important;}
+    #col-md-12 {top: 0;}
     #home-dia-cal {font-size: 8rem;}
     #home-tip-cal {
-        bottom: 3.5rem;
-        padding: 5px 0;
+        bottom: 2.5rem;
+        padding: 5px 0 15px 0;
     }
     #home-mes-cal{
         font-size: 1.8rem;
@@ -360,47 +518,118 @@
         margin-left: -5px;
         padding-top: 5px;
     }
+    .admon2{
+        width: 50%;
+        height: 200px;
+        margin-left: -40px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 50%;
+        height: 130px;
+        margin-left: -15px;
+    }
+    .mieconsejo, .miecomite{width: 25% !important;}
+    .carousel-caption{min-height: 130px;}
+    .carousel-indicators {bottom: -40px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 26%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 74%;}
+    .text2_contac, .textspan2_contac{font-size: .8rem;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 78px;
+        width: 23%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 3px;}
+    #imagen_rande {
+        height: 162px;
+        margin: 25px 0;
+        width: 100%;
+    }
+    .esp-icon-dias{height: 45px;}
 }
 @media (min-width: 800px) {
     dt > img{width: 6.5%;}
-    #home-content-img{height: 440px !important;}
-    .home-content-titulo {
-        margin-top: 45px !important;
+    #home-content-img{height: 450px !important;}
+    .home-content-titulo {margin-top: 45px !important;}
+    .carousel-indicators {bottom: -20px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 81px;
+        width: 22%;
     }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 4px;}
+    .esp-carrusel-dias{height: 45px;}
+}
+@media (min-width: 820px){
+    dt > img{width: 6%;}
+    .carousel-indicators {bottom: -25px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 87px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 6px;}
+}
+@media (min-width: 860px){
+    dt > img{width: 5.8%;}
+    .carousel-indicators {bottom: -40px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 90px;
+        width: 23%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 10px;}
+    #imagen_rande {width: 80%;}
+}
+@media (min-width: 880px){
+    dt > img{width: 5.6%;}
+    .carousel-indicators {bottom: -50px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 94px;}
 }
 @media (min-width: 900px) {
-    dt > img{width: 6.5%;}
-    .nav-cerrar > i {
-        margin: 0px 5px 15px -5px !important;
-    }
-    #home-content-img{height: 500px !important;}
-    .carousel-caption{
+    dt > img{width: 5.2%;}
+    .nav-cerrar > i {margin: 0px 5px 15px -5px !important;}
+    #home-content-img{height: 520px !important;}
+    /*.carousel-caption{
         background-color: transparent;
+    }*/
+    .home-content-titulo {padding-left: 30px !important;}
+    .home-content-desc {margin-top: 35px !important;}
+    .imgconsejo > img, .imgcomite > img{width: 95%;}
+    .carousel-indicators {bottom: -15px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 22%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 78%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 78px;
+        width: 20%;
     }
-    .home-content-titulo {
-        padding-left: 30px !important;
-    }
-    .home-content-desc {
-        margin-top: 35px !important;
-    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 4px;}
+}
+@media (min-width: 920px){
+    .carousel-indicators {bottom: -20px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 78%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 82px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 6px;}
 }
 @media (min-width: 960px) {
-    dt > img{width: 6.6%;}
+    dt > img{width: 5%;}
+    .carousel-indicators {bottom: -35px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 85px;
+        width: 19.5%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
 }
+@media (min-width: 980px){
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 88px;}
+}
+
+/* Tamaño desde el cual empienza col-md */
 @media (min-width: 992px) {
-    dt > img{width: 6%;}
+    dt > img{width: 5%;}
     #home-dia-cal {font-size: 6rem;}
     #home-tip-cal {
-        bottom: 4.78rem;
+        bottom: 1.8rem;
         font-size: 1.2rem;
     }
     #home-mes-cal{
         font-size: 1.6rem;
         padding: 8px 0;
     }
-    #home-content-img{
-        height: 350px !important;
-    }
+    #home-content-img{height: 515px !important;}
     .home-content-titulo {
         font-size: 1.3rem !important;
         padding-left: 25px !important;
@@ -414,37 +643,88 @@
         padding-top: 5px;
     }
     #space-sup{display: none;}
+    .imgconsejo > img, .imgcomite > img{width: 95%;}
+    .mieconsejo, .miecomite{width: 16.6% !important;}
+    .carousel-indicators {bottom: -50px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 20%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 80%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 79px;
+        width: 18%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 4px;}
+    #imagen_rande {
+        height: 162px;
+        margin: 25px 0;
+        width: 100%;
+    }
+    .esp-carrusel-dias{height: 55px;}
 }
 @media (min-width: 990px) and (max-width: 1023px) {
-    dt > img{width: 5%;}
+    dt > img{width: 4.8%;}
 }
 @media (min-width: 1024px) {
-    dt > img{width: 5%;}
-    .nav-cerrar > i {
-        margin: 0px 2px 15px -10px !important;
-    }
-    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-        width: 100% !important;
-    }
-    #home-content-img{height: 370px !important;}
-    .home-content-titulo {
-        margin-top: 40px !important;
-    }
-    .home-content-desc {
-        margin-left: -10px;
-    }
+    dt > img{width: 4.5%;}
+    .nav-cerrar > i {margin: 0px 2px 15px -10px !important;}
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{width: 100% !important;}
+    #home-content-img{height: 530px !important;}
+    .home-content-titulo {margin-top: 40px !important;}
+    .home-content-desc {margin-left: -10px;}
+    .imgconsejo > img, .imgcomite > img{width: 96%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 84px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 6px;}
+    .dias-cal{width: 43%;}
+    .icon-mod{width: 57%;}
 }
 @media (min-width: 1053px){
-    #home-tip-cal {
-        bottom: 2.9rem;
+    #home-content-img{height: 560px !important;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 88px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
+    .dias-cal{width: 46%;}
+    .icon-mod{width: 54%;}
+}
+@media (min-width: 1080px){
+    #home-content-img{height: 570px !important;}
+    .imgconsejo > img, .imgcomite > img{width: 94%;}
+    .carousel-indicators {bottom: -50px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 18%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 82%;}
+    .text2_contac, .textspan2_contac{font-size: 1rem;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 78px;
+        width: 17%
     }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 4px;}
 }
 @media (min-width: 1080px) and (max-width: 1199px) {
-    dt > img{width: 5%;}
+    dt > img{width: 4.2%;}
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
         width: 98% !important;
     }
-    #home-content-img{height: 390px !important;}
+}
+@media (min-width: 1100px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 82px;
+        width: 16%
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    #home-content-img{height: 580px !important;}
+    .dias-cal{width: 47%;}
+    .icon-mod{width: 53%;}
+}
+@media (min-width: 1140px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 85px;
+        width: 16%
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 6px;} 
+    #imagen_rande {width: 95%;} 
+    #home-content-img{height: 600px !important;}
+    .dias-cal{width: 48%;}
+    .icon-mod{
+        width: 51%;
+        margin-left: 1% !important;
+    }  
 }
 @media (min-width: 1185px) {
     #home-dia-cal {font-size: 8rem;}
@@ -455,143 +735,457 @@
         font-size: 1.6rem;
         padding: 8px 0;
     }
+    .admon2{
+        width: 40%;
+        height: 150px;
+        margin-left: -40px;
+    }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 35%;
+        height: 100px;
+        margin-left: -15px;
+    }
+    .imgconsejo > img, .imgcomite > img{
+        width: 97%;
+    }
+    .mieconsejo, .miecomite{
+        width: 16.6% !important;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 89px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 7px;}
+    #home-content-img{height: 620px !important;}
+    .dias-cal{width: 50%;}
+    .icon-mod{
+        width: 49%;
+        margin-left: 1% !important;
+    }
+}
+
+/* Tamaño desde el cual empienza col-md */
+@media (min-width: 1200px) {
+    .carousel-indicators {bottom: -50px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 25%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 75%;}
+    .text2_contac, .textspan2_contac{font-size: .8rem;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 82px;
+        width: 21.5%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 4px;}
+    .form-contacto{height: 289px;}
+    #imagen_rande {
+        margin: 25px 0;
+        width: 90%;
+        height: auto;
+    }
+    #home-content-img{width: 70%;}
+    #home-content-dias{width: 30%;}
+    .esp-carrusel-dias{display: none;}
+    .esp-icon-dias{display: none;}
+    .dias-cal{width: 100%;}
+    .icon-mod{
+        width: 100%;
+        margin-left: 0 !important;
+    }
+    #col-md-12 {
+        top: 0;
+    }
+    .navbar-header {
+        min-height: 45px !important;
+    }
+    #menu-sup {
+        height: 45px;
+        min-height: 45px;
+    }
+    #nom-usu {
+        height: 45px;
+        min-height: 45px;
+    }
+    #nom-usu > div {
+        margin-top: 0;
+    }
+    .navbar-inverse {
+        height: 50px !important;
+        max-height: 50px;
+    }
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{margin-top: 0;}
+    .container-fluid {
+        margin-top: 95px;
+    }
 }
 @media (min-width: 1200px) and (max-width: 1279px) {
     #logo_edif{
-        width: 39% !important;
-        margin: auto 90px auto 0;
+        width: 58% !important;
+        margin: 4px 90px auto 0;
     }
-    #logo-site {
-        background-position: -35px 100% !important;
-    }
-    dt > img{width: 4%;}
+    dt > img{width: 3.9%;}
     #home-content-img{height: 450px !important;}
+}
+@media (min-width: 1200px) and (max-width: 1380px) {
+    #logo-site {
+        background-position: -20px 100% !important;
+        width: 325px;
+    }
+    #menu-sup {
+        width: 680px;
+    }
+    .navbar-nav>li {
+        width: 125px;
+    }
+}
+@media (min-width: 1220px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 83px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    .form-contacto{
+        height: 293px;
+    }
+    #home-content-img{width: 69%;}
+}
+@media (min-width: 1240px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 85px;}
+    .form-contacto{height: 299px;}
+    #home-content-dias{width: 31%;}
+    .carousel-indicators {bottom: -50px;}
+}
+@media (min-width: 1260px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 86px;}
+    .form-contacto{height: 303px;}
+    .carousel-indicators {bottom: -50px;}
 }
 @media (min-width: 1280px) {
     #logo_edif{
-        width: 35% !important;
-        margin: auto 90px auto 0;
+        width: 55% !important;
+        margin: 5px 90px auto 0;
     }
-    #logo-site {
-        background-position: -15px 100% !important;
-    }
-    dt > img{width: 4%;}
+    dt > img{width: 3.8%;}
     #home-content-img{height: 470px !important;}
     .home-content-titulo {
         font-size: 1.5rem !important;
         padding-left: 30px !important;
-        margin-top: 50px !important;
-    }
-    .home-content-desc {
         margin-top: 40px !important;
     }
+    .home-content-desc {margin-top: 40px !important;}
+    .imgconsejo > img, .imgcomite > img{width: 96%;}
+    .carousel-indicators {bottom: -60px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 89px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
+    .form-contacto{height: 312px;}
+    #imagen_rande {width: 80%;}
+    #home-content-img{width: 68%;}
+}
+@media (min-width: 1300px){
+    #home-content-dias{width: 32%;}
+}
+@media (min-width: 1340px){
+    .carousel-indicators {
+        bottom: -50px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        width: 22%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        width: 78%;
+    }
+    .text2_contac, .textspan2_contac{
+        font-size: .9rem;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 80px;
+        width: 19%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 3px;}
+    .form-contacto{
+        height: 282px;
+    }
+    #home-content-img{width: 67%;}
 }
 @media (min-width: 1380px) {
     #logo_edif{
-        width: 34% !important;
-        margin: auto 120px auto 0;
+        width: 50% !important;
+        margin: 6px 120px auto 0;
     }
-    dt > img{width: 4%;}
+    dt > img{width: 3.5%;}
     #home-content-img{height: 540px !important;}
+    .imgconsejo > img, .imgcomite > img{
+        width: 95%;
+    }
+    .carousel-indicators {
+        bottom: 0px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 85px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    .form-contacto{
+        height: 299px;
+    }
+    #imagen_rande {
+        width: 75%;
+    }
+    #home-content-img{width: 66.5%;}
+    #home-content-dias{width: 33.5%;}
+}
+@media (min-width: 1420px) {
+    #home-content-img{width: 66%;}
 }
 @media (min-width: 1440px) {
     #logo_edif{
-        width: 32% !important;
-        margin: auto 130px auto 0;
+        width: 48% !important;
+        margin: 7px 130px auto 0;
     }
-    dt > img{width: 4%;}
+    dt > img{width: 3.3%;}
     #home-img-banner{width: 100%;}
+    .imgconsejo, .imgcomite{
+        width: 25%;
+    }
+    .imgconsejo > img, .imgcomite > img{
+        width: 100%;
+    }
+    .mieconsejo, .miecomite{
+        width: 12.5% !important;
+    }
+    .carousel-indicators {
+        bottom: -15px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 88px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 7px;}
+    .form-contacto{
+        height: 308px;
+    }
+    #home-content-dias{width: 34%;}
+}
+@media (min-width: 1460px) {
+    #home-content-img{width: 65%;}
+}
+@media (min-width: 1480px){
+    .carousel-indicators {
+        bottom: -25px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 91px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 9px;}
+    .form-contacto{
+        height: 316px;
+    }
+    #imagen_rande {
+        width: 70%;
+    }
+}
+@media (min-width: 1500px){
+    .carousel-indicators {
+        bottom: -30px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{
+        width: 19%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{
+        width: 81%;
+    }
+    .text2_contac, .textspan2_contac{
+        font-size: 1rem;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 78px;
+        width: 17%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 3px;}
+    .form-contacto{
+        height: 278px;
+    }
+    #home-content-dias{width: 35%;}
+}
+@media (min-width: 1520px) {
+    #home-content-img{width: 64%;}
 }
 @media (min-width: 1536px) {
     #logo_edif{
-        width: 31% !important;
-        margin: auto 150px auto 0;
+        width: 46% !important;
+        margin: 8px 150px auto 0;
     }
-    dt > img{width: 4.1%;}
+    dt > img{width: 3%;}
     #home-img-banner{width: 98%;}
     #home-content-img{height: 560px !important;}
     .home-content-titulo {
         font-size: 1.7rem !important;
         padding-left: 40px !important;
-        margin-top: 55px !important;
     }
     .home-content-desc {
         margin-top: 45px !important;
     }
-    #home-content-dias{margin: 10px 0;}
+    .fotoadmin, .fotocontador, .fotorevisor{
+        width: 30%;
+    }
+    .imgconsejo, .imgcomite{
+        width: 15%;
+    }
+    .mieconsejo, .miecomite{
+        width: 8.5% !important;
+    }
+    .carousel-indicators {
+        bottom: -35px;
+    }
+    .carousel-caption{
+        height: 140px;
+    }
+}
+@media (min-width: 1540px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 80px;
+        width: 16.5%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 3px;}
+    .form-contacto{
+        height: 285px;
+    }    
+}
+@media (min-width: 1560px) {
+    #home-content-img{width: 63%;}
+}
+@media (min-width: 1580px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 83px;
+        width: 17%;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    .form-contacto{
+        height: 293px;
+    }
+    #imagen_rande {
+        width: 65%;
+    }   
 }
 @media (min-width: 1600px) {
     #logo_edif{
-        width: 30% !important;
-        margin: auto 160px auto 0;
+        width: 45% !important;
+        margin: 9px 160px auto 0;
     }
-    dt > img{width: 4.1%;}
+    dt > img{width: 2.5%;}
     #home-img-banner{width: 96%;}
     #space-sup{display: block;}
+    .carousel-indicators {bottom: -30px;}
+    #home-content-dias{width: 36%;}
+}
+@media (min-width: 1640px) {
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 87px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 7px;}
+    .form-contacto{height: 306px;}
+    .carousel-caption{height: 150px;}
+    .home-content-titulo {margin-top: 45px !important;}
+    .carousel-indicators {bottom: -40px;}
+}
+@media (min-width: 1680px) {
+    #home-content-dias{width: 37%;}
+    .carousel-indicators {bottom: -50px;}
 }
 @media (min-width: 1700px) {
     #logo_edif{
-        width: 27% !important;
-        margin: auto 190px auto 0;
+        width: 42% !important;
+        margin: 10px 190px auto 0;
     }
     #home-content-img{height: 630px !important;}
     .home-content-titulo {
         padding-left: 45px !important;
-        margin-top: 60px !important;
+        margin-top: 50px !important;
     }
     .home-content-desc {
         margin-top: 50px !important;
     }
+    .fotoadmin, .fotocontador, .fotorevisor{
+        height: 120px;
+    }
+    .carousel-caption{
+        height: 160px;
+    }
+    .carousel-indicators {
+        bottom: -10px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 94px;
+    }
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 11px;}
+    .form-contacto{
+        height: 326px;
+    }
+    #imagen_rande {
+        width: 60%;
+    }
+}
+@media (min-width: 1720px) {
+    #home-content-img{width: 62%;}
 }
 @media (min-width: 1800px) {
     #logo_edif{
-        width: 25% !important;
-        margin: auto 210px auto 0;
+        width: 40% !important;
+        margin: 8px 210px auto 0;
     }
     #home-content-img{height: 660px !important;}
     .home-content-titulo {
         font-size: 1.8rem !important;
         padding-left: 50px !important;
-        margin-top: 65px !important;
+        margin-top: 50px !important;
     }
     .home-content-desc {
         font-size: 1rem !important;
-        margin-top: 55px !important;
+        margin-top: 50px !important;
     }
     .carousel-inner>.item>img{width: 99%;}
-    .carousel-control.right {
-        right: 10px;
+    .carousel-control.right {right: 10px;}
+    .carousel-indicators {bottom: -20px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 16%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 84%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
+        height: 82px;
+        width: 14%;
     }
-    #home-content-dias{margin: 15px 0;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
+    .form-contacto{height: 290px;}
+    #imagen_rande {width: 55%;}
+}
+@media (min-width: 1860px) {
+    #home-content-img{width: 61%;}
+    #home-content-dias{width: 38%;}
 }
 @media (min-width: 1920px) {
     #logo_edif{
-        width: 25% !important;
-        margin: auto 230px auto 0;
+        width: 38% !important;
+        margin: 8px 230px auto 0;
     }
-    dt > img{width: 4.1%;}
-    #home-content-img{height: 680px !important;}
+    dt > img{width: 2.5%;}
     .home-content-titulo {
         font-size: 1.9rem !important;
         padding-left: 55px !important;
-        margin-top: 60px !important;
+        margin-top: 55px !important;
     }
     .home-content-desc {
         font-size: 1rem !important;
         margin-top: 60px !important;
     }
+    .admon2{height: 180px;}
+    .fotoadmin, .fotocontador, .fotorevisor{height: 140px;}
+    .carousel-caption{height: 175px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 86px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
+    .form-contacto{height: 302px;}
+    #imagen_rande {width: 50%;}
+    #home-content-dias{width: 39%;}
 }
 @media (min-width: 2048px) {
     #logo_edif{
-        width: 20% !important;
-        margin: auto 240px auto 0;
+        width: 36% !important;
+        margin: 8px 240px auto 0;
     }
     dt > img{width: 4.1%;}
     #home-content-img{height: 670px !important;}
     .home-content-titulo {
         font-size: 2rem !important;
         padding-left: 60px !important;
-        margin-top: 75px !important;
     }
     .home-content-desc {
         font-size: 1rem !important;

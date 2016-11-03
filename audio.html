@@ -1,0 +1,89 @@
+
+<!doctype html>
+<head>
+    <title>Using multiple file formats in JavaScript</title>
+    <!-- Uncomment the following meta tag if you have issues rendering this page on an intranet site. -->    
+    <!--  <meta http-equiv="X-UA-Compatible" content="IE=edge"/> --> 
+
+
+</head>
+<body>
+    <!-- <audio id="demo" class="my_audio" preload="auto" loop>
+        <source src="http://dl.dropbox.com/u/1538714/article_resources/song.m4a" type="audio/mpeg" />
+        <source src="http://dl.dropbox.com/u/1538714/article_resources/song.ogg" type="audio/ogg" />
+        <source src="images/aves_21.webm" type="audio/webm">
+        <source src="images/aves_21.wav" type="audio/wav">
+        <source src="images/aves_21.mp3" type="audio/mpeg">
+        <source src="images/aves_21.ogg" type="audio/ogg">
+        <source src="images/aves_21.webm" type="audio/webm">
+        <source src="images/aves_21.wav" type="audio/wav">
+        <object type="application/x-shockwave-flash" data="player.swf?miArchivo=./images/aves_21.mp3">
+            <param name="movie" value="player.swf?miArchivo=./images/aves_21.mp3">
+            <a href="images/aves_21.mp3">Descárgate aquí mi archivo de audio</a>
+        </object>
+    </audio> -->
+    <!-- <audio id="demo" src="./images/aves_21.mp3"></audio>
+    <div>
+      <button onclick="document.getElementById('demo').play()">Play the Audio</button>
+      <button onclick="document.getElementById('demo').pause()">Pause the Audio</button>
+      <button onclick="document.getElementById('demo').volume+=0.1">Increase Volume</button>
+      <button onclick="document.getElementById('demo').volume-=0.1">Decrease Volume</button>
+    </div> -->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // $('audio').get(3).play();
+        });
+        var ifr=document.createElement("audio");
+        ifr.setAttribute('src', "images/aves_21.mp3");
+        ifr.setAttribute('width', '1px');
+        ifr.setAttribute('height', '1px');
+        ifr.setAttribute('scrolling', 'no');
+        ifr.style.border="0px";
+        ifr.autoplay = true;
+        ifr.controls = false; 
+        ifr.loop = true; 
+        ifr.load();
+        document.body.appendChild(ifr);
+        setTimeout(function(){
+            ifr.play();
+        }, 1000);
+        
+        // window.onload = function() {
+        //     var audioPlayer = document.getElementById("demo");
+        //     audioPlayer.load();
+        //     audioPlayer.play();
+        //     alert("Carga la página");
+        // };
+        // function fakeClick(fn) {
+        //     var $a = $('<a href="#" id="fakeClick"></a>');
+        //     $a.bind("click", function(e) {
+        //         e.preventDefault();
+        //         fn();
+        //     });
+
+        //     $("body").append($a);
+
+        //     var evt, 
+        //     el = $("#fakeClick").get(0);
+
+        //     if (document.createEvent) {
+        //         evt = document.createEvent("MouseEvents");
+        //         if (evt.initMouseEvent) {
+        //             evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        //             el.dispatchEvent(evt);
+        //         }
+        //     }
+
+        //     $(el).remove();
+        // }
+
+        // $(function() {
+        //     var video = $("#demo").get(0);
+        //     fakeClick(function() {
+        //         video.play();
+        //     });
+        // });
+    </script>
+</body>
+</html>

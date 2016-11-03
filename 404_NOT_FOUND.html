@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404</title>
+</head>
+<body>
+    <h1>Cargando, espere un momento por favor ...</h1>
+     <script>
+        //var url = document.location.hostname; // 127.0.0.1
+        // var url = document.location.origin; // 127.0.0.1:9090
+        // var url = document.location.hash; // #algo encaso de que contenga hastag
+        // var url = document.location.host; // 127.0.0.1:9090
+        // var url = document.location.href; // http://127.0.0.1:9090/ph/adminph/lista-de-apartamentos.html
+        // var url = document.location.port; // 9090
+        // var url = document.location.protocol; // http:
+        // var url = document.location.search; // ?email=someone@example.com
+        // var url = window.location; // http://127.0.0.1:9090/ph/adminph/lista-de-apartamentos.html
+        var url = document.location.pathname; // /ph/adminph/lista-de-apartamentos.html
+        var num_url = 1;
+        var url_split = url.split("/");
+        var url_carp = url_split[num_url];
+        var url_length = url_split.length - 1;
+        var url_prot = document.location.protocol + "//";
+        var new_url = "";
+        if((url_carp === 'adminph') || (url_carp === 'habitante') || (url_carp === 'master')){
+            if(url_length === (num_url + 1)){
+                new_url = "http://181.49.17.6/"+ url_carp + "/";
+            }
+            else{
+                new_url = "http://181.49.17.6/";
+            }
+        }
+        else{
+            new_url = url_prot + document.location.hostname;
+        }
+        // alert(new_url);
+        location.replace(new_url);
+        // window.location = new_url;
+        
+    </script>
+</body>
+</html>

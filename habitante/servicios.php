@@ -5,133 +5,77 @@ require_once ("../php/funciones.php");
 // Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
-$tipo = "";
-$accion = "Nuevo";
-$desabilitar = "";
-$nom  = "";
-$desc = "";
-$cont = "";
-$img  = "";
-$est  = "";
-$fini = "";
-$ffin = "";
-if(isset($_GET['tipo'])){$tipo = $_GET['tipo'];}
-if(isset($_GET['edit'])){$accion = "Modificar";}
-if(isset($_GET['ver'])){$accion = "Consultar";$desabilitar = "disabled";}
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $res_doc = registroCampo("rmb_document", "*", "WHERE rmb_document_id = '$id'", "", "");
-    if($res_doc){
-        if(mysql_num_rows($res_doc) > 0){
-            $row_doc = mysql_fetch_array($res_doc);
-            $nom  = $row_doc[2];
-            $desc = $row_doc[3];
-            $cont = $row_doc[4];
-            $img  = $row_doc[5];
-            $est  = $row_doc[6];
-            $fini = $row_doc[7];
-            $ffin = $row_doc[8];
+$servi_all = false;
+$servi_emp = array();
+$servi_gen = array();
+$res_servi = registroCampo("rmb_residente r", "r.rmb_residente_id, r.rmb_residente_nom, r.rmb_residente_ape, r.rmb_carg_id, r.rmb_residente_foto, r.rmb_residente_nom2, r.rmb_residente_tel, r.rmb_residente_cel, r.rmb_residente_dir, r.rmb_residente_email, r.rmb_residente_obs, rmb_residente_perm", "WHERE rmb_residente_pers > 0 AND (r.rmb_carg_id = '18' OR  r.rmb_carg_id = '19')", "", "ORDER BY r.rmb_carg_id ASC");
+if($res_servi){
+    $servi_all = true;
+    if(mysql_num_rows($res_servi) > 0){
+        while ($row_servi = mysql_fetch_array($res_servi)) {
+            if($row_servi[3] == '18'){
+                $servi_emp = [$row_servi[5], $row_servi[1]." ".$row_servi[2], $row_servi[6], $row_servi[7], $row_servi[9], $row_servi[10], $row_servi[0], $row_servi[11]];
+            }
+            elseif($row_servi[3] == '19'){
+                $servi_gen[] = [$row_servi[4], $row_servi[1]." ".$row_servi[2], $row_servi[6], $row_servi[7], $row_servi[9], $row_servi[10], $row_servi[0], $row_servi[11]];
+            }
         }
     }
 }
-?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="auto;">
-    <div class="modal-content">
-        <div class="modal-header text-right">
-            <h3 class="modal-title" id="myModalLabel">
-                <img src="../images/imgFoto9.png" class="img-responsive" alt="Image" style="display:inline-block;margin-top: -30px;">
-                <span style="font-weight: bold;color: #139445"><span style="font-size: 2.5em;color: #EF9614;">S</span>ervicios <span style="font-size: 2.5em;color: #EF9614;">G</span>enerales</span>
-            </h3>
-        </div>
-        <div class="modal-body">
-            <!-- Titulares -->
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-center">
-                    <img src="../images/ASEO1.png" class="img-responsive" alt="Image" style="display:inline-block;">
-                </div>
-                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-                    <div class="clearfix">&nbsp;</div>
-                </div>
-                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-                    <div class="clearfix">&nbsp;</div>
-                </div>
-                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-                    <div class="clearfix">&nbsp;</div>
-                </div>
-                <div class="bgreen col-xs-12 col-sm-9 col-md-9 col-lg-9 text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;opacity:1;">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
-                        <div class="clearfix">&nbsp;</div>
-                        Empresa:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-left">
-                        Persona de Contacto:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 text-left">
-                        Tel:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 text-left">
-                        Cel:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-left">
-                        Email:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 text-left">
-                        Página WEB:
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                </div>
+if($servi_all){
+    if($servi_emp){?>
+        <!-- Titulares -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-info">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                <img src="../images/ASEO1.png" class="img-responsive admon2" alt="Image">
             </div>
-            <!-- Suplentes -->
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!-- Información seguridad Empresa -->
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 info-emp">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #139445;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bgreen text-center" style="border:3px solid #139445;border-radius: 5px;padding:5px;margin:5px;opacity:1;">Andres Parra</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
+                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Empresa:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $servi_emp[0];?></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Contacto:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"> <?php echo $servi_emp[1];?></span>
+                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">Tel:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-1 text-nowrap modal-open text-left"><?php echo $servi_emp[2];?></span>
+                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Cel:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $servi_emp[3];?></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Correo:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"><?php echo $servi_emp[4];?></span>
+                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">WEB:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-5 text-nowrap modal-open text-left"><?php echo $servi_emp[7];?></span>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Horario Atención:</span>
+                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $servi_emp[5];?></span>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer"></div>
-    </div>
-</div>
+        </div><?php 
+    }
+    if($servi_gen){?>
+        <!-- Suplentes -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger"><?php 
+            for($i = 0; $i < count($servi_gen); $i++){?>
+                <div class="col-xs-12 text-center miecomite"><?php 
+                    if($servi_gen[$i][0]){$src_gen = $servi_gen[$i][0];}
+                    else{$src_gen = imagenDefault();}?>
+                    <img src="<?php echo $src_gen;?>" class="img-responsive fotoservicios" alt="Image">
+                    <div class="bgreen text-center datacomite"><?php echo $servi_gen[$i][1]; ?></div>
+                </div><?php 
+            }?>
+        </div><?php 
+    }
+    if((!$servi_emp) && (!$servi_gen)){?>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">No hay seguridad registrado</div><?php 
+    }
+}
+else{?>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">Error en la consulta</div><?php 
+}?>
 <script>
     $(document).ready(function() {
         cargarPerfil();

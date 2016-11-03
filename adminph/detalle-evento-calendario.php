@@ -45,7 +45,7 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
 // echo $ffecha_date;
 ?>
 <!-- Inicio página detalle de evento calendario -->
-<div class="col-xs-11 col-sm-10 col-md-8 col-lg-6">
+<div class="col-xs-11 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     <div class="titulo-pagina">
         <div class="clearfix">&nbsp;</div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -95,9 +95,9 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
             <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control-label" for="rmb_calendario_img">Imagen:</label>
             <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9"><?php 
                 if($file_even <> ''){?>
-                    <img class="" src="<?php echo $file_even;?>" alt="Image" width="60%" style="margin: auto;"><?php
+                    <img id="vistaPrevia" src="<?php echo $file_even;?>" alt="Image" width="60%" style="margin: auto;"><?php
                 }?>
-                <input class="form-control" type="file" name="rmb_calendario_img" id="rmb_calendario_img" placeholder="Imagen para mostrar en el evento" value="">
+                <input class="form-control fileimagen" type="file" name="rmb_calendario_img" id="rmb_calendario_img" placeholder="Imagen para mostrar en el evento" value="">
             </div>
         </div>
         <div class="form-group">
@@ -138,20 +138,20 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-          <div class="mens-est-nom btn-success"></div>
-          <span>Circulares&nbsp;</span>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-          <div class="mens-est-nom btn-warning"></div>
-          <span>Eventos&nbsp;</span>
+          <div class="mens-est-nom bgreen"></div>
+          <span>Tareas&nbsp;</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
           <div class="mens-est-nom borange"></div>
           <span>Clasificados&nbsp;</span>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
-          <div class="mens-est-nom btn-danger"></div>
-          <span>Tareas&nbsp;</span>
+          <div class="mens-est-nom bblue"></div>
+          <span>Eventos&nbsp;</span>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
+          <div class="mens-est-nom bred"></div>
+          <span>Circulares&nbsp;</span>
         </div>
       </div>
     </div>
@@ -162,21 +162,10 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
 <!-- FIN Pagina detalle de evento calendario -->
 <!-- jQuery -->
 <script type="text/javascript" src="../js/jquery.min.js"></script>
-<!-- Personalizar alertas -->
-<script type="text/javascript" src="../js/sweet-alert.js"></script>
-
-<script type="text/javascript" src='../js/collapse.js'></script>
-<script type="text/javascript" src='../js/transition.js'></script>
-<script type="text/javascript" src='../js/moment.js'></script>
 <script type="text/javascript" src='../js/moment-with-locales.js'></script>
-<script type="text/javascript" src='../js/fullcalendar.js'></script>
-<script type="text/javascript" src='../js/lang-all.js'></script>
-
 <!-- Libreria java script que realiza la validacion de los formulariosP -->
 <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script> <!-- Datetimepicker -->
 <script type="text/javascript" src="../js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../js/bootstrap.js"></script> <!-- Bootstrap -->
-
 <script>
     $(document).ready(function() {
         var tipocal = $("#rmb_tcal_id").val();
@@ -242,12 +231,7 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
         .on('success.form.bv', function(e) {
             // Prevent form submission
             e.preventDefault();
-            var dates = $("#rmb_calendario_fini").val();
-            dates = dates.split(' ');
-            dates = dates[0].replace(/\-/g, ',');
-            dates = new Date(dates);
-            dates = dates.getFullYear() + "-" + (dates.getMonth() + 1) + "-" + dates.getDate();
-            dateString = dates;
+            
             var datos_form = new FormData($("#form_cal")[0]);
             $.ajax({
                 url:"../php/ins_cal.php",
@@ -258,6 +242,14 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
                 processData:false,
                 success: function(datos){
                     if(datos !== ''){
+                        var dates = $("#rmb_calendario_fini").val();
+                        var rdates = dates.replace(/ /g, 'T');
+                        var fecha = new Date(rdates);
+                        var fdates = fecha.getFullYear() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getDate();
+                        dateString = fdates;
+                        var url = "./calendario.php?tipo="+tipocal+"&date="+dateString+"&emp_id="+sess_id;
+                        url = encodeURI(url);
+                        $("#col-md-12").load(url);
                         swal({
                             title: "Felicidades!",
                             text: "El registro se ha guardado correctamente!",
@@ -276,11 +268,8 @@ if((isset($_GET['tipo'])) && (isset($_GET['start']))){
                             confirmButtonText: "Aceptar",
                             confirmButtonColor: "#E25856"
                         });
-                        $(".ing-cal").html("");
-                        $(".ing-cal").addClass('hidden');
                         return;
-                    }
-                    $("#col-md-12").load("./calendario.php?tipo="+tipocal+"&date="+dateString+"&emp_id="+sess_id);
+                    }                    
                 }
             });
         });

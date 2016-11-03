@@ -19,7 +19,7 @@ require_once ("../php/funciones.php");
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                 <div id="content_res">
-                    <p id="titulo">TESORERIA</p>
+                    <p id="titulo">Tesorería</p>
                     <p id="intro">
                         <span id="textspan">Aquí encontrará los estados de cuenta de su apartamento, los recibos de pago de administración y los comprobantes respectivos. </span><br />
                     </p>

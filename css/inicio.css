@@ -1,3 +1,4 @@
+/*body,html{ height:100%; margin:0;}*/
 body
 {
    font: normal 100%;
@@ -10,7 +11,7 @@ body
 }
 select{
    border-radius: 5px;
-   margin: 5px;
+   margin: 0;
    /*padding: 10px;*/
 }
 /* Estilos de los graficos estadisticos */
@@ -890,8 +891,8 @@ dt, dd{
 dt{
    background: #546E7A;
    color: #FFFFFF;
-   border-bottom: 2px solid #FFFFFF;
-   border-top: 2px solid #FFFFFF;
+   border-bottom: 2px solid #FFFFFF !important;
+   border-top: 2px solid #FFFFFF !important;
    cursor: pointer;
    text-align: left;
    border-radius: 5px;
@@ -899,9 +900,9 @@ dt{
 dd{
    display: none;
    line-height: 1.6rem;
-   background-color: #F1F1Ef;
+   /*background-color: #F1F1Ef;*/
 }
-dt.activo, dt:hover{ background: #546E7A; }
+/*dt.activo, dt:hover{ background: #546E7A; }*/
 
 dt:before{ content: "▸"; margin-right: 10px; }
 dt.activo:before{ content: "▾"; }
@@ -988,9 +989,9 @@ dt > img{
     float: none;
     font-size: 1rem;
     font-weight: bold;
-    margin: 20px auto;
+    margin-top: 20px;
     padding: 20px;
-    position: relative;
+    position: fixed;
     z-index:30001;
     border-radius: 5px;
     max-height: 96%;
@@ -1055,6 +1056,8 @@ dt > img{
 }
 .box_contac {
    background-color: rgb(255, 255, 255);
+   border: 1px solid #417F00;
+   cursor: pointer;
 }
 .text2_contac {
    float: left;
@@ -1064,7 +1067,7 @@ dt > img{
    font-weight: normal;
    line-height: 1rem;
    clear: none;
-   margin: 15px 0 0 0;
+   margin: 15px 0 15px 0;
 }
 .textspan2_contac {
    float: none;
@@ -1130,8 +1133,7 @@ dt > img{
    padding: 2px 0;
    position: absolute;
    width: 100%;
-   margin: 0;
-   background: #F5A601;
+   margin: 0 auto;
    color: #FFF;
    left: 0;
    right: 0; 
@@ -1145,7 +1147,22 @@ dt > img{
    margin: 0;
 }
 #home-dia-cal{
-   font-size:8em
+   font-size:8em;
+   margin: auto;
+}
+::-webkit-input-placeholder {
+ text-overflow: ellipsis;
+ /* otras propiedades */
+}
+input:-moz-placeholder {
+ text-overflow: ellipsis;
+ /* otras propiedades */
+}
+.clase-general{
+  display: table-row;
+}
+.vertical-middle {
+   vertical-align: middle !important;
 }
 
 

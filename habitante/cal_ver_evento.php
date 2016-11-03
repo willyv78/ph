@@ -31,8 +31,7 @@ if(isset($_GET['id'])){
     }
 }
 ?>
-
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="titulo-pagina">

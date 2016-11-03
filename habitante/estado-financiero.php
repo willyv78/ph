@@ -285,19 +285,19 @@ $anio2 = $anio + 1;
     <div class="clearfix">&nbsp;</div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-lg-offset-2 col-xs-12 col-sm-12 col-md-12 col-lg-10">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-right">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
           <div class="mens-est-nom btn-success"></div>
           <span>Al día&nbsp;</span>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-right">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
           <div class="mens-est-nom btn-warning"></div>
           <span>Mora de 1 mes&nbsp;</span>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-right">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
           <div class="mens-est-nom borange"></div>
           <span>Mora de 2 meses&nbsp;</span>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 text-right">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 text-right">
           <div class="mens-est-nom btn-danger"></div>
           <span>Mora más de 2 meses&nbsp;</span>
         </div>

@@ -221,14 +221,13 @@ if($res_med){
 }
 ?>
 <!-- Titulo de la pagina -->
-<div id="titulo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<!-- <div id="titulo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left text-left titulo-pagina">
         <input id="id_apartamento" name="id_apartamento" type="hidden" value="<?php echo $id_apto;?>">
         <h3 class="text-left">Estadísticas</h3>
     </div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <br><br>
+</div> -->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><br>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="myChart1">
             <div class="grafico-estadistico" id="container1"></div>

@@ -20,8 +20,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Reglamento del edificio</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample5'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample5'>&nbsp;</div>
 <!-- Manual de convivencia -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample6' aria-expanded='false' aria-controls='collapseExample6'>
     <div class='doc-est bblue'>
@@ -30,8 +30,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Manual de convivencia</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample6'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample6'>&nbsp;</div>
 <!-- Circulares informativas -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample2' aria-expanded='false' aria-controls='collapseExample2'>
     <div class='doc-est bgreen'>
@@ -40,8 +40,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Circulares informativas</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample2'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample2'>&nbsp;</div>
 <!-- Documentos administrativos -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample7' aria-expanded='false' aria-controls='collapseExample7'>
     <div class='doc-est blightblue'>
@@ -50,8 +50,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Documentos administrativos</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample7'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample7'>&nbsp;</div>
 <!-- Documentos contables -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample4' aria-expanded='false' aria-controls='collapseExample4'>
     <div class='doc-est borange'>
@@ -60,8 +60,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Documentos contables</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample4'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample4'>&nbsp;</div>
 <!-- Documentos fiscales -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample3' aria-expanded='false' aria-controls='collapseExample3'>
     <div class='doc-est bpink'>
@@ -70,8 +70,8 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Documentos fiscales</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample3'>&nbsp;</div>
 </div>
+<div class='panel-body collapse' id='collapseExample3'>&nbsp;</div>
 <!-- Actas de reuniones -->
 <div class='panel panel-default' data-toggle='collapse' href='#collapseExample1' aria-expanded='false' aria-controls='collapseExample1'>
     <div class='doc-est bviolet'>
@@ -80,8 +80,7 @@ require_once ("../php/funciones.php");
     <div class='panel-heading'>
         <span class='col-xs-9 col-sm-10 col-md-10 col-lg-10 text-nowrap modal-open text-left'>Actas de reuniones</span><br>
     </div>
-    <div class='panel-body collapse' id='collapseExample1'>&nbsp;</div>
 </div>
-
+<div class='panel-body collapse' id='collapseExample1'>&nbsp;</div>
 <script>mostrarDocs();</script>
 <!-- FIN Pagina primera pestaña -->

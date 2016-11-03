@@ -12,7 +12,7 @@ if(isset($_GET['id_mensaje'])){
     $res_aptos_x_mens_para = registroCampo("rmb_mens_dest d", "r.rmb_residente_id, a.rmb_aptos_nom, r.rmb_residente_nom, r.rmb_residente_ape", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_residente_id) LEFT JOIN rmb_aptos a USING(rmb_aptos_id)", "WHERE (d.rmb_mens_id = '$id_upd' AND d.rmb_mens_dest_tipo = 'para')", "ORDER BY a.rmb_aptos_nom ASC");
 }
 ?>
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">

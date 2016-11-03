@@ -1,6 +1,19 @@
 /* This code is only meant for previewing your Reflow design. */
+/** {overflow: hidden;}*/
+body,html{ height:100%; margin:0;}
 body{
     background-color: #000 !important;
+    display: table;
+    width: 100%;
+}
+.contenido{
+    /*height: 100%;*/
+    min-height: 100%;
+    /*height: auto !important;*/
+    margin-top: 30px;
+}
+.clase-general{
+  display: table-row;
 }
 .primaryContainer {
     height: auto;
@@ -9,10 +22,6 @@ body{
     max-height: 100%;
     width: 100.31348%;
     min-width: 320px;
-    /*border-top-color: rgb(202, 202, 202);
-    border-right-color: rgb(202, 202, 202);
-    border-bottom-color: rgb(202, 202, 202);
-    border-left-color: rgb(202, 202, 202);*/
     border-top-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
@@ -31,7 +40,6 @@ body{
     clear: none;
     width: 45%;
 }
-
 #text {
     float: none;
     font-size: 1em;
@@ -49,7 +57,6 @@ body{
     color: rgb(255, 255, 255);
     margin: 0px 0px 0px 50%;
 }
-
 #contrasena {
     height: 55px;
     display: inline-block;
@@ -58,7 +65,6 @@ body{
     clear: both;
     width: 45%;
 }
-
 #text1 {
     float: none;
     font-size: 1em;
@@ -77,11 +83,11 @@ body{
     margin: 0px 0px 0px 10%;
 }
 #olvido{
-    display: block;
-    text-align: center;
-    padding: 10px;
+    /*margin-top: -10px;*/
 }
-
+#olvido > button{
+    background: rgb(147,147,147);
+}
 #text2 {
     float: none;
     font-size: 1em;
@@ -99,24 +105,20 @@ body{
     margin-right: auto;
     display: block;
 }
-
-#panel {
+#panel-login {
     background-color: rgb(0, 0, 0);
     clear: none;
     color: rgb(255, 255, 255);
     float: none;
     margin: auto;    
-    padding: 40px 0px 60px 0px;
+    padding: 20px 0px 0px 0px;
 }
-
 #panel:active {
     display: block;
     height: 20px;
 }
-
 #panel:hover {
 }
-
 #animacion {
     float: left;
     height: auto;
@@ -124,10 +126,26 @@ body{
     clear: none;
     width: 100%;
 }
-
-#image {
+#divimg{
     background-color: #FFFFFF;
     border-radius: 10px;
+    display: inline-block;
+    height: 90px;
+    margin-bottom: 15px;
+    vertical-align: top;
+    width: 100%;
+}
+#divimg > img{
+    margin-left: auto;
+    margin-top: 0;
+    margin-right: auto;
+}
+#divform{
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+#image {
     clear: none;
     color: rgb(0, 0, 0);
     float: none;
@@ -139,13 +157,268 @@ body{
     margin-bottom: 10px;
     padding: 20px;
 }
+#footer{
+    background: rgba(164, 194, 48,1);
+    background: -moz-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(164, 194, 48,1)), color-stop(100%, rgba(105, 143, 47, 1)));
+    background: -webkit-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -o-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: linear-gradient(to bottom, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dcc46', endColorstr='#354704', GradientType=0 );
+    bottom: 0;
+    color:#FFF;
+    font-size: .7rem;
+    height: 45px;
+    left: 0;
+    /*padding: 25px 5px;*/
+    right: 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+#footer > p{
+    margin: 10px 0;
+    text-align: center;
+}
+#textoffooter > span{
+    color: #ff0000;
+}
+.btn-verde{
+    background: rgba(164, 194, 48,1);
+    background: -moz-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(164, 194, 48,1)), color-stop(100%, rgba(105, 143, 47, 1)));
+    background: -webkit-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -o-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);
+    background: linear-gradient(to bottom, rgba(164, 194, 48,1) 0%, rgba(105, 143, 47, 1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dcc46', endColorstr='#354704', GradientType=0 );
+}
+#textinput, #textinput1{
+    margin-bottom: 16px;
+}
+.form-group {
+    margin-bottom: 0;
+}
+
 /* media querys */
-@media (max-width: 768px) {
+@media (max-width: 319px) {
+    #panel{
+        padding: 15px 0px 0px 0;
+    }
+    #divimg{
+        height: 70px;
+    }
+    #divimg > img{
+        padding: 10px;
+        width: 35%;
+    }
+    #divform{
+        width: 100%;
+    }
+    label{
+        display: none !important;
+    }
+    #botoningreso{
+        padding: 6px 12px;
+    }
+}
+@media (min-width: 320px) {
+    #panel{
+        padding: 15px 0px 0px 0;
+    }
+    #divimg{
+        height: 70px;
+    }
+    #divimg > img{
+        padding: 5px;
+        width: 60%;
+    }
+    #divform{
+        width: 100%;
+    }
+    label{
+        display: none !important;
+    }
+    #botoningreso{
+        padding: 6px 12px;
+    }
+    .contenido{margin-top: 10px;}
+    #olvido{
+        margin-top: 15px;
+    }
+}
+@media (min-width: 340px){
+    #divimg{
+        height: 75px;
+    }
+}
+@media (min-width: 360px){
+    #divimg{
+        height: 85px;
+    }
+    #panel-login {
+        padding: 80px 0px 0px 0px;
+    }
+}
+@media (min-width: 375px) {
+    #panel-login {
+        padding: 50px 0px 0px 0px;
+    }
+}
+@media (min-width: 400px){
+    #divimg > img{
+        width: 58%;
+    }
+}
+@media (min-width: 440px){
+    #divimg > img{
+        width: 54%;
+    }
+}
+@media (min-width: 480px){
+    #divimg > img{
+        width: 50%;
+    }
+}
+@media (min-width: 500px){
+    #divimg > img{
+        width: 48%;
+    }
+}
+@media (min-width: 540px){
+    #divimg > img{
+        width: 45%;
+    }
+}
+@media (min-width: 560px){
+    #divimg > img{
+        width: 40%;
+    }
+}
+@media (min-width: 640px){
+    #divimg{
+        width: 30%;
+        height: 135px;
+    }
+    #divimg > img{
+        margin-top: 30px;
+        width: 100%;
+    }
+    #divform{
+        margin-left: 15px;
+        width: 65%;
+    }
+    .contenido{margin-top: 20px;}
+}
+@media (min-width: 667px) {
+    #panel-login {
+        padding: 0px 0px 0px 0px;
+    }
+    #textinput, #textinput1 {
+        margin-bottom: 3px;
+    }
+    #olvido {
+        margin-top: 3px;
+        width: 50%;
+    }
+    #botones{
+        margin-top: 3px;
+        width: 50%;
+    }
+    #divimg {
+        height: 110px;
+        width: 25%;
+    }
+    #divimg > img {
+        margin-top: 20px;
+    }
+    #divform {
+        margin-left: 5px;
+        width: 70%;
+    }
+    .contenido {
+        margin-top: 10px;
+    }
+}
+@media (min-width: 720px){
+    #divimg > img{
+        width: 90%;
+    }
+}
+@media (min-width: 736px) {
+    #panel-login {
+        padding: 5px 0px 0px 0px;
+    }
+    #textinput, #textinput1 {
+        margin-bottom: 3px;
+    }
+    #olvido {
+        margin-top: 3px;
+        width: 50%;
+    }
+    #botones{
+        margin-top: 3px;
+        width: 50%;
+    }
+    #divimg {
+        height: 110px;
+    }
+    #divimg > img {
+        margin-top: 20px;
+    }
+}
+@media (min-width: 768px) {
     #image{
         padding: 10px;
         margin: -30px auto 20px;
     }
     label{
         display: none !important;
+    }
+    #divimg > img{
+        width: 100%;
+    }
+    #panel-login {
+        padding: 180px 0px 0px 0px;
+    }
+    #olvido{
+        margin-top: 0;
+    }
+}
+@media (min-width: 900px){
+    #divimg > img{
+        width: 95%;
+    }
+}
+@media (min-width: 992px){
+    #divimg > img{
+        width: 100%;
+    }
+}
+@media (min-width: 1024px) {
+    #panel-login {
+        padding: 60px 0px 0px 0px;
+    }
+}
+@media (min-width: 1080px){
+    #divimg > img{
+        margin-top: 20px;
+    }
+}
+@media (min-width: 1200px){
+    #divimg > img{
+        margin-top: 20px;
+    }
+    .contenido{margin-top: 30px;}
+    #panel-login {
+        padding: 30px 0px 0px 0px;
+    }
+}
+@media (min-width: 1700px){
+    #divimg > img{
+        margin-top: -2px;
+        width: 85%;
+    }
+    #panel-login {
+        padding: 50px 0px 0px 0px;
     }
 }

@@ -4,8 +4,7 @@ require_once ("../php/funciones.php");
 $id_equipo = $_GET['id_equipo'];
 $query_sql = Mantenimientos($id_equipo);
 ?>
-
-<div class="modal-dialog" style="width:80%;">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
    <div class="modal-content">
       <div class="modal-header">
          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -53,7 +52,7 @@ $query_sql = Mantenimientos($id_equipo);
                                  </td>
                                  <td class='hidden-xs hidden-sm'>
                                     <div>
-                                       <span style='font-family:Arial;font-size:13px;'>" . $val[$i] . "</span>
+                                       <span style='font-family:Arial;font-size:13px;'>" . "$ " . number_format($val[$i], 0, ',', '.') . "</span>
                                     </div>
                                  </td>
                                  <td class='hidden-xs hidden-sm'>
@@ -86,7 +85,7 @@ $query_sql = Mantenimientos($id_equipo);
                </div><?php 
             }?>
             <div class="form-group text-center col-xs-offset-2 col-sm-offset-5 col-md-offset-5 col-lg-offset-5 col-xs-8 col-sm-3 col-md-2 col-lg-2">
-               <button type="button" class="btn btn-default form-control" alt="Agregar nuevo mantenimiento de equipo" title="Agregar nuevo mantenimiento de equipo">Nuevo</button>
+               <button id="new-mant" name="new-mant" type="button" class="btn btn-default form-control" alt="Agregar nuevo mantenimiento de equipo" title="Agregar nuevo mantenimiento de equipo">Nuevo</button>
             </div>
          </div>
       </div>

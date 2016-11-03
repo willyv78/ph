@@ -6,7 +6,6 @@
 //////////////////////////////////////////////////////////////////////////////////////
 -->
 <html>
-    <!-- This code is only meant for previewing your Reflow design. -->
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
@@ -22,38 +21,56 @@
         <link rel="apple-touch-icon" sizes="114x114" href="./images/icono-114.png" />
         <link rel="stylesheet" href="css/boilerplate.css" />
         <link rel="stylesheet" href="css/sweet-alert.css">
-        <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/index.css" />
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body style="overflow: hidden;">
         <div id="primaryContainer" class="primaryContainer clearfix">
             <div id="animacion" class="clearfix">
                 <div id="Stage" class="introph"></div>
             </div>
         </div>
-        <div id="panel" class="clearfix col-xs-10 col-sm-8 col-md-6 col-lg-4">
-            <form id="form-login" name="login_form" role="form" action="">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <img id="image" src="images/logo.png" class="image" width="40%" />
+        <div class="contenido">
+            <div id="panel-login" class="col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-4 col-xs-10 col-sm-10 col-md-7 col-lg-8">
+                <div id="divimg">
+                    <img src="images/logo.png" class="image"/>
                 </div>
-                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12 control-label" for="textinput">Email : </label>
-                    <input id="textinput" type="email" name="textinput" placeholder="E-mail" value="" class="form-control" />
+                <div id="divform">
+                    <form id="form-login" name="login_form" role="form" action="">
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <input id="textinput" type="email" name="textinput" placeholder="E-mail" value="" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <input id="textinput1" type="password" name="textinput1" placeholder="Contraseña" value="" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <div id="botones" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <button id="botoningreso" class="btn btn-verde btn-nd btn-block" type="submit">
+                                    <div class="clearfix">Ingresar</div>
+                                </button>
+                            </div>
+                            <div id="olvido" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <button id="botoningreso" class="btn btn-verde btn-md btn-block" type="submit">
+                                    <div class="clearfix">¿Olvidó su contraseña?</div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12 control-label" for="textinput1">Contraseña : </label>
-                    <input id="textinput1" type="password" name="textinput1" placeholder="Contraseña" value="" class="form-control" />
-                </div>
-                <div class="clearfix">&nbsp;</div>
-                <div id="botones" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                    <button id="botoningreso" class="btn btn-success btn-lg btn-block" type="submit">Ingresar</button>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                    <a id="olvido" href="olvido.html">¿Ólvido su Contraseña?</a>
-                </div>
-            </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
         </div>
+        <div class="clearfix clase-general">&nbsp;</div>
+        <!-- Pie de pagina -->
+        <footer id="footer" class="clase-general">
+          <p id="textoffooter">Diseñado por R<span id="textspan1"> + </span>B Diseño E<span id="textspan2">x</span>perimental<br>&copy; 2016 - Todos los derechos reservados</p>
+        </footer>
         <script>var __adobewebfontsappname__ = "reflow"</script>
         <script src="http://use.edgefonts.net/jura:n6,n3,n5,n4:all.js"></script>
         <script charset="utf-8" src="js/animacion_edgePreload.js"></script>
@@ -62,15 +79,18 @@
         <script src="js/sweet-alert.js"></script><!-- Personalizar alertas -->
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrapValidator.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('body').hide();
-                $('body').fadeIn(1500);
-            })
-        </script>
-
+        <!-- <script src="js/audio.min.js"></script> -->
         <script>
         $(document).ready(function() {
+            $('body').hide();
+            $('body').fadeIn(1500);
+            var screen = window.innerHeight;
+            if(screen <= 375){
+                setTimeout(function(){
+                    $("#Stage").css('height', '400px');
+                }, 5000);
+            }
+            var location = "habitante/";
             $("#form-login").bootstrapValidator({
                 message: 'Este valor no es valido',
                 feedbackIcons: {
@@ -121,29 +141,33 @@
                         // alert(datos);
                         if(datos !== ''){
                             var dat = datos.split(",");
-                            if(dat[2] === '1'){
+                            if(dat[2] === '23'){
                                 switch(dat[1]) {
                                     case '1':
-                                        swal({
-                                            title: "¡Bienvenid@!",
-                                            text: dat[3],
-                                            type: "success",
-                                            confirmButtonText: "Aceptar",
-                                            confirmButtonColor: "#94B86E"
-                                        },
-                                        function(){
-                                            window.location = "adminph/";
-                                        });
+                                        location = "master/";
                                         break;
                                     case '2':
-                                        window.location = "administracion/";
+                                        location = "adminph/";
                                         break;
                                     case '3':
-                                        window.location = "administracion/";
+                                        location = "consejo/";
+                                        break;
+                                    case '4':
+                                        location = "habitante/";
                                         break;
                                     default:                                
-                                        window.location = "habitante/";
+                                        location = "habitante/";
                                 }
+                                swal({
+                                    title: "¡Bienvenid@!",
+                                    text: dat[3],
+                                    type: "success",
+                                    confirmButtonText: "Aceptar",
+                                    confirmButtonColor: "#94B86E"
+                                },
+                                function(){
+                                    window.location = location;
+                                });
                             }
                             else{
                                 swal({
@@ -168,6 +192,20 @@
                     }
                 });
             });
+            var ifr=document.createElement("audio");
+            ifr.setAttribute('src', "images/aves_21.mp3");
+            ifr.setAttribute('width', '1px');
+            ifr.setAttribute('height', '1px');
+            ifr.setAttribute('scrolling', 'no');
+            ifr.style.border="0px";
+            ifr.autoplay = true;
+            ifr.controls = false; 
+            ifr.loop = true; 
+            ifr.load();
+            document.body.appendChild(ifr);
+            // setTimeout(function(){
+            //     ifr.play();
+            // }, 500);
         });
         </script>
     </body>

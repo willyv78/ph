@@ -16,7 +16,7 @@ if(isset($_GET['fecha'])){
 echo $fecha_ini;
 $res = registroCampo("rmb_calendario", "rmb_calendario_id, rmb_calendario_nom, rmb_tcal_id, rmb_calendario_desc, rmb_calendario_img", " WHERE rmb_calendario_fini >= '$fecha_ini' AND rmb_calendario_ffin <= '$fecha_fin' AND (rmb_calendario_user = $id_usu OR rmb_context_id = 1)", "", "ORDER BY rmb_calendario_fini ASC, rmb_calendario_id ASC");
 ?>
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <!-- Encabezado del modal -->
         <div class="modal-header">

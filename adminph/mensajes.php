@@ -2,18 +2,11 @@
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 ?>
-<script>
-	$("#nombre_tabla").val("rmb_mens");
-	$("#nombre_div_lista").val("perfiladministracionLayer2");
-	$("#form_pagina").val("form_u");
-	$("#nombre_pagina").val("5");
-	$("#nombre_lista").val("lista_m");
-</script>
 <!-- Pagina sexta pestaña -->
 <!-- Titulo de la pagina -->
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
+<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
    <h3 class="text-left">Mensajes</h3>
-</div>
+</div> -->
 <div class="clearfix">&nbsp;</div>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <!-- DIV botones -->

@@ -3,7 +3,7 @@ session_start();
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $id_usu = $_SESSION['UsuID'];
@@ -39,13 +39,14 @@ if($res_val) {
           else{
             $clase_est = "btn-success"; 
           }
-
+          if($row_val[1]){$de = $row_val[1];}
+          else{$de = "Yo";}
           $table .= "
 			      <!-- Contenido mensajes encontrados -->
             <div class='panel panel-default' data-toggle='collapse' href='#collapseExample".$row_val[0]."' aria-expanded='false' aria-controls='collapseExample".$row_val[0]."'>
               <div class='mens-est ".$clase_est."'></div>
               <div class='panel-heading'>
-                <span class='col-xs-7 col-sm-8 col-md-4 col-lg-4 text-nowrap modal-open' alt='".$row_val[1]."' title='".$remite.": ".$row_val[1]."'>".$remite.": ".$row_val[1]."</span>
+                <span class='col-xs-7 col-sm-8 col-md-4 col-lg-4 text-nowrap modal-open' alt='".$row_val[1]."' title='".$remite.": ".$row_val[1]."'>".$remite.": ".ucfirst($de)."</span>
                 <span class='hidden-xs hidden-sm col-md-4 col-lg-5 text-nowrap modal-open'>".$row_val[3]."</span>
                 <span class='col-xs-4 col-sm-3 col-md-3 col-lg-2 text-nowrap modal-open'>".$row_val[5]."</span><br>
               </div>
@@ -81,12 +82,12 @@ $table .= "
     <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
       <div class='col-sm-offset-4 col-md-offset-6 col-lg-offset-7 col-xs-12 col-sm-8 col-md-6 col-lg-5'>
         <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
-          <div class='mens-est-nom btn-info'></div>
-          <span>Sin responder&nbsp;</span>
-        </div>
-        <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
           <div class='mens-est-nom btn-success'></div>
           <span>Atendido&nbsp;</span>
+        </div>
+        <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
+          <div class='mens-est-nom btn-info'></div>
+          <span>Sin responder&nbsp;</span>
         </div>
         <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
           <div class='mens-est-nom btn-danger'></div>

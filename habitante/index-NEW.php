@@ -216,7 +216,7 @@ if($res_user){
       <div>&nbsp;</div>
       <!-- Pie de pagina -->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="footer">
-        <p id="textoffooter">Diseñado por R<span id="textspan1"> + </span>B Diseño E<span id="textspan2">x</span>perimental<br>&copy; 2016 - Todos los derechos resenvados.</p>
+        <p id="textoffooter">Diseñado por R<span id="textspan1"> + </span>B Diseño E<span id="textspan2">x</span>perimental<br>&copy; 2016 - Todos los derechos reservados.</p>
       </div>
       <!-- Div de carga de la pagina -->
       <div class="espere">

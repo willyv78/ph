@@ -26,7 +26,7 @@ if(isset($_GET['id_mantenimiento'])){
    }
 }
 ?>
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -98,6 +98,7 @@ if(isset($_GET['id_mantenimiento'])){
 <script>
     $(document).ready(function() {
         var id_equipo = '<?php echo $id_eq;?>';
+        var altopag = resizePag();
         $('#form_mant').bootstrapValidator({
             message: 'Este valor no es valido',
             feedbackIcons: {
@@ -153,6 +154,7 @@ if(isset($_GET['id_mantenimiento'])){
                         },
                         function () {
                             $(".ing-cal").load("historial-equipo-por-tipo.php?id_equipo="+id_equipo);
+                            $(".ing-cal").height(altopag);
                             $(".ing-cal").removeClass('hidden');
                         });
                     }

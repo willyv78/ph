@@ -2,7 +2,7 @@
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $res_val = Equipos();
@@ -17,7 +17,7 @@ if($res_val){
 				<div class="clearfix">&nbsp;</div>
 				<!-- imagen del equipo -->
 				<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center'>
-					<img id='vistaPrevia' src='<?php echo base64_decode($row_val[10]);?>' width='100px' height="100px"/>
+					<img id='vistaPrevia' src='<?php echo $row_val[10];?>' width='100px' height="100px"/>
 				</div>
 				<!-- Nombre equipo y botones -->
 				<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8 text-left'>

@@ -31,10 +31,10 @@ $res_autori = registroCampo("rmb_parq p", "p.rmb_parq_id, p.rmb_parq_nom, t.rmb_
             if(mysql_num_rows($res_autori) > 0){
                 while ($row_autori = mysql_fetch_array($res_autori)) {?>
                     <tr class="">
-                        <td class='col-xs-7 col-sm-4 col-md-2 col-lg-2 text-center'><?php echo $row_autori[1];?></td>
-                        <td class='hidden-xs col-sm-4 col-md-3 col-lg-3 text-center'><?php echo $row_autori[2];?></td>
-                        <td class='hidden-xs hidden-sm col-md-3 col-lg-3 text-center'><?php echo $row_autori[3];?></td>
-                        <td class='col-xs-5 col-sm-4 col-md-4 col-lg-4 text-center'>
+                        <td class='col-xs-7 col-sm-4 col-md-2 col-lg-2 text-center vertical-middle'><?php echo $row_autori[1];?></td>
+                        <td class='hidden-xs col-sm-4 col-md-3 col-lg-3 text-center vertical-middle'><?php echo $row_autori[2];?></td>
+                        <td class='hidden-xs hidden-sm col-md-3 col-lg-3 text-center vertical-middle'><?php echo $row_autori[3];?></td>
+                        <td class='col-xs-5 col-sm-4 col-md-4 col-lg-4 text-center vertical-middle'>
                             <div name="<?php echo $row_autori[0];?>" class="input-group input-group-md btn_est">
                                 <span class="btn btn-info input-group-addon" title="Ver Información"><i class="glyphicon glyphicon-eye-open"></i></span>
                                 <span class="btn btn-success input-group-addon" title="Editar Información"> <i class="glyphicon glyphicon-pencil"></i></span>

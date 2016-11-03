@@ -56,7 +56,7 @@ else{$dates = "";}
    <h3 class="text-left">Calendario</h3>
 </div>
 <div class="widget"></div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="z-index:1000">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 text-center" style="z-index:1000;margin: auto;float: none;">
     <input class="form-control" type="hidden" id="tipo_cal" value="<?php echo $tipo;?>">
     <div class="widget"></div>
     <div class="widget visible-xs-*"></div>
@@ -85,15 +85,6 @@ else{$dates = "";}
         </div>
     </div>
 </div>
-
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <p><strong>¡Tenga en cuenta!</strong></p><p>Para agregar un nuevo Evento, Circular o Clasificado debe hacer click dentro del cuadro del día deseado, si hace click en un evento ya creado podrá editarlo o eliminarlo.</p>
-    </div>
-</div>
-
-
 <script src="../js/jquery.min.js"></script>
 <script src='../js/moment.min.js'></script>
 <script src='../js/fullcalendar.js'></script>
@@ -101,6 +92,7 @@ else{$dates = "";}
 <script src='../js/gcal.js'></script>
 <script>
     var eventos = [<?php echo $array_events;?>];
+    var altopag = resizePag();
     function dibujaCalendario() {
         var dates = '<?php echo $dates;?>';
         if(dates.length < 1){
@@ -153,6 +145,7 @@ else{$dates = "";}
                     function(isConfirm){
                         if (isConfirm) {
                             $(".ing-cal").load("cal_det.php?id="+calEvent.id);
+                            $(".ing-cal").height(altopag);
                             $(".ing-cal").removeClass('hidden');
                         }
                         else {
@@ -189,6 +182,7 @@ else{$dates = "";}
                 }
                 else{
                     $(".ing-cal").load("cal_ver_evento.php?id="+calEvent.id+"&cal=1");
+                    $(".ing-cal").height(altopag);
                     $(".ing-cal").removeClass('hidden');
                 }
             }

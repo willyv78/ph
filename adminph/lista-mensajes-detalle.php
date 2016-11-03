@@ -3,7 +3,7 @@ session_start();
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 if(isset($_GET['id_mens'])){
@@ -15,8 +15,6 @@ if(isset($_GET['id_mens'])){
   if($tipo == 'de'){
     $nom_tipo = "Enviados";
   }
-  // SELECT m.rmb_mens_id, m.rmb_mens_asunto, m.rmb_mens_mens, m.rmb_mens_fenv, m.rmb_mens_frec, m.rmb_est_id, m.rmb_mens_flee, (SELECT GROUP_CONCAT(r.rmb_residente_nom,' ', r.rmb_residente_ape SEPARATOR ', ') FROM rmb_mens_dest d LEFT JOIN rmb_residente r USING(rmb_residente_id) WHERE d.rmb_mens_id = m.rmb_mens_id) AS id_residente FROM rmb_mens m WHERE m.rmb_mens_id = 23 OR m.rmb_mens_pad = 23 ORDER BY rmb_mens_fenv ASC 
-
   $res_val = registroCampo("rmb_mens m", "m.rmb_mens_id, m.rmb_mens_asunto, m.rmb_mens_mens, m.rmb_mens_fenv, m.rmb_mens_frec, m.rmb_est_id, m.rmb_mens_flee, (SELECT GROUP_CONCAT(d.rmb_mens_dest_tipo, ': ', r.rmb_residente_nom,' ', r.rmb_residente_ape SEPARATOR ', ') FROM rmb_mens_dest d LEFT JOIN rmb_residente r USING(rmb_residente_id) WHERE d.rmb_mens_id = m.rmb_mens_id AND d.rmb_residente_id <> $id_usu) AS destinatarios", "WHERE m.rmb_mens_id = $id_mens OR m.rmb_mens_pad = $id_mens", "", "ORDER BY m.rmb_mens_fenv ASC");
   $datos = "";
   $table = "";
@@ -35,13 +33,14 @@ if(isset($_GET['id_mens'])){
             else{
               $clase_est = "btn-success"; 
             }
-  
+            if($row_val[7]){$de = $row_val[7];}
+            else{$de = "Yo";}
             $table .= "
   			      <!-- Contenido mensajes encontrados -->
               <div class='panel panel-default' data-toggle='collapse' href='#collapseExample".$row_val[0]."' aria-expanded='false' aria-controls='collapseExample".$row_val[0]."'>
                 <div class='mens-est ".$clase_est."'></div>
                 <div class='panel-heading'>
-                  <span class='col-xs-7 col-sm-8 col-md-4 col-lg-4 text-nowrap modal-open' alt='".$row_val[7]."' title='".$row_val[7]."'>".ucfirst($row_val[7])."</span>
+                  <span class='col-xs-7 col-sm-8 col-md-4 col-lg-4 text-nowrap modal-open' alt='".$row_val[7]."' title='".$row_val[7]."'>".ucfirst($de)."</span>
                   <span class='hidden-xs hidden-sm col-md-4 col-lg-5 text-nowrap modal-open' alt='".$row_val[1]."' title='".$row_val[1]."'> ".$row_val[1]."</span>
                   <span class='col-xs-4 col-sm-3 col-md-3 col-lg-2 text-nowrap modal-open' alt='".$row_val[3]."' title='".$row_val[3]."'>".$row_val[3]."</span><br>
                 </div>
@@ -89,12 +88,12 @@ if(isset($_GET['id_mens'])){
       <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
         <div class='col-sm-offset-4 col-md-offset-6 col-lg-offset-7 col-xs-12 col-sm-8 col-md-6 col-lg-5'>
           <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
-            <div class='mens-est-nom btn-info'></div>
-            <span>Sin responder&nbsp;</span>
-          </div>
-          <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
             <div class='mens-est-nom btn-success'></div>
             <span>Atendido&nbsp;</span>
+          </div>
+          <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
+            <div class='mens-est-nom btn-info'></div>
+            <span>Sin responder&nbsp;</span>
           </div>
           <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right'>
             <div class='mens-est-nom btn-danger'></div>

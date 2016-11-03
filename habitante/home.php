@@ -82,10 +82,8 @@ $n_rows = 1;
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="z-index:1000">
     <input class="form-control" type="hidden" id="tipo_cal" value="<?php echo $tipo;?>">
     <div class="widget"></div>
-
-    <!-- Ejemplo de carrusell -->
-    <div id="home-content-img" class="carousel slide col-xs-12 col-sm-12 col-md-8 col-lg-8 home-content" data-ride="carousel">
-
+    <!-- Carrusell Banner -->
+    <div id="home-content-img" class="carousel slide col-xs-12 col-sm-12 col-md-12 col-lg-8 home-content" data-ride="carousel">
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox"><?php 
             if($res_banner){
@@ -110,7 +108,6 @@ $n_rows = 1;
                                 </div><?php 
                             }?>
                         </div><?php 
-                        
                         $sq++;
                     }
                 }
@@ -118,35 +115,30 @@ $n_rows = 1;
             }
             else{echo $banner_default;}?>
         </div>
-
         <!-- Indicators -->
-        <!-- <ol class="carousel-indicators"><?php 
+        <ol class="carousel-indicators"><?php 
             for($i = 0; $i < $n_rows; $i++){?>
                 <li data-target="#home-content-img" data-slide-to="<?php echo $i;?>" class="<?php if($i == 0){echo "active";}?>"></li><?php 
             }?>
-        </ol> -->
-
+        </ol>
         <!-- Controls -->
-        <a class="left carousel-control" href="#home-content-img" role="button" data-slide="prev">
+        <!-- <a class="left carousel-control" href="#home-content-img" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Anterior</span>
         </a>
         <a class="right carousel-control" href="#home-content-img" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Siguiente</span>
-        </a>
-        <div class="widget visible-xs-*"></div>
+        </a> -->
     </div>
-
+    <div class="col-xs-12 esp-carrusel-dias">&nbsp;</div>
     <!-- Columna derecha con los dias y otros botones -->
-    <div id="home-content-dias" class="col-xs-12 col-sm-12 col-md-4 col-lg-4 home-content">
-        <!-- espacio superior de lafecha y dias calendario -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="space-sup">&nbsp;</div>
+    <div id="home-content-dias" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 home-content">
         <!-- div de la fecha y dias de la semana en el calendario -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0;margin:0;">
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="home-cont-cal">
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-12 dias-cal" style="padding:0;margin:0;">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-6" id="home-cont-cal">
                 <span id="home-dia-cal" data-dia="<?php echo date('d');?>"><?php echo date('d');?></span>
-                <div class="hidden" id="home-tip-cal">Evento</div>
+                <div class="hidden" id="home-tip-cal"></div>
                 <div class="btn-default" id="home-mes-cal" data-mes="<?php echo date('m');?>" data-anio="<?php echo date('Y');?>"><?php echo mesesLetras(date('m'))." ".date('Y');?></div>
             </div>
             <div class="hidden-xs col-sm-1 hidden-md col-lg-1"></div>
@@ -156,65 +148,63 @@ $n_rows = 1;
                     $num_dia = date ( 'd' , $fecha_dia );
                     $num_mes = date ( 'm' , $fecha_dia );
                     $num_anio = date ( 'Y' , $fecha_dia );?>
-                    <button data-id="<?php echo $i;?>" data-dia="<?php echo $num_dia;?>" data-mes="<?php echo mesesLetras($num_mes);?>" data-nmes="<?php echo $num_mes;?>" data-anio="<?php echo $num_anio;?>" type="button" class="btn btn-default form-control otros-dias <?php if(date('N') == $i){echo "active";} ?>" <?php if($i == 1){echo 'id="dia-primero"';}elseif($i == 7){echo 'id="dia-ultimo"';} ?>>
+                    <div data-id="<?php echo $i;?>" data-dia="<?php echo $num_dia;?>" data-mes="<?php echo mesesLetras($num_mes);?>" data-nmes="<?php echo $num_mes;?>" data-anio="<?php echo $num_anio;?>" class="btn btn-default form-control otros-dias<?php if(date('N') == $i){echo " active";} ?>" <?php if($i == 1){echo 'id="dia-primero"';}elseif($i == 7){echo 'id="dia-ultimo"';} ?>>
                         <span class="nom-dia"><?php echo diasTodos($i);?></span><?php 
                         // echo $datostarea;
                         if(($datostarea) && (in_array($i, $datostarea))){?>
-                            <span class="pull-right eventos bgreen"><?php //echo count(array_keys($datostarea,$i));?>&nbsp;</span><?php 
+                            <span class="pull-right eventos bgreen"><div class="clearfix"></div></span><?php 
                         }
                         if(($datosclasi) && (in_array($i, $datosclasi))){?>
-                            <span class="pull-right eventos borange"><?php //echo count(array_keys($datosclasi,$i));?>&nbsp;</span><?php 
+                            <span class="pull-right eventos borange"><div class="clearfix"></div></span><?php 
                         }
                         if(($datoscircu) && (in_array($i, $datoscircu))){?>
-                            <span class="pull-right eventos bred"><?php //echo count(array_keys($datoscircu,$i));?>&nbsp;</span><?php 
+                            <span class="pull-right eventos bred"><div class="clearfix"></div></span><?php 
                         }
                         if(($datosevent) && (in_array($i, $datosevent))){?>
-                            <span class="pull-right eventos bblue"><?php //echo count(array_keys($datosevent,$i));?>&nbsp;</span><?php 
+                            <span class="pull-right eventos bblue"><div class="clearfix"></div></span><?php 
                         }?>
-                    </button>
+                    </div>
                 <?php }?>
             </div>
         </div>
         <!-- Espacio entre la fecha con los dias de la semana y los accesos a otros -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
+        <div class="col-xs-12 col-sm-12 hidden-md col-lg-12 esp-icon-dias">&nbsp;</div>
         <!-- div con los accesos a otros modulos -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0;margin:0;">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-12 icon-mod" style="padding:0;margin:0;">
             <!-- contenedor de quienes somos -->
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding:0;margin:0;">
-                <img src="../images/home-qui.png" class="img-responsive home-accesos" data-pag="quienes-somos" alt="Conozca quienes somos." title="Conozca quienes somos." style="width:97%;">
+                <img src="../images/home-qui.png" class="img-responsive home-accesos" data-pag="quienes-somos" alt="Conozca quienes somos." title="Conozca quienes somos." style="cursor: pointer;">
             </div>
             <!-- contenedor de imagenes de otros accesos -->
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding:0;margin:0;">
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-cont.png" class="img-responsive home-accesos" data-pag="contactos" alt="Revise los contactos en su entorno de vivienda" title="Revise los contactos en su entorno de vivienda" style="width:100%;">
+                    <img src="../images/home-cont.png" class="img-responsive home-accesos" data-pag="contactos" alt="Revise los contactos en su entorno de vivienda" title="Revise los contactos en su entorno de vivienda" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los telefonos de entidades y sistemas de emergencia" title="Obtenga los telefonos de entidades y sistemas de emergencia" style="width:100%;">
+                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los telefonos de entidades y sistemas de emergencia" title="Obtenga los telefonos de entidades y sistemas de emergencia" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-tes.png" class="img-responsive home-accesos" data-pag="estado-financiero" alt="Revise su estado finaciero" title="Revise su estado finaciero" style="width:100%;">
+                    <img src="../images/home-tes.png" class="img-responsive home-accesos" data-pag="estado-financiero" alt="Revise su estado finaciero" title="Revise su estado finaciero" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-men.png" class="img-responsive home-accesos" data-pag="mensajes" alt="Revise los mensajes enviados y/o recibidos" title="Revise los mensajes enviados y/o recibidos" style="width:100%;">
+                    <img src="../images/home-men.png" class="img-responsive home-accesos" data-pag="mensajes" alt="Revise los mensajes enviados y/o recibidos" title="Revise los mensajes enviados y/o recibidos" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-con.png" class="img-responsive home-accesos" data-pag="consumos" alt="Entérese de los consumos de servicios públicos de su conjunto." title="Entérese de los consumos de servicios públicos de su conjunto." style="width:100%;">
+                    <img src="../images/home-con.png" class="img-responsive home-accesos" data-pag="consumos" alt="Entérese de los consumos de servicios públicos de su conjunto." title="Entérese de los consumos de servicios públicos de su conjunto." style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-doc.png" class="img-responsive home-accesos" data-pag="documentos" alt="Consulte los documentos de interés" title="Consulte los documentos de interés" style="width:100%;">
+                    <img src="../images/home-doc.png" class="img-responsive home-accesos" data-pag="documentos" alt="Consulte los documentos de interés" title="Consulte los documentos de interés" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
 <script>
     cargarHome();
     $('.carousel').carousel();

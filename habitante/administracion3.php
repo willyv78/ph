@@ -2,7 +2,7 @@
 require_once ("../conexion/conexion.php");
 require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $Perfil = $_GET['perfil'];
@@ -52,7 +52,7 @@ if($res_val){
     if(mysql_num_rows($res_val) > 0){
         $row_val = mysql_fetch_array($res_val);
         if($row_val[11] != ''){
-            $src = base64_decode($row_val[11]);
+            $src = $row_val[11];
         }
         else{
             $src = "../images/fotografiacaadministradora.jpg";

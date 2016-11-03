@@ -5,149 +5,85 @@ require_once ("../php/funciones.php");
 // Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
-$tipo = "";
-$accion = "Nuevo";
-$desabilitar = "";
-$nom  = "";
-$desc = "";
-$cont = "";
-$img  = "";
-$est  = "";
-$fini = "";
-$ffin = "";
-if(isset($_GET['tipo'])){$tipo = $_GET['tipo'];}
-if(isset($_GET['edit'])){$accion = "Modificar";}
-if(isset($_GET['ver'])){$accion = "Consultar";$desabilitar = "disabled";}
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $res_doc = registroCampo("rmb_document", "*", "WHERE rmb_document_id = '$id'", "", "");
-    if($res_doc){
-        if(mysql_num_rows($res_doc) > 0){
-            $row_doc = mysql_fetch_array($res_doc);
-            $nom  = $row_doc[2];
-            $desc = $row_doc[3];
-            $cont = $row_doc[4];
-            $img  = $row_doc[5];
-            $est  = $row_doc[6];
-            $fini = $row_doc[7];
-            $ffin = $row_doc[8];
+$consejo_all = false;
+$consejo_pre = array();
+$consejo_vic = array();
+$consejo_tit = array();
+$consejo_del = array();
+$res_consejo = registroCampo("rmb_residente r", "r.rmb_residente_id, r.rmb_residente_nom, r.rmb_residente_ape, r.rmb_carg_id, a.rmb_aptos_nom, r.rmb_residente_foto", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_residente_id) LEFT JOIN rmb_aptos a USING(rmb_aptos_id) WHERE rmb_residente_pers > 0 AND (r.rmb_carg_id = '8' OR  r.rmb_carg_id = '9' OR r.rmb_carg_id = '20' OR r.rmb_carg_id = '21')", "", "ORDER BY r.rmb_carg_id ASC");
+if($res_consejo){
+    $consejo_all = true;
+    if(mysql_num_rows($res_consejo) > 0){
+        while ($row_consejo = mysql_fetch_array($res_consejo)) {
+            if($row_consejo[3] == '20'){
+                $consejo_pre = [$row_consejo[0], $row_consejo[1], $row_consejo[4], $row_consejo[5]];
+            }
+            elseif($row_consejo[3] == '21'){
+                $consejo_vic = [$row_consejo[0], $row_consejo[1], $row_consejo[4], $row_consejo[5]];
+            }
+            elseif($row_consejo[3] == '8'){
+                $consejo_tit[] = [$row_consejo[0], $row_consejo[1], $row_consejo[4], $row_consejo[5]];
+            }
+            elseif($row_consejo[3] == '9'){
+                $consejo_del[] = [$row_consejo[0], $row_consejo[1], $row_consejo[4], $row_consejo[5]];
+            }
         }
     }
 }
-?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="auto;">
-    <div class="modal-content">
-        <div class="modal-header text-right">
-            <h3 class="modal-title" id="myModalLabel">
-                <span style="font-weight: bold;color: #974694"><span style="font-size: 2.5em;color: #EF9614;">C</span>onsejo <span style="font-size: 2.5em;color: #EF9614;">A</span>dministrativo</span>
-            </h3>
-        </div>
-        <div class="modal-body">
-            <!-- Titulares -->
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                        <img src="../images/CONSEJO1.png" class="img-responsive" alt="Image" style="display:inline-block;">
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
-                            <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;display:inline-block;width:90%;">
-                            <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Presidente<br>Camilo Guzman<br>Apto 508</div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
-                            <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;display:inline-block;width:90%;">
-                            <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Vice-Presidente<br>Camilo Guzman<br>Apto 508</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #4D3A8F;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="bviolet text-center" style="border:3px solid #4D3A8F;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Suplentes -->
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
-                    <img src="../images/CONSEJO2.png" class="img-responsive" alt="Image" style="display:inline-block;">
-                </div>
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #EF9614;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="borange text-center" style="border:3px solid #EF9614;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #EF9614;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="borange text-center" style="border:3px solid #EF9614;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #EF9614;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="borange text-center" style="border:3px solid #EF9614;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-center">
-                        <div class="clearfix">&nbsp;</div>
-                        <img src="../images/perfilaseo.jpg" class="img-responsive" alt="Image" style="border: 8px solid #EF9614;border-radius: 5px;width:90%;display:inline-block;">
-                        <div class="borange text-center" style="border:3px solid #EF9614;border-radius: 5px;padding:5px;margin:5px;opacity:0.6;">Felipe Ramos<br>Apto 508</div>
-                        <div class="clearfix">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer"></div>
-    </div>
-</div>
+if($consejo_all){
+    if(($consejo_pre) || ($consejo_vic) || ($consejo_tit)){?>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-info">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center imgconsejo">
+                <img src="../images/CONSEJO1.png" class="img-responsive" alt="Image">
+            </div><?php 
+        if($consejo_pre){?>
+            <div class="col-xs-12 text-center mieconsejo"><?php 
+                if($consejo_pre[3]){$src_pre = $consejo_pre[3];}
+                else{$src_pre = imagenDefault();}?>
+                <img src="<?php echo $src_pre;?>" class="img-responsive fotoconsejo" alt="Image">
+                <div class="bviolet text-center dataconsejo">Presidente<br><?php echo $consejo_pre[1]; ?><br>Apto <?php echo $consejo_pre[2]; ?></div>
+            </div><?php 
+        }
+        if($consejo_vic){?>
+            <div class="col-xs-12 text-center mieconsejo"><?php 
+                if($consejo_vic[3]){$src_vic = $consejo_vic[3];}
+                else{$src_vic = imagenDefault();}?>
+                <img src="<?php echo $src_vic;?>" class="img-responsive fotoconsejo" alt="Image">
+                <div class="bviolet text-center dataconsejo">Vice-Presidente<br><?php echo $consejo_vic[1]; ?><br>Apto <?php echo $consejo_vic[2]; ?></div>
+            </div><?php 
+        }
+        if($consejo_tit){
+            for($i = 0; $i < count($consejo_tit); $i++){?>
+                <div class="col-xs-12 text-center mieconsejo"><?php 
+                if($consejo_tit[$i][3]){$src_tit = $consejo_tit[$i][3];}
+                else{$src_tit = imagenDefault();}?>
+                    <img src="<?php echo $src_tit;?>" class="img-responsive fotoconsejo" alt="Image">
+                    <div class="bviolet text-center dataconsejo">Titular<br><?php echo $consejo_tit[$i][1]; ?><br>Apto <?php echo $consejo_tit[$i][2]; ?></div>
+                </div><?php 
+            }
+        }
+        if((!$consejo_pre) && (!$consejo_vic) && (!$consejo_tit) && (!$consejo_del)){?>
+            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">No hay miembros del consejo registrados</div><?php 
+        }?>
+        </div><?php 
+    }
+    if($consejo_del){?>
+        <!-- Suplentes -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center imgconsejo">
+                <img src="../images/CONSEJO2.png" class="img-responsive" alt="Image" style="display:inline-block;">
+            </div><?php 
+            for($i = 0; $i < count($consejo_del); $i++){?>
+                <div class="col-xs-12 text-center mieconsejo"><?php 
+                    if($consejo_del[$i][3]){$src_del = $consejo_del[$i][3];}
+                    else{$src_del = imagenDefault();}?>
+                    <img src="<?php echo $src_del;?>" class="img-responsive fotoconsejo2" alt="Image">
+                    <div class="borange text-center dataconsejo">Suplente<br><?php echo $consejo_del[$i][1]; ?><br>Apto <?php echo $consejo_del[$i][2]; ?></div>
+                </div><?php 
+            }?>
+        </div><?php 
+    }
+}?>
 <script>
     $(document).ready(function() {
         cargarPerfil();

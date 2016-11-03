@@ -31,7 +31,7 @@ $res_val = DocumentoTipoSQL("rmb_document_nom", "ASC", $tipo);
             list($id[$i], $nombre[$i], $descripcion[$i], $fecha[$i], $acta[$i]) = mysql_fetch_array($res_val);
             $perfil = PerfilId($id[$i]);
             echo "<tr>
-            <td class='col-xs-11 col-sm-8 col-md-3 col-lg-3 text-nowrap'><div style='overflow:hidden;white-space:nowrap;text-overflow: ellipsis;width:100%;text-align:left'>" . cortarTexto($nombre[$i], 31) . "</div></td>
+            <td class='col-xs-11 col-sm-8 col-md-3 col-lg-3 text-nowrap'><div style='overflow:hidden;white-space:nowrap;text-overflow: ellipsis;width:100%;text-align:left'>" . cortarTexto(utf8_encode($nombre[$i]), 31) . "</div></td>
             <td class='hidden-xs hidden-sm text-nowrap'>" . cortarTexto($descripcion[$i], 50) . "</td>
             <td class='hidden-xs text-nowrap'>" . $fecha[$i] . "</td>
             <td class='text-nowrap id_tipo' name='".$id[$i]."' id_tipo='".$tipo."'>

@@ -109,7 +109,7 @@ if(isset($_GET['ver'])){
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_taptos_terr">Terrazas: </label>
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                <input type="text" name="rmb_taptos_terr" id="rmb_taptos_terr" class="form-control" value="<?php echo $taptos_terr;?>" placeholder="Coeficiente" alt="Digite el número de terrazas de este tipo de vivienda o digite 0 si no tiene." title="Digite el número de terrazas de este tipo de vivienda o digite 0 si no tiene." <?php echo $disabled;?>>
+                <input type="text" name="rmb_taptos_terr" id="rmb_taptos_terr" class="form-control" value="<?php echo $taptos_terr;?>" placeholder="Terrazas" alt="Digite el número de terrazas de este tipo de vivienda o digite 0 si no tiene." title="Digite el número de terrazas de este tipo de vivienda o digite 0 si no tiene." <?php echo $disabled;?>>
             </div>
         </div>
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -168,6 +168,7 @@ if(isset($_GET['ver'])){
     </form>
 </div>
 <div class="clearfix">&nbsp;</div>
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     cargaFormTaptos();
     $(document).ready(function() {

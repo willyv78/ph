@@ -68,7 +68,6 @@ function desactivarAccion (datos) {
             $("#tabla > thead > tr > th:last-child").removeAttr('class');
         }
     }, 0);
-    
 }
 // función que se ejecuta al hacer click en los botones de nuevo registro o volver al inicio en la lista de maestros
 function nuevoVolver (datos) {
@@ -113,27 +112,14 @@ function accionForm (datos) {
     }
     for(var i = 0; i < camp.length; i++){
         if(i === 0){
-            if(((camp[i] === 'rmb_residente_foto') || (camp[i] === tabla+'_img') || (camp[i] === 'rmb_tcont_icono') || (camp[i] === 'rmb_proyecto_foto')) && (camp[i] !== 'rmb_banner_img')){
-                var test6 = window.btoa($("#vistaPrevia").attr("src"));
-                campo_post += camp[i]+"="+test6+"";
-            }
-            else{
-                campo_post += camp[i]+"="+$("#"+camp[i]).val();
-            }
+          campo_post += camp[i]+"="+$("#"+camp[i]).val();
         }
         else{
-            if(((camp[i] === 'rmb_residente_foto') || (camp[i] === tabla+'_img') || (camp[i] === 'rmb_tcont_icono') || (camp[i] === 'rmb_proyecto_foto')) && (camp[i] !== 'rmb_banner_img')){
-                var test6 = window.btoa($("#vistaPrevia").attr("src"));
-                campo_post += "&"+camp[i]+"="+test6;
-            }
-            else{
-                campo_post += "&"+camp[i]+"="+$("#"+camp[i]).val();
-            }
+          campo_post += "&"+camp[i]+"="+$("#"+camp[i]).val();
         }
     }
-
     // validamos si la tabla es la de banner
-    if(tabla === 'rmb_banner'){
+    if((tabla === 'rmb_banner') || (tabla === 'rmb_tcont')){
       var datos_form = new FormData($("#form_master")[0]);
     }
 
@@ -143,7 +129,7 @@ function accionForm (datos) {
         return;
         break;
       case 'ingresar':
-        if(tabla === 'rmb_banner'){
+        if((tabla === 'rmb_banner') || (tabla === 'rmb_tcont')){
           var send_post = datos_form;
         }
         else{
@@ -151,7 +137,7 @@ function accionForm (datos) {
         }
         break;
       case 'actualizar':
-        if(tabla === 'rmb_banner'){
+        if((tabla === 'rmb_banner') || (tabla === 'rmb_tcont')){
           var send_post = datos_form;
         }
         else{
@@ -161,7 +147,7 @@ function accionForm (datos) {
         break;
     }
     //Enviar los datos para ingresar o actualizar
-    if(tabla === 'rmb_banner'){
+    if((tabla === 'rmb_banner') || (tabla === 'rmb_tcont')){
       $.ajax({
           url:"./edicion.php",
           cache:false,

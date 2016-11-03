@@ -124,9 +124,7 @@ if($res_user){
                <span class="icon-bar"></span>
             </button>
             <!-- Imagen central -->
-            <div  class="hidden-xs hidden-sm hidden-md col-lg-3 pull-left" id="logo-site" alt="Ir a la página de inicio" title="Ir a la página de inicio">
-               <img id="logo_edif" src="../images/logo.png" class="img-responsive" title="Logo del edificio" alt="Logo del edificio">
-            </div>
+            <div  class="hidden-xs hidden-sm hidden-md col-lg-3 pull-left" id="logo-site" alt="Ir a la página de inicio" title="Ir a la página de inicio"></div>
             <!-- Site name for smallar screens -->
             <!-- Barra de navegacion superior derecha -->
             <div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 text-left" id="menu-sup">
@@ -158,15 +156,15 @@ if($res_user){
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <!-- icono de preguntas frecuentes -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-right nav-cerrar">
-                  <i href="#indexjquerytabs1-page-question" data-original-title="Preguntas Frecuentes" data-toggle="tooltip" data-placement="left" title="Preguntas Frecuentes" alt="Preguntas Frecuentes" class="glyphicon fa fa-question pull-right menu_movil" style="padding:2px 6px;font-size:2.3em;"></i>
+                  <i href="#perfil" data-original-title="Preguntas Frecuentes" data-toggle="tooltip" data-placement="left" title="Preguntas Frecuentes" alt="Preguntas Frecuentes" class="glyphicon fa fa-question pull-right menu_movil" style="padding:2px 6px;font-size:2.3em;"></i>
                 </div>
                 <!-- icono de cambiar contraseña -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-center nav-cerrar">
-                  <i href="#indexjquerytabs1-page-pass" data-original-title="Cambiar contraseña" data-toggle="tooltip" data-placement="left" title="Cambiar contraseña" alt="Cambiar contraseña" class="glyphicon fa fa-lock menu_movil" style="padding:2px 6px;font-size:2.3em;"></i>
+                  <i href="#pass" data-original-title="Cambiar contraseña" data-toggle="tooltip" data-placement="left" title="Cambiar contraseña" alt="Cambiar contraseña" class="glyphicon fa fa-lock menu_movil" style="padding:2px 6px;font-size:2.3em;"></i>
                 </div>
                 <!-- icono de salir cerrar session -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-right nav-cerrar">
-                  <i href="#indexjquerytabs1-page-cerrar" data-original-title="Salir" data-toggle="tooltip" data-placement="left" title="Cerrar sesión" alt="Cerrar sesión" class="glyphicon glyphicon-remove pull-left menu_movil" style="padding:2px 2px;font-size:2.3em;"></i>
+                  <i href="#cerrar" data-original-title="Salir" data-toggle="tooltip" data-placement="left" title="Cerrar sesión" alt="Cerrar sesión" class="glyphicon glyphicon-remove pull-left menu_movil" style="padding:2px 2px;font-size:2.3em;"></i>
                 </div>
                 <!-- Nombre de usuario, foto usuario e icono de salir -->
                 <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 nav-cerrar text-center" id="nom-usu-s">
@@ -186,7 +184,7 @@ if($res_user){
       <div class="container">
          <div class="row">
             <!-- Aca se desplega el contenido de la pagina -->
-            <div id="col-md-12" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+            <div id="col-md-12" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="top:60px !important;"></div>
             <!-- Fin del contenido de la pagina -->
          </div>
       </div>

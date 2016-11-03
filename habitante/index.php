@@ -50,9 +50,9 @@ if($res_user){
       <link rel="stylesheet" href="../css/bootstrap-timepicker.min.css">
       <!-- DatePicker -->
       <link rel="stylesheet" href="../css/datepicker.css">
+      <link rel="stylesheet" href="../css/inicio.css">
       <link rel="stylesheet" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="../css/font-awesome.min.css">
-      <link rel="stylesheet" href="../css/inicio.css">
       <link rel="stylesheet" href="../css/plantilla1/style.css">
       <link rel="stylesheet" href="../css/responsive.css">
       <!-- Google analitycs -->
@@ -132,50 +132,83 @@ if($res_user){
             </div>
             <!-- Site name for smallar screens -->
             <!-- Barra de navegacion superior derecha -->
-            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 text-left" id="menu-sup">
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-8 text-center" id="menu-sup">
               <nav class="collapse navbar-collapse bs-navbar-collapse col-xs-12 col-sm-12 col-md-12 col-lg-12" role="navigation">
                 <!-- Menu en moviles -->
                 <ul class="nav navbar-nav navbar-right text-left">
                   <!-- home -->
-                  <li class="dropdown col-xs-12 hidden-sm hidden-md hidden-lg" style="float:none;">
+                  <li class="dropdown col-xs-12 col-sm-1 col-md-2 hidden-lg text-left" title="Ir a la página de inicio" alt="Ir a la página de inicio">
                     <a class="menu_movil" href="#pag-inicio-home">
-                      Inicio
+                      <i class="glyphicon fa fa-home"></i>
                     </a>
                   </li>
-                  <!-- Calendario -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
-                    <a class="menu_movil" href="#calendario.html">
-                      Calendario
+                  <!-- Actividades -->
+                  <li class="dropdown col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                      Actividades
+                      <b class="caret"></b>
                     </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                      <!-- Calendario -->
+                      <li>
+                        <a class="menu_movil" href="#calendario.html">Calendario</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#mensajes.html">Mensajes <span class="badge badge-recibidos cant_men hidden">0</span></a>
+                      </li>
+                    </ul>
                   </li>
                   <!-- Quienes somos -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
+                  <!-- <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <a class="menu_movil" href="#quienes-somos.html">
                       ¿Quienes Somos?
                     </a>
-                  </li>
+                  </li> -->
                   <!-- Documentos -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
+                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <a class="menu_movil" href="#documentos.html">
                       Documentos
                     </a>
                   </li>
-                  <!-- Tesoreria -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
+                  <!-- Tesorería -->
+                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <a class="menu_movil" href="#tesoreria.html">
-                      Tesoreria
+                      Tesorería
                     </a>
                   </li>
                   <!-- Contactos -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
+                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <a class="menu_movil" href="#contactos-y-numeros-de-emergencia.html">
                       Contactos
                     </a>
                   </li>
                   <!-- Estadísticas -->
-                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2" style="float:none;">
+                  <li class="dropdown col-xs-12 col-sm-2 col-md-2 col-lg-2">
                     <!-- Nombre icono menu -->
-                    <a class="menu_movil" href="#estadisticas.html">Estadísticas</a>
+                    <a class="menu_movil" href="#estadisticas.html">
+                      Estadísticas
+                    </a>
+                  </li>
+                  <!-- Cerrar Sessión / preguntas frecuentes / Cambiar contraseña -->
+                  <li class="dropdown col-xs-12 hidden-sm hidden-md hidden-lg">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                      Perfíl
+                      <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                      <li>
+                        <a class="menu_movil" href="#ndexjquerytabs1-page-question">Preguntas Frecuentes</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#indexjquerytabs1-page-perfil">Ver Perfíl</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#indexjquerytabs1-page-pass">Cambiar Contraseña</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#indexjquerytabs1-page-cerrar">Cerrar Sesión</a>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </nav>
@@ -186,15 +219,15 @@ if($res_user){
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <!-- icono de preguntas frecuentes -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-right nav-cerrar">
-                  <i href="#indexjquerytabs1-page-question" data-original-title="Preguntas Frecuentes" data-toggle="tooltip" data-placement="left" title="Preguntas Frecuentes" alt="Preguntas Frecuentes" class="glyphicon fa fa-question pull-right menu_movil" style="padding:2px 6px;font-size:1.8rem;"></i>
+                  <i href="#indexjquerytabs1-page-question" data-original-title="Preguntas Frecuentes" data-toggle="tooltip" data-placement="left" title="Preguntas Frecuentes" alt="Preguntas Frecuentes" class="glyphicon fa fa-question pull-right menu_movil" style="padding:2px 6px;font-size:1.5rem;"></i>
                 </div>
                 <!-- icono de cambiar contraseña -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-center nav-cerrar">
-                  <i href="#indexjquerytabs1-page-pass" data-original-title="Cambiar contraseña" data-toggle="tooltip" data-placement="left" title="Cambiar contraseña" alt="Cambiar contraseña" class="glyphicon fa fa-lock menu_movil" style="padding:2px 6px;font-size:1.8rem;"></i>
+                  <i href="#indexjquerytabs1-page-pass" data-original-title="Cambiar contraseña" data-toggle="tooltip" data-placement="left" title="Cambiar contraseña" alt="Cambiar contraseña" class="glyphicon fa fa-lock menu_movil" style="padding:2px 6px;font-size:1.5rem;"></i>
                 </div>
                 <!-- icono de salir cerrar session -->
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4 text-right nav-cerrar">
-                  <i href="#indexjquerytabs1-page-cerrar" data-original-title="Salir" data-toggle="tooltip" data-placement="left" title="Cerrar sesión" alt="Cerrar sesión" class="glyphicon glyphicon-remove pull-left menu_movil" style="padding:2px 2px;font-size:1.8rem;"></i>
+                  <i href="#indexjquerytabs1-page-cerrar" data-original-title="Salir" data-toggle="tooltip" data-placement="left" title="Cerrar sesión" alt="Cerrar sesión" class="glyphicon glyphicon-remove pull-left menu_movil" style="padding:2px 2px;font-size:1.5rem;"></i>
                 </div>
                 <!-- Nombre de usuario, foto usuario e icono de salir -->
                 <div class="hidden-xs col-sm-12 col-md-12 col-lg-12 nav-cerrar text-center" id="nom-usu-s">
@@ -211,18 +244,12 @@ if($res_user){
         </div>
       </div>
       <!-- Contenido de la pagina -->
-      <div class="container-fluid">
+      <div id="cont-pag" class="container-fluid">
         <div class="row">
           <!-- Aca se desplega el contenido de la pagina -->
           <div id="col-md-12" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
           <!-- Fin del contenido de la pagina -->
         </div>
-      </div>
-      <div>&nbsp;</div>
-      <div>&nbsp;</div>
-      <!-- Pie de pagina -->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="footer">
-        <p id="textoffooter">Diseñado por R<span id="textspan1"> + </span>B Diseño E<span id="textspan2">x</span>perimental<br>&copy; 2016 - Todos los derechos resenvados.</p>
       </div>
       <!-- Div de carga de la pagina -->
       <div class="espere">
@@ -233,12 +260,16 @@ if($res_user){
       <!-- Div de carga de formulario para ingreso de eventos al calendario -->
       <div class="ing-cal hidden"></div>
       <!-- Div de carga de formulario para ingreso de documentos -->
-      <div class="ing-doc hidden"></div><?php 
+      <div class="ing-doc hidden"></div>
+      <!-- Pie de pagina -->
+      <footer id="footer">
+        <p id="textoffooter">Diseñado por R<span id="textspan1"> + </span>B Diseño E<span id="textspan2">x</span>perimental<br>&copy; 2016 - Todos los derechos reservados.</p>
+      </footer><?php 
     }
     else{?>
       <script>window.location = "../";</script><?php 
     }?>
-      <script src="../js/jquery.min.js"></script>
+      <script src="../js/jquery.min.js?rev=<?php echo time();?>"></script>
       <script src="../js/sweet-alert.js"></script><!-- Personalizar alertas -->
       <script src="../js/bootstrap.js"></script> <!-- Bootstrap -->
       <script src="../js/bootstrap-datetimepicker.min.js"></script>
@@ -254,6 +285,9 @@ if($res_user){
       <script src="../js/estadisticas/highcharts-3d.js"></script>
       <script src="../js/estadisticas/highcharts-more.js"></script>
       <script src="../js/estadisticas/exporting.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/highcharts-more.js"></script>
+      <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
       <script src="../js/inicioh.js"></script>
       <script type="text/javascript">
         $(document).ready(function(){

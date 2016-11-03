@@ -15,7 +15,7 @@ if(isset($_GET['id_equipo'])){
    }
 }
 ?>
-<div class="modal-dialog">
+<div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
         <div class="modal-header">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -53,7 +53,7 @@ if(isset($_GET['id_equipo'])){
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Valor</div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right text-right"><?php echo $val;?></div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right text-right"><?php echo "$ " . number_format($val, 0, ',', '.');?></div>
                 </div>
                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Estado</div>
