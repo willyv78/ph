@@ -37,7 +37,7 @@ else{
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Atención!</strong>
           <p>En esta pestaña encontrará la lista de los empleados del edificio registrados en la aplicación.</p>
-          <footer>Si no esta seguro de los cambios a realizar o si el cambio afectará el funcionamiento de la aplicación, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">7569919</cite></footer>
+          <footer>Si no esta seguro de los cambios a realizar o si el cambio afectará el funcionamiento de la aplicación, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">7569919</cite></footer>
           
     </div>
 </div>

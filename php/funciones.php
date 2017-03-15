@@ -888,9 +888,9 @@ function Contac_Admin($id_perfil){
   $partidos = false;
   $where = "";
   if($id_perfil <> ''){
-    $where = " WHERE r.rmb_perf_id = $id_perfil";
+    // $where = "AND r.rmb_residente <> $id_perfil";
   }
-  $sql = ("SELECT c.* FROM rmb_contac c LEFT JOIN rmb_residente r ON r.rmb_residente_id = c.rmb_residente_id $where ORDER BY c.rmb_contac_nom ASC");
+  $sql = ("SELECT c.* FROM rmb_contac c LEFT JOIN rmb_residente r ON r.rmb_residente_id = c.rmb_residente_id WHERE c.rmb_context_id = 1 $where ORDER BY c.rmb_contac_titulo ASC");
   //echo $sql;
   $query = mysql_query($sql, conexion());
   if($query){
@@ -898,14 +898,14 @@ function Contac_Admin($id_perfil){
   } 
   return $partidos;
 }
-########### Trae los datos del contacto para el residene y devuelve el query ###########
+########### Trae los datos del contacto para el residente y devuelve el query ###########
 function Contac_Id($id_res){
   $partidos = false;
   $where = "";
   if($id_res <> ''){
-    $where = " WHERE rmb_residente_id = $id_res";
+    $where = "AND rmb_residente_id = $id_res";
   }
-  $sql = ("SELECT * FROM rmb_contac $where ORDER BY rmb_contac_nom ASC");
+  $sql = ("SELECT * FROM rmb_contac WHERE rmb_context_id = 2 $where ORDER BY rmb_contac_nom ASC");
   //echo $sql;
   $query = mysql_query($sql, conexion());
   if($query){
@@ -1044,13 +1044,13 @@ function registroCampo($tabla, $campos, $where, $group, $order)
   return $result;
 }
 ########### muestra un menu lista para ser seleccionado ############
-function campoSelect($tdoc, $tabla)
+function campoSelect($tdoc, $tabla, $deshabilitar = "")
 {
   $sql = "SELECT * FROM $tabla ORDER BY ".$tabla."_nom ASC";
   $query = mysql_query($sql, conexion());
   $array=mysql_fetch_array($query);
   ?>
-  <select class="form-control" name="<?php echo $tabla.'_id';?>"  id="<?php echo $tabla.'_id';?>">
+  <select class="form-control" name="<?php echo $tabla.'_id';?>"  id="<?php echo $tabla.'_id';?>" <?php echo $deshabilitar;?>>
     <option value="" <?php if($tdoc == ''){echo 'selected="selected"';} ?> >Seleccione...</option>
     <?php do {  ?>
       <option value="<?php echo $array[0];?>" <?php if($tdoc == $array[0]){echo 'selected="selected"';} ?>><?php echo $array[1];?></option>
@@ -1065,7 +1065,7 @@ function campoSelect($tdoc, $tabla)
   <?php
 }
 ########### muestra el select de los usuarios registrados segun parametro enviado para ser seleccionado ############
-function campoSelectMaster($tabla, $id, $campos, $where, $group, $order){
+function campoSelectMaster($tabla, $id, $campos, $where, $group, $order, $deshabilitar = ""){
   $sql = "SELECT $campos FROM $tabla $where $group $order";
   // echo $sql;
   $query = mysql_query($sql, conexion());
@@ -1079,20 +1079,14 @@ function campoSelectMaster($tabla, $id, $campos, $where, $group, $order){
   elseif($tabla == 'rmb_depos d'){
     $name = "rmb_depos_id";
   }
-  elseif($tabla == 'rmb_residente para'){
+  elseif(($tabla == 'rmb_residente para') || ($tabla == 'rmb_residente residente')){
     $name = "rmb_residente_id";
   }
-  // elseif($tabla == 'rmb_residente cc'){
-  //   $name = "rmb_residente_cc";
-  // }
-  // elseif($tabla == 'rmb_residente cco'){
-  //   $name = "rmb_residente_cco";
-  // }
   else{
     $name = $tabla."_id";
   }
   ?>
-  <select name="<?php echo $name;?>"  id="<?php echo $name;?>" class="form-control" alt="Seleccione una opción" title="Seleccione una opción">
+  <select name="<?php echo $name;?>"  id="<?php echo $name;?>" class="form-control" alt="Seleccione una opción" title="Seleccione una opción" <?php echo $deshabilitar;?>>
     <option value="" <?php if($id == ''){echo 'selected="selected"';} ?> >Seleccione...</option><?php 
     do { 
       $value = $array[0];
@@ -1105,6 +1099,13 @@ function campoSelectMaster($tabla, $id, $campos, $where, $group, $order){
       }
       elseif($tabla == 'rmb_residente para'){
         $valor = $array[1]." - ".$array[2]." ".$array[3];
+      }
+      elseif($tabla == 'rmb_residente residente'){
+        $valor = $array[1]." ".$array[2];
+      }
+      elseif($tabla == 'rmb_tesoreria'){
+        $fechapago = $array[1];
+        $valor = date('Y', strtotime($array[1]))." - ".mesesLetras(date('m', strtotime($array[1])));
       }
       else{
         $valor = $array[1];
@@ -1242,7 +1243,7 @@ function DocumentoTipo2($tipo) {
 function nombreCampo($id, $tabla){
   $result = "";
   if(($id <> '') && ($tabla <> '')){
-    $sql = ("SELECT ".$tabla."_nom FROM ".$tabla." WHERE ".$tabla."_id = $id ORDER BY ".$tabla."_nom ASC");
+    $sql = ("SELECT ".$tabla."_nom FROM ".$tabla." WHERE ".$tabla."_id = '".$id."' ORDER BY ".$tabla."_nom ASC");
     //echo $sql;
     $query = mysql_query($sql, conexion());
     if($query){
@@ -1256,13 +1257,13 @@ function nombreCampo($id, $tabla){
   return $result;
 }
 ########### muestra un menu lista de los estado dependiendo del modulo al que es llamado para ser seleccionado ############
-function campoSelectEst($tdoc, $tabla, $mod){
+function campoSelectEst($tdoc, $tabla, $mod, $deshabilitar = ""){
   $sql = "SELECT * FROM $tabla WHERE ".$tabla."_mod = '$mod' ORDER BY ".$tabla."_nom ASC";
   // echo $sql;
   $query = mysql_query($sql, conexion());
   $array=mysql_fetch_array($query);
   ?>
-  <select class="form-control" name="<?php echo $tabla.'_id';?>"  id="<?php echo $tabla.'_id';?>">
+  <select class="form-control" name="<?php echo $tabla.'_id';?>"  id="<?php echo $tabla.'_id';?>" <?php echo $deshabilitar;?>>
     <option value="" <?php if($tdoc == ''){echo 'selected="selected"';} ?> >Seleccione...</option>
     <?php do {  ?>
       <option value="<?php echo $array[0];?>" <?php if($tdoc == $array[0]){echo 'selected="selected"';} ?>><?php echo $array[1];?></option>
@@ -1279,7 +1280,7 @@ function campoSelectEst($tdoc, $tabla, $mod){
 // funcion que devuelve los dias en letras 3
 function diasTodos($ndia)
 {
-  $dias = array("", "Lunes","Martes","Miercoles","Jueves","Viernes","Sábado","Domingo");
+  $dias = array("", "Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo");
   $dia = $dias[$ndia];
   return $dia;
 }
@@ -1289,6 +1290,600 @@ function mesesLetras($nmes)
   $meses = array("", "Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
   $mes = $meses[(int) $nmes];
   return $mes;
+}
+// funcion que devuelve una imagen en base 64 default para cuando no tiene imagen o foto los registros
+function imagenDefault()
+{
+  $src = "../images/noimage.png";
+  return $src;
+}
+// funcion para calcular edad
+function calculaedad($fechanac){
+  list($ano,$mes,$dia) = explode("-", $fechanac);
+  $ano_diferencia  = date("Y") - $ano;
+  $mes_diferencia = date("m") - $mes;
+  $dia_diferencia   = date("d") - $dia;
+  if ($dia_diferencia < 0 || $mes_diferencia < 0)
+    $ano_diferencia--;
+  return $ano_diferencia;
+}
+// Funcion que realiza la consulta a tota la información de un apartamento y calcula el porcentaje de llenado de cada formulario y totaliza los porcentajes para colocar un color de estado general al boton de detalle apto en la lista de apartamentos.
+function estadoApto($id_apto)
+{
+  if($id_apto){
+    $num_pest = 0;
+    $total_pestana = 0;
+    $total_pest = 0;
+    $num_pest = 0;
+    $total_porc_apto = 0;
+    // Datos del apartamento
+    $res_apto = registroCampo("rmb_aptos a", "a.rmb_aptos_nom, a.rmb_torres_id, a.rmb_taptos_id, a.rmb_aptos_tel, a.rmb_aptos_area, a.rmb_aptos_priv, a.rmb_aptos_banos, a.rmb_aptos_hab, a.rmb_aptos_balc, a.rmb_aptos_inm, a.rmb_aptos_habita, a.rmb_aptos_parq, a.rmb_aptos_dep, a.rmb_aptos_coef, a.rmb_aptos_terr, a.rmb_aptos_vul, a.rmb_aptos_banco, a.rmb_aptos_serv, a.rmb_aptos_est, a.rmb_aptos_propio, a.rmb_aptos_numhab, a.rmb_aptos_masc, a.rmb_aptos_arrend", "WHERE a.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_apto){
+      if(mysql_num_rows($res_apto) > 0){
+        $row_apto = mysql_fetch_array($res_apto);
+        if($row_apto[0] <> ''){$total_porc_apto += 4.55;$nom_apto = $row_apto[0];}
+        if($row_apto[1] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[2] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[3] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[4] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[5] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[6] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[7] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[8] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[9] <> ''){$total_porc_apto += 4.55;$apto_inm = $row_apto[9];}
+        if($row_apto[10] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[11] <> ''){$total_porc_apto += 4.55;$apto_parq = $row_apto[11];}
+        if($row_apto[12] <> ''){$total_porc_apto += 4.55;$apto_dep = $row_apto[12];}
+        if($row_apto[13] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[14] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[15] <> ''){$total_porc_apto += 4.55;$apto_vul = $row_apto[15];}
+        if($row_apto[16] <> ''){$total_porc_apto += 4.55;$apto_banco = $row_apto[16];}
+        if($row_apto[17] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[18] <> ''){$total_porc_apto += 4.55;}
+        if($row_apto[19] <> ''){$total_porc_apto += 4.55;$apto_propio = $row_apto[19];}
+        $num_hab = $row_apto[20];
+        if($row_apto[21] <> ''){$total_porc_apto += 4.55;$apto_masc = $row_apto[21];}
+        if($row_apto[22] <> ''){$total_porc_apto += 4.55;$apto_arrend = $row_apto[22];}
+      }
+    }
+    // Datos de los residentes y otros
+    $res_resd = registroCampo("rmb_residente_x_aptos rxa", "rxa.rmb_tres_id, r.rmb_residente_nom, r.rmb_residente_ape, r.rmb_residente_doc, r.rmb_residente_dir, r.rmb_residente_tel, r.rmb_residente_cel, r.rmb_residente_pass, r.rmb_residente_email, r.rmb_residente_fnac, r.rmb_residente_nom2, r.rmb_residente_obs, r.rmb_residente_fini, r.rmb_residente_ffin, r.rmb_residente_foto, r.rmb_gen_id, r.rmb_residente_hijo, r.rmb_residente_vive, r.rmb_residente_perm, r.rmb_perf_id, r.rmb_carg_id, r.rmb_vinculo_id, r.rmb_tdoc_id, r.rmb_est_id, r.rmb_residente_cert, r.rmb_residente_fcert", "LEFT JOIN rmb_residente r USING(rmb_residente_id) WHERE rxa.rmb_aptos_id = '$id_apto' AND (rxa.rmb_tres_id = 1 OR rxa.rmb_tres_id = 2 OR rxa.rmb_tres_id = 3 OR rxa.rmb_tres_id = 5 OR rxa.rmb_tres_id = 6 OR rxa.rmb_tres_id = 7 OR rxa.rmb_tres_id = 8 OR rxa.rmb_tres_id = 9)", "", "");
+    $total_porc_prop = 0;
+    $total_porc_hab  = 0;
+    $total_porc_arren = 0;
+    $total_porc_serv = 0;
+    $total_porc_ban = 0;
+    $total_porc_aut = 0;
+    $total_porc_inm = 0;
+    $total_porc_emer = 0;
+    $total_porc_veh = 0;
+    $total_porc_masc = 0;
+    $total_porc_parq = 0;
+    $total_porc_dep = 0;
+    $total_porc_vuln = 0;
+    if($res_resd){
+      if(mysql_num_rows($res_resd) > 0){
+        while($row_resd = mysql_fetch_array($res_resd)){
+          // Propietario
+          if($row_resd[0] == 1){
+            $num_prop += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_prop += 5.9;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_prop += 5.9;}
+            // Numero documento
+            if($row_resd[3] <> ''){$total_porc_prop += 5.9;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_prop += 5.9;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_prop += 5.9;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_prop += 5.9;}
+            // Password
+            if($row_resd[7] <> ''){$total_porc_prop += 5.9;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_prop += 5.9;}
+            // Fecha nacimiento
+            if($row_resd[9] <> ''){$total_porc_prop += 5.9;}
+            // Razon social
+            // Observación
+            // Fecha Inicial
+            // Fecha final
+            // Foto
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_prop += 5.9;}
+            // hijo
+            if($row_resd[16] <> ''){$total_porc_prop += 5.9;}
+            // Vive
+            if($row_resd[17] <> ''){
+              $prop_vive = $row_resd[17];
+              $total_porc_prop += 5.9;
+              if($prop_vive == 1){
+                // Nombres
+                if($row_resd[1] <> ''){$total_porc_hab += 11.2;}
+                // Apellidos
+                if($row_resd[2] <> ''){$total_porc_hab += 11.2;}
+                // Numero documento
+                if($row_resd[3] <> ''){$total_porc_hab += 11.2;}
+                // Fecha nacimiento
+                if($row_resd[9] <> ''){$total_porc_hab += 11.2;}
+                // Genero
+                if($row_resd[15] <> ''){$total_porc_hab += 11.2;}
+                // hijo
+                if($row_resd[16] <> ''){$total_porc_hab += 11.2;}
+                // Vinculo
+                if($row_resd[21] <> ''){$total_porc_hab += 11.2;}
+                // Tipo documento
+                if($row_resd[22] <> ''){$total_porc_hab += 11.2;}
+                // Estado
+                if($row_resd[23] <> ''){$total_porc_hab += 11.2;}
+              }
+            }
+            // Permisos
+            // Perfil
+            if($row_resd[19] <> ''){$total_porc_prop += 5.9;}
+            // Cargo
+            // Vinculo
+            // Tipo documento
+            if($row_resd[22] <> ''){$total_porc_prop += 5.9;}
+            // Estado
+            if($row_resd[23] <> ''){$total_porc_prop += 5.9;}
+            // Certificado de tradicion
+            if($row_resd[24] <> ''){$total_porc_prop += 5.9;}
+            // Fecha certificado de tradición
+            if($row_resd[25] <> ''){$total_porc_prop += 5.9;}
+          }
+          // Residente / Habitantes
+          if($row_resd[0] == 2){
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_hab += 11.2;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_hab += 11.2;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_hab += 11.2;}
+            // fecha nacimiento
+            if(($row_resd[9] <> '') && ($row_resd[9] <> '0000-00-00')){$total_porc_hab += 11.2;}
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_hab += 11.2;}
+            // tiene hijos
+            if($row_resd[16] <> ''){$total_porc_hab += 11.2;}
+            // Vínculo
+            if($row_resd[21] <> ''){$total_porc_hab += 11.2;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_hab += 11.2;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_hab += 11.2;}
+          }
+          // Arrendatario
+          if($row_resd[0] == 3){
+            $num_arren += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_arren += 6.7;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_arren += 6.7;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_arren += 6.7;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_arren += 6.7;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_arren += 6.7;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_arren += 6.7;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_arren += 6.7;}
+            // fecha nacimiento
+            if(($row_resd[9] <> '') && ($row_resd[9] <> '0000-00-00')){$total_porc_arren += 6.7;}
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_arren += 6.7;}
+            // tiene hijos
+            if($row_resd[16] <> ''){$total_porc_arren += 6.7;}
+            // Vive en el apto
+            if($row_resd[17] <> ''){$total_porc_arren += 6.7;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_arren += 6.7;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_arren += 6.7;}
+          }
+          // Empleados Servicio
+          if($row_resd[0] == 5){
+            $num_serv += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_serv += 6.7;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_serv += 6.7;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_serv += 6.7;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_serv += 6.7;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_serv += 6.7;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_serv += 6.7;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_serv += 6.7;}
+            // fecha nacimiento
+            if(($row_resd[9] <> '') && ($row_resd[9] <> '0000-00-00')){$total_porc_serv += 6.7;}
+            // Foto
+            if($row_resd[14] <> ''){$total_porc_serv += 6.7;}
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_serv += 6.7;}
+            // Vive en el apto
+            if($row_resd[17] <> ''){
+              $serv_vive = $row_resd[17];
+              $total_porc_serv += 6.7;
+              if($serv_vive == 1){
+                // Nombres
+                if($row_resd[1] <> ''){$total_porc_hab += 11.2;}
+                // Apellidos
+                if($row_resd[2] <> ''){$total_porc_hab += 11.2;}
+                // Numero documento
+                if($row_resd[3] <> ''){$total_porc_hab += 11.2;}
+                // Fecha nacimiento
+                if($row_resd[9] <> ''){$total_porc_hab += 11.2;}
+                // Genero
+                if($row_resd[15] <> ''){$total_porc_hab += 11.2;}
+                // hijo
+                if($row_resd[16] <> ''){$total_porc_hab += 11.2;}
+                // Vinculo
+                if($row_resd[21] <> ''){$total_porc_hab += 11.2;}
+                // Tipo documento
+                if($row_resd[22] <> ''){$total_porc_hab += 11.2;}
+                // Estado
+                if($row_resd[23] <> ''){$total_porc_hab += 11.2;}
+              }
+            }
+            // Pasado Judicial
+            if($row_resd[18] <> ''){$total_porc_serv += 6.7;}
+            // cargo
+            if($row_resd[20] <> ''){$total_porc_serv += 6.7;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_serv += 6.7;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_serv += 6.7;}
+          }
+          // Bancos
+          if($row_resd[0] == 6){
+            $num_ban += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_ban += 8.4;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_ban += 8.4;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_ban += 8.4;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_ban += 8.4;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_ban += 8.4;}
+            // Password
+            if($row_resd[7] <> ''){$total_porc_ban += 8.4;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_ban += 8.4;}
+            // Razon Social
+            if($row_resd[10] <> ''){$total_porc_ban += 8.4;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_ban += 8.4;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_ban += 8.4;}
+            // Certificado de tradición
+            if($row_resd[24] <> ''){$total_porc_ban += 8.4;}
+            // Fecha de certificado
+            if($row_resd[25] <> ''){$total_porc_ban += 8.4;}
+          }
+          // Autorizadas
+          if($row_resd[0] == 7){
+            $num_aut += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_aut += 8.4;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_aut += 8.4;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_aut += 8.4;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_aut += 8.4;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_aut += 8.4;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_aut += 8.4;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_aut += 8.4;}
+            // fecha nacimiento
+            if(($row_resd[9] <> '') && ($row_resd[9] <> '0000-00-00')){$total_porc_aut += 8.4;}
+            // Foto
+            if($row_resd[14] <> ''){$total_porc_aut += 8.4;}
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_aut += 8.4;}
+            // Vinculo
+            if($row_resd[21] <> ''){$total_porc_aut += 8.4;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_aut += 8.4;}
+          }
+          // Inmobiliarias
+          if($row_resd[0] == 8){
+            $num_inm += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_inm += 11.2;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_inm += 11.2;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_inm += 11.2;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_inm += 11.2;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_inm += 11.2;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_inm += 11.2;}
+            // Razon Social
+            if($row_resd[10] <> ''){$total_porc_inm += 11.2;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_inm += 11.2;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_inm += 11.2;}
+          }
+          // Emergencia
+          if($row_resd[0] == 9){
+            $num_emer += 1;
+            // Nombres
+            if($row_resd[1] <> ''){$total_porc_emer += 7.7;}
+            // Apellidos
+            if($row_resd[2] <> ''){$total_porc_emer += 7.7;}
+            // Numero Documento
+            if($row_resd[3] <> ''){$total_porc_emer += 7.7;}
+            // Direccion
+            if($row_resd[4] <> ''){$total_porc_emer += 7.7;}
+            // Telefono
+            if($row_resd[5] <> ''){$total_porc_emer += 7.7;}
+            // Celular
+            if($row_resd[6] <> ''){$total_porc_emer += 7.7;}
+            // Email
+            if($row_resd[8] <> ''){$total_porc_emer += 7.7;}
+            // fecha nacimiento
+            if(($row_resd[9] <> '') && ($row_resd[9] <> '0000-00-00')){$total_porc_emer += 7.7;}
+            // Genero
+            if($row_resd[15] <> ''){$total_porc_emer += 7.7;}
+            // Vive en el apto
+            if($row_resd[17] <> ''){$total_porc_emer += 7.7;}
+            // Vinculo
+            if($row_resd[21] <> ''){$total_porc_emer += 7.7;}
+            // tipo de documento
+            if($row_resd[22] <> ''){$total_porc_emer += 7.7;}
+            // estado
+            if($row_resd[23] <> ''){$total_porc_emer += 7.7;}
+          }
+        }
+      }
+    }
+    // Datos de los vehiculos
+    $res_veh = registroCampo("rmb_veh v", "v.rmb_veh_placa, v.rmb_veh_marca, v.rmb_veh_mod, v.rmb_veh_color, v.rmb_tveh_id", "WHERE v.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_veh){
+      if(mysql_num_rows($res_veh) > 0){
+        while ($row_veh = mysql_fetch_array($res_veh)) {
+          $num_veh += 1;
+          if($row_veh[0] <> ''){$total_porc_veh += 20;}
+          if($row_veh[1] <> ''){$total_porc_veh += 20;}
+          if($row_veh[2] <> ''){$total_porc_veh += 20;}
+          if($row_veh[3] <> ''){$total_porc_veh += 20;}
+          if($row_veh[4] <> ''){$total_porc_veh += 20;}
+        }
+      }
+    }
+    // Datos de las mascotas
+    $res_masc = registroCampo("rmb_mascotas m", "m.rmb_mascotas_nom, m.rmb_mascotas_raza, m.rmb_mascotas_vac, m.rmb_tmascotas_id", "WHERE m.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_masc){
+      if(mysql_num_rows($res_masc) > 0){
+        while ($row_masc = mysql_fetch_array($res_masc)) {
+          $num_masc += 1;
+          if($row_masc[0] <> ''){$total_porc_masc += 25;}
+          if($row_masc[1] <> ''){$total_porc_masc += 25;}
+          if($row_masc[2] <> ''){$total_porc_masc += 25;}
+          if($row_masc[3] <> ''){$total_porc_masc += 25;}
+        }
+      }
+    }
+    // Datos de los parqueaderos
+    $res_parq = registroCampo("rmb_parq p", "p.rmb_parq_nom", "WHERE p.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_parq){
+      if(mysql_num_rows($res_parq) > 0){
+        while ($row_parq = mysql_fetch_array($res_parq)) {
+          $num_parq += 1;
+          if($row_parq[0] <> ''){$total_porc_parq += 100;}
+        }
+      }
+    }
+    // Datos de los depositos
+    $res_dep = registroCampo("rmb_depos d", "d.rmb_depos_nom", "WHERE d.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_dep){
+      if(mysql_num_rows($res_dep) > 0){
+        while ($row_dep = mysql_fetch_array($res_dep)) {
+          $num_dep += 1;
+          if($row_dep[0] <> ''){$total_porc_dep += 100;}
+        }
+      }
+    }
+    // Datos de las vulnerabilidades
+    $res_vuln = registroCampo("rmb_vulnera v", "v.rmb_tvulnera_id, v.rmb_vulnera_obs", "WHERE v.rmb_aptos_id = '$id_apto'", "", "");
+    if($res_vuln){
+      if(mysql_num_rows($res_vuln) > 0){
+        while ($row_vuln = mysql_fetch_array($res_vuln)) {
+          $num_vuln += 1;
+          if($row_vuln[0] <> ''){$total_porc_vuln += 50;}
+          if($row_vuln[1] <> ''){$total_porc_vuln += 50;}
+        }
+      }
+    }
+
+    // porcentaje total apartamento
+    if($total_porc_apto >= 0){
+      $num_pest += 1;
+      // Si el porcentaje de completado de la informacion del apartamento esta al 100% o mayor hace esto
+      if($total_porc_apto >= 100){$total_porc_apto = 100;}
+      $total_pest += $total_porc_apto;
+    }
+    // Si el apto es propio hace esto
+    if($apto_propio > 0){
+      $num_pest += 1;
+      // Porcentaje total propietario
+      if($total_porc_prop > 0){
+        if($num_prop > 0){
+          $total_porc_prop = round($total_porc_prop / $num_prop);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_prop >= 100){$total_porc_prop = 100;}
+        $total_pest += $total_porc_prop;
+      }
+    }
+    // Si esta habitado hace esto
+    if($num_hab > 0){
+      $num_pest += 1;
+      // Porcentaje total habitantes
+      if($total_porc_hab > 0){
+        $total_porc_hab = round($total_porc_hab / $num_hab);
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_hab >= 100){$total_porc_hab = 100;}
+        $total_pest += $total_porc_hab;
+      }
+    }
+    // Si esta arrendado hace esto
+    if($apto_arrend > 0){
+      $num_pest += 1;
+      // Porcentaje total arrendatario
+      if($total_porc_arren > 0){
+        if($num_arren > 0){
+          $total_porc_arren = round($total_porc_arren / $num_arren);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_arren >= 100){$total_porc_arren = 100;}
+        $total_pest += $total_porc_arren;
+      }
+    }
+    // Porcentaje total personal de servicio
+    if($total_porc_serv >= 0){
+      $num_pest += 1;
+      if($num_serv > 0){
+        $total_porc_serv = round($total_porc_serv / $num_serv);
+      }
+      // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+      if($total_porc_serv >= 100){$total_porc_serv = 100;}
+      $total_pest += $total_porc_serv;
+    }
+    // Porcentaje total personas autorizadas
+    if($total_porc_aut >= 0){
+      $num_pest += 1;
+      if($num_aut > 0){
+        $total_porc_aut = round($total_porc_aut / $num_aut);
+      }
+      // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+      if($total_porc_aut >= 100){$total_porc_aut = 100;}
+      $total_pest += $total_porc_aut;
+    }
+    // Porcentaje total en caso de emergencia
+    if($total_porc_emer >= 0){
+      $num_pest += 1;
+      if($num_emer > 0){
+        $total_porc_emer = round($total_porc_emer / $num_emer);
+      }
+      // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+      if($total_porc_emer >= 100){$total_porc_emer = 100;}
+      $total_pest += $total_porc_emer;
+    }
+    // Porcentaje total vehiculos
+    if($total_porc_veh >= 0){
+      $num_pest += 1;
+      if($num_veh > 0){
+        $total_porc_veh = round($total_porc_veh / $num_veh);
+      }
+      // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+      if($total_porc_veh >= 100){$total_porc_veh = 100;}
+      $total_pest += $total_porc_veh;
+    }
+    // Si tiene mascotas hace esto
+    if($apto_masc > 0){
+      $num_pest += 1;
+      // Porcentaje total mascotas
+      if($total_porc_masc > 0){
+        if($num_masc > 0){
+          $total_porc_masc = round($total_porc_masc / $num_masc);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_masc >= 100){$total_porc_masc = 100;}
+        $total_pest += $total_porc_masc;
+      }
+    }
+    // Si existe inmobiliaria hace esto
+    if($apto_inm > 0){
+      $num_pest += 1;
+      // Porcentaje total inmobiliaria
+      if($total_porc_inm > 0){
+        if($num_inm > 0){
+          $total_porc_inm = round($total_porc_inm / $num_inm);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_inm >= 100){$total_porc_inm = 100;}
+        $total_pest += $total_porc_inm;
+      }
+    }
+    // si existe banco hace esto
+    if($apto_banco > 0){
+      $num_pest += 1;
+      // Porcentaje total bancos
+      if($total_porc_ban > 0){
+        if($num_ban > 0){
+          $total_porc_ban = round($total_porc_ban / $num_ban);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_ban >= 100){$total_porc_ban = 100;}
+        $total_pest += $total_porc_ban;
+      }
+    }
+    // Si tiene parqueadero hace esto
+    if($apto_parq > 0){
+      $num_pest += 1;
+      // Porcentaje total parqueaderos
+      if($total_porc_parq > 0){
+        if($num_parq > 0){
+          $total_porc_parq = round($total_porc_parq / $num_parq);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_parq >= 100){$total_porc_parq = 100;}
+        $total_pest += $total_porc_parq;
+      }
+    }
+    // Si tiene depósito hace esto
+    if($apto_dep > 0){
+      $num_pest += 1;
+      // Porcentaje total depositos
+      if($total_porc_dep > 0){
+        if($num_dep > 0){
+          $total_porc_dep = round($total_porc_dep / $num_dep);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+        if($total_porc_dep >= 100){$clase_dep = "";}
+        $total_pest += $total_porc_dep;
+      }
+    }
+    // si presenta vulnerabilidades hace esto
+    if($apto_vul > 0){
+      $num_pest += 1;
+      // Porcentaje total vulnerabilidades
+      if($total_porc_vuln > 0){
+        if($num_vuln > 0){
+          $total_porc_vuln = round($total_porc_vuln / $num_vuln);
+        }
+        // Si el porcentaje de completado de la informacion del propietario esta al 100% o mayor hace esto
+        if($total_porc_vuln >= 100){$total_porc_vuln = 100;}
+        $total_pest += $total_porc_vuln;
+      }
+    }
+    // total todas las pestanas
+    if($total_pest > 0){
+      if($num_pest > 0){
+        $total_pestana = round($total_pest / $num_pest);
+      }
+      else{
+        $total_pestana = $total_pest;
+      }
+    }
+  }
+  return $total_pestana;
 }
 
 

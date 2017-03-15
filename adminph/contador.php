@@ -25,39 +25,32 @@ if($res_conta){
             }
         }
     }
-}?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 5px;">
-    <button type="button" class="btn btn-default pull-right" data-quien="5">Nuevo</button>
-</div><?php 
+}
 if($conta_all){
     if($conta_emp){?>
         <!-- Administrador Empresa -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-warning">
-            <!-- Imagen Administrador Empresa -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <img src="../images/CONTADOR1.png" class="img-responsive admon2" alt="Image">
-            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-contador">
             <!-- Información Administrador Empresa -->
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 info-emp">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Empresa:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $conta_emp[0];?></span>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-emp">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Empresa:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[0];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Contacto:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[1];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Contacto:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"> <?php echo $conta_emp[1];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">Tel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_emp[2];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-1 text-nowrap modal-open text-left">Cel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_emp[3];?></span>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Teléfono:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[2];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Celular:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[3];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Correo:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"><?php echo $conta_emp[4];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">WEB:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-5 text-nowrap modal-open text-left"><?php echo $conta_emp[7];?></span>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Correo:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[4];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">WEB:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_emp[7];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom-last">
                     <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Horario Atención:</span>
                     <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $conta_emp[5];?></span>
                 </div>
@@ -65,74 +58,57 @@ if($conta_all){
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <button type="button" class="btn btn-default pull-right" data-id="<?php echo $conta_emp[6];?>" data-quien="5">Eliminar</button>
                     <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-id="<?php echo $conta_emp[6];?>" data-quien="5">Editar</button>
+                    <button type="button" class="btn btn-default pull-right" data-quien="5">Nuevo</button>
                 </div>
             </div>
         </div><?php 
     }
     if($conta_gen){?>
         <!-- Contador titular -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-info">
-            <!-- imagen del contador -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3"><?php 
-                if($conta_gen[0]){$src_gen = $conta_gen[0];}
-                else{$src_gen = imagenDefault();}?>
-                <img src="../images/CONTADOR1.png" class="img-responsive admon2" alt="Image">
-                <img src="<?php echo $src_gen;?>" class="img-responsive fotocontador" alt="Image">
-            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-contador">
             <!-- datos del contador -->
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 info-gen">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Contador General:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"><?php echo $conta_gen[1];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">Tel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_gen[2];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-1 text-nowrap modal-open text-left">Cel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-3 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_gen[3];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Correo:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-10 text-nowrap modal-open text-left"><?php echo $conta_gen[4];?></span>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Contador General:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_gen[1];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Teléfono:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_gen[2];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Horario Atención:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $conta_gen[5];?></span>
-                </div>
-                <div class="clearfix">&nbsp;</div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <button type="button" class="btn btn-default pull-right" data-id="<?php echo $conta_gen[6];?>" data-quien="5">Eliminar</button>
-                    <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-id="<?php echo $conta_gen[6];?>" data-quien="5">Editar</button>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom-last">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Correo:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_gen[4];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Celular:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-1 text-left"><?php echo $conta_gen[3];?></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <button type="button" class="btn btn-default pull-right" data-id="<?php echo $conta_gen[6];?>" data-quien="5" style="margin-right: -265px">Eliminar</button>
+                        <button type="button" class="btn btn-default pull-right" style="margin-right: -185px;" data-id="<?php echo $conta_gen[6];?>" data-quien="5">Editar</button>
+                        <button type="button" class="btn btn-default pull-right" data-quien="5" style="margin-right: -120px;">Nuevo</button>
+                    </div>
                 </div>
             </div>
         </div><?php 
     }
     if($conta_del){?>
         <!-- Contador Delegado -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">
-            <!-- imagen del contador delegado -->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3"><?php 
-                if($conta_del[0]){$src_del = $conta_del[0];}
-                else{$src_del = imagenDefault();}?>
-                <img src="../images/CONTADOR2.png" class="img-responsive admon2" alt="Image">
-                <img src="<?php echo $src_del;?>" class="img-responsive fotocontador" alt="Image">
-            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-contador">
             <!-- Información del contador delegado -->
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 info-gen">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Cont. Delegado:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"><?php echo $conta_del[1];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">Tel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_del[2];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-1 text-nowrap modal-open text-left">Cel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-3 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_del[3];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Correo:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-2 text-nowrap modal-open text-left"><?php echo $conta_del[4];?></span>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Cont. Delegado:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_del[1];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Teléfono:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_del[2];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Horario Atención:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $conta_del[5];?></span>
-                </div>
-                <div class="clearfix">&nbsp;</div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <button type="button" class="btn btn-default pull-right" data-id="<?php echo $conta_del[6];?>" data-quien="5">Eliminar</button>
-                    <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-id="<?php echo $conta_del[6];?>" data-quien="5">Editar</button>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom-last">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Correo:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $conta_del[4];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Celular:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-1 text-left"><?php echo $conta_del[3];?></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <button type="button" class="btn btn-default pull-right" data-id="<?php echo $conta_del[6];?>" data-quien="5" style="margin-right: -265px">Eliminar</button>
+                        <button type="button" class="btn btn-default pull-right" style="margin-right: -185px;" data-id="<?php echo $conta_del[6];?>" data-quien="5">Editar</button>
+                        <button type="button" class="btn btn-default pull-right" data-quien="5" style="margin-right: -120px;">Nuevo</button>
+                    </div>
                 </div>
             </div>
         </div><?php 
@@ -144,6 +120,10 @@ if($conta_all){
 else{?>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">Error en la consulta</div><?php 
 }?>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/sweet-alert.js"></script><!-- Personalizar alertas -->
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {cargarPerfil();});
 </script>

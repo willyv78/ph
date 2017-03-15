@@ -743,7 +743,7 @@
     .fotoadmin, .fotocontador, .fotorevisor{
         width: 35%;
         height: 100px;
-        margin-left: -15px;
+        margin-left: 0;
     }
     .imgconsejo > img, .imgcomite > img{
         width: 97%;
@@ -1020,13 +1020,13 @@
         margin-top: 45px !important;
     }
     .fotoadmin, .fotocontador, .fotorevisor{
-        width: 30%;
+        width: 100%;
     }
     .imgconsejo, .imgcomite{
         width: 15%;
     }
     .mieconsejo, .miecomite{
-        width: 8.5% !important;
+        width: 12% !important;
     }
     .carousel-indicators {
         bottom: -35px;
@@ -1062,6 +1062,12 @@
     }   
 }
 @media (min-width: 1600px) {
+    #col-md-12 {
+        top: 0;
+        width: 90%;
+        margin: auto;
+        float: none;
+    }
     #logo_edif{
         width: 45% !important;
         margin: 9px 160px auto 0;
@@ -1085,6 +1091,9 @@
     .carousel-indicators {bottom: -50px;}
 }
 @media (min-width: 1700px) {
+    #col-md-12 {
+        width: 80%;
+    }
     #logo_edif{
         width: 42% !important;
         margin: 10px 190px auto 0;
@@ -1121,6 +1130,9 @@
     #home-content-img{width: 62%;}
 }
 @media (min-width: 1800px) {
+    #col-md-12 {
+        width: 70%;
+    }
     #logo_edif{
         width: 40% !important;
         margin: 8px 210px auto 0;
@@ -1138,11 +1150,11 @@
     .carousel-inner>.item>img{width: 99%;}
     .carousel-control.right {right: 10px;}
     .carousel-indicators {bottom: -20px;}
-    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 16%;}
-    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 84%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-3{width: 20%;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .col-xs-9{width: 80%;}
     .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{
         height: 82px;
-        width: 14%;
+        width: 15%;
     }
     .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 5px;}
     .form-contacto{height: 290px;}
@@ -1168,10 +1180,10 @@
         margin-top: 60px !important;
     }
     .admon2{height: 180px;}
-    .fotoadmin, .fotocontador, .fotorevisor{height: 140px;}
+    .fotoadmin, .fotocontador, .fotorevisor{height: 167px;}
     .carousel-caption{height: 175px;}
-    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 86px;}
-    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 8px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact{height: 76px;}
+    .div-contacto > .col-xs-12 > .col-xs-12 > .new-contact > i{padding: 3px;}
     .form-contacto{height: 302px;}
     #imagen_rande {width: 50%;}
     #home-content-dias{width: 39%;}

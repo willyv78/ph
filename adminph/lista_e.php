@@ -133,7 +133,7 @@ if($res_val){
 		        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		        <strong>Atención!</strong>
 		          <p>No se encontraron datos.</p>
-		          <footer>Si necesita ayuda o soporte, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">7569919</cite></footer>
+		          <footer>Si necesita ayuda o soporte, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">7569919</cite></footer>
 		    </div>
 		</div><?php 
 	}
@@ -144,7 +144,7 @@ else{?>
 	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	        <strong>Atención!</strong>
 	          <p>No se encontraron datos.</p>
-	          <footer>Si necesita ayuda o soporte, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">7569919</cite></footer>
+	          <footer>Si necesita ayuda o soporte, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">7569919</cite></footer>
 	    </div>
 	</div><?php 
 }

@@ -59,6 +59,10 @@ $res_val = DocumentoTipoSQL("rmb_document_nom", "ASC", $tipo);?>
   }?>
   </tbody>
 </table>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/sweet-alert.js"></script><!-- Personalizar alertas -->
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {
         editarDocs();

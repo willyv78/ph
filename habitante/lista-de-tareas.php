@@ -19,7 +19,7 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Atención!</strong>
           <p>En esta pestaña encontrará la lista de los residentes registrados en la aplicación y a los cuales podrá ingresar su estado financiero por mes y consultar su historial en el tiempo.</p>
-          <footer>Si no esta seguro de los cambios a realizar o si el cambio afectará el funcionamiento de la aplicación, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">7569919</cite></footer>
+          <footer>Si no esta seguro de los cambios a realizar o si el cambio afectará el funcionamiento de la aplicación, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">7569919</cite></footer>
           
     </div>
 </div>

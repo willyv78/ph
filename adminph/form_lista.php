@@ -442,16 +442,11 @@ if(isset($_GET['tipo_nom'])){
             <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 <?php echo $class_cert;?>">
                 <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_residente_cert">Certificado de Tradición y Libertad: </label>
                 <div class="col-xs-12 col-sm-5 col-md-7 col-lg-7"><?php 
-                    $url_file_cert = "#";
-                    $disabled_a = 'onclick="return false;"';
-                    $src = "../images/noimage.png";
-                    if($desabilitar == ''){
-                        if($reside_cert){
-                            $url_file_cert = $reside_cert;
-                            $disabled_a = "";
-                            $url_file_array = explode(".", $reside_cert);
-                            $src = "../images/TiposArchivo/".$url_file_array[3].".png";
-                        }
+                    if($reside_cert){
+                        $url_file_cert = $reside_cert;
+                        $disabled_a = "";
+                        $url_file_array = explode(".", $reside_cert);
+                        $src = "../images/TiposArchivo/".$url_file_array[3].".png";
                     }?>
                     <a href="<?php echo $url_file_cert;?>" target="_blank" <?php echo $disabled_a;?>>
                         <img id="vistaPrevia2" src="<?php echo $src;?>" alt="Image" width="150px" height="150px">

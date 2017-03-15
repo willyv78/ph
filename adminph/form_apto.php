@@ -126,9 +126,9 @@ $res = registroCampo("rmb_aptos_x_taptos", "rmb_aptos_nom", "WHERE rmb_aptos_nom
         <!-- Coeficiente -->
         <?php if($apto_coef <> ''){$class_coef = "";}else{$class_coef = "has-error";}?>
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 <?php echo $class_coef;?>">
-            <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_aptos_coef">Coeficiente Area (%): </label>
+            <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_aptos_coef">Coeficiente Área (%): </label>
             <div class="col-xs-12 col-sm-5 col-md-7 col-lg-7">
-                <input class="form-control" type="text" id="rmb_aptos_coef" name="rmb_aptos_coef" placeholder="Coeficiente Area (%)" alt="Digite el Coeficiente Área en porcentaje (%)" title="Digite el Coeficiente Área en porcentaje (%)" <?php echo $desabilitar;?> value="<?php echo $apto_coef;?>">
+                <input class="form-control" type="text" id="rmb_aptos_coef" name="rmb_aptos_coef" placeholder="Coeficiente Área (%)" alt="Digite el Coeficiente Área en porcentaje (%)" title="Digite el Coeficiente Área en porcentaje (%)" <?php echo $desabilitar;?> value="<?php echo $apto_coef;?>">
             </div>
         </div>
         <!-- Estudios -->
@@ -162,10 +162,10 @@ $res = registroCampo("rmb_aptos_x_taptos", "rmb_aptos_nom", "WHERE rmb_aptos_nom
                 </div>
             </div>
         </div>
-        <!-- Parquedero -->
+        <!-- Parqueadero -->
         <?php if($apto_parq <> ''){$class_parq = "";}else{$class_parq = "has-error";}?>
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 <?php echo $class_parq;?>">
-            <label class="col-xs-7 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_aptos_parq">¿Parquedero?: </label>
+            <label class="col-xs-7 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_aptos_parq">¿Parqueadero?: </label>
             <div class="col-xs-5 col-sm-5 col-md-7 col-lg-7">
                 <div class="radio">
                     <label>
@@ -385,9 +385,9 @@ $res = registroCampo("rmb_aptos_x_taptos", "rmb_aptos_nom", "WHERE rmb_aptos_nom
                         message: 'El número de apartamento es requerido'
                     },
                     stringLength: {
-                        min: 1,
+                        min: 2,
                         max: 10,
-                        message: 'El número de apartamento debe contener de 3 a 10 characteres'
+                        message: 'El número de apartamento debe contener de 1 a 10 characteres'
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\_\s\.\-]+$/,

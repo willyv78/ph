@@ -103,12 +103,12 @@ if($res_reside){
             </div>
         </div><?php 
         }?>
-        <!-- Telefono de contacto -->
+        <!-- Teléfono de contacto -->
         <?php if($reside_cel <> ''){$class_inm_cel = "";}else{$class_inm_cel = "has-error";}?>
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 <?php echo $class_inm_cel;?>">
-            <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_residente_cel">Telefono Contacto: </label>
+            <label class="col-xs-12 col-sm-7 col-md-5 col-lg-5 control-label" for="rmb_residente_cel">Teléfono Contacto: </label>
             <div class="col-xs-12 col-sm-5 col-md-7 col-lg-7">
-                <input class="form-control" type="text" id="rmb_residente_cel" name="rmb_residente_cel" placeholder="Telefono Contacto" <?php echo $desabilitar;?> value="<?php echo $reside_cel;?>">
+                <input class="form-control" type="text" id="rmb_residente_cel" name="rmb_residente_cel" placeholder="Teléfono Contacto" <?php echo $desabilitar;?> value="<?php echo $reside_cel;?>">
             </div>
         </div>
         <!-- Estado -->

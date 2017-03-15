@@ -39,7 +39,7 @@ $res_apto_2 = registroCampo("rmb_residente_x_aptos rxa", "rxa.rmb_aptos_id", "WH
                         }
                         if($row_residente[5]){?>
                             <tr>
-                                <th>Telefono:</th>
+                                <th>Teléfono:</th>
                                 <td><?php echo $row_residente[5];?></td>
                             </tr><?php 
                         }
@@ -74,7 +74,7 @@ $res_apto_2 = registroCampo("rmb_residente_x_aptos rxa", "rxa.rmb_aptos_id", "WH
                                                 <td class="col-xs-7 col-sm-7 col-md-7 col-lg-10"><?php echo $row_papto[0]. " " .$row_papto[1];?></td>
                                             </tr>
                                             <tr>
-                                                <th>Telefono:</th>
+                                                <th>Teléfono:</th>
                                                 <td><?php echo $row_papto[2];?></td>
                                             </tr>
                                             <tr>

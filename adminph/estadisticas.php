@@ -269,6 +269,7 @@ if($res_med){
     </div>
     <div class="clearfix"></div>
 </div>
+<script src="../js/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
         var chart = "";

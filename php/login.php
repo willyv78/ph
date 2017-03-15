@@ -1,7 +1,7 @@
 <?php session_start();
 require_once ("../conexion/conexion.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $Email = $_POST['email'];
@@ -18,6 +18,7 @@ if($res_val){
 		$_SESSION['EstID'] = $row_val[2];
 		$_SESSION['UsuNom'] = $row_val[3];
 		$_SESSION['UsuEmail'] = $Email;
+		$_SESSION['ProyId'] = 1;
 		$datos = $row_val[0].",".$row_val[1].",".$row_val[2].",".$row_val[3];
 		echo $datos;
 		}

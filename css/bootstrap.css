@@ -3085,6 +3085,14 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #333333;
 }
+
+.btn-default-inverse {color: #FFFFFF;background-color: #546E7A;border-color: #adadad;}
+.btn-default-inverse:hover,.btn-default-inverse:focus,.btn-default-inverse.focus,.btn-default-inverse:active,.btn-default-inverse.active,.open>.dropdown-toggle.btn-default-inverse{color:#546E7A;background-color:transparent;border-color:#546E7A}
+.btn-default-inverse:active,.btn-default-inverse.active,.open>.dropdown-toggle.btn-default-inverse{background-image:none}
+.btn-default-inverse.disabled,.btn-default-inverse[disabled],fieldset[disabled] .btn-default-inverse,.btn-default-inverse.disabled:hover,.btn-default-inverse[disabled]:hover,fieldset[disabled] .btn-default-inverse:hover,.btn-default-inverse.disabled:focus,.btn-default-inverse[disabled]:focus,fieldset[disabled] .btn-default-inverse:focus,.btn-default-inverse.disabled.focus,.btn-default-inverse[disabled].focus,fieldset[disabled] .btn-default-inverse.focus,.btn-default-inverse.disabled:active,.btn-default-inverse[disabled]:active,fieldset[disabled] .btn-default-inverse:active,.btn-default-inverse.disabled.active,.btn-default-inverse[disabled].active,fieldset[disabled] .btn-default-inverse.active{background-color:#fff;border-color:#ccc}
+.btn-default-inverse .badge{color:#fff;background-color:#546E7A;border-radius: 5px;padding:4px 7px;font-size:14px;}
+.btn-default-inverse:hover .badge, .btn-default-inverse.active .badge{color:#546E7A;background-color:#fff;}
+
 .btn-primary {
   color: #ffffff;
   background-color: #337ab7;

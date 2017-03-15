@@ -36,10 +36,29 @@ if($res_user){
       <meta http-equiv="Cache-control" content="no-cache">
       <meta http-equiv="Expires" content="-1">
       <title>Admnistración de Propiedad Horizontal, gerencia inmobiliaria y bienes raices</title>
-      <link rel="shortcut icon" href="../images/favicon.ico" />
+      <!-- <link rel="shortcut icon" href="../images/favicon.ico" />
       <link rel="apple-touch-icon" href="../images/icono-57.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="../images/icono-72.png" />
-      <link rel="apple-touch-icon" sizes="114x114" href="../images/icono-114.png" />
+      <link rel="apple-touch-icon" sizes="114x114" href="../images/icono-114.png" /> -->
+      
+      <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+      <link rel="manifest" href="../images/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="../images/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+
       <!-- Calendar -->
       <link rel="stylesheet" href="../css/fullcalendar.css">
       <!-- <link rel="stylesheet" href="../css/sweet-alert.css"> -->
@@ -143,6 +162,45 @@ if($res_user){
                           Inicio
                         </a>
                       </li>
+                      <li>
+                        <a class="menu_movil" href="#quienes-somos.html">¿Quiénes Somos?</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#documentos.html">Documentos</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#calendario.html">Actividades</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#tareas.html">Tareas</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#mensajes.html">Mensajes</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Quienes Somos -->
+                  <li class="dropdown hidden-xs hidden-sm hidden-md col-lg-2 text-nowrap">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                      Inicio
+                      <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                      <li>
+                        <a class="menu_movil" href="#quienes-somos.html">¿Quiénes Somos?</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#documentos.html">Documentos</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#calendario.html">Actividades</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#tareas.html">Tareas</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#mensajes.html">Mensajes</a>
+                      </li>
                     </ul>
                   </li>
                   <!-- Apartamentos / residentes -->
@@ -157,6 +215,36 @@ if($res_user){
                       </li>
                       <li>
                         <a class="menu_movil" href="#tipos-de-apartamento.html">Tipo Aptos.</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Inventario -->
+                  <li class="dropdown col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                      Inventario
+                      <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                      <li>
+                        <a class="menu_movil" href="#equipos-y-mantenimientos-activos.html">Activos</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#equipos-y-mantenimientos-inactivos.html">Inactivos</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- Estadisticas -->
+                  <li class="dropdown col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                      Estadísticas
+                      <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" style="text-align: center;">
+                      <li>
+                        <a class="menu_movil" href="#estadisticas.html">Habitantes</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#estadisticas-servicios-publicos.html">Serv. Públicos</a>
                       </li>
                     </ul>
                   </li>
@@ -177,6 +265,10 @@ if($res_user){
                         <a class="menu_movil" href="#lista-de-depositos.html">Depósitos</a>
                       </li>
                     </ul>
+                  </li>
+                  <!-- Contactos -->
+                  <li class="dropdown col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap">
+                    <a class="menu_movil" href="#contactos.html">Contactos</a>
                   </li>
                   <!-- Cerrar Sessión / preguntas frecuentes / Cambiar contraseña -->
                   <li class="dropdown col-xs-12 hidden-sm hidden-md hidden-lg">

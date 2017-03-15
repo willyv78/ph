@@ -21,72 +21,70 @@ if($res_servi){
             }
         }
     }
-}?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 5px;">
-    <button type="button" class="btn btn-default pull-right" data-quien="8">Nuevo</button>
-</div><?php 
+}
 if($servi_all){
     if($servi_emp){?>
-        <!-- Titulares -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-info">
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <img src="../images/ASEO1.png" class="img-responsive admon2" alt="Image">
-            </div>
-            <!-- Información seguridad Empresa -->
-            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 info-emp">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Empresa:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $servi_emp[0];?></span>
+        <!-- Servicios Empresa -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-contador">
+            <!-- Información servicios Empresa -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 info-emp">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Empresa:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[0];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Contacto:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[1];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Contacto:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"> <?php echo $servi_emp[1];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">Tel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-1 text-nowrap modal-open text-left"><?php echo $servi_emp[2];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Cel:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-2 text-nowrap modal-open text-left"><?php echo $servi_emp[3];?></span>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Teléfono:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[2];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Celular:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[3];?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Correo:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-5 col-lg-4 text-nowrap modal-open text-left"><?php echo $servi_emp[4];?></span>
-                    <span class="col-xs-12 col-sm-3 col-md-1 col-lg-1 text-nowrap modal-open text-left">WEB:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-4 col-lg-5 text-nowrap modal-open text-left"><?php echo $servi_emp[7];?></span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <span class="col-xs-12 col-sm-3 col-md-2 col-lg-2 text-nowrap modal-open text-left">Horario Atención:</span>
-                    <span class="col-xs-12 col-sm-9 col-md-10 col-lg-10 text-nowrap modal-open text-left"><?php echo $servi_emp[5];?></span>
-                </div>
-                <div class="clearfix">&nbsp;</div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <button type="button" class="btn btn-default pull-right" data-id="<?php echo $servi_emp[6];?>" data-quien="8">Eliminar</button>
-                    <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-id="<?php echo $servi_emp[6];?>" data-quien="8">Editar</button>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom-last">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Correo:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[4];?></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">WEB:</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $servi_emp[7];?></div>
                 </div>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button type="button" class="btn btn-default pull-right" data-id="<?php echo $servi_emp[6];?>" data-quien="8">Eliminar</button>
+            <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-id="<?php echo $servi_emp[6];?>" data-quien="8">Editar</button>
+            <button type="button" class="btn btn-default pull-right" style="margin-right: 5px;" data-quien="8">Nuevo</button>
         </div><?php 
     }
     if($servi_gen){?>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
         <!-- Suplentes -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger"><?php 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><?php 
             for($i = 0; $i < count($servi_gen); $i++){?>
-                <div class="col-xs-12 text-center miecomite"><?php 
+                <div class="col-xs-12 text-center mieconsejo serviciodelegado"><?php 
                     if($servi_gen[$i][0]){$src_gen = $servi_gen[$i][0];}
                     else{$src_gen = imagenDefault();}?>
-                    <img src="<?php echo $src_gen;?>" class="img-responsive fotoservicios" alt="Image">
+                    <img src="<?php echo $src_gen;?>" class="img-responsive" alt="Image">
                     <div class="iconos-edit hidden">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $servi_gen[$i][6];?>" data-quien="8"></span>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $servi_gen[$i][6];?>" data-quien="8"></span>
                     </div>
-                    <div class="bgreen text-center datacomite"><?php echo $servi_gen[$i][1]; ?></div>
+                    <div class="text-center"><?php echo $servi_gen[$i][1]; ?></div>
                 </div><?php 
             }?>
         </div><?php 
     }
     if((!$servi_emp) && (!$servi_gen)){?>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">No hay seguridad registrado</div><?php 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">No hay seguridad registrado</div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <button type="button" class="btn btn-default pull-right" data-quien="8">Nuevo</button>
+        </div><?php 
     }
 }
 else{?>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-danger">Error en la consulta</div><?php 
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Error en la consulta</div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button type="button" class="btn btn-default pull-right" data-quien="8">Nuevo</button>
+    </div><?php 
 }?>
 <script>
     $(document).ready(function() {

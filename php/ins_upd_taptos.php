@@ -3,10 +3,18 @@ require_once ("../conexion/conexion.php");
 require_once ("funciones.php");
 $tabla = "rmb_taptos";
 if(isset($_POST['id_sup'])){
+    // SQL para borrar el registro de la tabla de tipo de apartamento
     $sql_borrar = "DELETE FROM $tabla WHERE ".$tabla."_id = ".$_POST['id_sup']."";
     $res_borrar = mysql_query($sql_borrar, conexion());
-    if($res_borrar){
-        $nom_id = $_POST['id_sup']."_vac";
+    // SQL para borrar todos los registros de la tabla que une los apartamentos con los tipos de apartamento
+    $sql_borrar_axt = "DELETE FROM rmb_aptos_x_taptos WHERE rmb_taptos_id = ".$_POST['id_sup']; 
+    $res_borrar_axt = mysql_query($sql_borrar_axt, conexion());
+    // SQL para actualizar la tabla de los apartamentos y dejar en 0 los valores de los campos que se relacionan con el tipo de apartamento
+    $sql_upd_aptos = "UPDATE rmb_aptos SET rmb_aptos_area = 0, rmb_aptos_priv = 0, rmb_aptos_banos = 0, rmb_aptos_coc = 0, rmb_aptos_hab = 0, rmb_aptos_balc = 0, rmb_aptos_coef = 0, rmb_aptos_est = 0, rmb_aptos_serv = 0, rmb_aptos_terr = 0, rmb_taptos_id = 0 WHERE rmb_taptos_id = ".$_POST['id_sup'];
+    $res_upd_aptos = mysql_query($sql_upd_aptos, conexion());
+
+    if(($res_borrar) && ($res_borrar_axt) && ($res_upd_aptos)){
+        $nom_id = $_POST['id_sup'];
         echo "Se borro el registro Nº ".$nom_id;
     }
 }
@@ -61,6 +69,10 @@ else if(isset($_POST['id_upd'])){
             }
         }
     }
+    // SQL para actualizar la tabla de los apartamentos y dejar en 0 los valores de los campos que se relacionan con el tipo de apartamento
+    $sql_upd_aptos = "UPDATE rmb_aptos SET rmb_aptos_area = ".$_POST['rmb_taptos_area'].", rmb_aptos_priv = ".$_POST['rmb_taptos_priv'].", rmb_aptos_banos = ".$_POST['rmb_taptos_banos'].", rmb_aptos_hab = ".$_POST['rmb_taptos_hab'].", rmb_aptos_balc = ".$_POST['rmb_taptos_balc'].", rmb_aptos_coef = ".$_POST['rmb_taptos_coef'].", rmb_aptos_est = ".$_POST['rmb_taptos_est'].", rmb_aptos_serv = ".$_POST['rmb_taptos_serv'].", rmb_aptos_terr = ".$_POST['rmb_taptos_terr']." WHERE rmb_taptos_id = ".$_POST['id_upd'];
+    $res_upd_aptos = mysql_query($sql_upd_aptos, conexion());
+    if(!$res_upd_aptos){$sw ++;}
     // si los sql en esta seccion se ejecutaron correctamente hace esto
     if($sw == 0){echo "Todo estuvo bien";}
 }
@@ -108,9 +120,11 @@ else{
         foreach ($array_aptos as $key => $value) {
             $sql_aptos = "INSERT INTO rmb_aptos_x_taptos (rmb_aptos_nom, rmb_taptos_id, rmb_aptos_x_taptos_fecha, rmb_aptos_x_taptos_user) VALUES ('$value', '$nex_id', NOW(), '".$_SESSION['UsuID']."')";
             $res_aptos = mysql_query($sql_aptos, conexion());
-            if(!$sql_aptos){
-                $sw ++;
-            }
+            if(!$sql_aptos){$sw ++;}
+            // SQL para actualizar la tabla de los apartamentos y dejar en 0 los valores de los campos que se relacionan con el tipo de apartamento
+            $sql_upd_aptos = "UPDATE rmb_aptos SET rmb_aptos_area = ".$_POST['rmb_taptos_area'].", rmb_aptos_priv = ".$_POST['rmb_taptos_priv'].", rmb_aptos_banos = ".$_POST['rmb_taptos_banos'].", rmb_aptos_hab = ".$_POST['rmb_taptos_hab'].", rmb_aptos_balc = ".$_POST['rmb_taptos_balc'].", rmb_aptos_coef = ".$_POST['rmb_taptos_coef'].", rmb_aptos_est = ".$_POST['rmb_taptos_est'].", rmb_aptos_serv = ".$_POST['rmb_taptos_serv'].", rmb_aptos_terr = ".$_POST['rmb_taptos_terr']." WHERE rmb_aptos_nom = '$value'";
+            $res_upd_aptos = mysql_query($sql_upd_aptos, conexion());
+            if(!$res_upd_aptos){$sw ++;}
         }
     }
     // si los sql en esta seccion se ejecutaron correctamente hace esto

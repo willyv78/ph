@@ -107,6 +107,14 @@ else if(isset($_POST['id_upd_reenvío'])){
         mysql_query("ROLLBACK", conexion());
     }
 }
+else if(isset($_POST['id_upd'])){
+    $campo = "";
+    $valor = "";
+    $sq = 0;
+    $sql_upd = "UPDATE $tabla SET rmb_est_id = '7' WHERE rmb_mens_id = '".$_POST['id_upd']."'";
+    $res_upd = mysql_query($sql_upd, conexion());
+    if($res_upd){echo $nex_id;}
+}
 else{
     $campo = "";
     $valor = "";

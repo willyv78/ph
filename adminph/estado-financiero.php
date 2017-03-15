@@ -26,28 +26,29 @@ else{
 }
 $anio1 = $anio - 1;
 $anio2 = $anio + 1;
-$est_tes = 17;
+$est_tes = 20; // Estado de tesoreria al día
 $clase = "btn-warning";
-$est_clase = 18;
+$est_clase = 18; // Estado de tesoreria Mora de 1 mes
 $valor_saldo = 0;
 $valor_debe = 0;
 $deuda_ant = 0;
 $pago_ant = 0;
-$fechaini_admin = $anyo;
-$fechafin_admin = 30;
-$fechadec_admin = 15;
+$anio_ini = 2016; // Año inicial desde que se cobra administración.
+$fechaini_admin = 1; // Día en que arranca el cobro de administración.
+$fechafin_admin = 30; // día del mes en que se determina mora.
+$fechadec_admin = 15; // Día del mes hasta que se aplica descuento.
 $porc_desc_consejo = 0;
 // variable que almacena el valor de la administración del apartamento
 $valor_admin = 0;
 // realizamos la consulta de los parametros del proyecto año desde que se cobra administración, fecha hasta que aplica el descuento por pronto pago y la fecha hasta que se aplica mora
-$res_proy = registroCampo("rmb_proyecto p", "p.rmb_proyecto_finiadmin, p.rmb_proyecto_ffinadmin, p.rmb_proyecto_fdescadmin, p.rmb_proyecto_descc", "WHERE p.rmb_proyecto_id = '$id_proy'", "", "");
+$res_proy = registroCampo("rmb_proyecto p", "p.rmb_proyecto_finiadmin, p.rmb_proyecto_ffinadmin, p.rmb_proyecto_fdescadmin", "WHERE p.rmb_proyecto_id = '$id_proy'", "", "");
 if($res_proy){
     if(mysql_num_rows($res_proy) > 0){
         $row_proy = mysql_fetch_array($res_proy);
         $fechaini_admin = $row_proy[0];
         $fechafin_admin = $row_proy[1];
         $fechadec_admin = $row_proy[2];
-        $porc_desc_consejo = $row_proy[3];
+        // $porc_desc_consejo = $row_proy[3];
     }
 }
 // realizamos la consulta del valor de la administracion por tipo de apartamento
@@ -58,10 +59,9 @@ if($res_admin){
         $valor_admin = $row_admin[0];
     }
 }
-
 $sq = 0;
 // recorremos los años desde el inicio de cobro de administración segun variable del proyecto hasta el año actual
-for($i = round($fechaini_admin); $i <= round($anyo); $i++){
+for($i = round($anio_ini); $i <= round($anyo); $i++){
     // si esta en el año actual los meses equivale a el mes actual
     if($i == round($anyo)){$meses_anyo = round($mes);}
     // Si son años anteriores los meses serán 12
@@ -79,6 +79,7 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
             if(mysql_num_rows($res_tes) > 0){
                 $row_tes = mysql_fetch_array($res_tes);
                 $valor_debe = $row_tes[1];
+                $est_tes = $row_tes[2];
                 // consultamos si existe un concepto asignado al cobro actual
                 $res_concepto = registroCampo("rmb_tes_concep c", "tp.rmb_tpago_nom, tp.rmb_tpago_ope, c.rmb_tes_concep_cant, c.rmb_tes_concep_val", "LEFT JOIN rmb_tpago tp USING(rmb_tpago_id) WHERE c.rmb_tesoreria_id = '".$row_tes[0]."'", "", "");
                 // si realiza la consulta correctamente hace esto
@@ -88,19 +89,47 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         // insertamos un registro por concepto de administracion con valor segun el tipo de apartamento
                         $sql_concept = "INSERT INTO rmb_tes_concep (rmb_tesoreria_id, rmb_tpago_id, rmb_tes_concep_cant, rmb_tes_concep_val) VALUES ('".$row_tes[0]."', '1', '1', $valor_admin)";
                         $query_concept = mysql_query($sql_concept, conexion());
-                        // consultamos si el apartamento tiene un miembro en el consejo para aplicar el descuento por esto
-                        $sql_consejo = registroCampo("rmb_residente_x_aptos rxa", "r.rmb_perfil_id", "LEFT JOIN rmb_residente r USING(rmb_residente_id) WHERE rxa.rmb_aptos_id = '$id_apto'", "", "");
-                        // si se realiza la consulta correctamente hace esto
-                        if($sql_consejo){
-                            // si encuentra un miembro del consejo hace esto
-                            if(mysql_num_rows($sql_consejo) > 0){
-                                // se calcula el valor del descuento en pesos solo aplica si el valor en la tabla de rmb_proyecto es en porcentaje, se debe cambiar esto si cambia a valor fijo en pesos
-                                $valor_descuento = ($valor_admin * $porc_desc_consejo) / 100;
-                                // se ingresa un concepto al cobro por concepto de descuento por pertenecer al consejo el valor se trae desde los parametros del proyecto
-                                $sql_concept2 = "INSERT INTO rmb_tes_concep (rmb_tesoreria_id, rmb_tpago_id, rmb_tes_concep_cant, rmb_tes_concep_val) VALUES ('".$row_tes[0]."', '5', '1', $valor_descuento)";
-                                $query_concept2 = mysql_query($sql_concept2, conexion());
+                        // Consultamos los conceptos y sus tipo de operacion para actualizar el cobro
+                        $sql_tes_concept = "SELECT c.rmb_tes_concep_val, tp.rmb_tpago_ope FROM rmb_tes_concep c LEFT JOIN rmb_tpago tp USING(rmb_tpago_id) WHERE c.rmb_tesoreria_id = '".$row_tes[0]."'";
+                        $res_tes_concept = mysql_query($sql_tes_concept, conexion());
+                        if($res_tes_concept){
+                            if(mysql_num_rows($res_tes_concept) > 0){
+                                while($row_tes_concept = mysql_fetch_array($res_tes_concept)){
+                                    $valor = $row_tes_concept[0];
+                                    $opera = $row_tes_concept[1];
+                                    if($opera == "1"){
+                                        $valor_tes += $valor;
+                                    }
+                                    else{
+                                        if($valor_tes >= $valor){
+                                            $valor_tes = $valor_tes - $valor;
+                                        }
+                                        else{
+                                            $valor_tes = $valor - $valor_tes;
+                                        }
+                                    }
+                                }
                             }
                         }
+                        // si el estado del registro anterior o mes anterior es al dia hace esto
+                        if($est_tes == 17){
+                            $new_est = 18;
+                        }
+                        // Si el estado del mes anterior es mora de un mes hace esto
+                        elseif($est_tes == 18){
+                            $new_est = 19;
+                        }
+                        // si el estado del mes anterior es mora de 2 meses hace esto
+                        elseif($est_tes == 19){
+                            $new_est = 20;
+                        }
+                        // si el estado del mes anterior es mora de más de 2 meses hace esto
+                        else{
+                            $new_est = 20;
+                        }
+                        // Actualizamos el valor del cobro
+                        $sql_upd_tes = "UPDATE rmb_tesoreria SET rmb_tesoreria_val = $valor_tes, rmb_est_id = $new_est WHERE rmb_tesoreria_id = '".$row_tes[0]."'";
+                        $res_upd_tes = mysql_query($sql_upd_tes, conexion());
                     }
                 }
             }
@@ -126,12 +155,13 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         $sq++;
                     }
                 }
-                // consultamos el valor total pagado hata la fecha dada segun año dado, mes de la iteración y ultimo dia del mes
+                // consultamos el valor total pagado hasta la fecha dada segun año dado, mes de la iteración y ultimo dia del mes
                 $res_pago = registroCampo("rmb_pagos p", "SUM(p.rmb_pagos_valor)", "LEFT JOIN rmb_tesoreria tes USING(rmb_tesoreria_id) WHERE tes.rmb_aptos_id = '$id_apto' AND DATE_FORMAT(p.rmb_pagos_fpago,'%Y-%m-%d') <= '$fpag'", "GROUP BY tes.rmb_aptos_id", "");
                 if($res_pago){
                     if(mysql_num_rows($res_pago) > 0){
                         $row_pago = mysql_fetch_array($res_pago);
                         $pago_ant = $row_pago[0];
+                        // echo "Pago anterior = ".$pago_ant;
                     }
                 }
                 // si existe algun cobro o deuda anterior hace esto
@@ -144,6 +174,7 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         if(mysql_num_rows($res_est_tes) > 0){
                             $row_est_tes = mysql_fetch_array($res_est_tes);
                             $est_tes = $row_est_tes[0];
+                            // echo "est_tes=".$est_tes;
                         }
                     }
                     // si el estado del registro anterior o mes anterior es al dia hace esto
@@ -161,17 +192,19 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         $clase = "btn-danger";
                         $new_est = 20;
                     }
+                    // si el estado del mes anterior es mora de más de 2 meses hace esto
+                    else{
+                        $clase = "btn-danger";
+                        $new_est = 20;
+                    }
                 }
                 else{
                     $clase = "btn-warning";
-                    $new_est = 18;
+                    $new_est = 20;
                 }
-
                 // obtenermos el proximo id de la tabla tesoreria
                 $nex_id = NextID('rmb_admon', 'rmb_tesoreria');
-
-                echo "anyo=".round($anyo)." fechaini_admin=".round($fechaini_admin)." Año=".$i." fecha pago=".$fpag." Fecha vence=".$fven."<br>";
-                // hacemos el inser del registro en la tabla rmb_tesorería para el mes actual
+                // hacemos el insert del registro en la tabla rmb_tesorería para el mes actual
                 $sql_tes_mes = "INSERT INTO rmb_tesoreria (rmb_tesoreria_fpag, rmb_tesoreria_fven, rmb_tesoreria_obs, rmb_tesoreria_val, rmb_aptos_id, rmb_est_id, rmb_tesoreria_fecha, rmb_tesoreria_user) VALUES ('$fpag', '$fven', 'Pago de administración del mes de $mes_letras', $valor_admin, $id_apto, $new_est, NOW(), ".$_SESSION['UsuID'].")";
                 $query_tes_mens = mysql_query($sql_tes_mes, conexion());
                 if($query_tes_mens){
@@ -179,25 +212,21 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         // hacemos un insert del concepto administración
                         $sql2 = "INSERT INTO rmb_tes_concep (rmb_tesoreria_id, rmb_tpago_id, rmb_tes_concep_cant, rmb_tes_concep_val) VALUES ('$nex_id', '1', '1', $valor_admin)";
                         $query2 = mysql_query($sql2, conexion());
-                        // consultamos si el apto tiene un miembro del consejo
-                        $sql_consejo = registroCampo("rmb_residente_x_aptos rxa", "r.rmb_perfil_id", "LEFT JOIN rmb_residente r USING(rmb_residente_id) WHERE rxa.rmb_aptos_id = '$id_apto'", "", "");
-                        // si hace la consulta correctamente
-                        if($sql_consejo){
-                            // si hay un miembro del consejo hace esto
-                            if(mysql_num_rows($sql_consejo) > 0){
-                                // se calcula el valor del descuento en pesos solo aplica si el valor en la tabla de rmb_proyecto es en porcentaje, se debe cambiar esto si cambia a valor fijo en pesos
-                                $valor_descuento = ($valor_admin * $porc_desc_consejo) / 100;
-                                // se hace un insert de concepto por descuento por ser miembro del consejo
-                                $sql_concept2 = "INSERT INTO rmb_tes_concep (rmb_tesoreria_id, rmb_tpago_id, rmb_tes_concep_cant, rmb_tes_concep_val) VALUES ('$nex_id', '5', '1', $valor_descuento)";
-                                $query_concept2 = mysql_query($sql_concept2, conexion());
-                            }
-                        }
                     }
                 }
             }
         }
     }
-}?>
+}
+$res_tes_apto = registroCampo("rmb_tesoreria tes", "tes.rmb_est_id", "WHERE tes.rmb_aptos_id = '$id_apto'", "", "ORDER BY tes.rmb_tesoreria_id DESC LIMIT 1");
+if($res_tes_apto){
+    if(mysql_num_rows($res_tes_apto) > 0){
+        $row_tes_apto = mysql_fetch_array($res_tes_apto);
+        $sql_upd_apto = "UPDATE rmb_aptos SET rmb_est_id = ".$row_tes_apto[0]." WHERE rmb_aptos_id = '$id_apto'";
+        $res_upd_apto = mysql_query($sql_upd_apto, conexion());
+    }
+}
+?>
 <!-- Inicio página estado financiero -->
 <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
     <div class="modal-content">
@@ -207,22 +236,24 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
                     <span style="font-weight: bold;color: #546E7A">
-                        Estado Financiero <?php if($nom_apto){echo "apto. " . $nom_apto;}echo " - año " . $anio; ?>
+                        Estado Financiero <?php if($nom_apto){
+                            echo "apto. " . $nom_apto;
+                            }?>
                     </span>
                 </h4>
                 <div class="clearfix">&nbsp;</div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
                         <i class="glyphicon glyphicon-triangle-left"></i>
-                        <button type="button" class="btn btn-default btn-anios <?php if($anio1 < $fechaini_admin){echo "disabled";}?>"><?php echo $anio1;?></button>
+                        <button type="button" class="btn btn-default btn-anios <?php if($anio1 < $anio_ini){echo "disabled";}?>"><?php echo $anio1;?></button>
                         <button type="button" class="btn btn-default btn-anios active"><?php echo $anio;?></button>
                         <button type="button" class="btn btn-default btn-anios <?php if($anio2 > $anyo){echo "disabled";}?>"><?php echo $anio2;?></button>
                         <i class="glyphicon glyphicon-triangle-right"></i>
                     </div>
 
                     <div class="col-xs-12 col-sm-2 col-md-4 col-lg-6 text-right">
-                        <button type="button" class="btn btn-default btn-nuevo">Nuevo Pago</button>
-                        <button type="button" class="btn btn-default btn-nuevo">Nuevo Cobro</button>
+                        <button type="button" class="btn btn-default btn-nuevo" data-tipo="pago">Nuevo Pago</button>
+                        <button type="button" class="btn btn-default btn-nuevo" data-tipo="cobro">Nuevo Cobro</button>
                     </div>
                 </div>
                 <div class="clearfix">&nbsp;</div>
@@ -254,6 +285,7 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                     // se arma las fechas de inicio del mes y la final del mes
                     $fpag = $anio."-".$row_tes[3]."-".$primer_dia;
                     $fven = $anio."-".$row_tes[3]."-".$ultimo_dia;
+                    // echo "fecha de pag0:".$fpag." fecha vence:".$fven;
                     // inicializamos la variable lo que debe
                     $debe = 0;
                     $res_debe = registroCampo("rmb_tesoreria tes", "SUM(tes.rmb_tesoreria_val)", "WHERE tes.rmb_aptos_id = '$id_apto' AND tes.rmb_tesoreria_fpag < '$fpag'", "GROUP BY tes.rmb_aptos_id", "ORDER BY tes. rmb_tesoreria_fpag DESC");
@@ -273,7 +305,6 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                         }
                     }
                     $tiene = $pago - $debe;
-                    echo "pago=".$pago." debe=".$debe."<br>";
                     if($tiene < 0){$total = ($tiene * -1) + $tes_val;}
                     else{$total = $tiene - $tes_val;}
                     if($total < 0){$total = $total * -1;}?>
@@ -283,7 +314,7 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                             <div class="text-nowrap modal-open div-mes">&nbsp;<?php echo $tes_mes;?></div>
                             <div class="text-nowrap modal-open text-right div-valor"><?php echo number_format($total);?></div>
                         </div>
-                        <div class="panel-body collapse" id="historial-financiero-<?php echo $tes_id;?>">
+                        <div class="panel-body collapse" id="historial-financiero-<?php echo $tes_id;?>" data-mes="<?php echo $row_tes[3];?>" data-anio="<?php echo $anio;?>">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><?php 
                                 $res_concept = registroCampo("rmb_tes_concep c", "tp.rmb_tpago_nom, tp.rmb_tpago_ope, c.rmb_tes_concep_cant, c.rmb_tes_concep_val", "LEFT JOIN rmb_tpago tp USING(rmb_tpago_id) WHERE c.rmb_tesoreria_id = '".$row_tes[0]."'", "", "");
                                 if($res_concept){
@@ -330,7 +361,6 @@ for($i = round($fechaini_admin); $i <= round($anyo); $i++){
                                         }
                                     }
                                 }?>
-                                
                             </div>
                         </div>
                     </div><?php

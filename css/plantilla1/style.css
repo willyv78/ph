@@ -283,7 +283,7 @@ ul.dropdown-menu{
 .mens-est{
     width:1.3rem;
     float:left;
-    height:64px;
+    height:59px;
 }
 .mens-est-nom{
     width:1.3rem;
@@ -415,59 +415,70 @@ ul.dropdown-menu{
 }
 .fotoadmin{
     width: 40%;
-    border: 8px solid #4767AF;
-    border-radius: 5px;
+    border: 5px solid #546E7A;
+    border-radius: 15px;
     margin-left: -25px;
     height: 160px;
     display:inline-block;
 }
 .fotoconsejo{
-    border: 8px solid rgb(77, 58, 143);
+    border: 8px solid #546E7A;
     border-radius: 5px;
     display: inline-block;
     height: 150px;
     width: 90%;
 }
 .fotoconsejo2{
-    border: 8px solid #FF8000;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     display: inline-block;
     height: 150px;
     width: 90%;
 }
 .dataconsejo{
-    border:3px solid #4D3A8F;
     border-radius: 5px;
     font-size: .8rem;
     padding:5px;
     margin:5px;
-    opacity:0.6;
+}
+.consejopresidente{
+    border:3px solid #F9B113;
+}
+.consejovicepresidente{
+    border:3px solid #C62923;
+}
+.consejotitular{
+    border:3px solid #349636;
+}
+.consejodelegado{
+    border: 3px solid #4cc0fb;
+}
+.consejodelegado > img{
+    border-radius: 8px 8px 0 0;
 }
 .fotocomite{
-    border: 8px solid #1EA0CB;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     display: inline-block;
     height: 150px;
     width: 90%;
 }
 .fotocomite2{
-    border: 8px solid #73B848;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     display: inline-block;
     height: 150px;
     width: 90%;
 }
 .datacomite{
-    border:3px solid #4D3A8F;
     border-radius: 5px;
     font-size: .8rem;
     padding:5px;
     margin:5px;
-    opacity:0.6;
 }
 .fotocontador{
     width: 40%;
-    border: 8px solid #EF9614;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     margin-left: -25px;
     height: 160px;
@@ -475,25 +486,24 @@ ul.dropdown-menu{
 }
 .fotorevisor{
     width: 40%;
-    border: 8px solid #974694;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     margin-left: -25px;
     height: 160px;
     display:inline-block;
 }
 .fotoservicios{
-    border: 8px solid #139445;
+    border: 8px solid #546E7A;
     border-radius: 5px;
     display: inline-block;
     height: 150px;
     width: 90%;
 }
 .dataservicios{
-    border:3px solid #139445;
+    border:3px solid #546E7A;
     border-radius: 5px;
     padding:5px;
     margin:5px;
-    opacity:0.6;
 }
 .home-accesos{
     width: 100%;
@@ -522,9 +532,29 @@ ul.dropdown-menu{
     margin-top: 40px;
 }
 .info-gen{
-    margin-top: 30px;
+    margin-top: 24px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.info-gen > div{
+    padding-left: 0;
 }
 .iconos-edit{
+    background-color: rgba(250, 250, 250, 0.74);
+    border-radius: 8px;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+.iconos-edit > span{
+    color: #546E7A;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 60px 20px;
+}
+.iconos-edit-consejo-comite{
     background-color: rgba(250, 250, 250, 0.74);
     height: 100%;
     position: absolute;
@@ -532,11 +562,11 @@ ul.dropdown-menu{
     top: 0;
     width: 95%;
 }
-.iconos-edit > span{
+.iconos-edit-consejo-comite > span{
     color: #546E7A;
     cursor: pointer;
     font-size: 1.5rem;
-    margin: 60px 20px;
+    margin: 30px 20px;
 }
 .form-quienes{
     float: none;
@@ -646,7 +676,50 @@ tr.odd {
     background-color: #eee;
     opacity: 1;
 }
-
+.linea-bottom{
+    padding-bottom: 4px;
+    padding-top: 10px;
+    padding-left: 0;
+    border-bottom: 1px solid #546e7a;
+}
+.linea-bottom > span{
+    padding-left: 0;
+}
+.linea-bottom > div{
+    padding-left: 0;
+}
+.linea-bottom-last{
+    padding-top: 10px;
+    padding-left: 0;
+}
+.linea-bottom-last > div{
+    padding-left: 0;
+}
+.linea-bottom-last > span{
+    padding-left: 0;
+}
+.info-contador, .info-contador > div{
+    padding-left: 0;
+}
+.info-contador > div{
+    padding-right: 250px;
+}
+.mieconsejo{
+    margin-right: 20px;
+}
+.mieconsejo > .text-center{
+    padding: 5px;
+}
+.serviciodelegado {
+    background-color: #546e7a;
+    color: #fff;
+    font-size: .8rem;
+    border-radius: 10px;
+    padding: 3px;
+}
+.serviciodelegado > img {
+    border-radius: 10px;
+}
 
 
 

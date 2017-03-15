@@ -65,7 +65,7 @@ if(isset($_GET['id_mens'])){
                 <div class='alert alert-warning text-left'>
                     <strong>Atención!</strong>
                     <p>No tiene mensajes en la bandeja de ".$nom_tipo.".</p>
-                    <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al telefono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
+                    <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al teléfono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
                 </div>
             </div>
           ";
@@ -77,7 +77,7 @@ if(isset($_GET['id_mens'])){
             <div class='alert alert-danger text-left'>
                 <strong>Atención!</strong>
                 <p>Se presento un error en la consulta.</p>
-                <footer>Si el error persiste, comuníquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al telefono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
+                <footer>Si el error persiste, comuníquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al teléfono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
             </div>
         </div>
       ";

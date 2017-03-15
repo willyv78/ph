@@ -7,7 +7,7 @@ require_once ("../php/funciones.php");
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
     
-$res_tareas = registroCampo("rmb_calendario c", "c.rmb_calendario_id, c.rmb_calendario_nom, c.rmb_calendario_fini, c.rmb_est_id", "WHERE c.rmb_mod_id = 2", "", "ORDER BY c.rmb_calendario_fini DESC");
+$res_tareas = registroCampo("rmb_calendario c", "c.rmb_calendario_id, c.rmb_calendario_nom, c.rmb_calendario_fini, c.rmb_est_id", "WHERE c.rmb_tcal_id = 4", "", "ORDER BY c.rmb_calendario_fini DESC");
 ?>
 <!-- Titulo de la pagina -->
 <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
@@ -71,6 +71,15 @@ $res_tareas = registroCampo("rmb_calendario c", "c.rmb_calendario_id, c.rmb_cale
       </div><?php 
     }?>
 </div>
+<script src="../js/jquery.min.js"></script>
+<!-- Librerias para crear las tablas con filtro y paginado -->
+<script src="../libraries/dataTables/media/js/jquery.js"></script>
+<script src="../libraries/dataTables/media/js/jquery.dataTables.js"></script>
+<script src="../libraries/dataTables/media/js/jquery.dataTables.min.js"></script>
+<script src="../libraries/dataTables/media/js/jquery.jeditable.js"></script>
+<script src="../libraries/dataTables/extras/TableTools/media/js/TableTools.js"></script>
+<script src="../libraries/dataTables/extras/TableTools/media/js/TableTools.min.js"></script>
+<script src="../libraries/dataTables/extras/TableTools/media/js/ZeroClipboard.js"></script>
 <script>
     jQuery(document).ready(function($){
       // funcion que se ejecuta al crear una tabla

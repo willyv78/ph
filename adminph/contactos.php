@@ -134,4 +134,9 @@ $UsuID = $_SESSION['UsuID'];
         }
     }?>
 </div>
-<script>$(document).ready(function() {editDocumento();});</script>
+<script src="../js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        editDocumento();
+    });
+</script>

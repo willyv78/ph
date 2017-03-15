@@ -303,9 +303,9 @@ if($res){
                     <table class="table table-striped">
                         <tr>
                             <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Nombre</th>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">CC.</th>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Telefono Contacto</th>
-                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Telefono Celular</th>
+                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Número de Identificación.</th>
+                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Teléfono Contacto</th>
+                            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">Teléfono Celular</th>
                             <th class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">Correo Electrónico</th>
                             <th class="text-center"></th>
                         </tr>

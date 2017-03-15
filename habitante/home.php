@@ -182,7 +182,7 @@ $n_rows = 1;
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los telefonos de entidades y sistemas de emergencia" title="Obtenga los telefonos de entidades y sistemas de emergencia" style="width:100%; cursor: pointer;">
+                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los teléfonos de entidades y sistemas de emergencia" title="Obtenga los teléfonos de entidades y sistemas de emergencia" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">

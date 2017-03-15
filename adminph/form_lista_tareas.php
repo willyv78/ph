@@ -69,6 +69,7 @@ if(isset($_GET['ver'])){
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
         <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label" for="rmb_calendario_desc">Observación: </label>
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
@@ -93,6 +94,11 @@ if(isset($_GET['ver'])){
     </form>
 </div>
 <div class="clearfix">&nbsp;</div>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src='../js/moment-with-locales.js'></script>
+<!-- Libreria java script que realiza la validacion de los formulariosP -->
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script> <!-- Datetimepicker -->
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {
         // Validación formulario de datos del propietario
@@ -119,7 +125,7 @@ if(isset($_GET['ver'])){
                             message: 'La fecha de inicio de la tarea es requerida'
                         },
                         date: {
-                            format: 'YYYY-MM-DD h:i:s',
+                            format: 'YYYY-MM-DD H:i',
                             message: 'La fecha de inicio de la tarea no es valida'
                         }
                     }
@@ -141,6 +147,7 @@ if(isset($_GET['ver'])){
                 processData:false,
                 success: function(datos){
                     if(datos !== ''){
+                        // alert(datos);
                         setTimeout(esperehide, 500);
                         $("#col-md-12").load('tareas.php');
                         history.pushState({page: "tareas.php"}, "Lista tareas", "tareas.html");
@@ -167,5 +174,9 @@ if(isset($_GET['ver'])){
             });
         });
         cargaFormTareas();
+    });
+    $(function () {
+        $('#rmb_calendario_fini').datetimepicker({autoclose: true});
+        $('#rmb_calendario_ffin').datetimepicker({autoclose: true});
     });
 </script>

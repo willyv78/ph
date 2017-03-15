@@ -116,8 +116,12 @@ function resizePagFooter(argument) {
 }
 // funcion que redimenciona la pagina para ajustar el div cal
 function resizePag(argument) {
+  var header = $(".navbar-inverse").outerHeight();
+  var content = $("#cont-pag").outerHeight();
+  var footer = $("footer").outerHeight();
   var screen = window.innerHeight;
-  var res_height = $(".container-fluid").outerHeight();
+  // alert(screen);cont-pag
+  var res_height = header + content + footer + 55;
   if(res_height < screen){var total = screen;}
   else{var total = res_height;}
   return total;
@@ -319,6 +323,10 @@ function cargarPagina (event) {
     $("#col-md-12").load("./tareas.php");
     history.pushState({page: "tareas.php"}, "Tareas", "tareas.html");
   }
+  else if(pagina === '#contactos.html'){
+    $("#col-md-12").load("./contactos.php");
+    history.pushState({page: "contactos.php"}, "Contactos", "contactos.html");
+  }
   else if(pagina === '#quienes-somos.html'){
     $("#col-md-12").load("./quienes-somos.php");
     history.pushState({page: "quienes-somos.php"}, "¿Quienes Somos?", "quienes-somos.html");
@@ -390,9 +398,9 @@ function verEstFinanciero (event) {
   var anio = fecha.getFullYear();
   switch(clase){
     case 'Estado Financiero':
-      // $(".ing-cal").load("estado-financiero.php?id_apto=" + id_apto + "&anio=" + anio);
-      // $(".ing-cal").height(altopag);
-      // $(".ing-cal").removeClass('hidden');
+      $(".ing-cal").load("estado-financiero.php?id_apto=" + id_apto + "&anio=" + anio);
+      $(".ing-cal").height(altopag);
+      $(".ing-cal").removeClass('hidden');
       break;
     case 'Datos del Apartamento':
       $("#col-md-12").load('detalle-del-apartamento.php?id_apto='+id_apto);
@@ -1315,6 +1323,7 @@ function datosPredeterminados (datos) {
   // obtengo el numero del apartamento
   var apto = $("#rmb_aptos_nom").val();
   var id_upd = $("#id_upd").val();
+  var esto = $(this);
   // si hay informacion en el campo numero de apartamento hace esto
   if(apto){
     $.ajax({
@@ -1358,6 +1367,9 @@ function datosPredeterminados (datos) {
             type: "error",
             confirmButtonText: "Aceptar",
             confirmButtonColor: "#E25856"
+          },
+          function(){
+            $("#rmb_aptos_nom").closest('dd').load("./form_apto.php?id_apto="+id_upd);
           });
           return;
         }
@@ -1936,14 +1948,6 @@ function removerAptosMens (datos) {
 
 // Estado Financiero / Tesorería
 
-// funcion que se ejecuta al cargar la pagina de estado financiero
-function cargaEstadoFinanciero () {
-  $(".close").on("click", cerrarModalDocs);
-  $(".btn-anios").on("click", consultarEstadoAnio);
-  // $(".btn-editar").on("click", editarEstadoFinanciero);
-  // $(".btn-nuevo").on("click", nuevoEstadoFinanciero);
-  setTimeout(esperehide, 500);
-}
 // funcion que se ejecuta al hacer click en los botones de los años en estado financiero
 function consultarEstadoAnio (datos) {
   var altopag = resizePag();
@@ -1954,6 +1958,175 @@ function consultarEstadoAnio (datos) {
   $(".ing-cal").load("estado-financiero.php?id_apto="+id_apto+"&anio="+tipo_btn);
   $(".ing-cal").height(altopag);
   $(".ing-cal").removeClass('hidden');
+}
+// funcion que se ejecuta al hacer clic dentro de un panel collapse
+function restablecerPanel(panelbody, paneldefault){
+  // alert("restablecerPanel");
+  setTimeout(function(){
+    panelbody.css("height","auto");
+    paneldefault.removeClass('collapsed');
+    panelbody.removeClass('collapse').addClass('in');
+    var clase = panelbody.attr('class');
+  }, 0);
+}
+// funcion que se ejecuta cuando se carga la página de nuevo concepto en edicion de tesoreria
+function cargaNuevoConceptoEstadoFinanciero(){
+  var panelbody = $("#form-new-concept").closest('.panel-body');
+  var paneldefault = $("#form-new-concept").closest('.panel-default');
+  var id_tes = panelbody.attr('id').split('historial-financiero-');
+  var mes = panelbody.data('mes');
+  var anio = panelbody.data('anio');
+  var id_apto = $('#id_apto').val();
+  restablecerPanel(panelbody, paneldefault);
+  $(".btn-regresar").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    $(panelbody).load("estado-financiero-editar-cobro.php?id_tes="+id_tes[1]);
+  });
+  $(".form-control").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+  });
+  $(".btn-ingresar").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    $( "#form-new-concept" ).submit();
+  });
+}
+// funcion que se ejecuta al cargar el formulario de edicion de los cobros
+function cargaEditarEstadoFinanciero(datos){
+  var panelbody = $(".class-edit-cobro").closest('.panel-body');
+  var paneldefault = $(".class-edit-cobro").closest('.panel-default');
+  var id_tes = panelbody.attr('id').split('historial-financiero-');
+  var mes = panelbody.data('mes');
+  var anio = panelbody.data('anio');
+  var id_apto = $('#id_apto').val();
+  restablecerPanel(panelbody, paneldefault);
+  $(".form-control").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+  });
+  $(".btn-actualizar").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    $( "#form-concept" ).submit();
+  });
+  $(".btn-regresar").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    $(panelbody).load("estado-financiero-detalle.php?id_tes="+id_tes[1]+"&mes="+mes+"&anio="+anio+"&id_apto="+id_apto);
+  });
+  $(".btn-new-concept").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    $(panelbody).load("estado-financiero-new-concept.php?id_tes="+id_tes[1]);
+  });
+  $(".btn-del-concept").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+    var id_concept = $(this).data('concept');
+    var id_apto = $('#id_apto').val();
+    var altopag = resizePag();
+    var fecha = new Date();
+    var anio = fecha.getFullYear();
+    // alert(id_concept);
+    $.ajax({
+        url:"../php/ins_upd_estfin.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+id_concept+"&rmb_tesoreria_id="+id_tes[1],
+        success: function(datos){
+            if(datos !== ''){
+                // alert(datos);
+                var panelbody = $(".class-edit-cobro").closest('.panel-body');
+                var id_tes = $("#rmb_tesoreria_id").val();
+                swal({
+                    title: "Felicidades!",
+                    text: "El registro se ha eliminado correctamente!",
+                    type: "success",
+                    confirmButtonText: "Continuar",
+                    confirmButtonColor: "#94B86E"
+                },
+                function(){
+                    $(".ing-cal").load("estado-financiero.php?id_apto=" + id_apto + "&anio=" + anio);
+                    $(".ing-cal").height(altopag);
+                    $(".ing-cal").removeClass('hidden');
+                });
+            }
+            else{
+                setTimeout(esperehide, 1000);
+                swal({
+                    title: "Error!",
+                    text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+                    type: "error",
+                    confirmButtonText: "Aceptar",
+                    confirmButtonColor: "#E25856"
+                });
+                return;
+            }
+        }
+    });
+  });
+  esperehide();
+}
+// funcion que se ejecuta al hacer click en el boton de editar cobro
+function editarEstadoFinanciero (datos) {
+  espereshow();
+  var id_apto = $("#id_apto").val();
+  var panelbody = $(this).closest('.panel-body');
+  var paneldefault = $(this).closest('.panel-default');
+  restablecerPanel(panelbody, paneldefault);
+  var id_tes = panelbody.attr('id').split('historial-financiero-');
+  var text_boton = $(this).html();
+  if(text_boton === 'Editar Cobro'){
+    $(panelbody).load("estado-financiero-editar-cobro.php?id_tes="+id_tes[1]);
+  }
+  else{
+    $(panelbody).load("estado-financiero-nuevo-pago.php?id_tes="+id_tes[1]+"&id_apto="+id_apto);
+  }
+  
+}
+// funcion que se ejecuta al cargar el formulario de Nuevo cobro
+function cargaNuevoEstadoFinanciero(datos){
+  var id_apto = $("#id_apto").val();
+  var anio = $(".btn-anios.active").html();
+  var altopag = resizePag();
+  var panelbody = $(this).closest('.panel-body');
+  var paneldefault = $(this).closest('.panel-default');
+  restablecerPanel(panelbody, paneldefault);
+  $(".btn-actualizar").on('click', function(event) {
+    // alert("btn-actualizar");
+  });
+  $(".btn-regresar").on('click', function(event) {
+    $(".ing-cal").load("estado-financiero.php?id_apto=" + id_apto + "&anio=" + anio);
+    $(".ing-cal").height(altopag);
+    $(".ing-cal").removeClass('hidden');
+
+    $(panelbody).load("estado-financiero-detalle.php?id_tes="+id_tes[1]+"&mes="+mes+"&anio="+anio+"&id_apto="+id_apto);
+  });
+  esperehide();
+}
+// Funcion que se ejecuta al hacer click en un boton de nuevo pago o nuevo cobro
+function nuevoEstadoFinanciero(){
+  var tipo = $(this).data('tipo');
+  var id_apto = $("#id_apto").val();
+  if(tipo === 'cobro'){
+    // alert(tipo);
+    $(".modal-body").load("estado-financiero-nuevo-cobro.php");
+  }
+  else{
+    // alert(tipo);
+    $(".modal-body").load("estado-financiero-nuevo-pago.php?id_apto="+id_apto);
+  }
+  
+}
+// funcion que se ejecuta al cargar la pagina de estado financiero
+function cargaEstadoFinanciero () {
+  $(".close").on("click", cerrarModalDocs);
+  $(".btn-anios").on("click", consultarEstadoAnio);
+  $(".btn-editar").on("click", editarEstadoFinanciero);
+  $(".btn-nuevo").on("click", nuevoEstadoFinanciero);
+  setTimeout(esperehide, 500);
 }
 
 
@@ -1993,8 +2166,8 @@ function editarDocs () {
 // funcion que se ejecuta cuando se hace click en un boton en el listado de documentos
 function agregarEditarBorrarDoc (datos) {
   var altopag = resizePag();
-  var tipo        = $(this).parent(".id_tipo").attr("id_tipo");
-  var id          = $(this).parent("td").attr('name');
+  var tipo        = $(this).closest(".id_tipo").attr("id_tipo");
+  var id          = $(this).closest(".id_tipo").attr('name');
   var title_boton = $(this).attr('title');
   switch(title_boton){
     case "Descargar documento":
@@ -2155,9 +2328,169 @@ function verPerfil(datos) {
     }
   }, 100);
 }
+
+
+// funcion que se ejecuta al cargar el formulario del consejo y comite en quienes somos
+function cargaFormQuienesConsejoComite() {
+  $(".regresar").on("click", volverQuienes);
+  setTimeout(esperehide, 500);
+}
+// funcion que se ejecuta al hacer click en los iconos de editar y/o eliminar en quienes somos
+function editarMiembro(argument) {
+  espereshow();
+  var boton = $(this);
+  var botonHTML = boton.attr('title');
+  var data_id = boton.data('id');
+  var data_quien = boton.data('quien');
+  var pag = "";
+  if(botonHTML === 'Eliminar Registro'){
+    setTimeout(esperehide, 500);
+    if(data_quien === 2){pag = "consejo";}
+    else if(data_quien === 3){pag = "comite";}
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_quienes-consejo-comite.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#collapseExample" + data_quien).load(pag + ".php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+  else if(botonHTML === 'Editar Registro'){
+    setTimeout(esperehide, 500);
+    $(boton).closest(".panel-body").load("quienes-somos-form-consejo-comite.php?id_res=" + data_id + "&data_quien=" + data_quien);
+  }
+}
+// funcion que se ejecuta al hacer click en los botones de nuevo, editar y/o eliminar en consejo y comite en quienes somos
+function nuevoMiembro(argument) {
+  espereshow();
+  var boton = $(this);
+  var botonHTML = boton.html();
+  var data_quien = boton.data('quien');
+  if(data_quien !== 4){
+    if(botonHTML === 'Nuevo'){
+      $(boton).closest(".panel-body").load("quienes-somos-form-consejo-comite.php?data_quien=" + data_quien);
+    }
+    else if(botonHTML === 'Eliminar'){
+      setTimeout(esperehide, 500);
+      var data_id = boton.data('id');
+      if(data_quien === 1){pag = "administracion";}
+      else if(data_quien === 2){pag = "consejo";}
+      else if(data_quien === 3){pag = "comite";}
+      else if(data_quien === 4){pag = "edificio";}
+      else if(data_quien === 5){pag = "contador";}
+      else if(data_quien === 6){pag = "revisor";}
+      else if(data_quien === 7){pag = "seguridad";}
+      else if(data_quien === 8){pag = "servicios";}
+      swal({
+         title: "¿Esta Seguro?",
+         text: "Se borrará el registro con # id " + data_id,
+         type: "warning",
+         showCancelButton: true,
+         cancelButtonText: "Cancelar",
+         confirmButtonColor: "#F8BB86",
+         confirmButtonText: "Eliminar!",
+         closeOnConfirm: false
+      },
+      function(){
+        $.ajax({
+          url:"../php/ins_upd_quienes.php",
+          cache:false,
+          type:"POST",
+          data:"id_sup="+data_id,
+          success: function(datos){
+            if(datos !== ''){
+              swal({
+                  title: "Felicidades!",
+                  text: "El registro se ha guardado correctamente!",
+                  type: "success",
+                  confirmButtonText: "Continuar",
+                  confirmButtonColor: "#94B86E"
+              },
+              function(){
+                  $("#collapseExample" + data_quien).load(pag + ".php");
+              });
+            }
+            else{
+              setTimeout(esperehide, 500);
+              swal({
+                title: "Error!",
+                text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+                type: "error",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#E25856"
+              });
+              return;
+            }
+          }
+        });
+      });
+    }
+    else if(botonHTML === 'Editar'){
+      setTimeout(esperehide, 500);
+      var data_id = boton.data('id');
+      $(boton).closest(".panel-body").load("quienes-somos-form.php?id_res=" + data_id + "&data_quien=" + data_quien);
+    }
+  }
+  else{
+    $(boton).closest(".panel-body").load("quienes-somos-edificio-form.php?id_proy=" + sess_proy);
+  }
+}
+// funcion que se ejecuta al hacer click o pasar mouse sobre imagen para ver iconos de edicion y eliminación
+function mostrarOcultarIconosConsejoComite(argument) {
+  // alert("mostrarOcultarIconos");
+  $(this).find('.iconos-edit-consejo-comite').toggleClass('hidden');
+}
+// funcion que se ejecuta al cargar la pagina lista de consejo y lista de comite en quienes somos
+function cargarConsejoComite () {
+  $('.mieconsejo').on('mouseover', mostrarOcultarIconosConsejoComite);
+  $('.mieconsejo').on('mouseout', mostrarOcultarIconosConsejoComite);
+  $('.miecomite').on('mouseover', mostrarOcultarIconosConsejoComite);
+  $('.miecomite').on('mouseout', mostrarOcultarIconosConsejoComite);
+  $(".btn.btn-default.pull-right").on("click", nuevoMiembro);
+  $("div.iconos-edit-consejo-comite > .glyphicon.glyphicon-pencil").on("click", editarMiembro);
+  $("div.iconos-edit-consejo-comite > .glyphicon.glyphicon-remove").on("click", editarMiembro);
+  setTimeout(esperehide, 500);
+}
+
 // funcion que se ejecuta al cargar la pagina tipo modal del admnistrador
 function cargarPerfil () {
-  $('dt').on("click", abrirPestanaQuienes);
+  // $('dt').on("click", abrirPestanaQuienes);
   $('.mieconsejo').on('mouseover', mostrarOcultarIconos);
   $('.mieconsejo').on('mouseout', mostrarOcultarIconos);
   $('.miecomite').on('mouseover', mostrarOcultarIconos);
@@ -2193,6 +2526,7 @@ function abrirPestanaQuienes(event) {
 }
 // funcion que se ejecuta al hacer click o pasar mouse sobre imagen para ver iconos de edicion y eliminación
 function mostrarOcultarIconos(argument) {
+  // alert("mostrarOcultarIconos");
   $(this).find('.iconos-edit').toggleClass('hidden');
 }
 // funcion que se ejecuta al hacer click en los botones de nuevo, editar y/o eliminar en quienes somos
@@ -2208,14 +2542,14 @@ function abrirFormQuienes(argument) {
     else if(botonHTML === 'Eliminar'){
       setTimeout(esperehide, 500);
       var data_id = boton.data('id');
-      if(data_quien === '1'){pag = "administracion";}
-      else if(data_quien === '2'){pag = "consejo";}
-      else if(data_quien === '3'){pag = "comite";}
-      else if(data_quien === '4'){pag = "edificio";}
-      else if(data_quien === '5'){pag = "contador";}
-      else if(data_quien === '6'){pag = "revisor";}
-      else if(data_quien === '7'){pag = "seguridad";}
-      else if(data_quien === '8'){pag = "servicios";}
+      if(data_quien === 1){pag = "administracion";}
+      else if(data_quien === 2){pag = "consejo";}
+      else if(data_quien === 3){pag = "comite";}
+      else if(data_quien === 4){pag = "edificio";}
+      else if(data_quien === 5){pag = "contador";}
+      else if(data_quien === 6){pag = "revisor";}
+      else if(data_quien === 7){pag = "seguridad";}
+      else if(data_quien === 8){pag = "servicios";}
       swal({
          title: "¿Esta Seguro?",
          text: "Se borrará el registro con # id " + data_id,
@@ -2358,14 +2692,14 @@ function abrirFormQuienesIconos(argument) {
   var data_quien = boton.data('quien');
   if(botonHTML === 'Eliminar Registro'){
     setTimeout(esperehide, 500);
-    if(data_quien === '1'){pag = "administracion";}
-    else if(data_quien === '2'){pag = "consejo";}
-    else if(data_quien === '3'){pag = "comite";}
-    else if(data_quien === '4'){pag = "edificio";}
-    else if(data_quien === '5'){pag = "contador";}
-    else if(data_quien === '6'){pag = "revisor";}
-    else if(data_quien === '7'){pag = "seguridad";}
-    else if(data_quien === '8'){pag = "servicios";}
+    if(data_quien === 1){pag = "administracion";}
+    else if(data_quien === 2){pag = "consejo";}
+    else if(data_quien === 3){pag = "comite";}
+    else if(data_quien === 4){pag = "edificio";}
+    else if(data_quien === 5){pag = "contador";}
+    else if(data_quien === 6){pag = "revisor";}
+    else if(data_quien === 7){pag = "seguridad";}
+    else if(data_quien === 8){pag = "servicios";}
     swal({
        title: "¿Esta Seguro?",
        text: "Se borrará el registro con # id " + data_id,
@@ -2491,7 +2825,8 @@ function cargaFormQuienesEdificio() {
 function volverQuienesEdificio(argument) {
   var quien = 4;
   var pag = "edificio";
-  $("#collapseExample" + quien).load(pag + ".php");
+  var proy = $("#id_upd").val();
+  $("#collapseExample" + quien).load(pag + ".php?id_proy="+proy);
 }
 
 // Question
@@ -2940,10 +3275,10 @@ function mostrarCamposDinamicos (datos) {
          campos = '<div><table style="width: 95%"><tr><td><label for="ejemplo_password_1">Tipo</label><select class="form-control" id="sel1"> <option>Seleccione...</option><option>Automovil</option><option>Moto</option><option>Bicicleta</option><option>Otro</option></select></td><td><label for="ejemplo_password_1">Marca</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Marca"/></td><td><label for="sel1">Modelo</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Modelo"/></td><td><label for="sel1">Placa</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Placa"/></td><td><label for="sel1">Color</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Color"/></td><td><button class="btn btn-danger" title="Eliminar"><i class="glyphicon glyphicon-remove"></i></button><button class="btn btn-success"><i class="glyphicon glyphicon-plus" title="Agregar"></i></button></td></tr></table></div>';
          break;
       case "5":
-         campos = '<div><table style="width: 95%"><tr><td><label for="ejemplo_password_1">Nombre</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Nombre"/></td><td><label for="ejemplo_password_1">CC.</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="CC."/></td><td><label for="ejemplo_password_1">Permisos</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Permisos"/></td><td><label for="ejemplo_password_1">Número de contacto</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Número de contacto"/></td><td><button class="btn btn-danger" title="Eliminar"><i class="glyphicon glyphicon-remove"></i></button><button class="btn btn-success"><i class="glyphicon glyphicon-plus" title="Agregar"></i></button></td></tr></table></div>';
+         campos = '<div><table style="width: 95%"><tr><td><label for="ejemplo_password_1">Nombre</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Nombre"/></td><td><label for="ejemplo_password_1">Número de Identificación.</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Número de Identificación."/></td><td><label for="ejemplo_password_1">Permisos</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Permisos"/></td><td><label for="ejemplo_password_1">Número de contacto</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Número de contacto"/></td><td><button class="btn btn-danger" title="Eliminar"><i class="glyphicon glyphicon-remove"></i></button><button class="btn btn-success"><i class="glyphicon glyphicon-plus" title="Agregar"></i></button></td></tr></table></div>';
          break;
       case "6":
-         campos = '<div><table style="width: 95%"><tr><td><label for="ejemplo_password_1">Nombre</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Nombre"/></td><td><label for="ejemplo_password_1">CC.</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="CC."/></td><td><label for="ejemplo_password_1">Teléfono Contacto</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Teléfono Contacto"/></td><td><label for="ejemplo_password_1">Teléfono Celular</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Teléfono Celular"/></td><td><label for="ejemplo_password_1">Correo Electrónico</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Correo Electrónico"/></td><td><button class="btn btn-danger" title="Eliminar"><i class="glyphicon glyphicon-remove"></i></button><button class="btn btn-success"><i class="glyphicon glyphicon-plus" title="Agregar"></i></button></td></tr></table></div>';
+         campos = '<div><table style="width: 95%"><tr><td><label for="ejemplo_password_1">Nombre</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Nombre"/></td><td><label for="ejemplo_password_1">Número de Identificación.</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Número de Identificación."/></td><td><label for="ejemplo_password_1">Teléfono Contacto</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Teléfono Contacto"/></td><td><label for="ejemplo_password_1">Teléfono Celular</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Teléfono Celular"/></td><td><label for="ejemplo_password_1">Correo Electrónico</label><input type="text" class="form-control" name="mitexto[]" id="campo_' + FieldCount + '" placeholder="Correo Electrónico"/></td><td><button class="btn btn-danger" title="Eliminar"><i class="glyphicon glyphicon-remove"></i></button><button class="btn btn-success"><i class="glyphicon glyphicon-plus" title="Agregar"></i></button></td></tr></table></div>';
          break;
       default:
          break;

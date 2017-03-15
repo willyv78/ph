@@ -49,48 +49,70 @@ if(isset($_GET['id_apto'])){
                 if($row_resd[0] == 1){
                     $num_prop += 1;
                     // Nombres
-                    if($row_resd[1] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[1] <> ''){$total_porc_prop += 5.9;}
                     // Apellidos
-                    if($row_resd[2] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[2] <> ''){$total_porc_prop += 5.9;}
                     // Numero documento
-                    if($row_resd[3] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[3] <> ''){$total_porc_prop += 5.9;}
                     // Direccion
-                    if($row_resd[4] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[4] <> ''){$total_porc_prop += 5.9;}
                     // Telefono
-                    if($row_resd[5] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[5] <> ''){$total_porc_prop += 5.9;}
                     // Celular
-                    if($row_resd[6] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[6] <> ''){$total_porc_prop += 5.9;}
                     // Password
-                    if($row_resd[7] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[7] <> ''){$total_porc_prop += 5.9;}
                     // Email
-                    if($row_resd[8] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[8] <> ''){$total_porc_prop += 5.9;}
                     // Fecha nacimiento
-                    if($row_resd[9] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[9] <> ''){$total_porc_prop += 5.9;}
                     // Razon social
                     // Observación
                     // Fecha Inicial
                     // Fecha final
                     // Foto
-                    if($row_resd[14] <> ''){$total_porc_hab += 11.2;}
                     // Genero
-                    if($row_resd[15] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[15] <> ''){$total_porc_prop += 5.9;}
                     // hijo
-                    if($row_resd[16] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[16] <> ''){$total_porc_prop += 5.9;}
                     // Vive
-                    if($row_resd[17] <> ''){$prop_vive = $row_resd[17];$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[17] <> ''){
+                        $prop_vive = $row_resd[17];
+                        $total_porc_prop += 5.9;
+                        if($prop_vive == 1){
+                            // Nombres
+                            if($row_resd[1] <> ''){$total_porc_hab += 11.2;}
+                            // Apellidos
+                            if($row_resd[2] <> ''){$total_porc_hab += 11.2;}
+                            // Numero documento
+                            if($row_resd[3] <> ''){$total_porc_hab += 11.2;}
+                            // Fecha nacimiento
+                            if($row_resd[9] <> ''){$total_porc_hab += 11.2;}
+                            // Genero
+                            if($row_resd[15] <> ''){$total_porc_hab += 11.2;}
+                            // hijo
+                            if($row_resd[16] <> ''){$total_porc_hab += 11.2;}
+                            // Vinculo
+                            if($row_resd[21] <> ''){$total_porc_hab += 11.2;}
+                            // Tipo documento
+                            if($row_resd[22] <> ''){$total_porc_hab += 11.2;}
+                            // Estado
+                            if($row_resd[23] <> ''){$total_porc_hab += 11.2;}
+                        }
+                    }
                     // Permisos
                     // Perfil
-                    if($row_resd[19] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[19] <> ''){$total_porc_prop += 5.9;}
                     // Cargo
                     // Vinculo
                     // Tipo documento
-                    if($row_resd[22] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[22] <> ''){$total_porc_prop += 5.9;}
                     // Estado
-                    if($row_resd[23] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[23] <> ''){$total_porc_prop += 5.9;}
                     // Certificado de tradicion
-                    if($row_resd[24] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[24] <> ''){$total_porc_prop += 5.9;}
                     // Fecha certificado de tradición
-                    if($row_resd[25] <> ''){$total_porc_prop += 5.9;$total_porc_hab += 11.2;}
+                    if($row_resd[25] <> ''){$total_porc_prop += 5.9;}
                 }
                 // Residente / Habitantes
                 if($row_resd[0] == 2){
@@ -371,7 +393,6 @@ if($total_porc_prop > 0){
     if($total_porc_prop >= 100){$total_porc_prop = 100;$clase_prop = "";}
 }
 if($total_porc_hab > 0){
-    // echo "Total porcentaje=" . $total_porc_hab . " Numero de habitantes=" . $num_hab;
     if($num_hab > 0){
         $total_porc_hab = round($total_porc_hab / $num_hab);
     }

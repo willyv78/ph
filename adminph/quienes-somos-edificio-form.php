@@ -83,6 +83,10 @@ if($res_quien){
         <button type="button" class="btn btn-default regresar" data-quien="<?php echo $data_quien;?>">Regresar</button>
     </div>
 </form>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/sweet-alert.js"></script><!-- Personalizar alertas -->
+<script src="../js/bootstrapValidator.js"></script>
 <script>
     $(document).ready(function() {
         $('#form-quienes-edificio').bootstrapValidator({

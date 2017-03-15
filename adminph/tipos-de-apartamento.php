@@ -9,11 +9,6 @@ require_once ("../php/funciones.php");
     
 $res_taptos = registroCampo("rmb_taptos t", "t.rmb_taptos_id, t.rmb_taptos_nom, t.rmb_taptos_area, t.rmb_taptos_coef", "", "", "");
 ?>
-<!-- Titulo de la pagina -->
-<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
-   <input type="hidden" value="rmb_residente">
-   <h3 class="text-left">Tipos de Apartamento</h3>
-</div> -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="table-responsive">
     <table class="table table-hover" id="tabla">

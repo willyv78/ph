@@ -18,42 +18,33 @@ if($res_edificio){
         $const = $row_edificio[0];$curad = $row_edificio[1];$dhidra = $row_edificio[2];$chidra = $row_edificio[3];$delect = $row_edificio[4];$celect = $row_edificio[5];$finio = $row_edificio[6];$ffino = $row_edificio[7];
     }
 }?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 alert alert-info">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Constructura:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $const;?></div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0;padding-right: 80px;">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Constructura:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $const;?></div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Curaduría:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $curad;?></div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Curaduría:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $curad;?></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Diseño Hidráulico:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $dhidra;?></div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Constructor Hidráulico:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $chidra;?></div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Diseño Hidráulico:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $dhidra;?></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Diseño Eléctrico:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $delect;?></div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Constructor Eléctrico:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $celect;?></div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Constructor Hidráulico:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $chidra;?></div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Diseño Eléctrico:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $delect;?></div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Constructor Eléctrico:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $celect;?></div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Fecha inicio de obra:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $finio;?></div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-5 text-left"><b>Fecha fin de obra:</b></div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-7 text-left"><?php echo $ffino;?></div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <button type="button" class="btn btn-default pull-right form-edificio" data-quien="4">Editar</button>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 linea-bottom-last">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Fecha inicio de obra:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4 text-left"><?php echo $finio;?></div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 text-left">Fecha fin de obra:</div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 text-left"><?php echo $ffino;?></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1 text-right">
+            <button type="button" class="btn btn-default pull-right form-edificio" data-quien="4" style="margin-right: -90px;">Editar</button>
+        </div>
     </div>
 </div>
 <script>cargarPerfil();</script>

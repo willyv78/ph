@@ -3,7 +3,7 @@ session_start();
 require_once ("../conexion/conexion.php");
 require_once ("funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
-// Aplicación javascript usando jquery - Juego Crucigrama                           //
+// Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 $id_usu = $_SESSION['UsuID'];

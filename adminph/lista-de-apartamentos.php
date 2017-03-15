@@ -5,6 +5,7 @@ require_once ("../php/funciones.php");
 // Aplicación PHP usando Bootstrap, jquery, HTML5 y CSS - PH                        //
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
+
 $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb_aptos_nom, r.rmb_residente_nom, r.rmb_residente_ape, rxa.rmb_tres_id, tes.rmb_est_id", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_aptos_id) LEFT JOIN rmb_residente r USING(rmb_residente_id) LEFT JOIN rmb_tesoreria tes USING(rmb_aptos_id) LEFT JOIN rmb_torres t USING(rmb_torres_id)", "GROUP BY a.rmb_aptos_id", "ORDER BY a.rmb_torres_id ASC, a.rmb_aptos_nom ASC");
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -35,31 +36,46 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
       if ($res_val) {
         if (mysql_num_rows($res_val) > 0) {
           while($row_val = mysql_fetch_array($res_val)){
-            $clase = "btn-info";
+            $clase = "btn-danger";
             if(trim($row_val[6]) == 17){$clase = "btn-success";}
             elseif(trim($row_val[6]) == 18){$clase = "btn-warning";}
             elseif(trim($row_val[6]) == 19){$clase = "borange";}
-            elseif(trim($row_val[6]) == 20){$clase = "btn-danger";}?>
+            elseif(trim($row_val[6]) == 20){$clase = "btn-danger";}
+
+            $clase_det = "btn-danger";
+            $res_det = estadoApto($row_val[0]);
+            // echo "apto=".$row_val[2]." $res_det=".$res_det."<br>";
+            // Si el porcentaje de completado de la informacion esta entre 0 a 49 % hace esto
+            if($res_det < 50){$clase_det = "btn-danger";}
+            // Si el porcentaje de completado de la informacion del propietario esta entre 50 a 74 % hace esto
+            if(($res_det > 49) && ($res_det < 75)){$clase_det = "btn-warning";}
+            // Si el porcentaje de completado de la informacion del propietario esta entre 75 a 99 % hace esto
+            if(($res_det > 74) && ($res_det < 100)){$clase_det = "btn-primary";}
+            // Si el porcentaje de completado de la informacion del propietario esta al 100 % hace esto
+            if($res_det >= 100){$clase_det = "btn-default-inverse";$res_det = 100;}?>
             <tr>
               <td class="text-nowrap vertical-middle"><?php echo $row_val[1];?></td>
-              <td class="text-nowrap <?php echo $clase;?> vertical-middle"><?php echo $row_val[2];?></td>
+              <td class="text-nowrap vertical-middle"><?php echo $row_val[2];?></td>
               <td class="hidden-xs text-nowrap vertical-middle"><?php echo $row_val[3]." ".$row_val[4];?></td>
               <td class="hidden-xs hidden-sm text-nowrap vertical-middle"><?php echo nombreCampo($row_val[5], "rmb_tres");?></td>
               <td class="hidden-xs hidden-sm hidden-md text-nowrap vertical-middle"><?php echo nombreCampo($row_val[6], "rmb_est");?></td>
               <td id="lista_historial_facturas" class="lista_historial_facturas vertical-middle" name="<?php echo $row_val[0];?>">
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#detalle-del-apartamento.html" style="width:33%;">
-                  <button type="button" class="btn btn-info btn-accion" title="Datos del Apartamento" style="padding: 5px 10px;">
-                    <img src="../images/iconos/home1.png" alt="Detalle del apartamento" width="100%">
+                  <button type="button" class="btn <?php echo $clase_det;?> btn-accion" title="Datos del Apartamento" style="padding: 5px 10px;">
+                    <div><?php echo $res_det."%";?></div>
+                    <img src="../images/iconos/home1.png" alt="Detalle del apartamento" width="70%">
                   </button>
                 </a>
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#estado-financiero.html" style="width:33%;">
-                  <button type="button" class="btn btn-success btn-accion disabled" title="Estado Financiero" style="padding: 5px 10px;">
-                    <img src="../images/iconos/home2.png" alt="Estado financiero" width="100%">
+                  <button type="button" class="btn <?php echo $clase;?> btn-accion" title="Estado Financiero" style="padding: 5px 10px;">
+                    <div><?php echo "0%";?></div>
+                    <img src="../images/iconos/home2.png" alt="Estado financiero" width="70%">
                   </button>
                 </a>
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#contactar-al-administrador.html" style="width:33%;">
                   <button type="button" class="btn btn-warning btn-accion disabled" title="Enviar mensaje" style="padding: 5px 10px;">
-                    <img src="../images/iconos/home3.png" alt="Enviar mensaje" width="100%">
+                    <div><?php echo "0%";?></div>
+                    <img src="../images/iconos/home3.png" alt="Enviar mensaje" width="70%">
                   </button>
                 </a>
               </td>
@@ -71,7 +87,7 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
     </table>
   </div>
   <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4 col-md-offset-5 col-md-2 col-lg-offset-5 col-lg-2">
-    <button type="button" class="btn btn-default form-control" alt="Enviar resultados de la encuesta" title="Enviar resultados de la encuesta">Enviar</button>
+    <button type="button" class="btn btn-default form-control" alt="Enviar lista de apartamentos" title="Enviar lista de apartamentos">Enviar</button>
   </div>
 </div>
 <script>
@@ -139,7 +155,6 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
       }
     }
     setTimeout(function(){crearTabla("tabla");}, 200)
-    
     accionEstFinanciero();
   });
 </script>

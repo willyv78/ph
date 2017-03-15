@@ -152,7 +152,7 @@ if(isset($_GET['id_masc'])){
                 processData:false,
                 success: function(datos){
                     if(datos !== ''){
-                        // alert(datos);
+                        alert(datos);
                         $("#col-md-12").load('detalle-del-apartamento.php?id_apto='+id_apto);
                         swal({
                             title: "Felicidades!",

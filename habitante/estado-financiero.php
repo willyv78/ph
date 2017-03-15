@@ -226,7 +226,7 @@ $anio2 = $anio + 1;
                                             <div class="alert alert-warning text-left">
                                                 <strong>Atención!</strong>
                                                 <p>No se encontraron resultados para el mes delll '.mesesLetras($i).'.</p>
-                                                <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">(+057 1) 7569919</cite></footer>
+                                                <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">(+057 1) 7569919</cite></footer>
                                             </div>
                                         </div>';
                                     }
@@ -239,7 +239,7 @@ $anio2 = $anio + 1;
                                     <div class="alert alert-warning text-left">
                                         <strong>Atención!</strong>
                                         <p>No se encontraron resultados para el mes de '.mesesLetras($i).'.</p>
-                                        <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al telefono <cite title="Source Title">(+057 1) 7569919</cite></footer>
+                                        <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title="Source Title">info@rmasb.com</cite> o al teléfono <cite title="Source Title">(+057 1) 7569919</cite></footer>
                                     </div>
                                 </div>';
                         }
@@ -274,7 +274,7 @@ $anio2 = $anio + 1;
             <div class='alert alert-warning text-left'>
                 <strong>Atención!</strong>
                 <p>No se encontraron resultados para el año <?php echo $anio;?>.</p>
-                <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al telefono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
+                <footer>Si tiene una inquietud o sugerencia, comuniquese con el desarrollador de la aplicación al correo <cite title='Source Title'>info@rmasb.com</cite> o al teléfono <cite title='Source Title'>(+057 1) 7569919</cite></footer>
             </div>
         </div><?php 
     }?>

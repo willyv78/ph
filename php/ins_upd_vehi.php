@@ -36,7 +36,7 @@ else if(isset($_POST['id_upd'])){
         }
     }
 
-    $campos .= ", rmb_residente_fecha = NOW(), rmb_residente_user = '".$_SESSION['UsuID']."'";
+    $campos .= ", rmb_veh_fecha = NOW(), rmb_veh_user = '".$_SESSION['UsuID']."'";
 
     $sql_upd = "UPDATE ".$tabla." SET ".$campos." WHERE ".$tabla."_id = '".$_POST['id_upd']."'";
     $res_upd = mysql_query($sql_upd, conexion());

@@ -25,15 +25,24 @@ else if(isset($_POST['id_upd'])){
     foreach($_POST as $key => $value){
         if(($key <> 'id_upd') && ($key <> 'id_apto') && ($key <> 'tipo_res') && ($key <> 'rmb_mascotas_vac')){
             if($sq == 0){
-                $campos .= $key."='".mysql_escape_string($value)."'";
+                if($key == 'rmb_mascotas_aplica'){
+                    $campos .= $key."=".mysql_escape_string($value);
+                }
+                else{
+                    $campos .= $key."='".mysql_escape_string($value)."'";
+                }
             }
             else{
-                $campos .= ", ".$key."='".mysql_escape_string($value)."'";
+                if($key == 'rmb_mascotas_aplica'){
+                    $campos .= ", ".$key."=".mysql_escape_string($value);
+                }
+                else{
+                    $campos .= ", ".$key."='".mysql_escape_string($value)."'";
+                }
             }
             $sq += 1;
         }
     }
-
     //comprobamos que sea una petición ajax
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
         //obtenemos el archivo de la foto a subir.
@@ -53,9 +62,7 @@ else if(isset($_POST['id_upd'])){
             }
         }
     }
-
     $campos .= ", rmb_mascotas_fecha = NOW(), rmb_mascotas_user = '".$_SESSION['UsuID']."'";
-
     $sql_upd = "UPDATE ".$tabla." SET ".$campos." WHERE ".$tabla."_id = '".$_POST['id_upd']."'";
     $res_upd = mysql_query($sql_upd, conexion());
     if($res_upd){echo $sql_upd;}
@@ -69,17 +76,28 @@ else{
     foreach($_POST as $key=>$value){
         if(($key <> 'id_apto')&&($key <> 'id_upd') && ($key <> 'rmb_mascotas_vac')){
             if($sq == 0){
-                $campo .= $key;
-                $valor .= "'".trim($value)."'";
+                if($key == 'rmb_mascotas_aplica'){
+                    $campo .= $key;
+                    $valor .= trim($value);
+                }
+                else{
+                    $campo .= $key;
+                    $valor .= "'".trim($value)."'";
+                }
             }
             else{
-                $campo .= ",".$key;
-                $valor .= ",'".trim($value)."'";
+                if($key == 'rmb_mascotas_aplica'){
+                    $campo .= ",".$key;
+                    $valor .= ",".trim($value);
+                }
+                else{
+                    $campo .= ",".$key;
+                    $valor .= ",'".trim($value)."'";
+                }
             }            
             $sq += 1;
         }
     }
-
     //comprobamos que sea una petición ajax
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
         //obtenemos el archivo de la foto a subir.
@@ -100,13 +118,11 @@ else{
             }
         }
     }
-
     $campo .= ", rmb_aptos_id, rmb_mascotas_fecha, rmb_mascotas_user";
     $valor .= ", ".$_POST['id_apto'].", NOW(), ".$_SESSION['UsuID'];
-
     $sql_ins = "INSERT INTO ".$tabla." (".$campo.") VALUES (".$valor.")";
     $res_ins = mysql_query($sql_ins, conexion());
     if($res_ins){echo $_POST['id_apto'];}
-    else{echo "";}
+    else{echo $sql_ins;}
 }
 ?>

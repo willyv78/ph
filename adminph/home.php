@@ -170,7 +170,7 @@ $n_rows = 1;
         <div class="hidden-xs hidden-sm col-md-7 col-lg-12 icon-mod" style="padding:0;margin:0;">
             <!-- contenedor de quienes somos -->
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding:0;margin:0;">
-                <img src="../images/home-qui.png" class="img-responsive home-accesos" data-pag="quienes-somos" alt="Conozca quienes somos." title="Conozca quienes somos." style="cursor: pointer;">
+                <img src="../images/home-qui.png" class="img-responsive home-accesos" data-pag="quienes-somos" alt="Conozca quiénes somos." title="Conozca quiénes somos." style="cursor: pointer;">
             </div>
             <!-- contenedor de imagenes de otros accesos -->
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="padding:0;margin:0;">
@@ -179,7 +179,7 @@ $n_rows = 1;
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los telefonos de entidades y sistemas de emergencia" title="Obtenga los telefonos de entidades y sistemas de emergencia" style="width:100%; cursor: pointer;">
+                    <img src="../images/home-eme.png" class="img-responsive home-accesos" data-pag="contactos" alt="Obtenga los teléfonos de entidades y sistemas de emergencia" title="Obtenga los teléfonos de entidades y sistemas de emergencia" style="width:100%; cursor: pointer;">
                     <div>&nbsp;</div>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">

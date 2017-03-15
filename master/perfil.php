@@ -14,7 +14,7 @@
                             <td>Pepito Perez</td>
                         </tr>
                         <tr>
-                            <th>Telefono Contacto</th>
+                            <th>Teléfono Contacto</th>
                             <td>+571 2445456</td>
                         </tr>
                         <tr>
@@ -30,7 +30,7 @@
                             <td>Daniel Cardona</td>
                         </tr>
                         <tr>
-                            <th>Telefono Contacto</th>
+                            <th>Teléfono Contacto</th>
                             <td>+571 2478541</td>
                         </tr>
                         <tr>
@@ -70,7 +70,7 @@
                             <td>2</td>
                         </tr>
                         <tr>
-                            <th>Coeficiente Area (%)</th>
+                            <th>Coeficiente Área (%)</th>
                             <td>80</td>
                         </tr>
                         <tr>
@@ -178,7 +178,7 @@
                     <table class="table table-striped">
                         <tr>
                             <th>Nombre</th>
-                            <th>CC.</th>
+                            <th>Número de Identificación.</th>
                         </tr>
                         <tr>
                             <td>Agustino Cardona</td>
@@ -197,11 +197,11 @@
                             <td>Pepito Perez</td>
                         </tr>
                         <tr>
-                            <th>CC.</th>
+                            <th>Número de Identificación.</th>
                             <td>1031140478</td>
                         </tr>
                         <tr>
-                            <th>Telefono Contacto</th>
+                            <th>Teléfono Contacto</th>
                             <td>+571 2445456</td>
                         </tr>
                     </table>  
