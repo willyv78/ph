@@ -329,13 +329,27 @@ else{
 		var num_res = '<?php echo $num_res;?>';
 		// funcion que se ejecuta al crear una tabla
 		function crearTabla (selector) {
+			var table = $('#' + selector).dataTable({
+			  "oLanguage": {
+			    "sZeroRecords": "No se encontraron registros",
+			    "sInfoEmpty": "No se encontraron registros",
+			    "sEmptyTable": "No se encontraron registros"
+			  },
+			  "sDom": 't',
+			  "bJQueryUI": true,
+			  "bAutoWidth": false,
+			  "iDisplayLength": 5000
+			  // "bScrollInfinite": true,
+			  // "bScrollCollapse": false,
+			  // "sScrollY": "645px"
+			});
 			$('#tabla tfoot th').each( function () {
 				var title = $(this).text();
 				$(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
 			} );
 			if(num_res > 0){
 				// DataTable
-				var table = $('#tabla').DataTable({"dom": '<"toolbar">rt'});
+				// var table = $('#tabla').DataTable({"dom": '<"toolbar">rt'});
 				// Apply the filter
 				$( 'input' ).on( 'keyup', function () {
 					table.columns($(this).parent().index()).search(this.value).draw();

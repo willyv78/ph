@@ -19,7 +19,6 @@
         <!-- <link rel="apple-touch-icon" href="./images/icono-57.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="./images/icono-72.png" />
         <link rel="apple-touch-icon" sizes="114x114" href="./images/icono-114.png" /> -->
-
         <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
@@ -37,7 +36,6 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-
         <link rel="stylesheet" href="css/boilerplate.css" />
         <link rel="stylesheet" href="css/sweet-alert.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -150,14 +148,13 @@
             })
             .on('success.form.bv', function(e) {
                 e.preventDefault();
-                //Trer los datos de la shema de la tabla seleccionada
                 $.ajax({
-                    url:"php/login.php",
+                    url:"./php/login.php",
                     cache:false,
                     type:"POST",
                     data:"email="+textinput.value+"&pass="+textinput1.value,
                     success: function(datos){
-                        // alert(datos);
+                        alert(datos);
                         if(datos !== ''){
                             var dat = datos.split(",");
                             if(dat[2] === '23'){
@@ -222,9 +219,6 @@
             ifr.loop = true; 
             ifr.load();
             document.body.appendChild(ifr);
-            // setTimeout(function(){
-            //     ifr.play();
-            // }, 500);
         });
         </script>
     </body>

@@ -343,6 +343,26 @@ function cargarPagina (event) {
     $("#col-md-12").load("./lista-master.php?tabla=rmb_depos&nom=Depositos");
     history.pushState({page: "lista-master.php?tabla=rmb_depos&nom=Depositos"}, "Lista de Depósitos", "lista-de-depositos.html");
   }
+  else if(pagina === '#estadisticas-servicios-publicos.html'){
+    $("#col-md-12").load("./estadisticas-servicios-publicos.php?tabla=rmb_servicios&nom=ServiciosPublicos");
+    history.pushState({page: "estadisticas-servicios-publicos.php?tabla=rmb_servicios&nom=ServiciosPublicos"}, "Estadisticas de los servicios públicos", "estadisticas-servicios-publicos.html");
+  }
+  else if(pagina === '#servicios-publicos.html'){
+    $("#col-md-12").load("./publicos.php?tabla=rmb_servicios&nom=ServiciosPublicos");
+    history.pushState({page: "publicos.php?tabla=rmb_servicios&nom=ServiciosPublicos"}, "Lista de Consumos de Servicios Públicos", "servicios-publicos.html");
+  }
+  else if(pagina === '#evaluaciones.html'){
+    $("#col-md-12").load("./evaluacion-lista.php");
+    history.pushState({page: "evaluacion-lista.php"}, "Lista de Evaluaciones", "evaluaciones.html");
+  }
+  else if(pagina === '#categorias.html'){
+    $("#col-md-12").load("./evaluacion-lista-cate.php");
+    history.pushState({page: "evaluacion-lista-cate.php"}, "Lista de categorias", "categorias.html");
+  }
+  else if(pagina === '#temas.html'){
+    $("#col-md-12").load("./evaluacion-lista-tema.php");
+    history.pushState({page: "evaluacion-lista-tema.php"}, "Lista de temas", "temas.html");
+  }
   else if(pagina === '#indexjquerytabs1-page-cerrar'){
     esperehide();
     swal({
@@ -384,7 +404,7 @@ function accionEstFinanciero () {
   $(".btn-accion").on("click", verEstFinanciero);
   setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 100);
   $(".btn-default.form-control").on("click", enviarResultados);
-  esperehide();
+  setTimeout(esperehide, 500);
   // setTimeout(cerrar_alert, 8500);
 }
 // funcion que se ejecuta al hacer click en los botones de la lista de estados financieros
@@ -2271,10 +2291,410 @@ function editEvento () {
 
 // Estadisticas
 
+// Funcion que genera las estadisticas de servicios públicos segun fechas seleccionadas
+function generarEstadistica (argument) {
+  var serv_fini = $("#serv_fini").val();
+  var serv_ffin = $("#serv_ffin").val();
+  $("#col-md-12").load("./estadisticas-servicios-publicos.php?serv_fini="+serv_fini+"&serv_ffin="+serv_ffin);
+}
 // function que se ejecuta al cargar la pagina de estadisticas
 function cargarEstadisticas (argument) {
+  $(".btn-primary").on("click", generarEstadistica);
   setTimeout(esperehide, 500);
 }
+// funcion que se ejecuta al cargar la página del formulario de servicios públicos
+function cargaFormServiciosPublicos () {
+  setTimeout(esperehide, 500);
+  $(".close").on("click", cerrarModalDocs);
+  $(".btn-regresar").on("click", cerrarModalDocs);
+}
+// funcion que se ejecuta al hacer click en el boton enviar en el resultados individuales encuesta
+function enviarResultadosServiciosPublicos(argument) {
+  $(".ing-cal").load("lista-de-apartamentos-creaPDF.php");
+  swal({
+    title: "Atención!",
+    text: "Escriba una dirección de correo electrónico:",
+    type: "input",
+    inputType: "text",
+    inputPlaceholder: "Correo electrónico",
+    showLoaderOnConfirm: true,
+    showCancelButton: true,
+    closeOnConfirm: false,
+    cancelButtonText: "Cancelar",
+    confirmButtonText: "Enviar"
+  },
+  function(inputValue){
+    if (inputValue === false){
+      return false;
+    }
+    else if (inputValue === "") {
+      swal.showInputError("Digite un correo electrónico");
+      return false;
+    }
+    else{
+      swal.close();
+      espereshow();
+      var request = $.ajax({
+        url: "lista-de-apartamentos-enviaPDF.php",
+        method: "POST",
+        data: { email : inputValue },
+        dataType: "html"
+      });
+      request.done(function( datos ) {
+        if(datos.length){
+          setTimeout(esperehide, 500);
+          swal({
+            title: "Felicidades!",
+            text: "Los resultados se han enviado al correo "+inputValue,
+            type: "success",
+            confirmButtonText: "Continuar",
+            confirmButtonColor: "#94B86E"
+          },
+          function(){
+            $(".ing-cal").html("");
+            $(".ing-cal").addClass('hidden');
+          });
+        }
+        else{
+          setTimeout(esperehide, 500);
+          swal({
+            title: "Error!",
+            text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+            type: "error",
+            confirmButtonText: "Aceptar",
+            confirmButtonColor: "#E25856"
+          });
+          return;
+        }
+      });
+      request.fail(function( jqXHR, textStatus ) {
+          setTimeout(esperehide, 500);
+          swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+          });
+          return;
+      });
+    }
+  });
+  $(".ing-cal").addClass('hidden');
+}
+// funcion que se ejecuta al hacer click en los botones de la lista de servicios públicos
+function verServiciosPublicos (event) {
+  espereshow();
+  event.preventDefault();
+  var altopag = resizePag();
+  var id_reg = $(this).parent('a').parent('td').attr('name');
+  var clase = $(this).attr('title');
+  var fecha = new Date();
+  var anio = fecha.getFullYear();
+  switch(clase){
+    case 'Ver detalle del registro':
+      $(".ing-cal").load("publicos-form.php?id_reg=" + id_reg + "&ver=1");
+      $(".ing-cal").height(altopag);
+      $(".ing-cal").removeClass('hidden');
+      break;
+    case 'Editar registro':
+      $(".ing-cal").load("publicos-form.php?id_reg=" + id_reg);
+      $(".ing-cal").height(altopag);
+      $(".ing-cal").removeClass('hidden');
+      break;
+    case 'Eliminar registro':
+      swal({
+         title: "¿Esta Seguro?",
+         text: "Se borrará el registro con # id " + id_reg,
+         type: "warning",
+         showCancelButton: true,
+         cancelButtonText: "Cancelar",
+         confirmButtonColor: "#F8BB86",
+         confirmButtonText: "Eliminar!",
+         closeOnConfirm: false
+      },
+      function(){
+        $.ajax({
+          url:"../php/ins_upd_serv.php",
+          cache:false,
+          type:"POST",
+          data:"id_sup="+id_reg,
+          success: function(datos){
+            if(datos !== ''){
+              swal({
+                  title: "Felicidades!",
+                  text: "El registro se ha guardado correctamente!",
+                  type: "success",
+                  confirmButtonText: "Continuar",
+                  confirmButtonColor: "#94B86E"
+              },
+              function(){
+                $("#col-md-12").load("./publicos.php?tabla=rmb_servicios&nom=ServiciosPublicos");
+              });
+            }
+            else{
+              setTimeout(esperehide, 500);
+              swal({
+                title: "Error!",
+                text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+                type: "error",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "#E25856"
+              });
+              return;
+            }
+          }
+        });
+      });
+      break;
+    case 'Nuevo registro':
+      $(".ing-cal").load("publicos-form.php");
+      $(".ing-cal").height(altopag);
+      $(".ing-cal").removeClass('hidden');
+      break;
+  }
+}
+// Funcion que se ejecuta al cargar la pagina de estados financieros listado
+function cargaListaServiciosPublicos () {
+  $(".btn-accion").on("click", verServiciosPublicos);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 100);
+  $(".btn-default.form-control").on("click", enviarResultadosServiciosPublicos);
+  esperehide();
+  // setTimeout(cerrar_alert, 8500);
+}
+
+// Evaluaciones
+
+
+// funcion que se ejecuta al cargar la paginna del form de agregar o editar tareas
+function cargaFormEvaluacion () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar").on("click", regresarListaEvaluacion);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de tareas
+function regresarListaEvaluacion (argument) {
+  espereshow();
+  $("#col-md-12").load('evaluacion-lista.php');
+}
+// Funcion que se ejecuta al cargar la pagina de lista de evaluaciones
+function cargaListaEvaluaciones () {
+  $(".btn-accion").on("click", accionEvaluacion);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
+  setTimeout(esperehide, 500);
+}
+// Función que se ejecuta al hacer click en los botones del listado de evaluaciones
+function accionEvaluacion (datos) {
+  var evento = $(this).attr('title');
+  var data_id = $("#lista_evaluaciones").attr('name');
+  if (evento === 'Nuevo registro'){
+    $("#col-md-12").load("evaluacion-form.php");
+  }
+  else if (evento === 'Consultar información'){
+    $("#col-md-12").load("evaluacion-form.php?id_ver=" + data_id);
+  }
+  else if (evento === 'Editar Información'){
+    $("#col-md-12").load("evaluacion-form.php?id_upd=" + data_id);
+  }
+  else if (evento === 'Borrar registro'){
+    setTimeout(esperehide, 500);
+    var data_id = boton.data('id');
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_question.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#col-md-12").load("question.php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+}
+// funcion que se ejecuta al cargar el listado de categorias por evaluación
+function accionListaCateEva () {
+  $(".btn-accion-cate-eva").on("click", formListaCateEva);
+  setTimeout(esperehide, 500);
+}
+// funcion que se ejecuta al hacer clic en los botones del listado de Categorias por evaluacion
+function formListaCateEva (datos) {
+  espereshow();
+  var evento = $(this).attr('title');
+  if (evento === 'Nuevo registro'){
+    $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php");
+  }
+  else if (evento === 'Consultar información'){
+    var data_id = $("#lista_cate-eva").attr('name');
+    $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php?id_ver=" + data_id);
+  }
+  else if (evento === 'Editar Información'){
+    var data_id = $("#lista_cate-eva").attr('name');
+    $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php?id_upd=" + data_id);
+  }
+  else if (evento === 'Borrar registro'){
+    setTimeout(esperehide, 500);
+    var data_id = $("#lista_cate-eva").attr('name');
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_question.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#categorias-evaluacion").load("evaluacion-lista-cate-eva.php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+}
+// Funcion que se ejecuta al cargar la pagina de listado de categorias
+function cargaListaCategorias () {
+  $(".btn-accion").on("click", accionCategorias);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
+  setTimeout(esperehide, 500);
+}
+// Función que se ejecuta al hacer click en los botones del listado de categorias
+function accionCategorias (datos) {
+  var evento = $(this).attr('title');
+  if (evento === 'Nuevo registro'){}
+  else if (evento === 'Consultar información'){}
+  else if (evento === 'Editar Información'){}
+  else if (evento === 'Borrar registro'){}
+}
+// Funcion que se ejecuta al cargar la pagina de listado de categorias
+function cargaListaTemas () {
+  $(".btn-accion").on("click", accionTemas);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
+  setTimeout(esperehide, 500);
+}
+// Función que se ejecuta al hacer click en los botones del listado de categorias
+function accionTemas (datos) {
+  var evento = $(this).attr('title');
+  if (evento === 'Nuevo registro'){
+    $("#col-md-12").load("evaluacion-form.php");
+  }
+  else if (evento === 'Consultar información'){
+    var data_id = boton.data('id');
+    $("#col-md-12").load("evaluacion-form.php?id_ver=" + data_id);
+  }
+  else if (evento === 'Editar Información'){
+    var data_id = boton.data('id');
+    $("#col-md-12").load("evaluacion-form.php?id_upd=" + data_id);
+  }
+  else if (evento === 'Borrar registro'){
+    setTimeout(esperehide, 500);
+    var data_id = boton.data('id');
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_question.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#col-md-12").load("question.php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+}
+
+
 
 // Quienes somos
 
@@ -2328,8 +2748,6 @@ function verPerfil(datos) {
     }
   }, 100);
 }
-
-
 // funcion que se ejecuta al cargar el formulario del consejo y comite en quienes somos
 function cargaFormQuienesConsejoComite() {
   $(".regresar").on("click", volverQuienes);
@@ -2487,7 +2905,6 @@ function cargarConsejoComite () {
   $("div.iconos-edit-consejo-comite > .glyphicon.glyphicon-remove").on("click", editarMiembro);
   setTimeout(esperehide, 500);
 }
-
 // funcion que se ejecuta al cargar la pagina tipo modal del admnistrador
 function cargarPerfil () {
   // $('dt').on("click", abrirPestanaQuienes);

@@ -36,6 +36,7 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
       if ($res_val) {
         if (mysql_num_rows($res_val) > 0) {
           while($row_val = mysql_fetch_array($res_val)){
+            $tipo_res = "";
             $clase = "btn-danger";
             if(trim($row_val[6]) == 17){$clase = "btn-success";}
             elseif(trim($row_val[6]) == 18){$clase = "btn-warning";}
@@ -56,8 +57,24 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
             <tr>
               <td class="text-nowrap vertical-middle"><?php echo $row_val[1];?></td>
               <td class="text-nowrap vertical-middle"><?php echo $row_val[2];?></td>
-              <td class="hidden-xs text-nowrap vertical-middle"><?php echo $row_val[3]." ".$row_val[4];?></td>
-              <td class="hidden-xs hidden-sm text-nowrap vertical-middle"><?php echo nombreCampo($row_val[5], "rmb_tres");?></td>
+              <td class="hidden-xs text-nowrap vertical-middle"><?php 
+                // echo $row_val[3]." ".$row_val[4];
+                $res_res = registroCampo("rmb_residente r", "r.rmb_residente_nom, r.rmb_residente_ape", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_residente_id) WHERE rxa.rmb_aptos_id = ".$row_val[0]." AND rxa.rmb_tres_id = 1", "", "ORDER BY r.rmb_residente_id DESC");
+                if($res_res){
+                  if(mysql_num_rows($res_res) > 0){
+                    $row_res = mysql_fetch_array($res_res);
+                    $tipo_res = "Propietario";
+                    echo $row_res[0]." ".$row_res[1];
+                  }
+                }?>
+              </td>
+              <td class="hidden-xs hidden-sm text-nowrap vertical-middle"><?php 
+                if($tipo_res){
+                  echo $tipo_res;
+                }
+                else{
+                  echo nombreCampo($row_val[5], "rmb_tres");
+                }?></td>
               <td class="hidden-xs hidden-sm hidden-md text-nowrap vertical-middle"><?php echo nombreCampo($row_val[6], "rmb_est");?></td>
               <td id="lista_historial_facturas" class="lista_historial_facturas vertical-middle" name="<?php echo $row_val[0];?>">
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#detalle-del-apartamento.html" style="width:33%;">
@@ -118,38 +135,40 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
         }
       });
       var num_th = $('#tabla tfoot th').length;
-      var sq = 0;
-      var disabled = "";
+
       /*ini para los filtros individuales*/
-      $('#tabla tfoot th').each(function() {
-        // sq += 1;
-        var title = $('#tabla thead th').eq($(this).index()).text();
-        // if(sq === num_th){disabled = "disabled";}
-        $(this).html('<input class="form-control" type="text" placeholder="' + title + '" />');
-      });
-      $("tfoot input").keyup(function() {
-        /* Filter on the column (the index) of this element */
-        table.fnFilter(this.value, $("tfoot input").index(this));
-      });
-      var asInitVals = [];
-      $("tfoot input").each(function(i) {
-        asInitVals[i] = this.value;
-      });
-      $("tfoot input").focus(function() {
-      if (this.className == "search_init")
-      {
-        this.className = "";
-        this.value = "";
-      }
-      });
-      $("tfoot input").blur(function(i) {
-        if (this.value == "")
+
+      setTimeout(function(){
+        $('#tabla tfoot th').each(function() {
+          var title = $('#tabla thead th').eq($(this).index()).text();
+          $(this).html('<input class="form-control" type="text" placeholder="' + title + '" />');
+        });
+        $("tfoot input").keyup(function() {
+          /* Filter on the column (the index) of this element */
+          table.fnFilter(this.value, $("tfoot input").index(this));
+        });
+        var asInitVals = [];
+        $("tfoot input").each(function(i) {
+          asInitVals[i] = this.value;
+        });
+        $("tfoot input").focus(function() {
+        if (this.className == "search_init")
         {
-          this.className = "search_init";
-          this.value = asInitVals[$("tfoot input").index(this)];
+          this.className = "";
+          this.value = "";
         }
-      });
+        });
+        $("tfoot input").blur(function(i) {
+          if (this.value == "")
+          {
+            this.className = "search_init";
+            this.value = asInitVals[$("tfoot input").index(this)];
+          }
+        });
+      }, 200);
+
       /*fin filtros individuales*/
+
       function fnGetSelected(oTableLocal) {
         return oTableLocal.$('tr.row_selected');
       }

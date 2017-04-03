@@ -20,9 +20,10 @@ if(isset($_GET['id_masc'])){
             $masc_id = $row_veh[0];
             $masc_nom = $row_veh[1];
             $masc_raza = $row_veh[2];
-            $masc_vac = $row_veh[3];
             $masc_tipo = $row_veh[4];
             $masc_aplica = $row_veh[6];
+            if($masc_aplica <> 0){$masc_vac = $row_veh[3];}
+            else{$masc_vac = 1;}
         }
     }
 }
@@ -60,10 +61,10 @@ if(isset($_GET['id_masc'])){
             <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
                 <div class="radio">
                     <label>
-                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica1" value="1" alt="Si a su mascota le aplican vacunas marque esta opción" title="Si a su mascota le aplican vacunas marque esta opción" <?php if($masc_aplica == 1){echo 'checked="checked"';}?>>SI
+                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica1" value="1" alt="Si a su mascota le aplican vacunas marque esta opción" title="Si a su mascota le aplican vacunas marque esta opción" <?php if($masc_aplica == 1){echo 'checked="checked"';}?>>Aplica
                     </label>
                     <label>
-                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica2" value="0" alt="Si a su mascota NO le aplican vacunas marque esta opción" title="Si a su mascota NO le aplican vacunas marque esta opción" <?php if($masc_aplica == 0){echo 'checked="checked"';}?>>NO
+                        <input type="radio" name="rmb_mascotas_aplica" id="rmb_mascotas_aplica2" value="0" alt="Si a su mascota NO le aplican vacunas marque esta opción" title="Si a su mascota NO le aplican vacunas marque esta opción" <?php if($masc_aplica == 0){echo 'checked="checked"';}?>>NO Aplica
                     </label>
                 </div>
             </div>
@@ -152,7 +153,7 @@ if(isset($_GET['id_masc'])){
                 processData:false,
                 success: function(datos){
                     if(datos !== ''){
-                        alert(datos);
+                        // alert(datos);
                         $("#col-md-12").load('detalle-del-apartamento.php?id_apto='+id_apto);
                         swal({
                             title: "Felicidades!",

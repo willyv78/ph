@@ -1667,14 +1667,15 @@ function estadoApto($id_apto)
       }
     }
     // Datos de las mascotas
-    $res_masc = registroCampo("rmb_mascotas m", "m.rmb_mascotas_nom, m.rmb_mascotas_raza, m.rmb_mascotas_vac, m.rmb_tmascotas_id", "WHERE m.rmb_aptos_id = '$id_apto'", "", "");
+    $res_masc = registroCampo("rmb_mascotas m", "m.rmb_mascotas_nom, m.rmb_mascotas_raza, m.rmb_mascotas_vac, m.rmb_tmascotas_id, m.rmb_mascotas_aplica", "WHERE m.rmb_aptos_id = '$id_apto'", "", "");
     if($res_masc){
       if(mysql_num_rows($res_masc) > 0){
         while ($row_masc = mysql_fetch_array($res_masc)) {
           $num_masc += 1;
+          if($row_masc[4] == 0){$val_porc = 34;}
+          else{$val_porc = 25;if($row_masc[2] <> ''){$total_porc_masc += 25;}}
           if($row_masc[0] <> ''){$total_porc_masc += 25;}
           if($row_masc[1] <> ''){$total_porc_masc += 25;}
-          if($row_masc[2] <> ''){$total_porc_masc += 25;}
           if($row_masc[3] <> ''){$total_porc_masc += 25;}
         }
       }

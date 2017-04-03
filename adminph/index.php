@@ -201,6 +201,9 @@ if($res_user){
                       <li>
                         <a class="menu_movil" href="#mensajes.html">Mensajes</a>
                       </li>
+                      <li>
+                        <a class="menu_movil" href="#servicios-publicos.html">Serv. Públicos</a>
+                      </li>
                     </ul>
                   </li>
                   <!-- Apartamentos / residentes -->
@@ -263,6 +266,15 @@ if($res_user){
                       </li>
                       <li>
                         <a class="menu_movil" href="#lista-de-depositos.html">Depósitos</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#evaluaciones.html">Evaluaciones</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#categorias.html">Categorías</a>
+                      </li>
+                      <li>
+                        <a class="menu_movil" href="#temas.html">Temas</a>
                       </li>
                     </ul>
                   </li>
