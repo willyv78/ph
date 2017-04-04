@@ -1110,8 +1110,9 @@ function campoSelectMaster($tabla, $id, $campos, $where, $group, $order, $deshab
       else{
         $valor = $array[1];
       }
+      // mb_strtoupper(utf8_encode($valor))
       if(mysql_num_rows($query) > 0){?>
-        <option value="<?php echo $value;?>" <?php if(($id == $value) && ($id <> '')){echo 'selected="selected"';} ?>><?php echo $valor;?></option><?php 
+        <option value="<?php echo $value;?>" <?php if(($id == $value) && ($id <> '')){echo 'selected="selected"';} ?>><?php echo utf8_encode(ucwords(strtolower(utf8_decode($valor))));?></option><?php 
       }
     } while ($array = mysql_fetch_array($query));
       $rows = mysql_num_rows($query);

@@ -30,17 +30,17 @@ $res_val = registroCampo("rmb_eva e", "e.rmb_eva_id, e.rmb_eva_nom", "", "", "OR
           while($row_val = mysql_fetch_array($res_val)){?>
             <tr>
               <td class="text-nowrap vertical-middle"><?php echo $row_val[1];?></td>
-              <td id="lista_evaluaciones" class="lista_evaluaciones vertical-middle" name="<?php echo $row_val[0];?>">
+              <td class="lista_evaluaciones vertical-middle" name="<?php echo $row_val[0];?>">
 
-                <button type="button" class="btn btn-default btn-accion" title="Consultar información" alt="Consultar información" style="padding: 5px 10px;">
+                <button type="button" class="btn btn-default btn-accion" title="Consultar información" alt="Consultar información" style="padding: 5px 10px;width: 32%;">
                   <i class="glyphicon glyphicon-eye-open"></i>
                 </button>
 
-                <button type="button" class="btn btn-default btn-accion" title="Editar Información" alt="Editar Información" style="padding: 5px 10px;">
+                <button type="button" class="btn btn-default btn-accion" title="Editar Información" alt="Editar Información" style="padding: 5px 10px;width: 32%;">
                   <i class="glyphicon glyphicon-pencil"></i>
                 </button>
 
-                <button type="button" class="btn btn-default btn-accion" title="Borrar registro" alt="Borrar registro" style="padding: 5px 10px;">
+                <button type="button" class="btn btn-default btn-accion" title="Borrar registro" alt="Borrar registro" style="padding: 5px 10px;width: 32%;">
                   <i class="glyphicon glyphicon-remove"></i>
                 </button>
                 

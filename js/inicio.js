@@ -2485,7 +2485,7 @@ function cargaListaEvaluaciones () {
 // Función que se ejecuta al hacer click en los botones del listado de evaluaciones
 function accionEvaluacion (datos) {
   var evento = $(this).attr('title');
-  var data_id = $("#lista_evaluaciones").attr('name');
+  var data_id = $(this).closest(".lista_evaluaciones").attr('name');
   if (evento === 'Nuevo registro'){
     $("#col-md-12").load("evaluacion-form.php");
   }
@@ -2497,7 +2497,6 @@ function accionEvaluacion (datos) {
   }
   else if (evento === 'Borrar registro'){
     setTimeout(esperehide, 500);
-    var data_id = boton.data('id');
     swal({
        title: "¿Esta Seguro?",
        text: "Se borrará el registro con # id " + data_id,
@@ -2510,7 +2509,7 @@ function accionEvaluacion (datos) {
     },
     function(){
       $.ajax({
-        url:"../php/ins_upd_question.php",
+        url:"../php/ins_upd_eva.php",
         cache:false,
         type:"POST",
         data:"id_sup="+data_id,
@@ -2524,7 +2523,7 @@ function accionEvaluacion (datos) {
                 confirmButtonColor: "#94B86E"
             },
             function(){
-                $("#col-md-12").load("question.php");
+                $("#col-md-12").load('evaluacion-lista.php');
             });
           }
           else{
@@ -2551,24 +2550,25 @@ function accionListaCateEva () {
 // funcion que se ejecuta al hacer clic en los botones del listado de Categorias por evaluacion
 function formListaCateEva (datos) {
   espereshow();
+  $("#btn-form-edit-eva").addClass('hidden');
   var evento = $(this).attr('title');
   if (evento === 'Nuevo registro'){
     $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php");
   }
   else if (evento === 'Consultar información'){
-    var data_id = $("#lista_cate-eva").attr('name');
+    var data_id = $(this).parent(".lista_cate-eva").attr('name');
     $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php?id_ver=" + data_id);
   }
   else if (evento === 'Editar Información'){
-    var data_id = $("#lista_cate-eva").attr('name');
+    var data_id = $(this).parent(".lista_cate-eva").attr('name');
     $("#categorias-evaluacion").load("evaluacion-form-cate-eva.php?id_upd=" + data_id);
   }
   else if (evento === 'Borrar registro'){
     setTimeout(esperehide, 500);
-    var data_id = $("#lista_cate-eva").attr('name');
+    var data_id = $(this).parent(".lista_cate-eva").attr('name');
     swal({
        title: "¿Esta Seguro?",
-       text: "Se borrará el registro con # id " + data_id,
+       text: "Se borrará la categoría y los temas relacionados",
        type: "warning",
        showCancelButton: true,
        cancelButtonText: "Cancelar",
@@ -2578,7 +2578,7 @@ function formListaCateEva (datos) {
     },
     function(){
       $.ajax({
-        url:"../php/ins_upd_question.php",
+        url:"../php/ins_upd_eva_cate.php",
         cache:false,
         type:"POST",
         data:"id_sup="+data_id,
@@ -2593,6 +2593,102 @@ function formListaCateEva (datos) {
             },
             function(){
                 $("#categorias-evaluacion").load("evaluacion-lista-cate-eva.php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+}
+// funcion que se ejecuta al cargar la paginna del form de agregar o editar tareas
+function cargaFormCategoriaEvaluacion () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar-cat").on("click", regresarListaCategoriasEvaluacion);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de tareas
+function regresarListaCategoriasEvaluacion (argument) {
+  espereshow();
+  var id_eva = $("#id_eva").val();
+  $("#categorias-evaluacion").load('evaluacion-lista-cate-eva.php?id_eva='+id_eva);
+  $("#btn-form-edit-eva").removeClass('hidden');
+}
+// funcion que se ejecuta al cargar la paginna del form de agregar o editar tareas
+function cargaFormTemaEvaluacion () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar-tema").on("click", regresarListaTemaEvaluacion);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de tareas
+function regresarListaTemaEvaluacion (argument) {
+  espereshow();
+  var id_eva = $("#id_eva").val();
+  var id_cat = $("#id_cat").val();
+  $("#temas-categorias-evaluacion").load('evaluacion-lista-tema-cate-eva.php?id_eva='+id_eva+'&id_cat='+id_cat);
+  $("#btn-form-edit-cate-eva").removeClass('hidden');
+}
+// funcion que se ejecuta al cargar el listado de categorias por evaluación
+function accionListaTemaCateEva () {
+  $(".btn-accion-tema-cate-eva").on("click", formListaTemaCateEva);
+  setTimeout(esperehide, 500);
+}
+// funcion que se ejecuta al hacer clic en los botones del listado de Categorias por evaluacion
+function formListaTemaCateEva (datos) {
+  espereshow();
+  $("#btn-form-edit-cate-eva").addClass('hidden');
+  var evento = $(this).attr('title');
+  if (evento === 'Nuevo registro'){
+    $("#temas-categorias-evaluacion").load("evaluacion-form-tema-cate-eva.php");
+  }
+  else if (evento === 'Consultar información'){
+    var data_id = $(this).parent(".lista-tema-cate-eva").attr('name');
+    $("#temas-categorias-evaluacion").load("evaluacion-form-tema-cate-eva.php?id_ver=" + data_id);
+  }
+  else if (evento === 'Editar Información'){
+    var data_id = $(this).parent(".lista-tema-cate-eva").attr('name');
+    $("#temas-categorias-evaluacion").load("evaluacion-form-tema-cate-eva.php?id_upd=" + data_id);
+  }
+  else if (evento === 'Borrar registro'){
+    setTimeout(esperehide, 500);
+    var data_id = $(this).parent(".lista-tema-cate-eva").attr('name');
+    var id_cat = $("#id_cat").val();
+    var id_eva = $("#id_eva").val();
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_eva_cate_tema.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#temas-categorias-evaluacion").load("evaluacion-lista-tema-cate-eva.php?id_cat="+id_cat+"&id_eva="+id_eva);
             });
           }
           else{

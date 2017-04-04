@@ -8,11 +8,16 @@ require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
 
 $id_eva = "";
+$disabled = "";
 if(isset($_GET['id_eva'])){
     $id_eva = $_GET['id_eva'];
 }
+if(isset($_GET['ver'])){
+    $ver = $_GET['ver'];
+    $disabled = "disabled";
+}
     
-$res_cate_eva = registroCampo("rmb_eva_cate_x_eva ce", "ce.rmb_eva_cate_x_eva_id, ce.rmb_eva_cate_x_eva_peso, ce.rmb_eva_cate_x_eva_punt, c.rmb_eva_cate_nom", "LEFT JOIN c.rmb_eva_cate USING(rmb_eva_cate_id) WHERE ce., ce.rmb_eva_id = '$id_eva'", "", "ORDER BY c.rmb_eva_cate_nom");
+$res_cate_eva = registroCampo("rmb_eva_cate_x_eva ce", "ce.rmb_eva_cate_x_eva_id, ce.rmb_eva_cate_x_eva_peso, ce.rmb_eva_cate_x_eva_punt, c.rmb_eva_cate_nom", "LEFT JOIN rmb_eva_cate c USING(rmb_eva_cate_id) WHERE ce.rmb_eva_id = '$id_eva'", "", "ORDER BY c.rmb_eva_cate_nom");
 ?>
 <div class="panel-body">
     <table class="table table-hover">
@@ -22,7 +27,7 @@ $res_cate_eva = registroCampo("rmb_eva_cate_x_eva ce", "ce.rmb_eva_cate_x_eva_id
                 <th class='hidden-xs col-sm-4 col-md-3 col-lg-3 text-center'>Peso</th>
                 <th class='hidden-xs hidden-sm col-md-3 col-lg-3 text-center'>Puntaje</th>
                 <th class='col-xs-5 col-sm-4 col-md-4 col-lg-3 text-center'>
-                    <span class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn btn-warning btn-accion-cate-eva" title="Nuevo registro"><i class="glyphicon glyphicon-plus"></i></span>
+                    <span class="col-xs-12 col-sm-12 col-md-12 col-lg-12 btn btn-warning btn-accion-cate-eva <?php echo $disabled;?>" title="Nuevo registro"><i class="glyphicon glyphicon-plus"></i></span>
                 </th>
             </tr>
         </thead>
@@ -35,17 +40,17 @@ $res_cate_eva = registroCampo("rmb_eva_cate_x_eva ce", "ce.rmb_eva_cate_x_eva_id
                         <td class='hidden-xs col-sm-4 col-md-3 col-lg-3 text-center'><?php echo $row_cate_eva[1];?></td>
                         <td class='hidden-xs hidden-sm col-md-3 col-lg-3 text-center'><?php echo $row_cate_eva[2];?></td>
 
-                        <td id="lista_cate-eva" class="vertical-middle" name="<?php echo $row_cate_eva[0];?>">
+                        <td class="vertical-middle lista_cate-eva" name="<?php echo $row_cate_eva[0];?>">
 
-                            <button type="button" class="btn btn-default btn-accion-cate-eva" title="Consultar información" alt="Consultar información" style="padding: 5px 10px;">
+                            <button type="button" class="btn btn-default btn-accion-cate-eva <?php echo $disabled;?>" title="Consultar información" alt="Consultar información" style="padding: 5px 10px;width: 32%;">
                                 <i class="glyphicon glyphicon-eye-open"></i>
                             </button>
 
-                            <button type="button" class="btn btn-default btn-accion-cate-eva" title="Editar Información" alt="Editar Información" style="padding: 5px 10px;">
+                            <button type="button" class="btn btn-default btn-accion-cate-eva <?php echo $disabled;?>" title="Editar Información" alt="Editar Información" style="padding: 5px 10px;width: 32%;">
                                 <i class="glyphicon glyphicon-pencil"></i>
                             </button>
 
-                            <button type="button" class="btn btn-default btn-accion-cate-eva" title="Borrar registro" alt="Borrar registro" style="padding: 5px 10px;">
+                            <button type="button" class="btn btn-default btn-accion-cate-eva <?php echo $disabled;?>" title="Borrar registro" alt="Borrar registro" style="padding: 5px 10px;width: 32%;">
                                 <i class="glyphicon glyphicon-remove"></i>
                             </button>
                           

@@ -36,7 +36,12 @@ if($consejo_all){
         <?php 
         if($consejo_pre){?>
             <div class="col-xs-12 text-center mieconsejo">
-                <div class="text-center dataconsejo consejopresidente">Presidente<br><?php echo $consejo_pre[1];?><br><?php echo $consejo_pre[2];?><br>Apto <?php echo $consejo_pre[3];?></div>
+                <div class="text-center dataconsejo consejopresidente">
+                    <strong>Presidente</strong><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_pre[1]))));?><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_pre[2]))));?><br>
+                    Apto <?php echo $consejo_pre[3];?>
+                </div>
                 <div class="iconos-edit-consejo-comite hidden">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $consejo_pre[0];?>" data-quien="2"></span>
                     <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $consejo_pre[0];?>" data-quien="2"></span>
@@ -45,7 +50,12 @@ if($consejo_all){
         }
         if($consejo_vic){?>
             <div class="col-xs-12 text-center mieconsejo">
-                <div class="text-center dataconsejo consejovicepresidente">Vice-Presidente<br><?php echo $consejo_vic[1];?><br><?php echo $consejo_vic[2];?><br>Apto <?php echo $consejo_vic[3];?></div>
+                <div class="text-center dataconsejo consejovicepresidente">
+                    <strong>Vice-Presidente</strong><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_vic[1]))));?><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_vic[2]))));?><br>
+                    Apto <?php echo $consejo_vic[3];?>
+                </div>
                 <div class="iconos-edit-consejo-comite hidden">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $consejo_vic[0];?>" data-quien="2"></span>
                     <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $consejo_vic[0];?>" data-quien="2"></span>
@@ -55,7 +65,12 @@ if($consejo_all){
         if($consejo_tit){
             for($i = 0; $i < count($consejo_tit); $i++){?>
                 <div class="col-xs-12 text-center mieconsejo">
-                    <div class="text-center dataconsejo consejotitular">Titular<br><?php echo $consejo_tit[$i][1]; ?><br><?php echo $consejo_tit[$i][2]; ?><br>Apto <?php echo $consejo_tit[$i][3]; ?></div>
+                    <div class="text-center dataconsejo consejotitular">
+                        <strong>Titular</strong><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_tit[$i][1]))));?><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_tit[$i][2]))));?><br>
+                        Apto <?php echo $consejo_tit[$i][3]; ?>
+                    </div>
                     <div class="iconos-edit-consejo-comite hidden">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $consejo_tit[$i][0];?>" data-quien="2"></span>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $consejo_tit[$i][0];?>" data-quien="2"></span>
@@ -76,7 +91,12 @@ if($consejo_all){
             <?php 
             for($i = 0; $i < count($consejo_del); $i++){?>
                 <div class="col-xs-12 text-center mieconsejo">
-                    <div class="text-center dataconsejo consejodelegado">Suplente<br><?php echo $consejo_del[$i][1];?><br><?php echo $consejo_del[$i][2];?><br>Apto <?php echo $consejo_del[$i][3]; ?></div>
+                    <div class="text-center dataconsejo consejodelegado">
+                        <strong>Suplente</strong><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_del[$i][1]))));?><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($consejo_del[$i][2]))));?><br>
+                        Apto <?php echo $consejo_del[$i][3]; ?>
+                    </div>
                     <div class="iconos-edit-consejo-comite hidden">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $consejo_del[$i][0];?>" data-quien="2"></span>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $consejo_del[$i][0];?>" data-quien="2"></span>

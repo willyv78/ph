@@ -33,7 +33,7 @@ if($res_quien){
     <div class="form-group">
         <label class="col-xs-12 col-sm-4 col-md-5 col-lg-6 text-right" for="rmb_carg_id">Residente:</label>
         <div class="col-xs-12 col-sm-8 col-md-7 col-lg-6"><?php 
-            echo campoSelectMaster("rmb_residente residente", "$id", "residente.rmb_residente_id, residente.rmb_residente_nom, residente.rmb_residente_ape", "LEFT JOIN rmb_residente_x_aptos ra USING(rmb_residente_id) LEFT JOIN rmb_aptos a USING(rmb_aptos_id) WHERE ra.rmb_tres_id = '1'", "", "ORDER BY cast(a.rmb_aptos_nom as unsigned) ASC");?></div>
+            echo campoSelectMaster("rmb_residente residente", "$id", "residente.rmb_residente_id, residente.rmb_residente_nom, residente.rmb_residente_ape", "LEFT JOIN rmb_residente_x_aptos ra USING(rmb_residente_id) LEFT JOIN rmb_aptos a USING(rmb_aptos_id) WHERE ra.rmb_tres_id = '1'", "", "ORDER BY residente.rmb_residente_nom ASC");?></div>
     </div>
     <div class="form-group">
         <label class="col-xs-12 col-sm-4 col-md-5 col-lg-6 text-right" for="rmb_carg_id">Cargo:</label>

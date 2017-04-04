@@ -446,11 +446,16 @@ if(isset($_GET['tipo_nom'])){
                         $url_file_cert = $reside_cert;
                         $disabled_a = "";
                         $url_file_array = explode(".", $reside_cert);
-                        $src = "../images/TiposArchivo/".$url_file_array[3].".png";
+                        $src = "../images/TiposArchivo/".$url_file_array[3].".png";?>
+                        <a href="<?php echo $url_file_cert;?>" target="_blank" <?php echo $disabled_a;?>>
+                            <img id="vistaPrevia2" src="<?php echo $src;?>" alt="Image" width="150px" height="150px">
+                        </a><?php 
+                    }
+                    else{
+                        $url_file_cert = "#";
+                        $src = "../images/noimage.png";?>
+                        <img id="vistaPrevia2" src="<?php echo $src;?>" alt="Image" width="150px" height="150px"><?php 
                     }?>
-                    <a href="<?php echo $url_file_cert;?>" target="_blank" <?php echo $disabled_a;?>>
-                        <img id="vistaPrevia2" src="<?php echo $src;?>" alt="Image" width="150px" height="150px">
-                    </a>
                     <input type="file" name="rmb_residente_cert" id="rmb_residente_cert" class="form-control fileimagen2" placeholder="Certificado de tradición y Libertad" alt="Certificado de tradición y Libertad" title="Certificado de tradición y Libertad" value="" <?php echo $desabilitar;?>>
                 </div>
             </div>

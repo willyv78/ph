@@ -8,6 +8,7 @@ require_once ("../php/funciones.php");
 //////////////////////////////////////////////////////////////////////////////////////
 
 $desactivar = "";
+$id_eva = "";
 if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
     if(isset($_GET['id_ver'])){
         $id_eva = $_GET['id_ver'];
@@ -28,7 +29,7 @@ if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
 }?>
 <!-- Titulo de la pagina -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
-   <input type="hidden" value="rmb_residente">
+   <input id="id_eva" name="id_eva" type="hidden" value="<?php echo $id_eva;?>">
    <h3 class="text-left">Formulario Evaluación</h3>
 </div>
 <div class="text-left">
@@ -36,17 +37,17 @@ if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
         <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label" for="rmb_eva_nom">Nombre: </label>
             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
-                <input type="text" name="rmb_eva_nom" id="rmb_eva_nom" class="form-control" value="<?php echo $eva_nom;?>" placeholder="Nombre de la evaluación" alt="Nombre de la evaluación" title="Nombre de la evaluación" <?php echo $disabled;?>>
+                <input type="text" name="rmb_eva_nom" id="rmb_eva_nom" class="form-control" value="<?php echo $eva_nom;?>" placeholder="Nombre de la evaluación" alt="Nombre de la evaluación" title="Nombre de la evaluación" <?php echo $desactivar;?>>
             </div>
         </div>
         <div class="clearfix">&nbsp;</div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-            <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_eva;?>"><?php 
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="btn-form-edit-eva"><?php 
             if(isset($_GET['id_upd'])){?>
-                <button type="submit" class="btn btn-default btn-lg" <?php echo $disabled;?>>Actualizar</button>
+                <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_eva;?>">
+                <button type="submit" class="btn btn-default btn-lg" <?php echo $desactivar;?>>Actualizar</button>
             <?php }
             elseif((!isset($_GET['id_upd'])) && (!isset($_GET['id_ver']))){?>
-                <button type="submit" class="btn btn-default btn-lg" <?php echo $disabled;?>>Agregar</button>
+                <button type="submit" class="btn btn-default btn-lg" <?php echo $desactivar;?>>Agregar</button>
             <?php }?>
             <button type="button" class="btn btn-default btn-lg btn-regresar">Regresar</button>
         </div>
@@ -96,7 +97,6 @@ if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
                         // alert(datos);
                         setTimeout(esperehide, 500);
                         $("#col-md-12").load("evaluacion-form.php?id_upd=" + datos);
-                        history.pushState({page: "evaluacion-form.php"}, "Formulario de evaluación", "evaluacion-form.html");
                         swal({
                             title: "Felicidades!",
                             text: "El registro se ha guardado correctamente!",
@@ -120,8 +120,13 @@ if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
             });
         });
         var id_eva = '<?php echo $id_eva;?>';
+        var mas = "";
         if(id_eva){
-            $("#categorias-evaluacion").load("evaluacion-lista-cate-eva.php?id_eva="+id_eva);
+            var id_ver = '<?php echo $desactivar;?>';
+            if(id_ver){
+                mas = '&ver=1';
+            }
+            $("#categorias-evaluacion").load("evaluacion-lista-cate-eva.php?id_eva="+id_eva+mas);
         }
         cargaFormEvaluacion();
     });

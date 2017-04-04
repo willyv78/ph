@@ -41,7 +41,12 @@ if($comite_all){
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $comite_pre[0];?>" data-quien="3"></span>
                     <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $comite_pre[0];?>" data-quien="3"></span>
                 </div>
-                <div class="text-center datacomite consejopresidente">Presidente<br><?php echo $comite_pre[1];?><br><?php echo $comite_pre[4];?><br>Apto <?php echo $comite_pre[2]; ?></div>
+                <div class="text-center datacomite consejopresidente">
+                    <strong>Presidente</strong><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_pre[1]))));?><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_pre[4]))));?><br>
+                    Apto <?php echo $comite_pre[2];?>
+                </div>
             </div><?php 
         }
         if($comite_vic){?>
@@ -50,7 +55,12 @@ if($comite_all){
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $comite_vic[0];?>" data-quien="3"></span>
                     <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $comite_vic[0];?>" data-quien="3"></span>
                 </div>
-                <div class="text-center datacomite consejovicepresidente">Vice-Presidente<br><?php echo $comite_vic[1];?><br><?php echo $comite_vic[4];?><br>Apto <?php echo $comite_vic[2]; ?></div>
+                <div class="text-center datacomite consejovicepresidente">
+                    <strong>Vice-Presidente</strong><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_vic[1]))));?><br>
+                    <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_vic[4]))));?><br>
+                    Apto <?php echo $comite_vic[2]; ?>
+                </div>
             </div><?php 
         }
         if($comite_tit){
@@ -60,7 +70,12 @@ if($comite_all){
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $comite_tit[$i][0];?>" data-quien="3"></span>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $comite_tit[$i][0];?>" data-quien="3"></span>
                     </div>
-                    <div class="text-center datacomite consejotitular">Titular<br><?php echo $comite_tit[$i][1];?><br><?php echo $comite_tit[$i][4];?><br>Apto <?php echo $comite_tit[$i][2]; ?></div>
+                    <div class="text-center datacomite consejotitular">
+                        <strong>Titular</strong><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_tit[$i][1]))));?><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_tit[$i][4]))));?><br>
+                        Apto <?php echo $comite_tit[$i][2]; ?>
+                    </div>
                 </div><?php 
             }
         }?>
@@ -76,7 +91,12 @@ if($comite_all){
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true" alt="Editar Registro" title="Editar Registro" data-id="<?php echo $comite_del[$i][0];?>" data-quien="3"></span>
                         <span class="glyphicon glyphicon-remove" aria-hidden="true" alt="Eliminar Registro" title="Eliminar Registro" data-id="<?php echo $comite_del[$i][0];?>" data-quien="3"></span>
                     </div>
-                    <div class="text-center datacomite consejodelegado">Suplente<br><?php echo $comite_del[$i][1];?><br><?php echo $comite_del[$i][4];?><br>Apto <?php echo $comite_del[$i][2]; ?></div>
+                    <div class="text-center datacomite consejodelegado">
+                        <strong>Suplente</strong><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_del[$i][1]))));?><br>
+                        <?php echo utf8_encode(ucwords(strtolower(utf8_decode($comite_del[$i][4]))));?><br>
+                        Apto <?php echo $comite_del[$i][2]; ?>
+                    </div>
                     <div class="clearfix">&nbsp;</div>
                 </div><?php 
             }?>
