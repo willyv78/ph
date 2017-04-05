@@ -363,6 +363,10 @@ function cargarPagina (event) {
     $("#col-md-12").load("./evaluacion-lista-tema.php");
     history.pushState({page: "evaluacion-lista-tema.php"}, "Lista de temas", "temas.html");
   }
+  else if(pagina === '#calificar-evaluacion.html'){
+    $("#col-md-12").load("./calificar-evaluacion.php");
+    history.pushState({page: "calificar-evaluacion.php"}, "Calificar Evaluación", "calificar-evaluacion.html");
+  }
   else if(pagina === '#indexjquerytabs1-page-cerrar'){
     esperehide();
     swal({
@@ -2716,34 +2720,20 @@ function cargaListaCategorias () {
 // Función que se ejecuta al hacer click en los botones del listado de categorias
 function accionCategorias (datos) {
   var evento = $(this).attr('title');
-  if (evento === 'Nuevo registro'){}
-  else if (evento === 'Consultar información'){}
-  else if (evento === 'Editar Información'){}
-  else if (evento === 'Borrar registro'){}
-}
-// Funcion que se ejecuta al cargar la pagina de listado de categorias
-function cargaListaTemas () {
-  $(".btn-accion").on("click", accionTemas);
-  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
-  setTimeout(esperehide, 500);
-}
-// Función que se ejecuta al hacer click en los botones del listado de categorias
-function accionTemas (datos) {
-  var evento = $(this).attr('title');
   if (evento === 'Nuevo registro'){
-    $("#col-md-12").load("evaluacion-form.php");
+    $("#col-md-12").load("./evaluacion-form-cate.php");
   }
   else if (evento === 'Consultar información'){
-    var data_id = boton.data('id');
-    $("#col-md-12").load("evaluacion-form.php?id_ver=" + data_id);
+    var data_id = $(this).parent("#lista_categoria").attr('name');
+    $("#col-md-12").load("./evaluacion-form-cate.php?id_ver=" + data_id);
   }
   else if (evento === 'Editar Información'){
-    var data_id = boton.data('id');
-    $("#col-md-12").load("evaluacion-form.php?id_upd=" + data_id);
+    var data_id = $(this).parent("#lista_categoria").attr('name');
+    $("#col-md-12").load("./evaluacion-form-cate.php?id_upd=" + data_id);
   }
   else if (evento === 'Borrar registro'){
     setTimeout(esperehide, 500);
-    var data_id = boton.data('id');
+    var data_id = $(this).parent("#lista_categoria").attr('name');
     swal({
        title: "¿Esta Seguro?",
        text: "Se borrará el registro con # id " + data_id,
@@ -2756,7 +2746,7 @@ function accionTemas (datos) {
     },
     function(){
       $.ajax({
-        url:"../php/ins_upd_question.php",
+        url:"../php/ins_upd_cate.php",
         cache:false,
         type:"POST",
         data:"id_sup="+data_id,
@@ -2770,7 +2760,7 @@ function accionTemas (datos) {
                 confirmButtonColor: "#94B86E"
             },
             function(){
-                $("#col-md-12").load("question.php");
+                $("#col-md-12").load("evaluacion-lista-cate.php");
             });
           }
           else{
@@ -2788,6 +2778,94 @@ function accionTemas (datos) {
       });
     });
   }
+}
+// funcion que se ejecuta al cargar la paginna del form de agregar o editar tareas
+function cargaFormCategoria () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar-cat").on("click", regresarListaCategorias);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de tareas
+function regresarListaCategorias (argument) {
+  espereshow();
+  $("#col-md-12").load("evaluacion-lista-cate.php");
+}
+// Funcion que se ejecuta al cargar la pagina de listado de categorias
+function cargaListaTemas () {
+  $(".btn-accion").on("click", accionTemas);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
+  setTimeout(esperehide, 500);
+}
+// Función que se ejecuta al hacer click en los botones del listado de categorias
+function accionTemas (datos) {
+  var evento = $(this).attr('title');
+  if (evento === 'Nuevo registro'){
+    $("#col-md-12").load("./evaluacion-form-tema.php");
+  }
+  else if (evento === 'Consultar información'){
+    var data_id = $(this).parent("#lista_tema").attr('name');
+    $("#col-md-12").load("./evaluacion-form-tema.php?id_ver=" + data_id);
+  }
+  else if (evento === 'Editar Información'){
+    var data_id = $(this).parent("#lista_tema").attr('name');
+    $("#col-md-12").load("./evaluacion-form-tema.php?id_upd=" + data_id);
+  }
+  else if (evento === 'Borrar registro'){
+    setTimeout(esperehide, 500);
+    var data_id = $(this).parent("#lista_tema").attr('name');
+    swal({
+       title: "¿Esta Seguro?",
+       text: "Se borrará el registro con # id " + data_id,
+       type: "warning",
+       showCancelButton: true,
+       cancelButtonText: "Cancelar",
+       confirmButtonColor: "#F8BB86",
+       confirmButtonText: "Eliminar!",
+       closeOnConfirm: false
+    },
+    function(){
+      $.ajax({
+        url:"../php/ins_upd_tema.php",
+        cache:false,
+        type:"POST",
+        data:"id_sup="+data_id,
+        success: function(datos){
+          if(datos !== ''){
+            swal({
+                title: "Felicidades!",
+                text: "El registro se ha guardado correctamente!",
+                type: "success",
+                confirmButtonText: "Continuar",
+                confirmButtonColor: "#94B86E"
+            },
+            function(){
+                $("#col-md-12").load("evaluacion-lista-tema.php");
+            });
+          }
+          else{
+            setTimeout(esperehide, 500);
+            swal({
+              title: "Error!",
+              text: "Ha ocurrido un error,\nNo se ha realizado cambios,\nrevise la información diligenciada he intentelo nuevamente.",
+              type: "error",
+              confirmButtonText: "Aceptar",
+              confirmButtonColor: "#E25856"
+            });
+            return;
+          }
+        }
+      });
+    });
+  }
+}
+// funcion que se ejecuta al cargar la paginna del form de agregar o editar tareas
+function cargaFormTema () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar-tema").on("click", regresarListaTemas);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de tareas
+function regresarListaTemas (argument) {
+  espereshow();
+  $("#col-md-12").load("evaluacion-lista-tema.php");
 }
 
 

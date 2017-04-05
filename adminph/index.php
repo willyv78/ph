@@ -276,6 +276,9 @@ if($res_user){
                       <li>
                         <a class="menu_movil" href="#temas.html">Temas</a>
                       </li>
+                      <li>
+                        <a class="menu_movil" href="#calificar-evaluacion.html">Calificar Evaluación</a>
+                      </li>
                     </ul>
                   </li>
                   <!-- Contactos -->

@@ -6,7 +6,7 @@ require_once ("../php/funciones.php");
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 
-$res_val = registroCampo("rmb_eva_tema c", "c.rmb_eva_tema_id, c.rmb_eva_tema_nom", "", "", "ORDER BY c.rmb_eva_tema_nom ASC");
+$res_val = registroCampo("rmb_eva e", "e.rmb_eva_id, e.rmb_eva_nom", "", "", "ORDER BY e.rmb_eva_id DESC");
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="table-responsive">
@@ -30,7 +30,8 @@ $res_val = registroCampo("rmb_eva_tema c", "c.rmb_eva_tema_id, c.rmb_eva_tema_no
           while($row_val = mysql_fetch_array($res_val)){?>
             <tr>
               <td class="text-nowrap vertical-middle"><?php echo $row_val[1];?></td>
-              <td id="lista_tema" class="vertical-middle" name="<?php echo $row_val[0];?>">
+              <td class="lista_evaluaciones vertical-middle" name="<?php echo $row_val[0];?>">
+
                 <button type="button" class="btn btn-default btn-accion" title="Consultar información" alt="Consultar información" style="padding: 5px 10px;width: 32%;">
                   <i class="glyphicon glyphicon-eye-open"></i>
                 </button>
@@ -42,7 +43,7 @@ $res_val = registroCampo("rmb_eva_tema c", "c.rmb_eva_tema_id, c.rmb_eva_tema_no
                 <button type="button" class="btn btn-default btn-accion" title="Borrar registro" alt="Borrar registro" style="padding: 5px 10px;width: 32%;">
                   <i class="glyphicon glyphicon-remove"></i>
                 </button>
-                </a>
+                
               </td>
             </tr><?php 
           }
@@ -86,7 +87,7 @@ $res_val = registroCampo("rmb_eva_tema c", "c.rmb_eva_tema_id, c.rmb_eva_tema_no
       setTimeout(function(){
         $('#tabla tfoot th').each(function() {
           var title = $('#tabla thead th').eq($(this).index()).text();
-          $(this).html('<input class="form-control" type="text" placeholder=" Busqueda por ' + title + ' del tema" />');
+          $(this).html('<input class="form-control" type="text" placeholder=" Busqueda por ' + title + ' de la evaluación" />');
         });
         $("tfoot input").keyup(function() {
           /* Filter on the column (the index) of this element */
@@ -119,7 +120,7 @@ $res_val = registroCampo("rmb_eva_tema c", "c.rmb_eva_tema_id, c.rmb_eva_tema_no
       }
     }
     setTimeout(function(){crearTabla("tabla");}, 200)
-    cargaListaTemas();
+    cargaListaEvaluaciones();
   });
 </script>
 <!-- FIN Pagina primera pestaña -->
