@@ -2494,7 +2494,7 @@ function accionEvaluacion (datos) {
     $("#col-md-12").load("evaluacion-form.php");
   }
   else if (evento === 'Consultar información'){
-    $("#col-md-12").load("evaluacion-form.php?id_ver=" + data_id);
+    $("#col-md-12").load("evaluacion-resultados.php?id_eva=" + data_id);
   }
   else if (evento === 'Editar Información'){
     $("#col-md-12").load("evaluacion-form.php?id_upd=" + data_id);
@@ -2866,6 +2866,83 @@ function cargaFormTema () {
 function regresarListaTemas (argument) {
   espereshow();
   $("#col-md-12").load("evaluacion-lista-tema.php");
+}
+// Funcion que se ejecuta al cargar la pagina de lista de evaluaciones a calificar
+function cargaListaCalificaEva () {
+  $(".btn-accion").on("click", accionCalificaEva);
+  setTimeout(function(){$("#tabla > thead > tr > th:last-child").removeClass('sorting');}, 300);
+  setTimeout(esperehide, 500);
+}
+// Función que se ejecuta al hacer click en el boton calificar del listado de evaluaciones a calificar
+function accionCalificaEva (datos) {
+  var evento = $(this).attr('title');
+  var data_id = $(this).closest(".lista_evaluaciones").attr('name');
+  if (evento === 'Calificar Evaluación'){
+    $("#col-md-12").load("califica-evaluacion-form.php?id_upd=" + data_id);
+  }
+}
+// funcion que se ejecuta al cargar la paginna del form de calificar evaluación
+function cargaFormCalificaEva () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar").on("click", regresarCalificaEva);
+  $(".btn-accion").on("click", accionformCalificaEva);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de calificar evaluacion
+function regresarCalificaEva (argument) {
+  espereshow();
+  $("#col-md-12").load('calificar-evaluacion.php');
+}
+// Función que se ejecuta al hacer click en el boton calificar del listado de evaluaciones a calificar
+function accionformCalificaEva (datos) {
+  var evento = $(this).attr('title');
+  var data_id = $(this).closest(".lista-cate-eva").attr('name');
+  var id_eva = $("#id_eva").val();
+  if (evento === 'Calificar Categoría'){
+    $("#col-md-12").load("califica-evaluacion-form-cate.php?id_cat=" + data_id + "&id_eva=" + id_eva);
+  }
+}
+// funcion que se ejecuta al cargar la paginna del form de calificar categoria evaluación
+function cargaFormCalificaCateEva () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar").on("click", regresarCalificaCateEva);
+  $(".btn-accion").on("click", accionformCalificaCateEva);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de calificar categoria evaluacion
+function regresarCalificaCateEva (argument) {
+  espereshow();
+  var id_eva = $("#id_eva").val();
+  $("#col-md-12").load('califica-evaluacion-form.php?id_upd='+id_eva);
+}
+// Función que se ejecuta al hacer click en el boton calificar del listado de categorias a calificar
+function accionformCalificaCateEva (datos) {
+  var evento = $(this).attr('title');
+  var data_id = $(this).closest(".lista-tema-cate-eva").attr('name');
+  var id_eva = $("#id_eva").val();
+  var id_cat = $("#id_cat").val();
+  if (evento === 'Calificar Tema'){
+    $("#col-md-12").load("califica-evaluacion-form-tema.php?id_upd=" + data_id + "&id_eva=" + id_eva + "&id_cat=" + id_cat);
+  }
+}
+// funcion que se ejecuta al cargar la paginna del form de calificar categoria evaluación
+function cargaFormCalificaTemaEva () {
+  setTimeout(esperehide, 500);
+  $(".btn-regresar").on("click", regresarCalificaTemaEva);
+  $(".btn-accion").on("click", accionformCalificaTemaEva);
+}
+// funcion que se ejecuta al hacer click en el boton de regresar en el formulario de calificar categoria evaluacion
+function regresarCalificaTemaEva (argument) {
+  espereshow();
+  var id_eva = $("#id_eva").val();
+  var id_cat = $("#id_cat").val();
+  $("#col-md-12").load('califica-evaluacion-form-cate.php?id_eva='+id_eva+"&id_cat="+id_cat);
+}
+// Función que se ejecuta al hacer click en el boton calificar del listado de categorias a calificar
+function accionformCalificaTemaEva (datos) {
+  var evento = $(this).attr('title');
+  var data_id = $(this).closest(".lista-tema-cate-eva").attr('name');
+  if (evento === 'Calificar Tema'){
+    $("#col-md-12").load("califica-evaluacion-form-tema.php?id_ver=" + data_id);
+  }
 }
 
 

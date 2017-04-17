@@ -29,12 +29,12 @@ if(isset($_GET['id_ver']) || isset($_GET['id_upd'])){
 <!-- Titulo de la pagina -->
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titulo-pagina">
    <input id="id_cat" name="id_cat" type="hidden" value="<?php echo $id_cat;?>">
-   <h3 class="text-left">Formulario Categoria</h3>
+   <h3 class="text-left">Formulario Tema</h3>
 </div>
 <div class="text-left">
     <form id="form_tema" name="form_tema" action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
         <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <label class="col-xs-12 col-sm-2 col-md-3 col-lg-3 control-label" for="rmb_eva_tema_nom">Categoría: </label>
+            <label class="col-xs-12 col-sm-2 col-md-3 col-lg-3 control-label" for="rmb_eva_tema_nom">Tema: </label>
             <div class="col-xs-12 col-sm-9 col-md-8 col-lg-7">
                 <input type="text" name="rmb_eva_tema_nom" id="rmb_eva_tema_nom" class="form-control" value="<?php echo $cate_nom;?>" placeholder="Peso de la categoría" alt="Peso de la categoría" title="Peso de la categoría" <?php echo $disabled;?>>
             </div>

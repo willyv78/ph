@@ -154,7 +154,7 @@
                     type:"POST",
                     data:"email="+textinput.value+"&pass="+textinput1.value,
                     success: function(datos){
-                        alert(datos);
+                        // alert(datos);
                         if(datos !== ''){
                             var dat = datos.split(",");
                             if(dat[2] === '23'){

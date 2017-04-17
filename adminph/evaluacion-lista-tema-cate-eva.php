@@ -19,10 +19,7 @@ if((isset($_GET['id_eva'])) && (isset($_GET['id_cat']))){
     $id_eva = $_GET['id_eva'];
     $id_cat = $_GET['id_cat'];
     $res_cate_eva = registroCampo("rmb_eva_tema_x_cate tc", "tc.rmb_eva_tema_x_cate_id, t.rmb_eva_tema_nom", "LEFT JOIN rmb_eva_tema t USING(rmb_eva_tema_id) WHERE rmb_eva_cate_id = $id_cat AND rmb_eva_id = $id_eva", "", "ORDER BY t.rmb_eva_tema_nom ASC");
-}
-    
-
-?>
+}?>
 <div class="panel-body">
     <table class="table table-hover">
         <thead>
