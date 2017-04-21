@@ -2115,13 +2115,20 @@ function cargaNuevoEstadoFinanciero(datos){
   var id_apto = $("#id_apto").val();
   var anio = $(".btn-anios.active").html();
   var altopag = resizePag();
-  var panelbody = $(this).closest('.panel-body');
-  var paneldefault = $(this).closest('.panel-default');
+  var panelbody = $("#form-new-pago").closest('.panel-body');
+  var paneldefault = $("#form-new-pago").closest('.panel-default');
   restablecerPanel(panelbody, paneldefault);
+  $(".form-control").on('click', function(event) {
+    // event.preventDefault();
+    restablecerPanel(panelbody, paneldefault);
+  });
   $(".btn-actualizar").on('click', function(event) {
     // alert("btn-actualizar");
+    restablecerPanel(panelbody, paneldefault);
+    $( "#form-new-pago" ).submit();
   });
   $(".btn-regresar").on('click', function(event) {
+    restablecerPanel(panelbody, paneldefault);
     $(".ing-cal").load("estado-financiero.php?id_apto=" + id_apto + "&anio=" + anio);
     $(".ing-cal").height(altopag);
     $(".ing-cal").removeClass('hidden');

@@ -283,12 +283,13 @@ if($res_tes_apto){
                     $fecha_ultimodia = $fecha_anyomes->modify('last day of this month');
                     $ultimo_dia = $fecha_ultimodia->format('d');
                     // se arma las fechas de inicio del mes y la final del mes
-                    $fpag = $anio."-".$row_tes[3]."-".$primer_dia;
-                    $fven = $anio."-".$row_tes[3]."-".$ultimo_dia;
-                    // echo "fecha de pag0:".$fpag." fecha vence:".$fven;
+                    $fpag = date("Y-m-d", strtotime($anio."-".$row_tes[3]."-".$primer_dia));
+                    $fven = date("Y-m-d", strtotime($anio."-".$row_tes[3]."-".$ultimo_dia));
+                    // echo "fecha de pag0:".$fpag." fecha vence:".$fven." $id_apto=".$id_apto."<br>";
                     // inicializamos la variable lo que debe
                     $debe = 0;
-                    $res_debe = registroCampo("rmb_tesoreria tes", "SUM(tes.rmb_tesoreria_val)", "WHERE tes.rmb_aptos_id = '$id_apto' AND tes.rmb_tesoreria_fpag < '$fpag'", "GROUP BY tes.rmb_aptos_id", "ORDER BY tes. rmb_tesoreria_fpag DESC");
+                    $res_debe = registroCampo("rmb_tesoreria tes", "SUM(tes.rmb_tesoreria_val)", "WHERE tes.rmb_aptos_id = '$id_apto' AND tes.rmb_tesoreria_fpag < '$fven'", "GROUP BY tes.rmb_aptos_id", "ORDER BY tes. rmb_tesoreria_fpag DESC");
+                    // echo "SELECT SUM(tes.rmb_tesoreria_val) FROM rmb_tesoreria tes WHERE tes.rmb_aptos_id = '$id_apto' AND tes.rmb_tesoreria_fpag < '$fven' GROUP BY tes.rmb_aptos_id ORDER BY tes. rmb_tesoreria_fpag DESC"."<br>";
                     if($res_debe){
                         if(mysql_num_rows($res_debe) > 0){
                             $row_debe = mysql_fetch_array($res_debe);
@@ -297,7 +298,8 @@ if($res_tes_apto){
                     }
                     // Inicializamos la variable de lo que pago
                     $pago = 0;
-                    $res_pago = registroCampo("rmb_pagos p", "SUM(p.rmb_pagos_valor)", "LEFT JOIN rmb_tesoreria tes USING(rmb_tesoreria_id) WHERE tes.rmb_aptos_id = '$id_apto' AND p.rmb_pagos_fpago < '$fven'", "GROUP BY p.rmb_tesoreria_id", "ORDER BY p.rmb_pagos_id DESC");
+                    $res_pago = registroCampo("rmb_pagos p", "SUM(p.rmb_pagos_valor)", "LEFT JOIN rmb_tesoreria tes USING(rmb_tesoreria_id) WHERE tes.rmb_aptos_id = '$id_apto' AND p.rmb_pagos_fpago < '$fven'", "GROUP BY tes.rmb_aptos_id", "ORDER BY p.rmb_pagos_id DESC");
+                    // echo "SELECT SUM(p.rmb_pagos_valor) FROM rmb_pagos p LEFT JOIN rmb_tesoreria tes USING(rmb_tesoreria_id) WHERE tes.rmb_aptos_id = '$id_apto' AND p.rmb_pagos_fpago < '$fven' GROUP BY tes.rmb_aptos_id ORDER BY p.rmb_pagos_id DESC"."<br>";
                     if($res_pago){
                         if(mysql_num_rows($res_pago) > 0){
                             $row_pago = mysql_fetch_array($res_pago);
@@ -305,9 +307,14 @@ if($res_tes_apto){
                         }
                     }
                     $tiene = $pago - $debe;
-                    if($tiene < 0){$total = ($tiene * -1) + $tes_val;}
+                    if($tiene < 0){$total = ($tiene * -1);}
+                    elseif($tiene == 0){$total = 0;}
                     else{$total = $tiene - $tes_val;}
-                    if($total < 0){$total = $total * -1;}?>
+                    if($total < 0){$total = $total * -1;}
+                    if(($debe == 0) && ($tiene >= 0)){
+                        $tiene = 0;
+                    }
+                    // echo "Tiene=".$tiene." Pago=".$pago." Debe=".$debe." tes_val=".$tes_val." Total=".$total."<br>";?>
                     <div class="panel panel-default" data-toggle="collapse" href="#historial-financiero-<?php echo $tes_id;?>" aria-expanded="false" aria-controls="historial-financiero-<?php echo $tes_id;?>">
                         <div class="mens-est <?php echo $clase;?>"></div>
                         <div class="panel-heading">
@@ -317,6 +324,21 @@ if($res_tes_apto){
                         <div class="panel-body collapse" id="historial-financiero-<?php echo $tes_id;?>" data-mes="<?php echo $row_tes[3];?>" data-anio="<?php echo $anio;?>">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><?php 
                                 $res_concept = registroCampo("rmb_tes_concep c", "tp.rmb_tpago_nom, tp.rmb_tpago_ope, c.rmb_tes_concep_cant, c.rmb_tes_concep_val", "LEFT JOIN rmb_tpago tp USING(rmb_tpago_id) WHERE c.rmb_tesoreria_id = '".$row_tes[0]."'", "", "");
+                                $res_pagos2 = registroCampo("rmb_pagos p", "p.rmb_pagos_valor", "WHERE p.rmb_tesoreria_id = $row_tes[0]", "", "ORDER BY p.rmb_pagos_id DESC");
+                                $valor_pagado = 0;
+                                if($res_pagos2){
+                                    if(mysql_num_rows($res_pagos2) > 0){
+                                        while($row_pagos2 = mysql_fetch_array($res_pagos2)){
+                                            $valor_pagado += $row_pagos2[0];
+                                        }
+                                    }
+                                }
+                                if($tes_val < $valor_pagado){
+                                    $tiene = $tes_val - $valor_pagado;
+                                    // echo "valor_pagado=".$valor_pagado."<br>";
+                                }
+                                
+                                $total_concepto = 0;
                                 if($res_concept){
                                     if(mysql_num_rows($res_concept) > 0){?>
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -325,8 +347,12 @@ if($res_tes_apto){
                                             while($row_concept = mysql_fetch_array($res_concept)){?>
                                                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 text-left"><?php echo $row_concept[0];?></div>
                                                 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-right"><?php echo number_format($row_concept[3]);?></div><?php 
+                                                if($row_concept[3] == ($tiene * -1)){
+                                                    $total_concepto += 1;
+                                                }
                                             }
-                                            if($tiene <> 0){
+                                            // echo "total_concepto=".$total_concepto."<br>";
+                                            if($total_concepto == 0){
                                                 if($tiene < 0){?>
                                                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 text-left">Más saldo negativo anterior</div>
                                                     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-right"><?php echo number_format(($tiene * -1));?></div><?php 

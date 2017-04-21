@@ -9,11 +9,12 @@ $id_proy = $_SESSION['ProyId'];
 $id_fpago = "";
 $id_tes = "";
 $id_apto = "";
+$id_pago = "";
 if(isset($_GET['id_tes'])){$id_tes = $_GET['id_tes'];}
 if(isset($_GET['id_apto'])){$id_apto = $_GET['id_apto'];}
 
 // realizamos la consulta de los pagos realizados para la tesoreria indicada
-$res_tes = registroCampo("rmb_pagos p", "p.rmb_pagos_fpago, p.rmb_pagos_valor, p.rmb_pagos_obs, p.rmb_fpago_id", "WHERE p.rmb_tesoreria_id = '$id_tes'", "", "");
+$res_tes = registroCampo("rmb_pagos p", "p.rmb_pagos_fpago, p.rmb_pagos_valor, p.rmb_pagos_obs, p.rmb_fpago_id, p.rmb_pagos_id", "WHERE p.rmb_tesoreria_id = '$id_tes'", "", "");
 if($res_tes){
     if(mysql_num_rows($res_tes) > 0){
         $row_tes = mysql_fetch_array($res_tes);
@@ -21,6 +22,7 @@ if($res_tes){
         $valor = $row_tes[1];
         $obs = $row_tes[2];
         $id_fpago = $row_tes[3];
+        $id_pago = $row_tes[4];
     }
 }
 ?>
@@ -61,6 +63,7 @@ if($res_tes){
             if(isset($_GET['id_tes'])){?>
                 <div class="btn-group pull-right">
                     <input type="hidden" name="id_apto2" id="id_apto2" class="form-control" value="">
+                    <input type="hidden" name="id_upd" id="id_upd" class="form-control" value="<?php echo $id_pago;?>">
                     <button type="submit" class="btn btn-default btn-actualizar">Actualizar</button>
                 </div><?php 
             }
@@ -149,7 +152,7 @@ if($res_tes){
             processData:false,
             success: function(datos){
                 if(datos !== ''){
-                    alert(datos);
+                    // alert(datos);
                     var panelbody = $(".class-edit-cobro").closest('.panel-body');
                     var mes = panelbody.data('mes');
                     var id_apto = $('#id_apto').val();

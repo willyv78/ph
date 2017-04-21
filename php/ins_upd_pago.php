@@ -2,6 +2,7 @@
 require_once ("../conexion/conexion.php");
 require_once ("funciones.php");
 $tabla = "rmb_pagos";
+$id_apto = $_POST['id_apto2'];
 if(isset($_POST['id_sup'])){
     $sql = "BEGIN;";
     $res_sql = mysql_query($sql, conexion());
@@ -43,59 +44,59 @@ if(isset($_POST['id_sup'])){
     }
 }
 else if(isset($_POST['id_upd'])){
-    $sq = 0;$sw = 0;
-    $campos = "";
-    $sql_upd = "";
-    $nom_campos = "";
-    $nom_campo = "";
-    $id_concepto = "";
-    foreach($_POST as $key => $value){
-        $id_concepto = "";
-        $nom_campos = explode("-", $key);
-        $nom_campo = $nom_campos[0];
-        $id_concepto = $nom_campos[1];
-
-        if(($nom_campo == "rmb_tpago_id") || ($nom_campo == "rmb_tes_concep_val")){
-            if($sq == 0){
-                $campos .= $nom_campo."=".mysql_escape_string($value);
+    $sql_upd_tes = "UPDATE rmb_pagos SET rmb_pagos_fpago = '".$_POST['rmb_pagos_fpago']."', rmb_fpago_id = '".$_POST['rmb_fpago_id']."', rmb_tesoreria_id = ".$_POST['rmb_tesoreria_id'].",  rmb_pagos_valor = ".$_POST['rmb_pagos_valor'].", rmb_pagos_obs = '".$_POST['rmb_pagos_obs']."', rmb_pagos_fecha = NOW(), rmb_pagos_user = ".$_SESSION['UsuID']." WHERE rmb_pagos_id = '".$_POST['id_upd']."'";
+    echo $sql_upd_tes;
+    $res_upd_tes = mysql_query($sql_upd_tes, conexion());
+    if($res_upd_tes){
+        $deuda_ant = 0;
+        // Consultamos el valor de la deuda con fecha inferior a la fecha de este pago
+        $res_deuda = registroCampo("rmb_tesoreria tes", "SUM(tes.rmb_tesoreria_val)", "WHERE tes.rmb_aptos_id = '$id_apto' AND DATE_FORMAT(tes.rmb_tesoreria_fpag,'%Y-%m-%d') <= '".$_POST['rmb_pagos_fpago']."'", "GROUP BY tes.rmb_aptos_id", "");
+        if($res_deuda){
+            if(mysql_num_rows($res_deuda) > 0){
+                $row_deuda = mysql_fetch_array($res_deuda);
+                $deuda_ant = $row_deuda[0];
             }
-            else{
-                $campos .= ", ".$nom_campo."=".mysql_escape_string($value);
-            }
-            if($nom_campo == "rmb_tes_concep_val"){
-                $sql_upd = "UPDATE ".$tabla." SET ".$campos." WHERE ".$tabla."_id = '".$id_concepto."'";
-                $res_upd = mysql_query($sql_upd, conexion());
-                if($res_upd){$sw += 1;}
-            }
-            $sq += 1;
         }
-    }
-    $valor_tes = 0;
-    $sql_tes = "SELECT c.rmb_tes_concep_val, tp.rmb_tpago_ope FROM rmb_tes_concep c LEFT JOIN rmb_tpago tp USING(rmb_tpago_id) WHERE c.rmb_pagos_id = '".$_POST['rmb_pagos_id']."'";
-    $res_tes = mysql_query($sql_tes, conexion());
-    if($res_tes){
-        if(mysql_num_rows($res_tes) > 0){
-            while($row_tes = mysql_fetch_array($res_tes)){
-                $valor = $row_tes[0];
-                $opera = $row_tes[1];
-                if($opera == "1"){
-                    $valor_tes += $valor;
-                }
-                else{
-                    if($valor_tes >= $valor){
-                        $valor_tes = $valor_tes - $valor;
+        $pago_ant = 0;
+        // consultamos el valor total pagado hasta la fecha de estre pago
+        $res_pago = registroCampo("rmb_pagos p", "SUM(p.rmb_pagos_valor)", "LEFT JOIN rmb_tesoreria tes USING(rmb_tesoreria_id) WHERE tes.rmb_aptos_id = '$id_apto' AND DATE_FORMAT(p.rmb_pagos_fpago,'%Y-%m-%d') <= '".$_POST['rmb_pagos_fpago']."'", "GROUP BY tes.rmb_aptos_id", "");
+        if($res_pago){
+            if(mysql_num_rows($res_pago) > 0){
+                $row_pago = mysql_fetch_array($res_pago);
+                $pago_ant = $row_pago[0];
+            }
+        }
+        $saldo = $deuda_ant - $pago_ant;
+        if($saldo > 0){
+            // Debe
+            $sql_est_tes = "SELECT rmb_est_id FROM rmb_tesoreria WHERE rmb_tesoreria_id <> ".$_POST['rmb_tesoreria_id']." AND rmb_tesoreria_fpag,'%Y-%m-%d') <= '".$_POST['rmb_pagos_fpago']."' AND rmb_aptos_id = '$id_apto' ORDER BY rmb_tesoreria_fpag DESC LIMIT 1";
+            $res_est_tes = mysql_query($sql_est_tes, conexion());
+            if($res_est_tes){
+                if(mysql_num_rows($res_est_tes) > 0){
+                    $row_est_tes = mysql_fetch_array($sql_est_tes);
+                    if($row_est_tes[0] == 17){
+                        $new_est_tes = 18;
+                    }
+                    elseif($row_est_tes[0] == 18){
+                        $new_est_tes = 19;
                     }
                     else{
-                        $valor_tes = $valor - $valor_tes;
+                        $new_est_tes = 20;
                     }
                 }
             }
         }
+        else{
+            // a favor
+            $new_est_tes = 17;
+        }
+        $sql_upd_est_tes = "UPDATE rmb_tesoreria SET rmb_est_id = $new_est_tes WHERE rmb_tesoreria_id = ".$_POST['rmb_tesoreria_id'];
+        $res_upd_est_tes = mysql_query($sql_upd_est_tes, conexion());
+        if($res_upd_est_tes){
+            echo $_POST['id_upd'];
+        }
+        
     }
-    $sql_upd_tes = "UPDATE rmb_pagos SET rmb_pagos_valor = $valor_tes WHERE rmb_pagos_id = '".$_POST['rmb_pagos_id']."'";
-    $res_upd_tes = mysql_query($sql_upd_tes, conexion());
-
-    if(($sw == $_POST['id_upd']) && ($res_upd_tes)){echo $_POST['id_upd'];}
 }
 else{
     $rmb_pagos_id = NextID('rmb_admon', 'rmb_pagos');
@@ -103,9 +104,6 @@ else{
     $res_pagos = mysql_query($sql_pagos, conexion());
     if($res_pagos){
         echo $rmb_pagos_id;
-    }
-    else{
-        echo "INSERT INTO $tabla (rmb_pagos_fpago, rmb_pagos_valor, rmb_pagos_obs, rmb_tesoreria_id, rmb_fpago_id, rmb_pagos_fecha, rmb_pagos_user) VALUES ('".$_POST['rmb_pagos_fpago']."', '".$_POST['rmb_pagos_valor']."', '".$_POST['rmb_pagos_obs']."', ".$_POST['rmb_tesoreria_id'].", ".$_POST['rmb_fpago_id'].", NOW(), ".$_SESSION['UsuID'].")";
     }
 }
 ?>

@@ -6,7 +6,7 @@ require_once ("../php/funciones.php");
 // Copyright 2014 Wilson Giovanny Velandia Barreto 3204274564 - willyv78@gmail.com  //
 //////////////////////////////////////////////////////////////////////////////////////
 
-$res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb_aptos_nom, r.rmb_residente_nom, r.rmb_residente_ape, rxa.rmb_tres_id, tes.rmb_est_id", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_aptos_id) LEFT JOIN rmb_residente r USING(rmb_residente_id) LEFT JOIN rmb_tesoreria tes USING(rmb_aptos_id) LEFT JOIN rmb_torres t USING(rmb_torres_id)", "GROUP BY a.rmb_aptos_id", "ORDER BY a.rmb_torres_id ASC, a.rmb_aptos_nom ASC");
+$res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb_aptos_nom, r.rmb_residente_nom, r.rmb_residente_ape, rxa.rmb_tres_id, tes.rmb_est_id", "LEFT JOIN rmb_residente_x_aptos rxa USING(rmb_aptos_id) LEFT JOIN rmb_residente r USING(rmb_residente_id) LEFT JOIN rmb_tesoreria tes USING(rmb_aptos_id) LEFT JOIN rmb_torres t USING(rmb_torres_id)", "GROUP BY a.rmb_aptos_id", "ORDER BY a.rmb_torres_id ASC, a.rmb_aptos_nom ASC, rmb_tesoreria_fpag DESC");
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="table-responsive">
@@ -84,15 +84,13 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
                   </button>
                 </a>
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#estado-financiero.html" style="width:33%;">
-                  <button type="button" class="btn <?php echo $clase;?> btn-accion" title="Estado Financiero" style="padding: 5px 10px;">
-                    <div><?php echo "0%";?></div>
-                    <img src="../images/iconos/home2.png" alt="Estado financiero" width="70%">
+                  <button type="button" class="btn <?php echo $clase;?> btn-accion" title="Estado Financiero" style="padding: 7px 10px;">
+                    <img src="../images/iconos/home2.png" alt="Estado financiero" width="100%">
                   </button>
                 </a>
                 <a class="col-xs-4 col-sm-4 col-md-4 col-lg-4" href="#contactar-al-administrador.html" style="width:33%;">
-                  <button type="button" class="btn btn-warning btn-accion disabled" title="Enviar mensaje" style="padding: 5px 10px;">
-                    <div><?php echo "0%";?></div>
-                    <img src="../images/iconos/home3.png" alt="Enviar mensaje" width="70%">
+                  <button type="button" class="btn btn-warning btn-accion disabled" title="Enviar mensaje" style="padding: 7px 10px;">
+                    <img src="../images/iconos/home3.png" alt="Enviar mensaje" width="100%">
                   </button>
                 </a>
               </td>
@@ -165,7 +163,7 @@ $res_val = registroCampo("rmb_aptos a", "a.rmb_aptos_id, t.rmb_torres_nom, a.rmb
             this.value = asInitVals[$("tfoot input").index(this)];
           }
         });
-      }, 200);
+      }, 400);
 
       /*fin filtros individuales*/
 
